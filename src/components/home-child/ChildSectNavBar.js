@@ -12,6 +12,7 @@ const ChildSectNavBar = (props) => {
   const { avatarNum } = chosenChild
   const { navBarWrapper, navBarElement, avatarStyle } = styles
 
+  // This function will show the profile card
   const handleProfileBtn = () => {
     setIsProfileClicked((prevState) => !prevState)
   }

@@ -19,6 +19,7 @@ const EnterChildNameMainSec = () => {
   } = styles
   const { bgStyleWNavBar } = globalStyles
 
+  // This function will change the name of the new child whenever the value of the text input changes
   const handleChangeText = (new_name) => {
     setNewChild({ ...EMPTY_CHILD_OBJ, name: new_name })
   }

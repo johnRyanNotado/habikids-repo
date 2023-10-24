@@ -15,10 +15,11 @@ const ListChild = (props) => {
     handleOnPress,
     iconStyle,
   } = props
+  const { centered } = globalStyles
 
   const { custContainer, iniIconStyle, nameStyle } = styles
   return (
-    <View style={[globalStyles.centered, custContainer]}>
+    <View style={[centered, custContainer]}>
       <TouchableOpacity onPress={handleOnPress}>
         <Image
           style={[iniIconStyle, custBorderStyle, iconStyle]}

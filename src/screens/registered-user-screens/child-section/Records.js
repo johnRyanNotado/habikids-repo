@@ -35,10 +35,12 @@ const Records = ({ navigation }) => {
     txtStyle,
   } = styles
 
+  // This function will show the records for the Lessons
   const handleLessonsBtn = () => {
     setSelectedRecord(LESSONS)
   }
 
+  // This function will show the records for the Activities
   const handleActivitiesBtn = () => {
     setSelectedRecord(ACTIVITIES)
   }

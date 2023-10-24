@@ -24,13 +24,17 @@ const Home = ({ navigation }) => {
     setIsChildChosen(false)
   }, [])
 
+  // This function will navigate the user to the EnterChildName screen
   const handleAddBtn = () => {
     navigation.navigate('EnterChildName')
   }
 
+  // This function will navigate the user to the Settings screen
   const handleSettingsBtn = () => {
     navigation.navigate('Settings')
   }
+
+  // This function will navigate the user to the ManageProfile screen
   const handleManageProfileBtn = () => {
     navigation.navigate('ManageProfiles')
   }

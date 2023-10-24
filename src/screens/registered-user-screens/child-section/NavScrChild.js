@@ -20,23 +20,30 @@ export const useChildSectionContext = () => useContext(ChildSectionContext)
 
 const NavScrChild = ({ navigation }) => {
   const { setIsChildChosen } = useChildDataContext()
-  const [lessonsGHData, setLessonsGHData] = useState(LESSONS_GOODHABITS)
-  const [lessonsVData, setLessonsVData] = useState(LESSONS_VALUES)
-  const [lessonsTData, setLessonsTData] = useState(LESSONS_TRADITIONS)
+
+  const [lessonsGHData, setLessonsGHData] = useState(LESSONS_GOODHABITS) // Data for the good habits lessons
+
+  const [lessonsVData, setLessonsVData] = useState(LESSONS_VALUES) // Data for the values lessons
+
+  const [lessonsTData, setLessonsTData] = useState(LESSONS_TRADITIONS) // Data for the traditions lessons
+
   const [activitiesGHData, setActivitiesGHData] = useState(
     ACTIVITIES_GOODHABITS
-  )
-  const [activitiesVData, setActivitiesVData] = useState(ACTIVITIES_VALUES)
-  const [activitiesTData, setActivitiesTData] = useState(ACTIVITIES_TRADITIONS)
+  ) // Data for the good habits activities
+
+  const [activitiesVData, setActivitiesVData] = useState(ACTIVITIES_VALUES) // Data for the values activities
+
+  const [activitiesTData, setActivitiesTData] = useState(ACTIVITIES_TRADITIONS) // Data for the traditions activities
+
   // use state for profile card in home-child screen
   const [isProfileClicked, setIsProfileClicked] = useState(false)
 
-  // handle settings button
+  // This function will navigate the user to the settings screen.
   const handleSettingsBtn = () => {
     navigation.navigate('Settings')
   }
 
-  // handle switch profile button
+  // This function will navigate the user to the home screen and will set the isChildChosen to false.
   const handleSwitchProfBtn = () => {
     setIsChildChosen(false)
     navigation.navigate('Home')

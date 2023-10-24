@@ -42,16 +42,22 @@ const ActivitiesMainSect = () => {
   } = styles
   const { container, centered, positionAbsolute } = globalStyles
 
+  // Will set the content of the main section to values activities
   const handleValBtn = () => {
     setContent(VALUES)
   }
+
+  // Will set the content of the main section to traditions activities
   const handleTradBtn = () => {
     setContent(TRADITIONS)
   }
+
+  // Will set the content of the main section to good habits activities
   const handleGoodHanBtn = () => {
     setContent(GOOD_HABITS)
   }
 
+  // Button components that will initially be shown on the activities screen
   const ButtonComp = (
     <View style={[centered, container, btnWrapper]}>
       <Button
@@ -75,6 +81,7 @@ const ActivitiesMainSect = () => {
     </View>
   )
 
+  // Will get the corresponding components base on the value of the content useState
   const getCorresComp = () => {
     switch (content) {
       case BUTTONS:
@@ -102,6 +109,7 @@ const ActivitiesMainSect = () => {
     }
   }
 
+  // Will get the corresponding subtitle base on the value of the content useState
   const getSubTitle = () => {
     switch (content) {
       case BUTTONS:
@@ -119,6 +127,7 @@ const ActivitiesMainSect = () => {
     }
   }
 
+  // Will show the dropdown base on the value of the content useState
   const getDropDown = () => {
     switch (content) {
       case BUTTONS:

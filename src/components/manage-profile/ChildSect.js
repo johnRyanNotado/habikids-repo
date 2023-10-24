@@ -15,11 +15,15 @@ const ChildSect = () => {
     custBorderWrapper,
     switchWrapper,
   } = styles
+
   const { isDeleteEnabled, setIsDeleteEnabled } = useChosenChildContext()
+
+  // this is the props for the switch component
   const switchProps = {
     trackColor: { false: COLORS.greenPrimary, true: COLORS.greenPrimary },
     thumbColor: COLORS.white,
   }
+
   return (
     <View style={childrenSectWrapper}>
       <View style={learnersLabel}>

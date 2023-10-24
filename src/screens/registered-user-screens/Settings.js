@@ -9,6 +9,7 @@ import SettingsMainSect from '../../components/settings/SettingsMainSect'
 const Settings = ({ navigation }) => {
   const { custContainer } = styles
   const { container, centered } = globalStyles
+
   // handle backpress (goBack)
   useEffect(() => {
     const backAction = () => {

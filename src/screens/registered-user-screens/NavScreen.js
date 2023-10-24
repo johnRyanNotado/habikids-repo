@@ -19,11 +19,19 @@ export const ChildDataContext = createContext()
 export const useChildDataContext = () => useContext(ChildDataContext)
 
 const NavScreen = () => {
+  // for the identifying if there is a chosen child (used in managing profile and child section)
   const [isChildChosen, setIsChildChosen] = useState(false)
+
+  // for the selected child (used in managing profile and child section)
   const [chosenChild, setChosenChild] = useState(EMPTY_CHILD_OBJ)
+
+  // for the data of all the children
   const [childData, setChildData] = useState(sampleListChildObj)
+
+  // for the new child that will be added (used in EnterChildName and EnterChildAge screens)
   const [newChild, setNewChild] = useState(EMPTY_CHILD_OBJ)
 
+  // will set the isChild chosen to true and will set the value for the chosen child based on a given value
   const handleChosenChild = (childObj) => {
     const { id, name, age, avatarNum } = childObj
     setIsChildChosen(true)

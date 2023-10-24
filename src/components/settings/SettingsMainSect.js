@@ -4,6 +4,7 @@ import { Picker } from '@react-native-picker/picker'
 import SettingsConfigSect from './SettingsConfigSect'
 
 const SettingsMainSect = () => {
+  // These are the useState that will serve as the value for each switch in the settings.
   const [isMusicVal, setIsMusicVal] = useState(false)
   const [isVoiceVal, setIsVoiceVal] = useState(false)
   const [isReminderVal, setIsReminderVal] = useState(false)

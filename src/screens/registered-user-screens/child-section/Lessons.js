@@ -31,7 +31,10 @@ const Lessons = ({ navigation }) => {
   const { homeBtnWrapper } = styles
   const { container, centered } = globalStyles
 
+  // useState for opening and closing the dropdown for the selected Year
   const [isOpen, setIsOpen] = useState(false)
+
+  // useState for serving as the value of the dropdown for the selected Year
   const [selectedYear, setSelectedYear] = useState(YEAR_LEVELS[0].value)
 
   // handle back press -> navigate to library
@@ -79,8 +82,10 @@ const Lessons = ({ navigation }) => {
     }
   }, [content])
 
+  // useState for identifies which function does the undo back calls
   const [undoBtnFunc, setUndoBtnFunc] = useState(() => handleUndoBtn)
 
+  // Back button component
   const backBtn = (
     <TouchableOpacity onPress={undoBtnFunc}>
       <View style={[centered, homeBtnWrapper]}>

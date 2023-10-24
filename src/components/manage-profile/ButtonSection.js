@@ -21,7 +21,7 @@ const ButtonSection = () => {
     setIsChildChosen(false)
     setChosenChild(EMPTY_CHILD_OBJ)
 
-    // replaces the value of the chosen child with the a new one
+    // replaces the value of the chosen child with a new one
     setChildData((prevItems) =>
       prevItems.map((item) => {
         if (item.id === chosenChild.id) {

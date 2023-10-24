@@ -28,6 +28,7 @@ const EnterChildName = ({ navigation }) => {
     return () => backHandler.remove()
   }, [])
 
+  // This function will navigate the user to home screen
   const handleLeftArrBtn = () => {
     setNewChild(EMPTY_CHILD_OBJ)
     navigation.navigate('Home')

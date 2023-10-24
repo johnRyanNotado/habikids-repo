@@ -34,18 +34,22 @@ const Library = ({ navigation }) => {
     return () => backHandler.remove()
   }, [])
 
+  // This function will navigate the user to the previous screen.
   const handleUndoBtn = () => {
     navigation.goBack()
   }
 
+  // This function will navigate the user to the activities screen.
   const handleJeepBtn = () => {
     navigation.navigate('Activities')
   }
 
+  // This function will navigate the user to the lessons screen.
   const handleBooksBtn = () => {
     navigation.navigate('Lessons')
   }
 
+  // Back button component
   const backBtn = (
     <TouchableOpacity onPress={handleUndoBtn}>
       <View style={[globalStyles.centered, styles.homeBtnWrapper]}>

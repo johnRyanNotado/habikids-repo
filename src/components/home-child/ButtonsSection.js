@@ -16,9 +16,11 @@ const ButtonsSection = () => {
   const { btnSection, btnIconWrapper, btnElement } = styles
   const { centered } = globalStyles
 
+  // This function will hide the profile card.
   const handleCancel = () => {
     setIsProfileClicked((prevState) => !prevState)
   }
+
   return (
     <View style={btnSection}>
       <TouchableOpacity style={[btnElement, { flex: 1.5 }]}>

@@ -12,6 +12,7 @@ const EnterChildAge = ({ navigation }) => {
 
   const { container, centered } = globalStyles
 
+  // Use effect for handling backpress
   useEffect(() => {
     const backAction = () => {
       navigation.goBack()

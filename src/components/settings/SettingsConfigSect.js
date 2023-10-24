@@ -4,6 +4,8 @@ import COLORS from '../../constants/colors'
 
 const SettingsConfigSect = (props) => {
   const { label, value, setValue } = props
+
+  // Props for the switch
   const switchProps = {
     trackColor: { false: COLORS.greenPrimary, true: COLORS.greenPrimary },
     thumbColor: COLORS.white,

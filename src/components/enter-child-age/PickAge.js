@@ -9,6 +9,7 @@ const PickAge = () => {
   const { pickAgeWrapper, ageLabelWrapper, ageLabel, ageSelectedWrapper } =
     styles
 
+  // This function will change the value of the newChild and selectedAge useStates
   const handleAgeRadioBtn = (ageVal) => {
     // set new age value
     setNewChild({ ...newChild, age: ageVal })

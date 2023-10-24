@@ -27,6 +27,7 @@ const ChooseAvatar = () => {
 
   const { id, age, name, avatarNum } = chosenChild
 
+  // Will set the new avatar for the chosenChild useState
   const handleSelectedAvatar = (avatarId) => {
     const newAvatar = avatarId
 

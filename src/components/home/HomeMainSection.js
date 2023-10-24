@@ -22,6 +22,7 @@ const HomeMainSection = (props) => {
     plusIconWrapper,
   } = styles
 
+  // This function will render a child's avatar, name, and age
   const renderChild = ({ item }) => {
     const { id, name, age, avatarNum } = item
     return (

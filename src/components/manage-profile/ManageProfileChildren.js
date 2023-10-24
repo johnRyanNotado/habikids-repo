@@ -27,6 +27,7 @@ const ManageProfileChildren = () => {
   } = styles
   const { centered } = globalStyles
 
+  // This function will alert the user, asking for confirmation about the delete request.
   const handleDeleteBtn = (id, name) => {
     Alert.alert('Saglit!', `Sigurado ka bang gusto mong i-delete si ${name}?`, [
       {
@@ -37,13 +38,13 @@ const ManageProfileChildren = () => {
       {
         text: 'YES',
         onPress: () => {
-          setChildData(childData.filter((child) => child.id !== id))
+          setChildData(childData.filter((child) => child.id !== id)) // Filter out the selected child
         },
       },
     ])
   }
 
-  // renders the child by using listChild component and an additional text for the age
+  // renders the child by using listChild component and an additional delete button and text for the age
   const renderChild = ({ item }) => {
     const { id, name, avatarNum, age } = item
     return (

@@ -22,12 +22,13 @@ const EditSection = () => {
     ageNameWrapper,
     custDropDownStyle,
   } = styles
+
   // item for dropdown
   const [items, setItems] = useState(AGE_ITEMS)
   const { id, name, age, avatarNum } = chosenChild
   const [selectedAge, setSelectedAge] = useState(chosenChild.age)
 
-  // useEffect for changing selected age
+  // useEffect for changing the age of the chosen child whenever the selected age changes
   useEffect(() => {
     handleChosenChild({
       id: id,
@@ -37,6 +38,7 @@ const EditSection = () => {
     })
   }, [selectedAge])
 
+  // function for changing the name of the chosen child whenever the value of the input changes
   const handleNameChange = (newName) => {
     handleChosenChild({
       id: id,

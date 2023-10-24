@@ -42,12 +42,17 @@ const LessonsMainSect = () => {
   } = styles
   const { container, centered, positionAbsolute } = globalStyles
 
+  // Will set the content of the main section to values lessons
   const handleValBtn = () => {
     setContent(VALUES)
   }
+
+  // Will set the content of the main section to traditions lessons
   const handleTradBtn = () => {
     setContent(TRADITIONS)
   }
+
+  // Will set the content of the main section to good habits lessons
   const handleGoodHanBtn = () => {
     setContent(GOOD_HABITS)
   }

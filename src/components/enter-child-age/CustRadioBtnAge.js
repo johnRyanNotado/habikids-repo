@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, StyleSheet, View } from 'react-native'
 import COLORS from '../../constants/colors'
 
 const CustRadioBtnAge = (props) => {
+  // based on the selected useState, the styles of the buttons will change.
   const { label, selected, onSelect } = props
   return (
     <TouchableOpacity onPress={onSelect}>

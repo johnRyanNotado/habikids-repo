@@ -4,6 +4,7 @@ import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
 
 const CustRadioBtnAvatar = (props) => {
+  // based on the selected useState, the styles of the buttons will change.
   const { id, selected, onSelect } = props
   const { imageStyle, selectedStyle, notSelectedStyle } = styles
   return (

@@ -15,6 +15,7 @@ const PickAvatar = () => {
     avatarContainerStyle,
   } = styles
 
+  // This function will change the value of the newChild and selectedAvatar useStates
   const handleAvatarRadioBtn = (avatarNum) => {
     // set new age value
     setNewChild({ ...newChild, avatarNum: avatarNum })

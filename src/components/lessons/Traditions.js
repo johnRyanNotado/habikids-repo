@@ -3,6 +3,7 @@ import { FlatList } from 'react-native'
 import { LESSONS_TRADITIONS } from '../../constants/lessonsList'
 import Card from '../activities/Card'
 const Traditions = () => {
+  // Will render a card each lessons
   const renderItem = ({ item }) => {
     const { img, lesNum, title } = item
     return <Card img={img} num={lesNum} title={title} label={`Lessons`} />

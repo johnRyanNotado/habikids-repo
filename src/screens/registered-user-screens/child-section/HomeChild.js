@@ -30,11 +30,12 @@ const HomeChild = ({ navigation }) => {
     return () => backHandler.remove()
   }, [])
 
-  // handle records button
+  // This function will navigate the user to Records screen
   const handleRecordsBtn = () => {
     navigation.navigate('Records')
   }
 
+  // This function will navigate the user to Library screen
   const handleBooksBtn = () => {
     navigation.navigate('Library')
   }

@@ -9,10 +9,6 @@ const ProfileCard = () => {
   const { profileCard, profileCardWrapperBg } = styles
   const { centered, positionAbsolute } = globalStyles
 
-  const handleCancel = () => {
-    setIsProfileClicked((prevState) => !prevState)
-  }
-
   return (
     <View style={[positionAbsolute, centered]}>
       <View style={[positionAbsolute, profileCardWrapperBg]} />
