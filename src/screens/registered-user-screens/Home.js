@@ -1,0 +1,62 @@
+import React, { useEffect } from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { globalStyles } from '../../styles/GlobalStyles'
+import { View } from 'react-native'
+import HomeNavBar from '../../components/home/HomeNavBar'
+import HomeMainSection from '../../components/home/HomeMainSection'
+import HomeFooterSection from '../../components/home/HomeFooterSection'
+import handleBckPrsExit from '../../utilities/handleBckPrsExit'
+import { SWGreenMain } from '../../constants/stackedWaves'
+import { useChildDataContext } from './NavScreen'
+import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
+
+const Home = ({ navigation }) => {
+  const { container, centered, bgStyleWNavBar } = globalStyles
+  const { handleChosenChild, setChosenChild, setIsChildChosen, chosenChild } =
+    useChildDataContext()
+
+  // Handle back press: when click => exit app
+  useEffect(handleBckPrsExit, [])
+
+  // Initializes chosen child obj
+  useEffect(() => {
+    setChosenChild(EMPTY_CHILD_OBJ)
+    setIsChildChosen(false)
+  }, [])
+
+  const handleAddBtn = () => {
+    navigation.navigate('EnterChildName')
+  }
+
+  const handleSettingsBtn = () => {
+    navigation.navigate('Settings')
+  }
+  const handleManageProfileBtn = () => {
+    navigation.navigate('ManageProfiles')
+  }
+
+  // on child chosen -> set chosenChild and redirect to NavScrChild
+  const handleOnChildChosen = (childObj) => {
+    handleChosenChild(childObj)
+    navigation.navigate('NavScrChild')
+  }
+
+  return (
+    <SafeAreaView style={[container, centered]}>
+      <HomeNavBar
+        handleSettingsBtn={handleSettingsBtn}
+        handleManageProfileBtn={handleManageProfileBtn}
+      />
+      <View style={[container, centered, { width: '100%' }]}>
+        <SWGreenMain style={bgStyleWNavBar} />
+        <HomeMainSection
+          handleAddBtn={handleAddBtn}
+          handleOnChildChosen={handleOnChildChosen}
+        />
+        <HomeFooterSection />
+      </View>
+    </SafeAreaView>
+  )
+}
+
+export default Home
