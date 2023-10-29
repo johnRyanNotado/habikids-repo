@@ -21,7 +21,7 @@
 ### Running the app on android studio's virtual device
 1. First open mo yung virtual device sa android studio. Dapat nagrurun na siya.
 2. Open the project folder ulit sa vscode then open the terminal. (Dapat nasa directory na ng project yung terminal)
-3. (This will start the expo server) Run -> **npx expo start**
+3. Run -> **npx expo start** (This will start the expo server) 
 4. Pag ok na and may nagenerate ng QR and commands options, enter mo "**a**", as in letter ***a*** lang in lowercase.
 5. After nun automatic na hanapin ni expo yung virtual device na nakabukas and ira-run niya dun yung app.
 
