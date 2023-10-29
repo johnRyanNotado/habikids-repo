@@ -7,7 +7,7 @@
 3.  Download zip file and extract/ Clone this project on your computer
 4.  Open the project folder on vscode
 5.  Open the terminal on vscode (Make sure na nasa proper directory na yung terminal. Nadodoble kasi yung folder pag in-extract.)
-6.  On the terminal run -> **npm install** (This will download all the modules needed para ma run yung app) 
+6.  On the terminal run **npm install** (This will download all the modules needed para ma run yung app)  (Copy mo lang yung nakabold, then enter sa terminal)
 
 
 ### Instructions para ma-run yung app sa mobile device 
@@ -21,8 +21,8 @@
 ### Running the app on android studio's virtual device
 1. First open mo yung virtual device sa android studio. Dapat nagrurun na siya.
 2. Open the project folder ulit sa vscode then open the terminal. (Dapat nasa directory na ng project yung terminal)
-3. Run -> **npx expo start** (This will start the expo server) 
-4. Pag ok na and may nagenerate ng QR and commands options, enter mo "**a**", as in letter ***a*** lang in lowercase.
+3. Run **npx expo start** (This will start the expo server) (Copy mo lang yung nakabold, then enter sa terminal)
+4. Pag ok na and may nagenerate ng QR and commands options, enter mo "***a***", as in letter ***a*** lang in lowercase.
 5. After nun automatic na hanapin ni expo yung virtual device na nakabukas and ira-run niya dun yung app.
 
 
