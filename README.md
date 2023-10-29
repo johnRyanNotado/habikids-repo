@@ -7,7 +7,7 @@
 3.  Download zip file and extract/ Clone this project on your computer
 4.  Open the project folder on vscode
 5.  Open the terminal on vscode (Make sure na nasa proper directory na yung terminal. Nadodoble kasi yung folder pag in-extract.)
-6. (This will download all the modules needed para ma run yung app) On the terminal run -> **npm install**
+6.  On the terminal run -> **npm install** (This will download all the modules needed para ma run yung app) 
 
 
 ### Instructions para ma-run yung app sa mobile device 
