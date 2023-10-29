@@ -42,14 +42,12 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   detailsWrapper: {
-    // backgroundColor: 'lightblue',
     height: '100%',
     width: '60%',
     gap: 5,
     alignItems: 'flex-start',
   },
   avatarWrapper: {
-    // backgroundColor: 'lightpink',
     height: '100%',
     width: '40%',
   },

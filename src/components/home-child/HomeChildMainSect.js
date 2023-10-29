@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   },
   libraryWrapper: {
     position: 'absolute',
-    bottom: 60,
-    left: 60,
+    bottom: '23%',
+    left: '13%',
     height: 200,
     justifyContent: 'flex-end',
   },

@@ -153,7 +153,7 @@ const LessonsMainSect = () => {
   }
 
   return (
-    <SafeAreaView style={[container, centered, custContainer]}>
+    <View style={[container, centered, custContainer]}>
       <View style={[centered, titleWrapper]}>
         <Text style={title}>Lessons</Text>
       </View>
@@ -162,13 +162,14 @@ const LessonsMainSect = () => {
       <View style={[positionAbsolute, dropDownWrapper]}>{getDropDown()}</View>
 
       <View style={contentWrapper}>{getCorresComp()}</View>
-    </SafeAreaView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   custContainer: {
     paddingBottom: 20,
+    paddingHorizontal: 20,
   },
   contentWrapper: {
     height: '80%',
@@ -237,7 +238,7 @@ const styles = StyleSheet.create({
     height: 35,
     right: 10,
     top: 25,
-    left: '',
+    left: 'auto',
     zIndex: 10,
   },
   dropDownBg: {

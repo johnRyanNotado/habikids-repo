@@ -4,6 +4,7 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import ProfileSection from './ProfileSection'
 import ButtonsSection from './ButtonsSection'
+import Animated, { BounceIn } from 'react-native-reanimated'
 
 const ProfileCard = () => {
   const { profileCard, profileCardWrapperBg } = styles
@@ -12,10 +13,10 @@ const ProfileCard = () => {
   return (
     <View style={[positionAbsolute, centered]}>
       <View style={[positionAbsolute, profileCardWrapperBg]} />
-      <View style={profileCard}>
+      <Animated.View entering={BounceIn} style={profileCard}>
         <ProfileSection />
         <ButtonsSection />
-      </View>
+      </Animated.View>
     </View>
   )
 }
@@ -26,8 +27,12 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderRadius: 20,
     elevation: 5,
-    width: 380,
-    height: 215,
+    minWidth: 380,
+    minHeight: 215,
+    width: '30%',
+    height: '30%',
+    maxWidth: 230,
+    maxHeight: 430,
   },
   profileCardWrapperBg: {
     backgroundColor: COLORS.grayPrimary,

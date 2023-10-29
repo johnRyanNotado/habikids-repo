@@ -55,7 +55,7 @@ const LessonsRec = () => {
             handleDropDownChange(value)
           }}
           textStyle={title}
-          style={{ borderWidth: 0, backgroundColor: '' }}
+          style={{ borderWidth: 0, backgroundColor: 'auto' }}
         />
       </View>
       <FlatList data={listData} renderItem={renderItem} />
