@@ -4,7 +4,7 @@
 > Note: Dapat may vscode.
 1.  Install node first -> [link](//https://nodejs.org/en/download)
 2.  Install git -> [link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-3.  Clone this project on your device/Download zip file and extract
+3.  Download zip file and extract/ Clone this project on your computer
 4.  Open the project folder on vscode
 5.  Open the terminal on vscode (Make sure na nasa proper directory na yung terminal. Nadodoble kasi yung folder pag in-extract.)
 6. (This will download all the modules needed para ma run yung app) On the terminal run -> **npm install**
