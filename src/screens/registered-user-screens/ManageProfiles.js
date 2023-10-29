@@ -68,7 +68,7 @@ const ManageProfiles = ({ navigation }) => {
     >
       <View style={[container, centered, custContainer]}>
         <ManageProfileNavBar handleLeftArrBtn={handleLeftArrBtn} />
-        <View style={[container, centered, { justifyContent: 'flex-start' }]}>
+        <View style={[container, centered]}>
           <View style={cardWrapper}>
             <ManageProfileAcc handleLogout={handleLogout} />
             <ChildSect />
@@ -85,7 +85,6 @@ const ManageProfiles = ({ navigation }) => {
 const styles = {
   custContainer: {
     backgroundColor: COLORS.greenPrimary,
-    width: '100%',
   },
   cardWrapper: {
     backgroundColor: 'white',

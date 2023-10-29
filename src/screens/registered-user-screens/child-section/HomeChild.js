@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useContext } from 'react'
-import { BackHandler, ImageBackground } from 'react-native'
+import { BackHandler, ImageBackground, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { getImg } from '../../../utilities/getImg'
 import { useChildSectionContext } from './NavScrChild'

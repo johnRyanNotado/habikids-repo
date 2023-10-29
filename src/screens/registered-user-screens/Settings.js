@@ -31,7 +31,7 @@ const Settings = ({ navigation }) => {
   return (
     <View style={[container, custContainer]}>
       <SettingsNavBar handleLeftArrBtn={handleLeftArrBtn} />
-      <View style={[container, centered, { justifyContent: 'flex-start' }]}>
+      <View style={[container, centered]}>
         <SettingsMainSect />
       </View>
     </View>
