@@ -1,24 +1,35 @@
 ﻿# Habikids Repo
 
-### Instructions
+### Instructions sa installation
+Note: Dapat may vscode.
+1.  Install node first -> [link](//https://nodejs.org/en/download)
+2.  Install git -> [link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+3.  Clone this project on your device/Download zip file and extract
+4.  Open the project folder on vscode
+5.  Open the terminal on vscode (Make sure na nasa proper directory na yung terminal. Nadodoble kasi yung folder pag in-extract.)
+6. (This will download all the modules needed para ma run yung app) On the terminal run -> **npm install**
 
-1.  Install node first -> link://https://nodejs.org/en/download
-2.  Install git -> https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-3.  Clone this project on your device.
-4.  Open the terminal
-5.  Go to the project directory
-6.  To download all the modules -> run "npm install"
 
-### Running the app on your mobile device
+### Instructions para ma-run yung app sa mobile device 
+Note: Dapat connected yung phone and laptop sa same network.
+Note: Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka-public. Need i-change yung network to private. Make sure lang na secure yung wifi.
+1.  Install mo "expo go" sa mobile device. Nasa app store siya.
+2.  Sa laptop, open mo project folder sa vscode then open the terminal sa vscode. (Dapat nasa directory na ng project yung terminal)
+4. (This will start the expo server and generate a QR code) Run -> **npx expo start** 
+5.  Open the "expo go" app on your mobile phone. Then scan the QR code using the app. Magloload na yung app
 
-1.  Install "expo go" on your mobile device.
-2.  Open the terminal.
-3.  Go to the project directory.
-4.  Run "npx expo start". (This will generate a QR code).
-5.  Open the "expo go" app on your mobile phone. Then scan the QR code using the app.
-    Note: Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka public.
 
-### Reminder for pushing into the directory
+### Running the app on android studio's virtual device
+1. Open mo yung virtual device sa android studio. Dapat nagrurun na siya.
+2. Open the project folder ulit sa vscode then open the terminal. (Dapat nasa directory na ng project yung terminal)
+3. (This will start the expo server) Run -> **npx expo start**
+4. Pag ok na and may nagenerate ng QR and commands options, enter mo "**a**", as in letter ***a*** lang in lowercase.
+5. After nun automatic na hanapin ni expo yung virtual device na nakabukas and ira-run niya dun yung app.
 
-1. Mag chat muna sa gc kung ano ginawa haha para rin ma-notify kami.
-2. If possible, create ng another branch paggumagawa ng features.
+
+### NOTE
+- Di ko pa na ayos yung UI ng app para maging dynamic kaya baka maging iba yung itsura niya sa phone niyo, sorry.
+- Medyo bano ako sa naming ng identifiers at file names. Pasensya na.
+- Yung sa activities/games, gumawa ko ng separate app para dun para mabilis yung development, lipat ko nalang siya dito pagtapos na.
+- If may nakita kang mali o ways para ma-improve yung gawa ko in any part of the project, chat ka lang, ty.
+- Pag may concern, chat ka lang.
