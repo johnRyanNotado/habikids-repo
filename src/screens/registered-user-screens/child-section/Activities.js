@@ -107,7 +107,7 @@ const Activities = ({ navigation }) => {
         setSelectedYear,
       }}
     >
-      <SafeAreaView style={container}>
+      <View style={container}>
         <ImageBackground
           resizeMode="cover"
           style={{ flex: 1 }}
@@ -117,7 +117,7 @@ const Activities = ({ navigation }) => {
           <ActivitiesMainSect />
           {isProfileClicked ? <ProfileCard /> : <></>}
         </ImageBackground>
-      </SafeAreaView>
+      </View>
     </ActivitiesContext.Provider>
   )
 }

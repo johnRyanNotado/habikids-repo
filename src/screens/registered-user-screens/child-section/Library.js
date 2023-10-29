@@ -59,7 +59,7 @@ const Library = ({ navigation }) => {
   )
 
   return (
-    <SafeAreaView style={globalStyles.container}>
+    <View style={globalStyles.container}>
       <ImageBackground
         resizeMode="cover"
         style={{ flex: 1 }}
@@ -72,7 +72,7 @@ const Library = ({ navigation }) => {
         />
         {isProfileClicked ? <ProfileCard /> : <></>}
       </ImageBackground>
-    </SafeAreaView>
+    </View>
   )
 }
 

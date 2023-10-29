@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import EnterChildNameNavBar from '../../../components/enter-child-name/EnterChildNameNavBar'
 import EnterChildNameMainSec from '../../../components/enter-child-name/EnterChildNameMainSec'
-import { BackHandler, ToastAndroid } from 'react-native'
+import { BackHandler, ToastAndroid, View } from 'react-native'
 import { useChildDataContext } from '../NavScreen'
 import EMPTY_CHILD_OBJ from '../../../constants/emptyChildObj'
 
@@ -60,13 +60,13 @@ const EnterChildName = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={[centered, container]}>
+    <View style={[centered, container]}>
       <EnterChildNameNavBar
         handleLeftArrBtn={handleLeftArrBtn}
         handleRightArrBtn={handleRightArrBtn}
       />
       <EnterChildNameMainSec />
-    </SafeAreaView>
+    </View>
   )
 }
 

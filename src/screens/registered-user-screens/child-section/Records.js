@@ -110,7 +110,7 @@ const Records = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={container}>
+    <View style={container}>
       <ImageBackground
         resizeMode="cover"
         source={getImg.bg.emptyBg.link}
@@ -130,7 +130,7 @@ const Records = ({ navigation }) => {
           <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
         </View>
       </ImageBackground>
-    </SafeAreaView>
+    </View>
   )
 }
 

@@ -47,7 +47,7 @@ const HomeChild = ({ navigation }) => {
         handleBooksBtn,
       }}
     >
-      <SafeAreaView style={container}>
+      <View style={container}>
         <ImageBackground
           resizeMode="cover"
           style={container}
@@ -58,7 +58,7 @@ const HomeChild = ({ navigation }) => {
 
           {isProfileClicked ? <ProfileCard /> : <></>}
         </ImageBackground>
-      </SafeAreaView>
+      </View>
     </HomeChildSectionContext.Provider>
   )
 }

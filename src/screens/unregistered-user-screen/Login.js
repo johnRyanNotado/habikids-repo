@@ -53,7 +53,7 @@ const Login = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={[container, centered]}>
+    <View style={[container, centered]}>
       <LWGreenTop style={bgStyle} />
       <View style={loginAccWrapper}>
         <Message messageTxt={LOGIN_MESSAGE} />
@@ -73,7 +73,7 @@ const Login = ({ navigation }) => {
           </Pressable>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

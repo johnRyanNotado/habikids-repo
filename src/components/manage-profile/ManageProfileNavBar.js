@@ -9,7 +9,7 @@ const ManageProfileNavBar = (props) => {
   const { navBarWrapper, navBarTitle, navBarElement, navBtn } = styles
   const { txtShadowMedium } = globalStyles
   return (
-    <SafeAreaView style={navBarWrapper}>
+    <View style={navBarWrapper}>
       <View style={navBarElement}>
         <TouchableOpacity onPress={handleLeftArrBtn}>
           <Image
@@ -22,7 +22,7 @@ const ManageProfileNavBar = (props) => {
         <Text style={[navBarTitle, txtShadowMedium]}>Manage Profiles</Text>
       </View>
       <View style={navBarElement}></View>
-    </SafeAreaView>
+    </View>
   )
 }
 

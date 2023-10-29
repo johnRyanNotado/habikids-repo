@@ -40,7 +40,7 @@ const VerifyEmail = ({ navigation }) => {
       blurRadius={4}
       source={getImg.bg.lwGreenTop.link}
     >
-      <SafeAreaView style={[container, centered, mainWrapperCustom]}>
+      <View style={[container, centered, mainWrapperCustom]}>
         {isVerified ? (
           <VerifyEmailDesc
             txtMain={VERIFIED_EMAIL_MAIN}
@@ -65,7 +65,7 @@ const VerifyEmail = ({ navigation }) => {
               : () => setIsVerified(!isVerified)
           }
         />
-      </SafeAreaView>
+      </View>
     </ImageBackground>
   )
 }

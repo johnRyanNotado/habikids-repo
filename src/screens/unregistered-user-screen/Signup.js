@@ -55,7 +55,7 @@ const Signup = ({ navigation }) => {
   }, [])
 
   return (
-    <SafeAreaView style={[container, centered]}>
+    <View style={[container, centered]}>
       <LWGreenTop style={bgStyle} />
       <View style={createAccWrapper}>
         <Message messageTxt={SIGNUP_MESSAGE} />
@@ -75,7 +75,7 @@ const Signup = ({ navigation }) => {
           </Pressable>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

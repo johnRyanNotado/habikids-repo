@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BackHandler, ToastAndroid } from 'react-native'
+import { BackHandler, ToastAndroid, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import EnterChileAgeNavBar from '../../../components/enter-child-age/EnterChildAgeNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
@@ -69,13 +69,13 @@ const EnterChildAge = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={[container, centered]}>
+    <View style={[container, centered]}>
       <EnterChileAgeNavBar
         handleLeftArrBtn={handleLeftArrBtn}
         handleRightArrBtn={handleRightArrBtn}
       />
       <EnterChildAgeMainSec />
-    </SafeAreaView>
+    </View>
   )
 }
 

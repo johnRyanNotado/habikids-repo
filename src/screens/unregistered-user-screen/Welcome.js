@@ -35,7 +35,7 @@ const Welcome = ({ navigation }) => {
 
   if (fontsLoaded) {
     return (
-      <SafeAreaView style={[container, { backgroundColor: 'red' }]}>
+      <View style={[container, { backgroundColor: 'red' }]}>
         <LWGreenBottom style={bgStyle} />
         <View style={[container, titleWrapper]}>
           <View>
@@ -66,7 +66,7 @@ const Welcome = ({ navigation }) => {
             </Pressable>
           </View>
         </View>
-      </SafeAreaView>
+      </View>
     )
   }
 

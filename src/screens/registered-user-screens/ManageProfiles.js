@@ -66,7 +66,7 @@ const ManageProfiles = ({ navigation }) => {
         setIsDeleteEnabled,
       }}
     >
-      <SafeAreaView style={[container, centered, custContainer]}>
+      <View style={[container, centered, custContainer]}>
         <ManageProfileNavBar handleLeftArrBtn={handleLeftArrBtn} />
         <View style={[container, centered, { justifyContent: 'flex-start' }]}>
           <View style={cardWrapper}>
@@ -77,7 +77,7 @@ const ManageProfiles = ({ navigation }) => {
 
         {/* Show if a child is selected */}
         {isChildChosen ? <ManageProfileOverlay /> : <></>}
-      </SafeAreaView>
+      </View>
     </ChosenChildContext.Provider>
   )
 }

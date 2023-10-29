@@ -46,7 +46,7 @@ const Home = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView style={[container, centered]}>
+    <View style={[container, centered]}>
       <HomeNavBar
         handleSettingsBtn={handleSettingsBtn}
         handleManageProfileBtn={handleManageProfileBtn}
@@ -59,7 +59,7 @@ const Home = ({ navigation }) => {
         />
         <HomeFooterSection />
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

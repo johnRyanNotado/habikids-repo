@@ -29,12 +29,12 @@ const Settings = ({ navigation }) => {
     navigation.goBack()
   }
   return (
-    <SafeAreaView style={[container, custContainer]}>
+    <View style={[container, custContainer]}>
       <SettingsNavBar handleLeftArrBtn={handleLeftArrBtn} />
       <View style={[container, centered, { justifyContent: 'flex-start' }]}>
         <SettingsMainSect />
       </View>
-    </SafeAreaView>
+    </View>
   )
 }
 

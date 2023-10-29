@@ -107,7 +107,7 @@ const Lessons = ({ navigation }) => {
         setSelectedYear,
       }}
     >
-      <SafeAreaView style={container}>
+      <View style={container}>
         <ImageBackground
           resizeMode="cover"
           style={{ flex: 1 }}
@@ -117,7 +117,7 @@ const Lessons = ({ navigation }) => {
           <LessonsMainSect />
           {isProfileClicked ? <ProfileCard /> : <></>}
         </ImageBackground>
-      </SafeAreaView>
+      </View>
     </LessonsContext.Provider>
   )
 }
