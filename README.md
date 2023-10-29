@@ -32,3 +32,4 @@
 - Yung sa activities/games, gumawa ko ng separate app para dun para mabilis yung development, lipat ko nalang siya dito pagtapos na.
 - If may nakita kang mali o ways para ma-improve yung gawa ko in any part of the project, chat ka lang, ty.
 - Pag may concern, chat ka lang.
+- Yung img folder di pa sila nakaclassify, siguro by wednesday ko na ayusin, medyo busy ako this monday and tuesday.
