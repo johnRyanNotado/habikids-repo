@@ -10,7 +10,7 @@
 6.  On the terminal run **npm install** (This will download all the modules needed para ma run yung app)  (Copy mo lang yung nakabold, then enter sa terminal)
 
 
-### Instructions para ma-run yung app sa mobile device 
+### Instructions sa pag-run ng app sa mobile device 
 > Note: Dapat connected yung phone and laptop sa same network. Additionally, Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka-public. Need i-change yung network to private. Make sure lang na secure yung wifi. Google mo lang "how to change network from public to private on windows"
 1.  First install mo "expo go" sa mobile device. Nasa app store siya.
 2.  Sa laptop, open mo project folder sa vscode then open the terminal sa vscode. (Dapat nasa directory na ng project yung terminal)
@@ -18,7 +18,7 @@
 5.  Open the "expo go" app on your mobile phone. Then scan the QR code using the app. Magloload na yung app
 
 
-### Running the app on android studio's virtual device
+### Intructions sa pagrun ng app sa android studio's virtual device
 1. First open mo yung virtual device sa android studio. Dapat nagrurun na siya.
 2. Open the project folder ulit sa vscode then open the terminal. (Dapat nasa directory na ng project yung terminal)
 3. Run **npx expo start** (This will start the expo server) (Copy mo lang yung nakabold, then enter sa terminal)
