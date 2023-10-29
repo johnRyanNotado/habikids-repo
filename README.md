@@ -11,7 +11,7 @@
 
 
 ### Instructions para ma-run yung app sa mobile device 
-> Note: Dapat connected yung phone and laptop sa same network. Additionally, Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka-public. Need i-change yung network to private. Make sure lang na secure yung wifi.
+> Note: Dapat connected yung phone and laptop sa same network. Additionally, Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka-public. Need i-change yung network to private. Make sure lang na secure yung wifi. Google mo lang "how to change network from public to private on windows"
 1.  Install mo "expo go" sa mobile device. Nasa app store siya.
 2.  Sa laptop, open mo project folder sa vscode then open the terminal sa vscode. (Dapat nasa directory na ng project yung terminal)
 4. (This will start the expo server and generate a QR code) Run -> **npx expo start** 
