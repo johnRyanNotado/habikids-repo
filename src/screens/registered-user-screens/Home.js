@@ -6,7 +6,7 @@ import HomeNavBar from '../../components/home/HomeNavBar'
 import HomeMainSection from '../../components/home/HomeMainSection'
 import HomeFooterSection from '../../components/home/HomeFooterSection'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
-import { SWGreenMain } from '../../constants/stackedWaves'
+import { SWGreenMain } from '../../constants/svg/stackedWaves'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import { useChildDataContext } from '../context-api/ContextAPI'
 

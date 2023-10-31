@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native'
 import COLORS from '../../constants/colors'
 import PickAge from './PickAge'
 import PickAvatar from './PickAvatar'
-import { SWGreenMain } from '../../constants/stackedWaves'
+import { SWGreenMain } from '../../constants/svg/stackedWaves'
 import { globalStyles } from '../../styles/GlobalStyles'
 
 const EnterChildAgeMainSec = () => {

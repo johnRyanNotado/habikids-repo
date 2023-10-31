@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import { LESSONS_VALUES } from '../../constants/lessonsList'
+import { LESSONS_VALUES } from '../../constants/temp_db/db_lessons'
 import Card from '../activities/Card'
 const Values = () => {
   // Will render a card each lessons

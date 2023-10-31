@@ -13,7 +13,7 @@ import Button from '../../components/Button'
 import Message from '../../components/login-signup/Message'
 import EmailPass from '../../components/login-signup/EmailPass'
 import { LOGIN_MESSAGE } from '../../constants/textOptions'
-import { LWGreenTop } from '../../constants/layeredWaves'
+import { LWGreenTop } from '../../constants/svg/layeredWaves'
 
 const Login = ({ navigation }) => {
   const {

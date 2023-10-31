@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, StyleSheet, View, TextInput } from 'react-native'
 import COLORS from '../../constants/colors'
-import { SWGreenMain } from '../../constants/stackedWaves'
+import { SWGreenMain } from '../../constants/svg/stackedWaves'
 import { MaterialIcons } from '@expo/vector-icons'
 import { globalStyles } from '../../styles/GlobalStyles'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'

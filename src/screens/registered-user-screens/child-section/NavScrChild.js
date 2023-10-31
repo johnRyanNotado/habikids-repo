@@ -6,12 +6,12 @@ import {
   LESSONS_GOODHABITS,
   LESSONS_VALUES,
   LESSONS_TRADITIONS,
-} from '../../../constants/lessonsList'
+} from '../../../constants/temp_db/db_lessons'
 import {
   ACTIVITIES_GOODHABITS,
   ACTIVITIES_VALUES,
   ACTIVITIES_TRADITIONS,
-} from '../../../constants/activitiesList'
+} from '../../../constants/temp_db/db_activity'
 import {
   useChildDataContext,
   ChildSectionContext,

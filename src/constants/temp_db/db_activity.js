@@ -6,7 +6,7 @@ export const ACTIVITIES_GOODHABITS = [
     date: '2023-1-11',
     score: 12,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const ACTIVITIES_GOODHABITS = [
     date: '2023-1-15',
     score: 10,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const ACTIVITIES_GOODHABITS = [
     date: '',
     score: 0,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const ACTIVITIES_GOODHABITS = [
     date: '',
     score: 0,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
 ]
 
@@ -45,7 +45,7 @@ export const ACTIVITIES_TRADITIONS = [
     date: '2023-1-11',
     score: 10,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ export const ACTIVITIES_TRADITIONS = [
     date: '2023-1-15',
     score: 8,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 3,
@@ -63,7 +63,7 @@ export const ACTIVITIES_TRADITIONS = [
     date: '',
     score: 0,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 4,
@@ -72,7 +72,7 @@ export const ACTIVITIES_TRADITIONS = [
     date: '',
     score: 0,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
 ]
 
@@ -84,7 +84,7 @@ export const ACTIVITIES_VALUES = [
     date: '2023-1-11',
     score: 9,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 2,
@@ -93,7 +93,7 @@ export const ACTIVITIES_VALUES = [
     date: '2023-1-15',
     score: 10,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 3,
@@ -102,7 +102,7 @@ export const ACTIVITIES_VALUES = [
     date: '',
     score: 0,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
   {
     id: 4,
@@ -111,6 +111,6 @@ export const ACTIVITIES_VALUES = [
     date: '',
     score: 0,
     items: 12,
-    img: require('../img/empty-bg.png'),
+    img: require('../../img/bg/empty-bg.png'),
   },
 ]

@@ -20,3 +20,8 @@ export const YEAR_LEVELS = [
   { label: '2nd Grade', value: '2nd Grade' },
   { label: '3rd Grade', value: '3rd Grade' },
 ]
+
+export const LANGUAGES = [
+  { label: 'Filipino', value: 'Filipino' },
+  { label: 'English', value: 'English' },
+]

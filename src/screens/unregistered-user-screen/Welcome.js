@@ -7,7 +7,7 @@ import Button from '../../components/Button'
 import LoadingScreen from '../LoadingScreen'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
-import { LWGreenBottom } from '../../constants/layeredWaves'
+import { LWGreenBottom } from '../../constants/svg/layeredWaves'
 
 const Welcome = ({ navigation }) => {
   const {

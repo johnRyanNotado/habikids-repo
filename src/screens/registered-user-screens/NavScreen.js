@@ -10,7 +10,7 @@ import {
   NavScrChild,
 } from './index.js'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
-import { sampleListChildObj } from '../../constants/childList'
+import { sampleListChildObj } from '../../constants/temp_db/childList'
 import { ChildDataContext } from '../context-api/ContextAPI'
 
 const RegisteredUserStack = createStackNavigator()

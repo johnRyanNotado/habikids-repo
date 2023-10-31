@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { View, StyleSheet, ScrollView, Text } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import SettingsConfigSect from './SettingsConfigSect'
+import { LANGUAGES } from '../../constants/dropDownItems'
+import DropDownPicker from 'react-native-dropdown-picker'
+import { globalStyles } from '../../styles/GlobalStyles'
 
 const SettingsMainSect = () => {
   // These are the useState that will serve as the value for each switch in the settings.
@@ -11,6 +14,7 @@ const SettingsMainSect = () => {
   const [isTipsSuppVal, setIsTipsSuppVal] = useState(false)
   const [isShowBtnVal, setIsShowBtnVal] = useState(false)
   const [selectedLanguage, setSelectedLanguage] = useState('Filipino')
+  const [isOpen, setIsOpen] = useState(false)
 
   const {
     cardWrapper,
@@ -18,65 +22,82 @@ const SettingsMainSect = () => {
     settingsFont,
     sectionTitle,
     sectionConfigWrapper,
+    dropDownContainerStyle,
+    dropDownStyle,
+    dropDownTxtStyle,
   } = styles
+  const { container, centered } = globalStyles
 
   return (
     <View style={cardWrapper}>
       <ScrollView style={scrollViewCustStyle}>
-        <View>
-          <Text style={[settingsFont, sectionTitle]}>General</Text>
-          <View>
-            <SettingsConfigSect
-              label={'Music'}
-              value={isMusicVal}
-              setValue={setIsMusicVal}
-            />
-            <SettingsConfigSect
-              label={'Voice'}
-              value={isVoiceVal}
-              setValue={setIsVoiceVal}
-            />
-          </View>
-        </View>
-        <View>
-          <Text style={[settingsFont, sectionTitle]}>Notifications</Text>
-          <View>
-            <SettingsConfigSect
-              label={'Learning Reminder'}
-              value={isReminderVal}
-              setValue={setIsReminderVal}
-            />
-            <SettingsConfigSect
-              label={'Learning Tips and Support'}
-              value={isTipsSuppVal}
-              setValue={setIsTipsSuppVal}
-            />
-          </View>
-        </View>
-        <View>
-          <Text style={[settingsFont, sectionTitle]}>Preferences</Text>
-          <View>
-            <SettingsConfigSect
-              label={'Show Home Button in Learning Path Lessons'}
-              value={isShowBtnVal}
-              setValue={setIsShowBtnVal}
-            />
-            <View style={sectionConfigWrapper}>
-              <Text style={settingsFont}>Language: </Text>
-              <View style={{ width: '85%' }}>
-                <Picker
-                  selectedValue={selectedLanguage}
-                  onValueChange={(itemValue, itemIndex) =>
-                    setSelectedLanguage(itemValue)
-                  }
-                >
-                  <Picker.Item label="Filipino" value="Filipino" />
-                  <Picker.Item label="English" value="English" />
-                </Picker>
+        {/* Added a horizontal scrollview because nested list with the same direction is not allowed. */}
+        <ScrollView
+          horizontal={true}
+          contentContainerStyle={{
+            width: '100%',
+          }}
+        >
+          <View style={[container]}>
+            <View>
+              <Text style={[settingsFont, sectionTitle]}>General</Text>
+              <View>
+                <SettingsConfigSect
+                  label={'Music'}
+                  value={isMusicVal}
+                  setValue={setIsMusicVal}
+                />
+                <SettingsConfigSect
+                  label={'Voice'}
+                  value={isVoiceVal}
+                  setValue={setIsVoiceVal}
+                />
+              </View>
+            </View>
+            <View>
+              <Text style={[settingsFont, sectionTitle]}>Notifications</Text>
+              <View>
+                <SettingsConfigSect
+                  label={'Learning Reminder'}
+                  value={isReminderVal}
+                  setValue={setIsReminderVal}
+                />
+                <SettingsConfigSect
+                  label={'Learning Tips and Support'}
+                  value={isTipsSuppVal}
+                  setValue={setIsTipsSuppVal}
+                />
+              </View>
+            </View>
+            <View>
+              <Text style={[settingsFont, sectionTitle]}>Preferences</Text>
+              <View>
+                <SettingsConfigSect
+                  label={'Show Home Button in Learning Path Lessons'}
+                  value={isShowBtnVal}
+                  setValue={setIsShowBtnVal}
+                />
+                <View style={[sectionConfigWrapper, { zIndex: 10 }]}>
+                  <Text style={settingsFont}>Language: </Text>
+                  <View style={{ width: '85%' }}>
+                    <DropDownPicker
+                      items={LANGUAGES}
+                      open={isOpen}
+                      setOpen={setIsOpen}
+                      value={selectedLanguage}
+                      setValue={setSelectedLanguage}
+                      dropDownDirection="TOP"
+                      dropDownContainerStyle={dropDownContainerStyle}
+                      style={dropDownStyle}
+                      textStyle={dropDownTxtStyle}
+                    />
+                    {/* </ScrollView> */}
+                  </View>
+                </View>
               </View>
             </View>
           </View>
-        </View>
+        </ScrollView>
       </ScrollView>
     </View>
   )
@@ -115,6 +136,24 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  dropDownStyle: {
+    borderWidth: 0,
+    backgroundColor: '',
+    paddingLeft: 15,
+    zIndex: 10,
+  },
+  dropDownContainerStyle: {
+    borderRadius: 20,
+    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
+    paddingLeft: 10,
+    width: '100%',
+  },
+  dropDownTxtStyle: {
+    fontSize: 22,
+    fontFamily: 'QuiapoRegular',
+    letterSpacing: 2,
   },
 })
 

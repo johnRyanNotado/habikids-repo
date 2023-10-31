@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import { ACTIVITIES_VALUES } from '../../constants/activitiesList'
+import { ACTIVITIES_VALUES } from '../../constants/temp_db/db_activity'
 import Card from './Card'
 
 const Values = () => {

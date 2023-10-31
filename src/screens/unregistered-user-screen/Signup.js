@@ -13,7 +13,7 @@ import {
 import EmailPass from '../../components/login-signup/EmailPass'
 import Message from '../../components/login-signup/Message'
 import { SIGNUP_MESSAGE } from '../../constants/textOptions'
-import { LWGreenTop } from '../../constants/layeredWaves'
+import { LWGreenTop } from '../../constants/svg/layeredWaves'
 const Signup = ({ navigation }) => {
   const {
     createAccWrapper,
