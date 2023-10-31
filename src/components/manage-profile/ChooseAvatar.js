@@ -3,11 +3,13 @@ import { View, Text, StyleSheet, Image, FlatList } from 'react-native'
 import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
 import { globalStyles } from '../../styles/GlobalStyles'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import { AVATAR_LIST } from '../../constants/avatarList'
 import AvatarList from './AvatarList'
 import Button from '../Button'
-import { useChosenChildContext } from '../../screens/registered-user-screens/ManageProfiles'
+import {
+  useChildDataContext,
+  useChosenChildContext,
+} from '../../screens/context-api/ContextAPI'
 
 const ChooseAvatar = () => {
   const { chosenChild, handleChosenChild } = useChildDataContext()

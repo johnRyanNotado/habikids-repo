@@ -1,9 +1,11 @@
 import React from 'react'
 import { Image, View, TouchableOpacity, StyleSheet, Text } from 'react-native'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
-import { useChildSectionContext } from '../../screens/registered-user-screens/child-section/NavScrChild'
+import {
+  useChildSectionContext,
+  useChildDataContext,
+} from '../../screens/context-api/ContextAPI'
 
 const ChildSectNavBar = (props) => {
   const { backBtn } = props

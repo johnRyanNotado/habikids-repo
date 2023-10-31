@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import COLORS from '../../constants/colors'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import Button from '../Button'
+import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 
 const ButtonSection = () => {
   const { setChildData, chosenChild, setIsChildChosen, setChosenChild } =

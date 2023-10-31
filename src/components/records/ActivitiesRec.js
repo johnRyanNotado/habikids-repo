@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Text, View, StyleSheet, FlatList } from 'react-native'
 import COLORS from '../../constants/colors'
-import { useChildSectionContext } from '../../screens/registered-user-screens/child-section/NavScrChild'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { TOPICS_ITEMS } from '../../constants/dropDownItems'
 import ActivitiesData from './ActivitiesData'
+import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 
 const ActivitiesRec = () => {
   const { activitiesGHData, activitiesVData, activitiesTData } =

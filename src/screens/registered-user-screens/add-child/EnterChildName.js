@@ -4,8 +4,8 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import EnterChildNameNavBar from '../../../components/enter-child-name/EnterChildNameNavBar'
 import EnterChildNameMainSec from '../../../components/enter-child-name/EnterChildNameMainSec'
 import { BackHandler, ToastAndroid, View } from 'react-native'
-import { useChildDataContext } from '../NavScreen'
 import EMPTY_CHILD_OBJ from '../../../constants/emptyChildObj'
+import { useChildDataContext } from '../../context-api/ContextAPI'
 
 const EnterChildName = ({ navigation }) => {
   const { childData, newChild, setNewChild } = useChildDataContext()

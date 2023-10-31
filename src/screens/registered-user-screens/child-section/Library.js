@@ -10,11 +10,11 @@ import {
 } from 'react-native'
 import { getImg } from '../../../utilities/getImg'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
-import { useChildSectionContext } from './NavScrChild'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import LibraryMainSect from '../../../components/library/LibraryMainSect'
 import COLORS from '../../../constants/colors'
 import { Ionicons } from '@expo/vector-icons'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const Library = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()

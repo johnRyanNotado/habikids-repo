@@ -9,8 +9,6 @@ import {
   StyleSheet,
   Pressable,
   BackHandler,
-  btnStyle,
-  btnTxtStyle,
 } from 'react-native'
 import EmailPass from '../../components/login-signup/EmailPass'
 import Message from '../../components/login-signup/Message'

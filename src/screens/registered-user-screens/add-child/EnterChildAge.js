@@ -3,8 +3,8 @@ import { BackHandler, ToastAndroid, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import EnterChileAgeNavBar from '../../../components/enter-child-age/EnterChildAgeNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { useChildDataContext } from '../NavScreen'
 import EnterChildAgeMainSec from '../../../components/enter-child-age/EnterChildAgeMainSec'
+import { useChildDataContext } from '../../context-api/ContextAPI'
 
 const EnterChildAge = ({ navigation }) => {
   const { childData, setChildData, newChild, setNewChild } =

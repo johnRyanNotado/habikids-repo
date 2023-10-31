@@ -9,12 +9,12 @@ import {
   GOOD_HABITS,
   BUTTONS,
 } from '../../constants/contentClassification'
-import { useActivitiesContext } from '../../screens/registered-user-screens/child-section/Activities'
 import Values from './Values'
 import Traditions from './Traditions'
 import GoodHabits from './GoodHabits'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { YEAR_LEVELS } from '../../constants/dropDownItems'
+import { useActivitiesContext } from '../../screens/context-api/ContextAPI'
 
 const ActivitiesMainSect = () => {
   const {

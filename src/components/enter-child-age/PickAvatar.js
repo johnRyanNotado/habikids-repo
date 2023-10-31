@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text, FlatList } from 'react-native'
 import { AVATAR_LIST } from '../../constants/avatarList'
 import CustRadioBtnAvatar from './CustRadioBtnAvatar'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
+import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 
 const PickAvatar = () => {
   const { newChild, setNewChild } = useChildDataContext()

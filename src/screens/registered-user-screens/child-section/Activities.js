@@ -10,7 +10,6 @@ import {
 import COLORS from '../../../constants/colors'
 import { Ionicons } from '@expo/vector-icons'
 import { getImg } from '../../../utilities/getImg'
-import { useChildSectionContext } from './NavScrChild'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import ProfileCard from '../../../components/home-child/ProfileCard'
@@ -22,9 +21,10 @@ import {
   GOOD_HABITS,
 } from '../../../constants/contentClassification'
 import { YEAR_LEVELS } from '../../../constants/dropDownItems'
-
-export const ActivitiesContext = createContext()
-export const useActivitiesContext = () => useContext(ActivitiesContext)
+import {
+  useChildSectionContext,
+  ActivitiesContext,
+} from '../../context-api/ContextAPI'
 
 const Activities = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()

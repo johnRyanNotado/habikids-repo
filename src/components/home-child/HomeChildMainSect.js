@@ -1,8 +1,8 @@
 import React from 'react'
 import { Image, View, TouchableOpacity, StyleSheet } from 'react-native'
 import { getImg } from '../../utilities/getImg'
-import { useHomeChildSectionContext } from '../../screens/registered-user-screens/child-section/HomeChild'
 import COLORS from '../../constants/colors'
+import { useHomeChildSectionContext } from '../../screens/context-api/ContextAPI'
 
 const HomeChildMainSect = () => {
   const { handleRecordsBtn, handleBooksBtn } = useHomeChildSectionContext()

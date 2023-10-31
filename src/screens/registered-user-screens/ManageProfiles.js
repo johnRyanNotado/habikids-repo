@@ -6,11 +6,11 @@ import COLORS from '../../constants/colors'
 import ManageProfileNavBar from '../../components/manage-profile/ManageProfileNavBar'
 import ManageProfileAcc from '../../components/manage-profile/ManageProfileAcc'
 import ManageProfileOverlay from '../../components/manage-profile/ManageProfileOverlay'
-import { useChildDataContext } from './NavScreen'
 import ChildSect from '../../components/manage-profile/ChildSect'
-
-export const ChosenChildContext = createContext()
-export const useChosenChildContext = () => useContext(ChosenChildContext)
+import {
+  useChildDataContext,
+  ChosenChildContext,
+} from '../context-api/ContextAPI'
 
 const ManageProfiles = ({ navigation }) => {
   const { handleChosenChild, isChildChosen } = useChildDataContext()

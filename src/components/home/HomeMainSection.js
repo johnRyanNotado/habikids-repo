@@ -2,7 +2,6 @@ import React from 'react'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import ListChild from './ListChild'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import {
   View,
   StyleSheet,
@@ -10,6 +9,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native'
+import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 
 const HomeMainSection = (props) => {
   const { handleOnChildChosen, handleAddBtn } = props

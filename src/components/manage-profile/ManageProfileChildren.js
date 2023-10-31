@@ -10,9 +10,11 @@ import {
 import COLORS from '../../constants/colors'
 import { globalStyles } from '../../styles/GlobalStyles'
 import ListChild from '../home/ListChild'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
-import { useChosenChildContext } from '../../screens/registered-user-screens/ManageProfiles'
 import { MaterialIcons } from '@expo/vector-icons'
+import {
+  useChildDataContext,
+  useChosenChildContext,
+} from '../../screens/context-api/ContextAPI'
 
 const ManageProfileChildren = () => {
   const { childData, setChildData, handleChosenChild } = useChildDataContext()

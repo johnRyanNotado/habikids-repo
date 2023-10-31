@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import DropDownPicker from 'react-native-dropdown-picker'
-import { useChosenChildContext } from '../../screens/registered-user-screens/ManageProfiles'
 import { MY_ACC_ITEMS } from '../../constants/dropDownItems'
+import {
+  useChosenChildContext,
+  useChildDataContext,
+} from '../../screens/context-api/ContextAPI'
 
 const ManageProfileAcc = (props) => {
   const { handleLogout } = props

@@ -5,7 +5,7 @@ import COLORS from '../../constants/colors'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { Ionicons } from '@expo/vector-icons'
 import Button from '../Button'
-import { useChildSectionContext } from '../../screens/registered-user-screens/child-section/NavScrChild'
+import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 const ButtonsSection = () => {
   const {
     isProfileClicked,

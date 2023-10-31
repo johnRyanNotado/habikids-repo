@@ -11,12 +11,9 @@ import {
 } from './index.js'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import { sampleListChildObj } from '../../constants/childList'
+import { ChildDataContext } from '../context-api/ContextAPI'
 
 const RegisteredUserStack = createStackNavigator()
-
-// Create a context for the children data
-export const ChildDataContext = createContext()
-export const useChildDataContext = () => useContext(ChildDataContext)
 
 const NavScreen = () => {
   // for the identifying if there is a chosen child (used in managing profile and child section)

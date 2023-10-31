@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { View, Image, TextInput } from 'react-native'
 import COLORS from '../../constants/colors'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import { corresIcon } from '../../utilities/determineAvatar'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import DropDownPicker from 'react-native-dropdown-picker'
-import { useChosenChildContext } from '../../screens/registered-user-screens/ManageProfiles'
 import { AGE_ITEMS } from '../../constants/dropDownItems'
+import {
+  useChosenChildContext,
+  useChildDataContext,
+} from '../../screens/context-api/ContextAPI'
 
 const EditSection = () => {
   const { chosenChild, handleChosenChild } = useChildDataContext()
@@ -96,6 +98,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+    zIndex: 5,
   },
   avatar: {
     height: 100,

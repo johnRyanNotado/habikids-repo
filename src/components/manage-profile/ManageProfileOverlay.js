@@ -4,8 +4,8 @@ import COLORS from '../../constants/colors'
 import EditSection from './EditSection'
 import ButtonSection from './ButtonSection'
 import { globalStyles } from '../../styles/GlobalStyles'
-import { useChosenChildContext } from '../../screens/registered-user-screens/ManageProfiles'
 import ChooseAvatar from './ChooseAvatar'
+import { useChosenChildContext } from '../../screens/context-api/ContextAPI'
 
 const ManageProfileOverlay = () => {
   const { isChoosingAvatar } = useChosenChildContext()

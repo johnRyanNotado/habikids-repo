@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import CustRadioBtnAge from './CustRadioBtnAge'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
+import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 
 const PickAge = () => {
   const { newChild, setNewChild } = useChildDataContext()

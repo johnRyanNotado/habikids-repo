@@ -7,8 +7,8 @@ import HomeMainSection from '../../components/home/HomeMainSection'
 import HomeFooterSection from '../../components/home/HomeFooterSection'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { SWGreenMain } from '../../constants/stackedWaves'
-import { useChildDataContext } from './NavScreen'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
+import { useChildDataContext } from '../context-api/ContextAPI'
 
 const Home = ({ navigation }) => {
   const { container, centered, bgStyleWNavBar } = globalStyles

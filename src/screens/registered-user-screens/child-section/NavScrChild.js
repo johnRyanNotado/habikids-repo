@@ -2,7 +2,6 @@ import React, { useState, createContext, useContext } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { Activities, Lessons, Library, HomeChild, Records } from './index'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
-import { useChildDataContext } from '../../../screens/registered-user-screens/NavScreen'
 import {
   LESSONS_GOODHABITS,
   LESSONS_VALUES,
@@ -13,10 +12,12 @@ import {
   ACTIVITIES_VALUES,
   ACTIVITIES_TRADITIONS,
 } from '../../../constants/activitiesList'
+import {
+  useChildDataContext,
+  ChildSectionContext,
+} from '../../../screens/context-api/ContextAPI'
 
 const ChildSectionStack = createStackNavigator()
-export const ChildSectionContext = createContext()
-export const useChildSectionContext = () => useContext(ChildSectionContext)
 
 const NavScrChild = ({ navigation }) => {
   const { setIsChildChosen } = useChildDataContext()

@@ -2,15 +2,14 @@ import React, { useEffect, createContext, useContext } from 'react'
 import { BackHandler, ImageBackground, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { getImg } from '../../../utilities/getImg'
-import { useChildSectionContext } from './NavScrChild'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import HomeChildMainSect from '../../../components/home-child/HomeChildMainSect'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import { globalStyles } from '../../../styles/GlobalStyles'
-
-export const HomeChildSectionContext = createContext()
-export const useHomeChildSectionContext = () =>
-  useContext(HomeChildSectionContext)
+import {
+  useChildSectionContext,
+  HomeChildSectionContext,
+} from '../../context-api/ContextAPI'
 
 const HomeChild = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()

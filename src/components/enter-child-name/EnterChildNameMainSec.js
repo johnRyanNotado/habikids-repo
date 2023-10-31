@@ -4,8 +4,8 @@ import COLORS from '../../constants/colors'
 import { SWGreenMain } from '../../constants/stackedWaves'
 import { MaterialIcons } from '@expo/vector-icons'
 import { globalStyles } from '../../styles/GlobalStyles'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
+import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 
 const EnterChildNameMainSec = () => {
   const { newChild, setNewChild } = useChildDataContext()

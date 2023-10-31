@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Switch } from 'react-native'
 import ManageProfileChildren from './ManageProfileChildren'
 import COLORS from '../../constants/colors'
-import { useChosenChildContext } from '../../screens/registered-user-screens/ManageProfiles'
+import { useChosenChildContext } from '../../screens/context-api/ContextAPI'
 
 const ChildSect = () => {
   const {

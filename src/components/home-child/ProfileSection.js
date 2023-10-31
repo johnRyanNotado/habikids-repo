@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
-import { useChildDataContext } from '../../screens/registered-user-screens/NavScreen'
+import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 
 const ProfileSection = () => {
   const { chosenChild } = useChildDataContext()
