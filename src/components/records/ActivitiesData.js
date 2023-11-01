@@ -16,7 +16,7 @@ const ActivitiesData = (props) => {
   return (
     <View style={activityDataWrapper}>
       <View>
-        <Text style={activityTitle}>{`Activity ${actNum}`}</Text>
+        <Text style={activityTitle}>{`Gawain ${actNum}`}</Text>
       </View>
       <View
         style={[

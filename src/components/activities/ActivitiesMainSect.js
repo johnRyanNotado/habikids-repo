@@ -1,7 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View, ScrollView } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
-import Button from '../Button'
 import COLORS from '../../constants/colors'
 import {
   VALUES,
@@ -9,28 +8,27 @@ import {
   GOOD_HABITS,
   BUTTONS,
 } from '../../constants/contentClassification'
-import Values from './Values'
-import Traditions from './Traditions'
-import GoodHabits from './GoodHabits'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { YEAR_LEVELS } from '../../constants/dropDownItems'
-import { useActivitiesContext } from '../../screens/context-api/ContextAPI'
+import {
+  ACTIVITIES_GOODHABITS,
+  ACTIVITIES_VALUES,
+  ACTIVITIES_TRADITIONS,
+} from '../../constants/temp_db/db_activity'
+import RenderActivities from './RenderActivities'
+import {
+  useActivitiesContext,
+  useChildSectionContext,
+} from '../../screens/context-api/ContextAPI'
+import Buttons from './Buttons'
 
 const ActivitiesMainSect = () => {
-  const {
-    content,
-    setContent,
-    isOpen,
-    setIsOpen,
-    selectedYear,
-    setSelectedYear,
-  } = useActivitiesContext()
+  const { isOpen, setIsOpen } = useActivitiesContext()
+
+  const { selectedYear, setSelectedYear, content } = useChildSectionContext()
   const {
     custContainer,
     contentWrapper,
-    btnWrapper,
-    txtStyle,
-    btnStyle,
     titleWrapper,
     title,
     subTitleWrapper,
@@ -42,66 +40,27 @@ const ActivitiesMainSect = () => {
   } = styles
   const { container, centered, positionAbsolute } = globalStyles
 
-  // Will set the content of the main section to values activities
-  const handleValBtn = () => {
-    setContent(VALUES)
-  }
-
-  // Will set the content of the main section to traditions activities
-  const handleTradBtn = () => {
-    setContent(TRADITIONS)
-  }
-
-  // Will set the content of the main section to good habits activities
-  const handleGoodHanBtn = () => {
-    setContent(GOOD_HABITS)
-  }
-
-  // Button components that will initially be shown on the activities screen
-  const ButtonComp = (
-    <View style={[centered, container, btnWrapper]}>
-      <Button
-        label={'Values'}
-        onPress={handleValBtn}
-        txtStyle={txtStyle}
-        btnStyle={btnStyle}
-      />
-      <Button
-        label={'Traditions'}
-        onPress={handleTradBtn}
-        txtStyle={txtStyle}
-        btnStyle={btnStyle}
-      />
-      <Button
-        label={'Good Habits'}
-        onPress={handleGoodHanBtn}
-        txtStyle={txtStyle}
-        btnStyle={btnStyle}
-      />
-    </View>
-  )
-
   // Will get the corresponding components base on the value of the content useState
   const getCorresComp = () => {
     switch (content) {
       case BUTTONS:
-        return ButtonComp
+        return <Buttons />
       case VALUES:
         return (
           <ScrollView style={[container]}>
-            <Values />
+            <RenderActivities data={ACTIVITIES_VALUES} />
           </ScrollView>
         )
       case TRADITIONS:
         return (
           <ScrollView style={[container]}>
-            <Traditions />
+            <RenderActivities data={ACTIVITIES_TRADITIONS} />
           </ScrollView>
         )
       case GOOD_HABITS:
         return (
           <ScrollView style={[container]}>
-            <GoodHabits />
+            <RenderActivities data={ACTIVITIES_GOODHABITS} />
           </ScrollView>
         )
       default:
@@ -115,11 +74,21 @@ const ActivitiesMainSect = () => {
       case BUTTONS:
         return <></>
       case VALUES:
+        return (
+          <View style={subTitleBg}>
+            <Text style={subTitle}>PRINSIPYO</Text>
+          </View>
+        )
       case TRADITIONS:
+        return (
+          <View style={subTitleBg}>
+            <Text style={subTitle}>TRADISYON</Text>
+          </View>
+        )
       case GOOD_HABITS:
         return (
           <View style={subTitleBg}>
-            <Text style={subTitle}>{content}</Text>
+            <Text style={subTitle}>MABUBUTING GAWI</Text>
           </View>
         )
       default:
@@ -159,8 +128,9 @@ const ActivitiesMainSect = () => {
   return (
     <View style={[container, centered, custContainer]}>
       <View style={[centered, titleWrapper]}>
-        <Text style={title}>Activities</Text>
+        <Text style={title}>Gawain</Text>
       </View>
+
       <View style={[centered, subTitleWrapper]}>{getSubTitle()}</View>
 
       <View style={[positionAbsolute, dropDownWrapper]}>{getDropDown()}</View>
@@ -173,30 +143,10 @@ const ActivitiesMainSect = () => {
 const styles = StyleSheet.create({
   custContainer: {
     paddingBottom: 20,
-    paddingHorizontal: 20,
   },
   contentWrapper: {
     height: '80%',
     width: '100%',
-  },
-  btnWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingBottom: '10%',
-  },
-  btnStyle: {
-    height: 50,
-    width: 200,
-    borderColor: COLORS.white,
-    borderWidth: 3,
-    borderRadius: 20,
-    backgroundColor: COLORS.primary,
-  },
-  txtStyle: {
-    fontFamily: 'QuiapoRegular',
-    fontSize: 30,
-    color: COLORS.accent,
   },
   titleWrapper: {
     width: 200,
@@ -222,7 +172,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   subTitleBg: {
-    width: 120,
+    width: 180,
     height: 25,
     marginVertical: 10,
     backgroundColor: COLORS.whiteTrans,

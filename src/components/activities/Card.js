@@ -4,7 +4,7 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 
 const Card = (props) => {
-  const { img, num, title, label } = props
+  const { img, num, title, label, screen, onPress } = props
   const {
     custContainer,
     bg,
@@ -16,7 +16,11 @@ const Card = (props) => {
   } = styles
   const { container, centered, positionAbsolute } = globalStyles
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        onPress(screen)
+      }}
+    >
       <View style={[container, centered, custContainer]}>
         <View style={[centered, card]}>
           <View style={imgWrapper}>
@@ -33,7 +37,9 @@ const Card = (props) => {
 }
 
 const styles = StyleSheet.create({
-  custContainer: {},
+  custContainer: {
+    marginHorizontal: 10,
+  },
   bg: {
     opacity: 0,
     width: '100%',

@@ -43,12 +43,12 @@ const SettingsMainSect = () => {
               <Text style={[settingsFont, sectionTitle]}>General</Text>
               <View>
                 <SettingsConfigSect
-                  label={'Music'}
+                  label={'Musika'}
                   value={isMusicVal}
                   setValue={setIsMusicVal}
                 />
                 <SettingsConfigSect
-                  label={'Voice'}
+                  label={'Tunog ng Boses'}
                   value={isVoiceVal}
                   setValue={setIsVoiceVal}
                 />
@@ -58,12 +58,12 @@ const SettingsMainSect = () => {
               <Text style={[settingsFont, sectionTitle]}>Notifications</Text>
               <View>
                 <SettingsConfigSect
-                  label={'Learning Reminder'}
+                  label={'Mga Paalala sa Mag-aaral'}
                   value={isReminderVal}
                   setValue={setIsReminderVal}
                 />
                 <SettingsConfigSect
-                  label={'Learning Tips and Support'}
+                  label={'Mga Tips at Suporta sa Pag-aaral'}
                   value={isTipsSuppVal}
                   setValue={setIsTipsSuppVal}
                 />
@@ -73,11 +73,18 @@ const SettingsMainSect = () => {
               <Text style={[settingsFont, sectionTitle]}>Preferences</Text>
               <View>
                 <SettingsConfigSect
-                  label={'Show Home Button in Learning Path Lessons'}
+                  label={
+                    'Ipakita ang Home Button Habang Nagkokodukto ng Aralin o Gawain'
+                  }
                   value={isShowBtnVal}
                   setValue={setIsShowBtnVal}
                 />
-                <View style={[sectionConfigWrapper, { zIndex: 10 }]}>
+                <SettingsConfigSect
+                  label={'Ipakita nag Ingles na Captions'}
+                  value={isShowBtnVal}
+                  setValue={setIsShowBtnVal}
+                />
+                {/* <View style={[sectionConfigWrapper, { zIndex: 10 }]}>
                   <Text style={settingsFont}>Language: </Text>
                   <View style={{ width: '85%' }}>
                     <DropDownPicker
@@ -91,9 +98,8 @@ const SettingsMainSect = () => {
                       style={dropDownStyle}
                       textStyle={dropDownTxtStyle}
                     />
-                    {/* </ScrollView> */}
                   </View>
-                </View>
+                </View> */}
               </View>
             </View>
           </View>
@@ -116,7 +122,7 @@ const styles = StyleSheet.create({
     minHeight: 290,
     maxHeight: 310,
     minWidth: 600,
-    maxWidth: 715,
+    maxWidth: 800,
   },
   scrollViewCustStyle: {
     paddingRight: 30,

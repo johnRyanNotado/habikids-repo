@@ -14,7 +14,9 @@ import EmailPass from '../../components/login-signup/EmailPass'
 import Message from '../../components/login-signup/Message'
 import { SIGNUP_MESSAGE } from '../../constants/textOptions'
 import { LWGreenTop } from '../../constants/svg/layeredWaves'
+import { useAppContext } from '../context-api/ContextAPI'
 const Signup = ({ navigation }) => {
+  const { setShouldPlay } = useAppContext()
   const {
     createAccWrapper,
     askForAccWrapper,
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
   askForAccPressable: {
     color: COLORS.greenPrimary,
     fontSize: 16,
-    fontFamily: 'QuiapoLight',
+    fontFamily: 'QuiapoRegular',
     textDecorationLine: 'underline',
     letterSpacing: 2,
     marginEnd: 6,

@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   askForAccPressable: {
     color: COLORS.greenPrimary,
     fontSize: 16,
-    fontFamily: 'QuiapoLight',
+    fontFamily: 'QuiapoRegular',
     textDecorationLine: 'underline',
     letterSpacing: 2,
     marginEnd: 6,

@@ -8,19 +8,18 @@ import {
 import React, { useState } from 'react'
 import COLORS from '../../constants/colors'
 import { MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons'
-import { globalStyles } from '../../styles/GlobalStyles'
 
 const EmailPass = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const {
     formWrapperEmail,
     formWrapperPassword,
-    inputText,
+    inputLabel,
     inputView,
     passwordIcon,
     custEmailPassStyle,
     formLabelWrapper,
-    txtReminder,
+    inputTxt,
   } = styles
 
   return (
@@ -28,40 +27,28 @@ const EmailPass = () => {
       <View style={formWrapperEmail}>
         <View style={formLabelWrapper}>
           <MaterialIcons name="email" size={24} color={COLORS.white} />
-          <Text style={inputText}>Email Address</Text>
+          <Text style={inputLabel}>Email Address</Text>
         </View>
 
         <View style={inputView}>
           <TextInput
             placeholder="Halimbawa: pangalan@gmail.com"
             keyboardType="email-address"
-            style={{
-              width: '100%',
-              fontWeight: '400',
-              fontFamily: 'QuiapoRegular',
-              fontSize: 18,
-            }}
+            style={inputTxt}
           />
         </View>
-        {/* <Text style={txtReminder}>
-          Kailangan ng Account ng Tagapangalaga Upang ma-Save ang Progress ng
-          Mag-aaral
-        </Text> */}
       </View>
 
       <View style={formWrapperPassword}>
         <View style={formLabelWrapper}>
           <FontAwesome5 name="user-lock" size={24} color={COLORS.white} />
-          <Text style={[inputText]}>Password</Text>
+          <Text style={[inputLabel]}>Password</Text>
         </View>
         <View style={inputView}>
           <TextInput
             placeholder="Enter your password"
             secureTextEntry={isPasswordShown}
-            style={{
-              width: '100%',
-              fontWeight: '700',
-            }}
+            style={inputTxt}
           />
 
           <TouchableOpacity
@@ -88,7 +75,13 @@ const styles = StyleSheet.create({
   formWrapperPassword: {
     height: '50%',
   },
-  inputText: {
+  inputTxt: {
+    width: '100%',
+    fontWeight: '400',
+    fontFamily: 'QuiapoRegular',
+    fontSize: 18,
+  },
+  inputLabel: {
     fontSize: 20,
     fontWeight: '400',
     marginVertical: 8,
@@ -119,21 +112,11 @@ const styles = StyleSheet.create({
     height: '45%',
     width: 400,
     justifyContent: 'center',
-    // backgroundColor: 'lightpink',
   },
   formLabelWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
-  },
-  txtReminder: {
-    color: COLORS.greenPrimary,
-    textAlign: 'center',
-    fontFamily: 'QuiapoLight',
-    fontSize: 16,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    letterSpacing: 2,
   },
 })
 

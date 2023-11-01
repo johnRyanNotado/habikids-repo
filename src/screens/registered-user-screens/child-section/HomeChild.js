@@ -10,6 +10,7 @@ import {
   useChildSectionContext,
   HomeChildSectionContext,
 } from '../../context-api/ContextAPI'
+import HomePageSvg from '../../../svg/bg/HomePageSvg'
 
 const HomeChild = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
@@ -47,16 +48,11 @@ const HomeChild = ({ navigation }) => {
       }}
     >
       <View style={container}>
-        <ImageBackground
-          resizeMode="cover"
-          style={container}
-          source={getImg.bg.bahayKubo.link}
-        >
-          <ChildSectNavBar />
-          <HomeChildMainSect />
+        <ChildSectNavBar />
+        <HomeChildMainSect />
 
-          {isProfileClicked ? <ProfileCard /> : <></>}
-        </ImageBackground>
+        {isProfileClicked ? <ProfileCard /> : <></>}
+        <HomePageSvg />
       </View>
     </HomeChildSectionContext.Provider>
   )

@@ -1,15 +1,8 @@
-import React, { useEffect, useState, createContext, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import {
-  ImageBackground,
-  BackHandler,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native'
+import { BackHandler, StyleSheet, TouchableOpacity, View } from 'react-native'
 import COLORS from '../../../constants/colors'
 import { Ionicons } from '@expo/vector-icons'
-import { getImg } from '../../../utilities/getImg'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import ProfileCard from '../../../components/home-child/ProfileCard'
@@ -25,17 +18,17 @@ import {
   useChildSectionContext,
   ActivitiesContext,
 } from '../../context-api/ContextAPI'
+import JeepSvg from '../../../svg/bg/JeepSvg'
 
 const Activities = ({ navigation }) => {
-  const { isProfileClicked } = useChildSectionContext()
+  const { isProfileClicked, setSelectedYear, content, setContent } =
+    useChildSectionContext()
+
   const { homeBtnWrapper } = styles
   const { container, centered } = globalStyles
 
   // useState for opening and closing the dropdown for the selected Year
   const [isOpen, setIsOpen] = useState(false)
-
-  // useState for serving as the value of the dropdown for the selected Year
-  const [selectedYear, setSelectedYear] = useState(YEAR_LEVELS[0].value)
 
   // handle back press -> navigate to library
   useEffect(() => {
@@ -53,7 +46,7 @@ const Activities = ({ navigation }) => {
   }, [])
 
   // useState for changing the contents of the main section
-  const [content, setContent] = useState(BUTTONS)
+  // const [content, setContent] = useState(BUTTONS)
 
   // will set the handle button to show the Buttons when clicked
   const setButtonsVal = () => {
@@ -62,6 +55,10 @@ const Activities = ({ navigation }) => {
   // will set the handle button to navigate to library when clicked
   const handleUndoBtn = () => {
     navigation.goBack()
+  }
+
+  const handleSelectedAct = (act) => {
+    navigation.navigate(act)
   }
 
   // useEffect that sets the undo btn to the initial state if content !== BUTTONS and navigate to library if content === BUTTONS
@@ -97,26 +94,20 @@ const Activities = ({ navigation }) => {
   return (
     <ActivitiesContext.Provider
       value={{
-        content,
-        setContent,
+        // content,
+        // setContent,
         undoBtnFunc,
         setUndoBtnFunc,
         isOpen,
         setIsOpen,
-        selectedYear,
-        setSelectedYear,
+        handleSelectedAct,
       }}
     >
+      <JeepSvg />
       <View style={container}>
-        <ImageBackground
-          resizeMode="cover"
-          style={{ flex: 1 }}
-          source={getImg.bg.jeepInterior.link}
-        >
-          <ChildSectNavBar backBtn={backBtn} />
-          <ActivitiesMainSect />
-          {isProfileClicked ? <ProfileCard /> : <></>}
-        </ImageBackground>
+        <ChildSectNavBar backBtn={backBtn} />
+        <ActivitiesMainSect />
+        {isProfileClicked ? <ProfileCard /> : <></>}
       </View>
     </ActivitiesContext.Provider>
   )

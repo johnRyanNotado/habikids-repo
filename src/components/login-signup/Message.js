@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
   },
   titleWrapper: {
     minHeight: 20,
-    height: '15%',
-    justifyContent: 'flex-end',
+    height: '20%',
+    justifyContent: 'center',
   },
 })
 

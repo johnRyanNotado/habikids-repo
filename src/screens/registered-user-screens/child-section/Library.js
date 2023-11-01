@@ -15,7 +15,7 @@ import LibraryMainSect from '../../../components/library/LibraryMainSect'
 import COLORS from '../../../constants/colors'
 import { Ionicons } from '@expo/vector-icons'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
-
+import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
 const Library = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
 
@@ -60,18 +60,13 @@ const Library = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
-      <ImageBackground
-        resizeMode="cover"
-        style={{ flex: 1 }}
-        source={getImg.bg.table.link}
-      >
-        <ChildSectNavBar backBtn={backBtn} />
-        <LibraryMainSect
-          handleJeepBtn={handleJeepBtn}
-          handleBooksBtn={handleBooksBtn}
-        />
-        {isProfileClicked ? <ProfileCard /> : <></>}
-      </ImageBackground>
+      <ChildSectNavBar backBtn={backBtn} />
+      <LibraryMainSect
+        handleJeepBtn={handleJeepBtn}
+        handleBooksBtn={handleBooksBtn}
+      />
+      {isProfileClicked ? <ProfileCard /> : <></>}
+      <LibrariesSvg />
     </View>
   )
 }

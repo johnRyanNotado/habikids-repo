@@ -3,5 +3,19 @@ import Lessons from './Lessons'
 import Library from './Library'
 import HomeChild from './HomeChild'
 import Records from './Records'
+import CultPuzzNav from '../../activities/cultural-puzzle/CultPuzzNav'
+import KindCatchNav from '../../activities/kindness-catcher/KindCatchNav'
+import ArrTheValNav from '../../activities/arrange-the-values/ArrTheValNav'
+import CTRPNav from '../../activities/choose-the-right-picture/CTRPNav'
 
-export { Activities, Lessons, Library, HomeChild, Records }
+export {
+  Activities,
+  Lessons,
+  Library,
+  HomeChild,
+  Records,
+  CultPuzzNav,
+  KindCatchNav,
+  ArrTheValNav,
+  CTRPNav,
+}

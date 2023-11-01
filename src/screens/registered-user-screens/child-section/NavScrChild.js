@@ -1,6 +1,16 @@
 import React, { useState, createContext, useContext } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Activities, Lessons, Library, HomeChild, Records } from './index'
+import {
+  Activities,
+  Lessons,
+  Library,
+  HomeChild,
+  Records,
+  CultPuzzNav,
+  KindCatchNav,
+  ArrTheValNav,
+  CTRPNav,
+} from './index'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import {
   LESSONS_GOODHABITS,
@@ -11,11 +21,13 @@ import {
   ACTIVITIES_GOODHABITS,
   ACTIVITIES_VALUES,
   ACTIVITIES_TRADITIONS,
-} from '../../../constants/temp_db/db_activity'
+} from '../../../constants/temp_db/db_records_act'
 import {
   useChildDataContext,
   ChildSectionContext,
 } from '../../../screens/context-api/ContextAPI'
+import { YEAR_LEVELS } from '../../../constants/dropDownItems'
+import { BUTTONS } from '../../../constants/contentClassification'
 
 const ChildSectionStack = createStackNavigator()
 
@@ -39,10 +51,16 @@ const NavScrChild = ({ navigation }) => {
   // use state for profile card in home-child screen
   const [isProfileClicked, setIsProfileClicked] = useState(false)
 
+  // useState for serving as the value of the dropdown for the selected Year
+  const [selectedYear, setSelectedYear] = useState(YEAR_LEVELS[0].value)
+
   // This function will navigate the user to the settings screen.
   const handleSettingsBtn = () => {
     navigation.navigate('Settings')
   }
+
+  // useState for changing the contents of the main section
+  const [content, setContent] = useState(BUTTONS)
 
   // This function will navigate the user to the home screen and will set the isChildChosen to false.
   const handleSwitchProfBtn = () => {
@@ -69,6 +87,10 @@ const NavScrChild = ({ navigation }) => {
         setActivitiesTData,
         handleSettingsBtn,
         handleSwitchProfBtn,
+        selectedYear,
+        setSelectedYear,
+        content,
+        setContent,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">
@@ -95,6 +117,26 @@ const NavScrChild = ({ navigation }) => {
         <ChildSectionStack.Screen
           name={'Records'}
           component={Records}
+          options={MAIN_HEADER_OPT}
+        />
+        <ChildSectionStack.Screen
+          name={'CultPuzzNav'}
+          component={CultPuzzNav}
+          options={MAIN_HEADER_OPT}
+        />
+        <ChildSectionStack.Screen
+          name={'KindCatchNav'}
+          component={KindCatchNav}
+          options={MAIN_HEADER_OPT}
+        />
+        <ChildSectionStack.Screen
+          name={'ArrTheValNav'}
+          component={ArrTheValNav}
+          options={MAIN_HEADER_OPT}
+        />
+        <ChildSectionStack.Screen
+          name={'CTRPNav'}
+          component={CTRPNav}
           options={MAIN_HEADER_OPT}
         />
       </ChildSectionStack.Navigator>

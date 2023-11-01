@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Text, ImageBackground, StyleSheet, View } from 'react-native'
-import { getImg } from '../../../utilities/getImg'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
@@ -9,6 +8,8 @@ import { Ionicons } from '@expo/vector-icons'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import LessonsRec from '../../../components/records/LessonsRec'
 import ActivitiesRec from '../../../components/records/ActivitiesRec'
+import EmptyBgSvg from '../../../svg/bg/EmptyBgSvg'
+import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 
 const Records = ({ navigation }) => {
   const { container, centered, positionAbsolute } = globalStyles
@@ -17,7 +18,7 @@ const Records = ({ navigation }) => {
   const INITIAL = 'None'
   const TITLE = {
     initial: 'Records',
-    activities: 'Ulat ng mga Natapos na mga Aktibidad',
+    activities: 'Ulat ng mga Natapos na mga Gawain',
     lessons: 'Ulat ng mga Natapos na mga Leksiyon',
   }
   const [selectedRecord, setSelectedRecord] = useState(INITIAL)
@@ -30,7 +31,6 @@ const Records = ({ navigation }) => {
     finalTitle,
     btnWrapper,
     dataWrapper,
-    custPositionAbs,
     btnStyle,
     txtStyle,
   } = styles
@@ -58,7 +58,7 @@ const Records = ({ navigation }) => {
               onPress={handleLessonsBtn}
             />
             <Button
-              label={`Ulat ng mga Natapos na mga Aktibidad`}
+              label={`Ulat ng mga Natapos na mga Gawain`}
               btnStyle={btnStyle}
               txtStyle={txtStyle}
               onPress={handleActivitiesBtn}
@@ -109,27 +109,34 @@ const Records = ({ navigation }) => {
     }
   }
 
+  // Back button component
+  const backBtn = (
+    <TouchableOpacity onPress={handleUndoBtn}>
+      <View style={[centered, homeBtnWrapper]}>
+        <Ionicons name="arrow-undo" size={30} color={COLORS.accent} />
+      </View>
+    </TouchableOpacity>
+  )
+
   return (
-    <View style={container}>
-      <ImageBackground
-        resizeMode="cover"
-        source={getImg.bg.emptyBg.link}
-        style={[container, centered]}
-      >
-        <View style={[positionAbsolute, custPositionAbs]}>
-          <TouchableOpacity onPress={handleUndoBtn}>
-            <View style={[centered, homeBtnWrapper]}>
-              <Ionicons name="arrow-undo" size={25} color={COLORS.accent} />
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={[centered, recordsWrapperSection]}>
-          <View style={[centered, titleWrapper]}>
-            <Text style={getStyle()}>{getTitle()}</Text>
+    <View style={(container, centered)}>
+      <View style={positionAbsolute}>
+        <ChildSectNavBar backBtn={backBtn} />
+      </View>
+      {/* <View style={[positionAbsolute, custPositionAbs]}>
+        <TouchableOpacity onPress={handleUndoBtn}>
+          <View style={[centered, homeBtnWrapper]}>
+            <Ionicons name="arrow-undo" size={30} color={COLORS.accent} />
           </View>
-          <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
+        </TouchableOpacity>
+      </View> */}
+      <View style={[centered, recordsWrapperSection]}>
+        <View style={[centered, titleWrapper]}>
+          <Text style={getStyle()}>{getTitle()}</Text>
         </View>
-      </ImageBackground>
+        <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
+      </View>
+      <EmptyBgSvg />
     </View>
   )
 }
@@ -183,16 +190,16 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   homeBtnWrapper: {
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     borderRadius: 25,
     backgroundColor: COLORS.primary,
-    borderColor: COLORS.accent,
-    borderWidth: 4,
+    borderColor: COLORS.white,
+    borderWidth: 3,
   },
   custPositionAbs: {
-    left: 10,
-    top: 10,
+    left: 25,
+    top: 20,
     right: '',
   },
   btnStyle: {

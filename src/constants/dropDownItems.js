@@ -16,9 +16,9 @@ export const TOPICS_ITEMS = [
 ]
 
 export const YEAR_LEVELS = [
-  { label: '1st Grade', value: '1st Grade' },
-  { label: '2nd Grade', value: '2nd Grade' },
-  { label: '3rd Grade', value: '3rd Grade' },
+  { label: '1st Grade', value: 1 },
+  { label: '2nd Grade', value: 2 },
+  { label: '3rd Grade', value: 3 },
 ]
 
 export const LANGUAGES = [

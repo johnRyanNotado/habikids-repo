@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     width: 550,
     height: 200,
     marginLeft: '7%',
-    marginTop: '-2%',
+    marginTop: '-1%',
   },
   btnSection: {
     justifyContent: 'center',
