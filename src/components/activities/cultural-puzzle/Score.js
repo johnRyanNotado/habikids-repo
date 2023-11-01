@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
-import COLORS from '../../constants/colors'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import COLORS from '../../../constants/colors'
 import { Entypo } from '@expo/vector-icons'
 
 const SCORE_BOX_DIMENSION = { w: 90, h: 50, br: 10 }

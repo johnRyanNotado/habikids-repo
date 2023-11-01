@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
-import COLORS from '../../constants/colors'
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import COLORS from '../../../constants/colors'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { BounceIn } from 'react-native-reanimated'
-import { useCultPuzzContext } from '../../screens/activities/cultural-puzzle/CultPuzzContext'
+import { useCultPuzzContext } from '../../../screens/activities/cultural-puzzle/CultPuzzContext'
 
 const Trivia = (props) => {
   const { PUZZLE_GAME_DATA } = useCultPuzzContext()

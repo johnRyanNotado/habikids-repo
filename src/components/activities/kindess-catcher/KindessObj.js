@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Text, StyleSheet, Vibration } from 'react-native'
-import COLORS from '../../constants/colors'
+import { Text, StyleSheet } from 'react-native'
+import COLORS from '../../../constants/colors'
 import Animated, {
   Easing,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated'
-import { globalStyles } from '../../styles/GlobalStyles'
-import { WINDOW_WIDTH } from '../../constants/windowConstants'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const BASKET_DIMENSION = {
   w: 100,
@@ -23,9 +23,9 @@ const OBJ_DIMENSION = {
   h: 50,
 }
 
-const BadObj = (props) => {
-  const { basketPos, wait, badness } = props
-  const { badnessObj, custText } = styles
+const KindessObj = (props) => {
+  const { basketPos, wait, kindness, setScore } = props
+  const { kindnessObj, custText } = styles
   const { centered } = globalStyles
 
   // Get the initial position at x axis randomly
@@ -50,7 +50,7 @@ const BadObj = (props) => {
       interval = setInterval(() => {
         renderObj()
         if (targetPositionY.value > WINDOW_HEIGHT + 10) {
-          clearInterval(interval) // clear interval after object is below the screen
+          clearInterval(interval)
         }
       }, DELTA)
     }
@@ -67,8 +67,8 @@ const BadObj = (props) => {
       OBJ_DIMENSION.h + nextPos.y > basketPos.value.y &&
       OBJ_DIMENSION.h + nextPos.y < basketPos.value.y + 5
     ) {
-      // set badnessComp to null if collision occurs
-      setBadnessComp(null)
+      // set kindnessComp to null if collision occurs
+      setKindnessComp(null)
     }
     nextPos = getNextPos(direction.value)
 
@@ -89,32 +89,34 @@ const BadObj = (props) => {
     }
   }
 
-  const badObjAnimatedStyles = useAnimatedStyle(() => {
+  const kindObjAnimatedStyles = useAnimatedStyle(() => {
     return {
       top: targetPositionY.value,
       left: targetPositionX.value,
     }
   })
 
-  const [badnessComp, setBadnessComp] = useState(
-    <Animated.View style={[centered, badnessObj, badObjAnimatedStyles]}>
-      <Text style={custText}>{badness}</Text>
+  const [kindnessComp, setKindnessComp] = useState(
+    <Animated.View style={[centered, kindnessObj, kindObjAnimatedStyles]}>
+      <Text style={custText}>{kindness}</Text>
     </Animated.View>
   )
 
-  // If badnessComp changes its value to null, vibrate
+  // If kindnessComp changes its value to null, add 1 to the score
   useEffect(() => {
-    Vibration.vibrate(1000, false)
-  }, [badnessComp])
+    if (kindnessComp === null) {
+      setScore((prevState) => prevState + 1)
+    }
+  }, [kindnessComp])
 
-  return badnessComp
+  return kindnessComp
 }
 
 const styles = StyleSheet.create({
-  badnessObj: {
+  kindnessObj: {
     height: OBJ_DIMENSION.h,
     width: OBJ_DIMENSION.w,
-    backgroundColor: COLORS.redPrimary,
+    backgroundColor: COLORS.greenPrimaryTrans,
     position: 'absolute',
     top: 0,
     left: 0,
@@ -125,4 +127,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default BadObj
+export default KindessObj

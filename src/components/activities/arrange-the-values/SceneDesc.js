@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
-import { db_ArrTheVal } from '../../constants/temp_db/db_ArrTheVal'
-import COLORS from '../../constants/colors'
-import { useArrTheValContext } from '../../screens/activities/arrange-the-values/ArrTheValContext'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
+import COLORS from '../../../constants/colors'
+import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const SceneDesc = () => {
   const { item } = useArrTheValContext()

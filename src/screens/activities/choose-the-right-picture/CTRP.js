@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { FadeIn } from 'react-native-reanimated'
-import Scene from '../../../components/choose-the-right-picture/Scene'
+import Scene from '../../../components/activities/choose-the-right-picture/Scene'
+import Options from '../../../components/activities/choose-the-right-picture/Options'
+import ItemBox from '../../../components/activities/choose-the-right-picture/ItemBox'
+import SceneDesc from '../../../components/activities/choose-the-right-picture/SceneDesc'
 import { useCTRPContext } from './CTRPContext'
-import Options from '../../../components/choose-the-right-picture/Options'
-import ItemBox from '../../../components/choose-the-right-picture/ItemBox'
-import SceneDesc from '../../../components/choose-the-right-picture/SceneDesc'
 
 const CTRP = ({ navigation }) => {
   const { item, timer, displayed, setDisplayed, OPTIONS, SCENE } =

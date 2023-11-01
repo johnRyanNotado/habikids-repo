@@ -1,7 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import COLORS from '../../../constants/colors'
 import { useArrTheValContext } from './ArrTheValContext'
 import ActivityCard from '../../../components/ActivityCard'
 

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { CTRP, CTRPCA } from './index'
-import { CTRPContext } from './CTRPContext'
 import { db_CTRP_GoodHabits } from '../../../constants/temp_db/db_CTRP_GoodHabits'
 import { db_CTRP_Values } from '../../../constants/temp_db/db_CTRP_Values'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
 import { GOOD_HABITS, VALUES } from '../../../constants/contentClassification'
+import { CTRPContext } from './CTRPContext'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const CTRPStack = createStackNavigator()
 

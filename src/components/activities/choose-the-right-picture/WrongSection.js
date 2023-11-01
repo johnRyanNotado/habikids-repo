@@ -6,7 +6,7 @@ import {
   TouchableHighlight,
   Vibration,
 } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
+import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, {
   useAnimatedGestureHandler,
   useAnimatedStyle,
@@ -14,10 +14,10 @@ import Animated, {
   withTiming,
   BounceInRight,
 } from 'react-native-reanimated'
-import { useCTRPContext } from '../../screens/activities/choose-the-right-picture/CTRPContext'
-import COLORS from '../../constants/colors'
+import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
+import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const WrongSection = (props) => {
   const { enteringProps } = props

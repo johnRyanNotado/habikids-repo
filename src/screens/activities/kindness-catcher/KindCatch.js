@@ -3,8 +3,6 @@ import { View, StyleSheet, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
-import KindessObj from '../../../components/kindess-catcher/KindessObj'
-import BadObj from '../../../components/kindess-catcher/BadObj'
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from '../../../constants/windowConstants'
 import Timer from '../../../components/Timer'
 import Animated, {
@@ -16,6 +14,8 @@ import {
   GestureHandlerRootView,
   PanGestureHandler,
 } from 'react-native-gesture-handler'
+import KindessObj from '../../../components/activities/kindess-catcher/KindessObj'
+import BadObj from '../../../components/activities/kindess-catcher/BadObj'
 import { useKindCatchContext } from './KindCatchContext'
 
 const DELAY_INTERVAL = 3000

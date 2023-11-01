@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableHighlight } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
+import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, {
   BounceInRight,
   useAnimatedGestureHandler,
@@ -8,10 +8,10 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated'
-import { useCTRPContext } from '../../screens/activities/choose-the-right-picture/CTRPContext'
-import COLORS from '../../constants/colors'
+import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
+import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const CorrectSection = (props) => {
   const { goBack, enteringProps } = props

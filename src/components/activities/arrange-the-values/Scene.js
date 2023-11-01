@@ -1,12 +1,13 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
+import { StyleSheet, Image } from 'react-native'
+import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { BounceIn } from 'react-native-reanimated'
-import { useCTRPContext } from '../../screens/activities/choose-the-right-picture/CTRPContext'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
+import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const Scene = () => {
-  const { item, gameData } = useCTRPContext()
+  const { item } = useArrTheValContext()
   const { selectedYear } = useChildSectionContext()
   const { imgSect, imgStyle } = styles
   const { centered } = globalStyles
@@ -17,7 +18,7 @@ const Scene = () => {
       style={[centered, imgSect]}
     >
       <Image
-        source={gameData.grade[selectedYear - 1]?.item[item - 1]?.scene.img}
+        source={db_ArrTheVal.grade[selectedYear - 1]?.item[item - 1]?.img}
         style={imgStyle}
       />
     </Animated.View>

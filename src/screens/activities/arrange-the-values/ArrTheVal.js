@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import COLORS from '../../../constants/colors'
 import Animated, { FadeIn } from 'react-native-reanimated'
-import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
-import SceneDesc from '../../../components/arrange-the-values/SceneDesc'
-import Scene from '../../../components/arrange-the-values/Scene'
-import Options from '../../../components/arrange-the-values/Options'
+import SceneDesc from '../../../components/activities/arrange-the-values/SceneDesc'
+import Scene from '../../../components/activities/arrange-the-values/Scene'
+import Options from '../../../components/activities/arrange-the-values/Options'
+import ItemBox from '../../../components/activities/arrange-the-values/ItemBox'
 import { useArrTheValContext } from './ArrTheValContext'
-import ItemBox from '../../../components/arrange-the-values/ItemBox'
 
 const ArrTheVal = ({ navigation }) => {
   const { item, timer, displayed, setDisplayed, OPTIONS, SCENE } =

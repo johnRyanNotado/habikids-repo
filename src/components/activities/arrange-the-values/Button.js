@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
-import COLORS from '../../constants/colors'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import COLORS from '../../../constants/colors'
 import Animated, { BounceInRight } from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 const Button = (props) => {

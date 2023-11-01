@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
+import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { BounceIn } from 'react-native-reanimated'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import CorrectSection from './CorrectSection'

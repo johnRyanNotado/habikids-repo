@@ -16,8 +16,8 @@ import {
   PUZZLE_PIECES,
   CENTER_X,
   CENTER_Y,
-} from '../../constants/puzzleConstants'
-import { useCultPuzzContext } from '../../screens/activities/cultural-puzzle/CultPuzzContext'
+} from '../../../constants/puzzleConstants'
+import { useCultPuzzContext } from '../../../screens/activities/cultural-puzzle/CultPuzzContext'
 
 const PuzzlePiece = (props) => {
   const { PUZZLE_GAME_DATA } = useCultPuzzContext()

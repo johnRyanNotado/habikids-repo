@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import PuzzlePiece from '../../../components/cultural-puzzle/PuzzlePiece'
-import PuzzleSpot from '../../../components/cultural-puzzle/PuzzleSpot'
 import Timer from '../../../components/Timer'
+import Trivia from '../../../components/activities/cultural-puzzle/Trivia'
+import { Score } from '../../../components/activities/cultural-puzzle/Score'
+import PuzzlePiece from '../../../components/activities/cultural-puzzle/PuzzlePiece'
+import PuzzleSpot from '../../../components/activities/cultural-puzzle/PuzzleSpot'
 import { useCultPuzzContext } from './CultPuzzContext'
-import Trivia from '../../../components/cultural-puzzle/Trivia'
-import { Score } from '../../../components/cultural-puzzle/Score'
 
 const CultPuzz = ({ navigation }) => {
   const {

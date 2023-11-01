@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import COLORS from '../../constants/colors'
-import { useCTRPContext } from '../../screens/activities/choose-the-right-picture/CTRPContext'
-import { globalStyles } from '../../styles/GlobalStyles'
+import COLORS from '../../../constants/colors'
+import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
+import { globalStyles } from '../../../styles/GlobalStyles'
 
 const ItemBox = () => {
   const { item, ITEM_AMOUNT } = useCTRPContext()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Vibration } from 'react-native'
-import { globalStyles } from '../../styles/GlobalStyles'
-import COLORS from '../../constants/colors'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import COLORS from '../../../constants/colors'
 import Animated, {
   BounceIn,
   useAnimatedGestureHandler,
@@ -10,10 +10,10 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { useArrTheValContext } from '../../screens/activities/arrange-the-values/ArrTheValContext'
-import { db_ArrTheVal } from '../../constants/temp_db/db_ArrTheVal'
+import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
+import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
 import Button from './Button'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const Options = (props) => {
   const { goBack } = props

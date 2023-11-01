@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
-import { useCTRPContext } from '../../screens/activities/choose-the-right-picture/CTRPContext'
-import { globalStyles } from '../../styles/GlobalStyles'
-import COLORS from '../../constants/colors'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
+import { globalStyles } from '../../../styles/GlobalStyles'
+import COLORS from '../../../constants/colors'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const SceneDesc = () => {
   const { item, gameData } = useCTRPContext()

@@ -5,8 +5,8 @@ import {
   PUZZLE_PIECES,
   CENTER_X,
   CENTER_Y,
-} from '../../constants/puzzleConstants'
-import COLORS from '../../constants/colors'
+} from '../../../constants/puzzleConstants'
+import COLORS from '../../../constants/colors'
 
 const PuzzleSpot = ({ index }) => {
   const piece = PUZZLE_PIECES[index]
