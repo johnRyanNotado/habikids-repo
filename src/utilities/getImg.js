@@ -10,5 +10,7 @@ export const getImg = {
     records: { link: require('../img/buttons/records.png') },
     books: { link: require('../img/buttons/books.png') },
     jeepRed: { link: require('../img/buttons/jeep-red.png') },
+    basket: { link: require('../img/act/kindness-catcher/basket.png') },
+    apple: { link: require('../img/act/kindness-catcher/apple.png') },
   },
 }

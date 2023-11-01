@@ -17,10 +17,10 @@ const BASKET_DIMENSION = {
 
 const FPS = 60
 const DELTA = 1000 / FPS
-const SPEED = 3
+const SPEED = 2
 const OBJ_DIMENSION = {
-  w: 100,
-  h: 50,
+  w: 130,
+  h: 150,
 }
 
 const BadObj = (props) => {
@@ -64,8 +64,8 @@ const BadObj = (props) => {
     if (
       nextPos.x < basketPos.value.x + BASKET_DIMENSION.w &&
       nextPos.x + OBJ_DIMENSION.w > basketPos.value.x &&
-      OBJ_DIMENSION.h + nextPos.y > basketPos.value.y &&
-      OBJ_DIMENSION.h + nextPos.y < basketPos.value.y + 5
+      OBJ_DIMENSION.h + nextPos.y > basketPos.value.y + 50 &&
+      OBJ_DIMENSION.h + nextPos.y < basketPos.value.y + 55
     ) {
       // set badnessComp to null if collision occurs
       setBadnessComp(null)
@@ -121,7 +121,11 @@ const styles = StyleSheet.create({
   },
   custText: {
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'QuiapoLight',
+    fontWeight: '400',
+    color: COLORS.white,
+    textAlign: 'center',
+    marginTop: 10,
   },
 })
 

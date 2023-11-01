@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, Text, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
@@ -17,11 +17,12 @@ import {
 import KindessObj from '../../../components/activities/kindess-catcher/KindessObj'
 import BadObj from '../../../components/activities/kindess-catcher/BadObj'
 import { useKindCatchContext } from './KindCatchContext'
+import { getImg } from '../../../utilities/getImg'
 
 const DELAY_INTERVAL = 3000
 const BASKET_DIMENSION = {
-  w: 100,
-  h: 70,
+  w: 130,
+  h: 150,
 }
 
 const KindCatch = ({ navigation }) => {
@@ -33,9 +34,8 @@ const KindCatch = ({ navigation }) => {
     timerLimit,
     setTimerLimit,
     badList,
-    custTitle,
   } = useKindCatchContext()
-  const { basketHead, basketBody, basketWrapper } = styles
+  const { basketStyle, basketWrapper, custTitle } = styles
   const { container, centered, positionAbsolute, titleText } = globalStyles
   let kindnessDelay = 0
   let badnessDelay = 1400
@@ -61,7 +61,7 @@ const KindCatch = ({ navigation }) => {
   // Handles the basket's initial position
   const basketPos = useSharedValue({
     x: WINDOW_WIDTH / 2 - BASKET_DIMENSION.w / 2,
-    y: WINDOW_HEIGHT - BASKET_DIMENSION.h - 30,
+    y: WINDOW_HEIGHT - BASKET_DIMENSION.h - 35,
   })
 
   // Handles the basket animation
@@ -132,8 +132,7 @@ const KindCatch = ({ navigation }) => {
             playerAnimatedStyle,
           ]}
         >
-          <View style={basketHead} />
-          <View style={basketBody} />
+          <Image source={getImg.components.basket.link} style={basketStyle} />
         </Animated.View>
 
         {/* Score */}
@@ -158,17 +157,10 @@ const KindCatch = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
-  basketHead: {
-    height: '20%',
-    width: '100%',
-    backgroundColor: COLORS.accent,
-  },
-  basketBody: {
-    height: '80%',
-    width: '90%',
-    backgroundColor: COLORS.primary,
-    borderBottomEndRadius: 50,
-    borderBottomStartRadius: 50,
+  basketStyle: {
+    width: BASKET_DIMENSION.w,
+    height: BASKET_DIMENSION.h,
+    aspectRatio: 1,
   },
   basketWrapper: {
     width: BASKET_DIMENSION.w,
@@ -176,6 +168,7 @@ const styles = StyleSheet.create({
   },
   custTitle: {
     fontSize: 90,
+    fontWeight: '700',
     opacity: 0.2,
     paddingBottom: 20,
     zIndex: -1,

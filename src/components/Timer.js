@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { globalStyles } from '../styles/GlobalStyles'
 import COLORS from '../constants/colors'
@@ -8,6 +8,7 @@ const Timer = (props) => {
   const { timerLimit } = props
   const { timerTxt, timerWrapper } = styles
   const { centered, positionAbsolute, titleText } = globalStyles
+
   return (
     <View style={[positionAbsolute, centered, timerWrapper]}>
       <MaterialIcons name="timer" size={26} color={COLORS.accent} />

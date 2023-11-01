@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { Text, StyleSheet, Image } from 'react-native'
 import COLORS from '../../../constants/colors'
 import Animated, {
   Easing,
@@ -9,6 +9,7 @@ import Animated, {
 } from 'react-native-reanimated'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
+import { getImg } from '../../../utilities/getImg'
 
 const BASKET_DIMENSION = {
   w: 100,
@@ -17,15 +18,15 @@ const BASKET_DIMENSION = {
 
 const FPS = 60
 const DELTA = 1000 / FPS
-const SPEED = 3
+const SPEED = 2
 const OBJ_DIMENSION = {
   w: 100,
-  h: 50,
+  h: 100,
 }
 
 const KindessObj = (props) => {
   const { basketPos, wait, kindness, setScore } = props
-  const { kindnessObj, custText } = styles
+  const { kindnessObj, custText, apple } = styles
   const { centered } = globalStyles
 
   // Get the initial position at x axis randomly
@@ -64,8 +65,8 @@ const KindessObj = (props) => {
     if (
       nextPos.x < basketPos.value.x + BASKET_DIMENSION.w &&
       nextPos.x + OBJ_DIMENSION.w > basketPos.value.x &&
-      OBJ_DIMENSION.h + nextPos.y > basketPos.value.y &&
-      OBJ_DIMENSION.h + nextPos.y < basketPos.value.y + 5
+      OBJ_DIMENSION.h + nextPos.y > basketPos.value.y + 50 &&
+      OBJ_DIMENSION.h + nextPos.y < basketPos.value.y + 55
     ) {
       // set kindnessComp to null if collision occurs
       setKindnessComp(null)
@@ -98,6 +99,7 @@ const KindessObj = (props) => {
 
   const [kindnessComp, setKindnessComp] = useState(
     <Animated.View style={[centered, kindnessObj, kindObjAnimatedStyles]}>
+      <Image source={getImg.components.apple.link} style={apple} />
       <Text style={custText}>{kindness}</Text>
     </Animated.View>
   )
@@ -116,14 +118,24 @@ const styles = StyleSheet.create({
   kindnessObj: {
     height: OBJ_DIMENSION.h,
     width: OBJ_DIMENSION.w,
-    backgroundColor: COLORS.greenPrimaryTrans,
     position: 'absolute',
     top: 0,
     left: 0,
   },
   custText: {
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'QuiapoLight',
+    fontWeight: '400',
+    color: COLORS.white,
+    textAlign: 'center',
+    marginTop: 10,
+  },
+  apple: {
+    height: OBJ_DIMENSION.h,
+    width: OBJ_DIMENSION.w,
+    position: 'absolute',
+    zIndex: -1,
+    aspectRatio: 1,
   },
 })
 
