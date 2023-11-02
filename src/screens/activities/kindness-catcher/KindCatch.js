@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import COLORS from '../../../constants/colors'
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from '../../../constants/windowConstants'
 import Timer from '../../../components/Timer'
 import Animated, {
@@ -26,18 +25,11 @@ const BASKET_DIMENSION = {
 }
 
 const KindCatch = ({ navigation }) => {
-  const {
-    score,
-    setScore,
-    TIMER_VALUE,
-    kindnessList,
-    timerLimit,
-    setTimerLimit,
-    badList,
-  } = useKindCatchContext()
+  const { score, TIMER_VALUE, kindnessList, timerLimit, badList } =
+    useKindCatchContext()
   const { basketStyle, basketWrapper, custTitle } = styles
   const { container, centered, positionAbsolute, titleText } = globalStyles
-  let kindnessDelay = 0
+  let kindnessDelay = 500
   let badnessDelay = 1400
 
   // Sets timer for the game
@@ -49,12 +41,12 @@ const KindCatch = ({ navigation }) => {
 
     // Changes the timerTxt every sec
     const interval = setInterval(() => {
-      setTimerLimit((prevState) => prevState - 1)
+      timerLimit.value--
     }, 1000)
 
     return () => {
-      clearTimeout(timeout)
       clearInterval(interval)
+      clearTimeout(timeout)
     }
   }, [])
 
@@ -94,7 +86,7 @@ const KindCatch = ({ navigation }) => {
         basketPos={basketPos}
         wait={wait}
         kindness={kindness}
-        setScore={setScore}
+        score={score}
       />
     )
   }
@@ -136,10 +128,10 @@ const KindCatch = ({ navigation }) => {
         </Animated.View>
 
         {/* Score */}
-        <Text style={[titleText, custTitle]}>{score}</Text>
+        <Text style={[titleText, custTitle]}>{score.value}</Text>
 
         {/* Timer */}
-        <Timer timerLimit={timerLimit} />
+        <Timer timerLimit={timerLimit.value} />
 
         <PanGestureHandler onGestureEvent={gestureHandler}>
           <Animated.View

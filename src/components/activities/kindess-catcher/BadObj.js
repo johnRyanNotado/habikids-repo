@@ -11,13 +11,13 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from '../../../constants/windowConstants'
 
 const BASKET_DIMENSION = {
-  w: 100,
-  h: 70,
+  w: 130,
+  h: 150,
 }
 
 const FPS = 60
 const DELTA = 1000 / FPS
-const SPEED = 2
+const SPEED = 3
 const OBJ_DIMENSION = {
   w: 130,
   h: 150,
@@ -49,9 +49,6 @@ const BadObj = (props) => {
       direction.value.y = 1
       interval = setInterval(() => {
         renderObj()
-        if (targetPositionY.value > WINDOW_HEIGHT + 10) {
-          clearInterval(interval) // clear interval after object is below the screen
-        }
       }, DELTA)
     }
     return () => clearInterval(interval)

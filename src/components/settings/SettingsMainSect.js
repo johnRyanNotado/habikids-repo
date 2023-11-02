@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, ScrollView, Text } from 'react-native'
+import { View, StyleSheet, ScrollView, Text, Image } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import SettingsConfigSect from './SettingsConfigSect'
 import { LANGUAGES } from '../../constants/dropDownItems'
@@ -13,20 +13,10 @@ const SettingsMainSect = () => {
   const [isReminderVal, setIsReminderVal] = useState(false)
   const [isTipsSuppVal, setIsTipsSuppVal] = useState(false)
   const [isShowBtnVal, setIsShowBtnVal] = useState(false)
-  const [selectedLanguage, setSelectedLanguage] = useState('Filipino')
-  const [isOpen, setIsOpen] = useState(false)
-
-  const {
-    cardWrapper,
-    scrollViewCustStyle,
-    settingsFont,
-    sectionTitle,
-    sectionConfigWrapper,
-    dropDownContainerStyle,
-    dropDownStyle,
-    dropDownTxtStyle,
-  } = styles
-  const { container, centered } = globalStyles
+  const [isEngCapShown, setIsEngCapShown] = useState(false)
+  const { cardWrapper, scrollViewCustStyle, settingsFont, sectionTitle } =
+    styles
+  const { container } = globalStyles
 
   return (
     <View style={cardWrapper}>
@@ -81,25 +71,9 @@ const SettingsMainSect = () => {
                 />
                 <SettingsConfigSect
                   label={'Ipakita nag Ingles na Captions'}
-                  value={isShowBtnVal}
-                  setValue={setIsShowBtnVal}
+                  value={isEngCapShown}
+                  setValue={setIsEngCapShown}
                 />
-                {/* <View style={[sectionConfigWrapper, { zIndex: 10 }]}>
-                  <Text style={settingsFont}>Language: </Text>
-                  <View style={{ width: '85%' }}>
-                    <DropDownPicker
-                      items={LANGUAGES}
-                      open={isOpen}
-                      setOpen={setIsOpen}
-                      value={selectedLanguage}
-                      setValue={setSelectedLanguage}
-                      dropDownDirection="TOP"
-                      dropDownContainerStyle={dropDownContainerStyle}
-                      style={dropDownStyle}
-                      textStyle={dropDownTxtStyle}
-                    />
-                  </View>
-                </View> */}
               </View>
             </View>
           </View>

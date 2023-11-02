@@ -12,20 +12,20 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import { getImg } from '../../../utilities/getImg'
 
 const BASKET_DIMENSION = {
-  w: 100,
-  h: 70,
+  w: 130,
+  h: 150,
 }
 
 const FPS = 60
 const DELTA = 1000 / FPS
-const SPEED = 2
+const SPEED = 3
 const OBJ_DIMENSION = {
   w: 100,
   h: 100,
 }
 
 const KindessObj = (props) => {
-  const { basketPos, wait, kindness, setScore } = props
+  const { basketPos, wait, kindness, score } = props
   const { kindnessObj, custText, apple } = styles
   const { centered } = globalStyles
 
@@ -50,9 +50,6 @@ const KindessObj = (props) => {
       direction.value.y = 1
       interval = setInterval(() => {
         renderObj()
-        if (targetPositionY.value > WINDOW_HEIGHT + 10) {
-          clearInterval(interval)
-        }
       }, DELTA)
     }
     return () => clearInterval(interval)
@@ -104,11 +101,10 @@ const KindessObj = (props) => {
     </Animated.View>
   )
 
-  // If kindnessComp changes its value to null, add 1 to the score
+  // add 1 to score if collision occurs
+  // added a separate useEffect since the collision detection runs multiple times after a collission
   useEffect(() => {
-    if (kindnessComp === null) {
-      setScore((prevState) => prevState + 1)
-    }
+    if (kindnessComp === null) score.value = score.value + 1
   }, [kindnessComp])
 
   return kindnessComp

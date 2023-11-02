@@ -5,34 +5,36 @@ import { KindCatch, KindCatchCA } from './'
 import { KindCatchContext } from './KindCatchContext'
 import { db_KindCatch } from '../../../constants/temp_db/db_KindCatch'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
+import { useSharedValue } from 'react-native-reanimated'
 
 const KindCatchStack = createStackNavigator()
+const GAME_INSTRUCTIONS =
+  'Saluhin ang mga nahuhulog na mabuting gawain at iwasan ang mga masasamang gagawin.'
+const NARRATOR = 'uni'
 
 const KindCatchNav = () => {
   const { selectedYear } = useChildSectionContext()
-  const [score, setScore] = useState(0)
-  const [grade, setGrade] = useState(1)
-  const TIMER_VALUE = 30000
-  const [timerLimit, setTimerLimit] = useState(TIMER_VALUE / 1000)
+  const TIMER_VALUE = 31000
 
   // get the game data based on selected year
   const kindnessList = db_KindCatch.grade[selectedYear - 1].kindnessList
   const badList = db_KindCatch.grade[selectedYear - 1].badList
 
+  const timerLimit = useSharedValue(30)
+  const score = useSharedValue(0)
+
   return (
     <KindCatchContext.Provider
       value={{
         score,
-        setScore,
         kindnessList,
         badList,
         TIMER_VALUE,
         kindnessList,
         badList,
         timerLimit,
-        setTimerLimit,
-        grade,
-        setGrade,
+        GAME_INSTRUCTIONS,
+        NARRATOR,
       }}
     >
       <KindCatchStack.Navigator>

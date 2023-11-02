@@ -1,6 +1,7 @@
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { globalStyles } from '../styles/GlobalStyles'
 import COLORS from '../constants/colors'
+import Animated, { SlideInUp, SlideOutUp } from 'react-native-reanimated'
 
 const ActivityCard = (props) => {
   const { score, handleStartBtn, handleCancelBtn } = props
@@ -17,51 +18,52 @@ const ActivityCard = (props) => {
     btnSection,
   } = styles
   return (
-    <View style={[container, centered, positionAbsolute, overlayWrapper]}>
+    <Animated.View
+      style={[container, centered, positionAbsolute, overlayWrapper]}
+      entering={SlideInUp.duration(1000).delay(2000)}
+      exiting={SlideOutUp.duration(1000)}
+    >
       <View style={[centered, gameCard]}>
         <View style={[centered, scoreWrapper]}>
-          <Text style={scoreLabel}>Score</Text>
+          <Text style={scoreLabel}>Puntos</Text>
           <Text style={scoreTxt}>{score}</Text>
         </View>
         <View style={[centered, btnSection]}>
           <TouchableOpacity onPress={handleCancelBtn}>
             <View style={[centered, goBackBtnWrapper]}>
-              <Text style={startTxt}>Cancel</Text>
+              <Text style={startTxt}>Bumalik</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={handleStartBtn}>
             <View style={[centered, startBtnWrapper]}>
-              <Text style={startTxt}>Start</Text>
+              <Text style={startTxt}>Magsimula</Text>
             </View>
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </Animated.View>
   )
 }
 
 const styles = StyleSheet.create({
   gameCard: {
-    width: 300,
+    width: 400,
     height: 220,
     backgroundColor: COLORS.white,
     borderColor: COLORS.accent,
-    borderWidth: 2,
+    borderWidth: 5,
     borderRadius: 10,
   },
-  overlayWrapper: {
-    backgroundColor: COLORS.whiteTrans,
-    zIndex: 10,
-  },
+  overlayWrapper: {},
   startBtnWrapper: {
-    backgroundColor: COLORS.accent,
-    width: 120,
+    backgroundColor: COLORS.primary,
+    width: 140,
     paddingVertical: 10,
     borderRadius: 30,
   },
   goBackBtnWrapper: {
     backgroundColor: COLORS.grayPrimary,
-    width: 120,
+    width: 140,
     paddingVertical: 10,
     borderRadius: 30,
   },
@@ -80,11 +82,11 @@ const styles = StyleSheet.create({
   },
   scoreLabel: {
     color: COLORS.accent,
-    fontSize: 16,
+    fontSize: 20,
     opacity: 0.5,
   },
   btnSection: {
-    gap: 15,
+    gap: 30,
     flexDirection: 'row',
   },
 })

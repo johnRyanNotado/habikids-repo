@@ -71,7 +71,7 @@ const Welcome = ({ navigation }) => {
 
   if (fontsLoaded) {
     return (
-      <View style={[container, { backgroundColor: 'red' }]}>
+      <View style={[container]}>
         <Video
           ref={video}
           style={bgStyle}
