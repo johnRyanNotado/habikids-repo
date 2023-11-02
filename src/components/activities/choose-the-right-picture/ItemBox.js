@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   itemTxt: {
-    fontSize: 26,
-    fontWeight: '700',
+    fontSize: 30,
+    fontWeight: '400',
+    fontFamily: 'Quiapo',
     color: COLORS.accent,
   },
 })

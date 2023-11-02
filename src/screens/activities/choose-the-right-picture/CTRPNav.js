@@ -23,6 +23,13 @@ const CTRPNav = () => {
   const [item, setItem] = useState(1)
   const [gameData, setGameData] = useState(null)
 
+  // get the related data for narration (initialize it to values, change it when content changes)
+  const [instruction, setInstruction] = useState(db_CTRP_Values.instruction)
+  const [instructionDuration, setInstructionDuration] = useState(
+    db_CTRP_Values.instructionDuration * 1000
+  )
+  const [narrator, setNarrator] = useState(db_CTRP_Values.narrator)
+
   useEffect(() => {
     setGameData(
       content === VALUES
@@ -31,6 +38,31 @@ const CTRPNav = () => {
         ? db_CTRP_GoodHabits
         : null
     )
+
+    setInstruction(
+      content === VALUES
+        ? db_CTRP_Values.instruction
+        : content === GOOD_HABITS
+        ? db_CTRP_GoodHabits.instruction
+        : null
+    )
+
+    setInstructionDuration(
+      content === VALUES
+        ? db_CTRP_Values.instructionDuration * 1000
+        : content === GOOD_HABITS
+        ? db_CTRP_GoodHabits.instructionDuration * 1000
+        : null
+    )
+
+    setNarrator(
+      content === VALUES
+        ? db_CTRP_Values.narrator
+        : content === GOOD_HABITS
+        ? db_CTRP_GoodHabits.narrator
+        : null
+    )
+    console.log('SHEESH')
   }, [content])
 
   return (
@@ -49,6 +81,9 @@ const CTRPNav = () => {
         ITEM_AMOUNT,
         gameData,
         setGameData,
+        instruction,
+        instructionDuration,
+        narrator,
       }}
     >
       <CTRPStack.Navigator>

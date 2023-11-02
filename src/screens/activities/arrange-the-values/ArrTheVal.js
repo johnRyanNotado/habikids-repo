@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { FadeIn } from 'react-native-reanimated'
 import SceneDesc from '../../../components/activities/arrange-the-values/SceneDesc'
 import Scene from '../../../components/activities/arrange-the-values/Scene'
 import Options from '../../../components/activities/arrange-the-values/Options'
 import ItemBox from '../../../components/activities/arrange-the-values/ItemBox'
+import Narrator from '../../../components/activities/Narrator'
+import { getImg } from '../../../utilities/getImg'
 import { useArrTheValContext } from './ArrTheValContext'
 
 const ArrTheVal = ({ navigation }) => {
-  const { item, timer, displayed, setDisplayed, OPTIONS, SCENE } =
+  const { item, timer, displayed, setDisplayed, OPTIONS, SCENE, narrator } =
     useArrTheValContext()
   const { container, centered } = globalStyles
   const { mainSectWrapper } = styles
 
-  // Displays options/scene after timer
+  // Displays options/scene after timer if item changes
   useEffect(() => {
     switch (displayed) {
       case OPTIONS:
@@ -36,7 +38,12 @@ const ArrTheVal = ({ navigation }) => {
       case OPTIONS:
         return <Options goBack={goBack} />
       case SCENE:
-        return <Scene />
+        return (
+          <>
+            <Scene />
+            <Narrator narrator={narrator} custWrapperStyle={{ right: -50 }} />
+          </>
+        )
       default:
         return <Text>Something went wrong!</Text>
     }
@@ -47,13 +54,19 @@ const ArrTheVal = ({ navigation }) => {
   }
 
   return (
-    <View style={[container, centered]}>
-      <Animated.View entering={FadeIn} style={[centered, mainSectWrapper]}>
-        <SceneDesc />
-        {getComponent()}
-      </Animated.View>
-      <ItemBox />
-    </View>
+    <ImageBackground
+      source={getImg.bg.jeepInterior.link}
+      style={container}
+      resizeMode="contain"
+    >
+      <View style={[container, centered]}>
+        <Animated.View entering={FadeIn} style={[centered, mainSectWrapper]}>
+          <SceneDesc />
+          {getComponent()}
+        </Animated.View>
+        <ItemBox />
+      </View>
+    </ImageBackground>
   )
 }
 

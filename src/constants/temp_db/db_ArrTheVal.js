@@ -1,4 +1,7 @@
 export const db_ArrTheVal = {
+  instructionDuration: 10,
+  instruction: `I-uri ang iba't-ibang mga gawain o sitwasyon sa mga grupo ng 'Mabuting Prinsipyo' at 'Hindi gaanong Mabuting Prinsipyo'`,
+  narrator: 'uni',
   grade: [
     {
       item: [

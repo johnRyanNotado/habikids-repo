@@ -105,11 +105,16 @@ const styles = StyleSheet.create({
   },
   txtBox: {
     height: '20%',
-    width: '100%',
+
+    backgroundColor: COLORS.whiteTrans,
+    width: 200,
+    borderRadius: 40,
+    marginTop: 5,
   },
   txtStyle: {
-    fontSize: 25,
-    fontWeight: '700',
+    fontSize: 30,
+    fontWeight: '400',
+    fontFamily: 'QuiapoRegular',
   },
   imgStyle: {
     backgroundColor: COLORS.secondary,

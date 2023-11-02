@@ -1,9 +1,12 @@
 export const db_CTRP_GoodHabits = {
+  instructionDuration: 10,
+  instruction: `Piliin and larawan na nagpapakita ng pinakamabuting tugon.`,
+  narrator: 'vio',
   grade: [
     {
       item: [
         {
-          desc: 'Pakshet. Nakita mo na nag-aaway ang iyong mga kaibigan. Ano ang iyong gagawin?',
+          desc: 'Nakita mo na nag-aaway ang iyong mga kaibigan. Ano ang iyong gagawin?',
           scene: {
             desc: 'Scene',
             img: require('../../img/act/ctrp/grade-one/first/scene.png'),

@@ -1,29 +1,62 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
+import { View, StyleSheet, ImageBackground } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { useArrTheValContext } from './ArrTheValContext'
+import { getImg } from '../../../utilities/getImg'
+import {
+  ACTIVITY_CARD,
+  INSTRUCTIONS,
+  NONE,
+} from '../../../constants/contentClassification'
 import ActivityCard from '../../../components/ActivityCard'
+import ActivityNarr from '../../../components/activities/ActivityNarr'
+import { useArrTheValContext } from './ArrTheValContext'
 
 const ArrTheValCA = ({ navigation }) => {
-  const { score, setScore } = useArrTheValContext()
+  const { score, setScore, narrator, instruction, instructionDuration } =
+    useArrTheValContext()
   const { container, centered, positionAbsolute } = globalStyles
+  const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
+
   const handleCancelBtn = () => {
     navigation.goBack()
   }
 
   const handleStartBtn = () => {
     setScore(0)
-    navigation.navigate('ArrTheVal')
+    setContent(INSTRUCTIONS) // first show instructions
+
+    const instrucTimeout = setTimeout(() => {
+      setContent(NONE) // first show empty obj so that the exit animation has time to animate
+      clearTimeout(instrucTimeout)
+    }, instructionDuration)
+
+    const startTimeout = setTimeout(() => {
+      navigation.navigate('ArrTheVal') // then navigate
+      setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
+      clearTimeout(startTimeout)
+    }, instructionDuration + 500)
   }
 
   return (
-    <View style={[container, centered]}>
-      <ActivityCard
-        score={score}
-        handleStartBtn={handleStartBtn}
-        handleCancelBtn={handleCancelBtn}
-      />
-    </View>
+    <ImageBackground
+      source={getImg.bg.jeepInterior.link}
+      style={container}
+      resizeMode="contain"
+    >
+      <View style={[container, centered]}>
+        {content === ACTIVITY_CARD ? (
+          <ActivityCard
+            score={score}
+            handleStartBtn={handleStartBtn}
+            handleCancelBtn={handleCancelBtn}
+          />
+        ) : content === INSTRUCTIONS ? (
+          <ActivityNarr narrator={narrator} instruction={instruction} />
+        ) : (
+          <></>
+        )}
+      </View>
+    </ImageBackground>
   )
 }
 
