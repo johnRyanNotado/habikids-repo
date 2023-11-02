@@ -69,19 +69,21 @@ const styles = StyleSheet.create({
   },
   startTxt: {
     color: COLORS.white,
-    fontSize: 20,
-    fontWeight: '700',
+    fontSize: 25,
+    fontFamily: 'QuiapoRegular',
   },
   scoreWrapper: {
     paddingBottom: 30,
   },
   scoreTxt: {
     color: COLORS.accent,
-    fontSize: 50,
-    fontWeight: '700',
+    fontSize: 60,
+    fontFamily: 'Quiapo',
+    fontWeight: '400',
   },
   scoreLabel: {
     color: COLORS.accent,
+    fontFamily: 'QuiapoRegular',
     fontSize: 20,
     opacity: 0.5,
   },

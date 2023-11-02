@@ -1,14 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
-import Animated, {
-  SlideInRight,
-  SlideInUp,
-  SlideOutUp,
-  SlideOutRight,
-} from 'react-native-reanimated'
+import { StyleSheet, Text } from 'react-native'
+import Animated, { SlideInUp, SlideOutUp } from 'react-native-reanimated'
 import COLORS from '../../constants/colors'
 import { globalStyles } from '../../styles/GlobalStyles'
-import { getAni } from '../../utilities/getAni'
 import {
   ENTER_DELAY,
   ENTER_DURATION,
@@ -18,9 +12,8 @@ import Narrator from './Narrator'
 
 const ActivityNarr = (props) => {
   const { instruction, narrator } = props
-  const { container, centered, positionAbsolute } = globalStyles
-  const { narrStyle, narrWrapper, narrTxtWrapper, narrTxt, custContainer } =
-    styles
+  const { container, centered } = globalStyles
+  const { narrTxtWrapper, narrTxt, custContainer } = styles
   return (
     <Animated.View style={[container, centered, custContainer]}>
       <Animated.View
@@ -37,16 +30,6 @@ const ActivityNarr = (props) => {
 
 const styles = StyleSheet.create({
   custContainer: { width: '100%', justifyContent: 'flex-start' },
-  narrWrapper: {
-    top: 'auto',
-    left: 'auto',
-    right: 0,
-    bottom: 0,
-  },
-  narrStyle: {
-    height: 300,
-    width: 300,
-  },
   narrTxtWrapper: {
     backgroundColor: COLORS.whiteTrans,
     borderRadius: 50,

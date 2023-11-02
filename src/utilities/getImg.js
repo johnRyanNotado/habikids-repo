@@ -13,5 +13,7 @@ export const getImg = {
     basket: { link: require('../img/act/kindness-catcher/basket.png') },
     apple: { link: require('../img/act/kindness-catcher/apple.png') },
     badApple: { link: require('../img/act/kindness-catcher/bad-apple.png') },
+    mabait: { link: require('../img/act/arr-the-val/options/mabait.png') },
+    masama: { link: require('../img/act/arr-the-val/options/masama.png') },
   },
 }

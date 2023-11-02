@@ -19,14 +19,15 @@ const Timer = (props) => {
 
 const styles = StyleSheet.create({
   timerTxt: {
-    fontSize: 24,
+    fontSize: 28,
     color: COLORS.accent,
+    fontFamily: 'Quiapo',
   },
   timerWrapper: {
     top: 10,
     left: 'auto',
     right: 20,
-    fontWeight: '700',
+    fontWeight: '400',
     backgroundColor: COLORS.primaryTrans,
     width: 40,
     height: 80,

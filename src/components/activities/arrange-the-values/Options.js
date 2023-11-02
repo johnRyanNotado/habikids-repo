@@ -14,6 +14,7 @@ import { useArrTheValContext } from '../../../screens/activities/arrange-the-val
 import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
 import Button from './Button'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
+import { getImg } from '../../../utilities/getImg'
 
 const Options = (props) => {
   const { goBack } = props
@@ -124,6 +125,7 @@ const Options = (props) => {
           animatedStyle={goodAnimatedStyle}
           delay={300}
           label={MABUTI}
+          source={getImg.components.mabait.link}
         />
         <Button
           handleBtn={handleBadBtn}
@@ -131,6 +133,7 @@ const Options = (props) => {
           animatedStyle={badAnimatedStyle}
           delay={1300}
           label={MASAMA}
+          source={getImg.components.masama.link}
         />
       </Animated.View>
     </GestureHandlerRootView>
