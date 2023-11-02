@@ -39,6 +39,11 @@ const CultPuzzNav = () => {
   // get the data using the selected year
   const PUZZLE_GAME_DATA = db_CultPuzz.grade[selectedYear - 1]
 
+  // get the related data for narration
+  const instruction = db_CultPuzz.instruction
+  const instructionDuration = db_CultPuzz.instructionDuration * 1000
+  const narrator = db_CultPuzz.narrator
+
   return (
     <CultPuzzContext.Provider
       value={{
@@ -52,6 +57,9 @@ const CultPuzzNav = () => {
         shuffledEndPos,
         setShuffledEndPos,
         PUZZLE_GAME_DATA,
+        instruction,
+        instructionDuration,
+        narrator,
       }}
     >
       <CultPuzzStack.Navigator>

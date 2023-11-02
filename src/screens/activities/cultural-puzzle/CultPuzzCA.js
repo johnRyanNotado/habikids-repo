@@ -1,14 +1,30 @@
-import React from 'react'
-import { View } from 'react-native'
+import React, { useState } from 'react'
+import { View, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { useCultPuzzContext } from './CultPuzzContext'
+import { getImg } from '../../../utilities/getImg'
+import {
+  ACTIVITY_CARD,
+  INSTRUCTIONS,
+  NONE,
+} from '../../../constants/contentClassification'
 import ActivityCard from '../../../components/ActivityCard'
+import ActivityNarr from '../../../components/activities/ActivityNarr'
+import { useCultPuzzContext } from './CultPuzzContext'
 
 const CultPuzzCA = ({ navigation }) => {
-  const { score, setTimerLimit, setIsFinished, endPos, setShuffledEndPos } =
-    useCultPuzzContext()
-  const { container } = globalStyles
+  const {
+    score,
+    setTimerLimit,
+    setIsFinished,
+    endPos,
+    setShuffledEndPos,
+    narrator,
+    instruction,
+    instructionDuration,
+  } = useCultPuzzContext()
+  const { container, centered } = globalStyles
+  const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
   const handleStartBtn = () => {
     // shuffle the end-position of the puzzle piece
@@ -17,7 +33,18 @@ const CultPuzzCA = ({ navigation }) => {
     // set timer
     setIsFinished(false)
     setTimerLimit(30)
-    navigation.navigate('CultPuzz')
+    setContent(INSTRUCTIONS) // first show instructions
+
+    const instrucTimeout = setTimeout(() => {
+      setContent(NONE) // first show empty obj so that the exit animation has time to animate
+      clearTimeout(instrucTimeout)
+    }, instructionDuration)
+
+    const startTimeout = setTimeout(() => {
+      navigation.navigate('CultPuzz') // then navigate
+      setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
+      clearTimeout(startTimeout)
+    }, instructionDuration + 500)
   }
 
   const handleCancelBtn = () => {
@@ -25,13 +52,25 @@ const CultPuzzCA = ({ navigation }) => {
   }
 
   return (
-    <View style={container}>
-      <ActivityCard
-        score={score.value}
-        handleStartBtn={handleStartBtn}
-        handleCancelBtn={handleCancelBtn}
-      />
-    </View>
+    <ImageBackground
+      source={getImg.bg.jeepInterior.link}
+      style={container}
+      resizeMode="contain"
+    >
+      <View style={[container, centered]}>
+        {content === ACTIVITY_CARD ? (
+          <ActivityCard
+            score={score.value}
+            handleStartBtn={handleStartBtn}
+            handleCancelBtn={handleCancelBtn}
+          />
+        ) : content === INSTRUCTIONS ? (
+          <ActivityNarr narrator={narrator} instruction={instruction} />
+        ) : (
+          <></>
+        )}
+      </View>
+    </ImageBackground>
   )
 }
 

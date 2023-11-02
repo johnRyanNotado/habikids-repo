@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet, Text, Image } from 'react-native'
+import { View, StyleSheet, Text, Image, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from '../../../constants/windowConstants'
@@ -29,7 +29,7 @@ const KindCatch = ({ navigation }) => {
     useKindCatchContext()
   const { basketStyle, basketWrapper, custTitle } = styles
   const { container, centered, positionAbsolute, titleText } = globalStyles
-  let kindnessDelay = 500
+  let kindnessDelay = 1000
   let badnessDelay = 1400
 
   // Sets timer for the game
@@ -97,54 +97,60 @@ const KindCatch = ({ navigation }) => {
     if (index) badnessDelay += DELAY_INTERVAL
     setTimeout(() => {
       setWait(false)
-    }, Math.random() * 2000 + badnessDelay)
+    }, Math.random() * 2000 + badnessDelay) // Add a random value to the delay so that it will be distinct
 
     return <BadObj basketPos={basketPos} wait={wait} badness={badness} />
   }
 
   return (
-    <GestureHandlerRootView style={container}>
-      <View style={[container, centered]}>
-        {/* Kindess Obj */}
-        {kindnessList.map((item, index) => {
-          return getKindObj(item.kindness, index)
-        })}
+    <ImageBackground
+      source={getImg.bg.jeepInterior.link}
+      style={container}
+      resizeMode="contain"
+    >
+      <GestureHandlerRootView style={[container]}>
+        <View style={[container, centered]}>
+          {/* Kindess Obj */}
+          {kindnessList.map((item, index) => {
+            return getKindObj(item.kindness, index)
+          })}
 
-        {badList.map((item, index) => {
-          return getBadObj(item.badness, index)
-        })}
+          {badList.map((item, index) => {
+            return getBadObj(item.badness, index)
+          })}
 
-        {/* Basket*/}
-        <Animated.View
-          style={[
-            positionAbsolute,
-            centered,
-            basketWrapper,
-            { top: basketPos.value.y },
-            playerAnimatedStyle,
-          ]}
-        >
-          <Image source={getImg.components.basket.link} style={basketStyle} />
-        </Animated.View>
-
-        {/* Score */}
-        <Text style={[titleText, custTitle]}>{score.value}</Text>
-
-        {/* Timer */}
-        <Timer timerLimit={timerLimit.value} />
-
-        <PanGestureHandler onGestureEvent={gestureHandler}>
+          {/* Basket*/}
           <Animated.View
-            style={{
-              width: '100%',
-              height: BASKET_DIMENSION.h + 10,
-              position: 'absolute',
-              bottom: 0,
-            }}
-          />
-        </PanGestureHandler>
-      </View>
-    </GestureHandlerRootView>
+            style={[
+              positionAbsolute,
+              centered,
+              basketWrapper,
+              { top: basketPos.value.y },
+              playerAnimatedStyle,
+            ]}
+          >
+            <Image source={getImg.components.basket.link} style={basketStyle} />
+          </Animated.View>
+
+          {/* Score */}
+          <Text style={[titleText, custTitle]}>{score.value}</Text>
+
+          {/* Timer */}
+          <Timer timerLimit={timerLimit.value} />
+
+          <PanGestureHandler onGestureEvent={gestureHandler}>
+            <Animated.View
+              style={{
+                width: '100%',
+                height: BASKET_DIMENSION.h + 10,
+                position: 'absolute',
+                bottom: 0,
+              }}
+            />
+          </PanGestureHandler>
+        </View>
+      </GestureHandlerRootView>
+    </ImageBackground>
   )
 }
 
@@ -161,7 +167,7 @@ const styles = StyleSheet.create({
   custTitle: {
     fontSize: 90,
     fontWeight: '700',
-    opacity: 0.2,
+    opacity: 0.5,
     paddingBottom: 20,
     zIndex: -1,
   },

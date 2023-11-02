@@ -1,4 +1,7 @@
 export const db_CultPuzz = {
+  instructionDuration: 10,
+  instruction: 'Buuin ang mga piraso ng puzzle sa loob ng 30 na segundo.',
+  narrator: 'juan',
   grade: [
     {
       id: 1,

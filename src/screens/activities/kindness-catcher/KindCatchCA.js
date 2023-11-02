@@ -1,112 +1,65 @@
 import React, { useState } from 'react'
-import { Image, Text, StyleSheet } from 'react-native'
+import { View, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { useKindCatchContext } from './KindCatchContext'
+import { getImg } from '../../../utilities/getImg'
+import {
+  ACTIVITY_CARD,
+  INSTRUCTIONS,
+  NONE,
+} from '../../../constants/contentClassification'
+import ActivityNarr from '../../../components/activities/ActivityNarr'
 import ActivityCard from '../../../components/ActivityCard'
-import JeepSvg from '../../../svg/bg/JeepSvg'
-import { getAni } from '../../../utilities/getAni'
-import Animated, {
-  SlideInRight,
-  SlideInUp,
-  SlideOutUp,
-  SlideOutRight,
-} from 'react-native-reanimated'
-import COLORS from '../../../constants/colors'
-
-const ACTIVITY_CARD = 'ACTIVITY_CARD'
-const INSTRUCTIONS = 'INSTRUCTIONS'
-const INSTRUCTIONS_DURATION = 10000
+import { useKindCatchContext } from './KindCatchContext'
 
 const KindCatchCA = ({ navigation }) => {
-  const { score, timerLimit, GAME_INSTRUCTIONS, NARRATOR } =
+  const { score, timerLimit, narrator, instruction, instructionDuration } =
     useKindCatchContext()
   const { container, centered } = globalStyles
-  const [content, setContent] = useState(ACTIVITY_CARD)
+  const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
   const handleStartBtn = () => {
     score.value = 0
     timerLimit.value = 30
-    setContent(INSTRUCTIONS)
+    setContent(INSTRUCTIONS) // first show instructions
+
     const instrucTimeout = setTimeout(() => {
-      setContent(ACTIVITY_CARD)
+      setContent(NONE) // first show empty obj so that the exit animation has time to animate
       clearTimeout(instrucTimeout)
-    }, INSTRUCTIONS_DURATION)
+    }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('KindCatch')
+      navigation.navigate('KindCatch') // then navigate
+      setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
-    }, INSTRUCTIONS_DURATION + 1000)
+    }, instructionDuration + 500)
   }
 
   const handleCancelBtn = () => {
     navigation.goBack()
   }
 
-  console.log('Called: KindCatchCA Screen')
   return (
-    <Animated.View style={[container, centered]}>
-      <JeepSvg />
-      {content === ACTIVITY_CARD ? (
-        <ActivityCard
-          score={score.value}
-          handleStartBtn={handleStartBtn}
-          handleCancelBtn={handleCancelBtn}
-        />
-      ) : (
-        <Animated.View
-          style={[
-            container,
-            centered,
-            { width: '100%', justifyContent: 'flex-start' },
-          ]}
-        >
-          <Animated.View
-            style={[centered, styles.narrTxtWrapper]}
-            entering={SlideInUp.duration(1000)}
-            exiting={SlideOutUp.duration(500)}
-          >
-            <Text style={styles.narrTxt}>{GAME_INSTRUCTIONS}</Text>
-          </Animated.View>
-          <Animated.View
-            style={[globalStyles.positionAbsolute, styles.narrWrapper]}
-            entering={SlideInRight.duration(1000)}
-            exiting={SlideOutRight.duration(500)}
-          >
-            <Image
-              style={styles.narrStyle}
-              source={getAni.characters[`${NARRATOR}`]?.link}
-            />
-          </Animated.View>
-        </Animated.View>
-      )}
-    </Animated.View>
+    <ImageBackground
+      source={getImg.bg.jeepInterior.link}
+      style={container}
+      resizeMode="contain"
+    >
+      <View style={[container, centered]}>
+        {content === ACTIVITY_CARD ? (
+          <ActivityCard
+            score={score.value}
+            handleStartBtn={handleStartBtn}
+            handleCancelBtn={handleCancelBtn}
+          />
+        ) : content === INSTRUCTIONS ? (
+          <ActivityNarr narrator={narrator} instruction={instruction} />
+        ) : (
+          <></>
+        )}
+      </View>
+    </ImageBackground>
   )
 }
-
-const styles = StyleSheet.create({
-  narrWrapper: {
-    top: 'auto',
-    left: 'auto',
-    right: 0,
-    bottom: 0,
-  },
-  narrStyle: {
-    height: 300,
-    width: 300,
-  },
-  narrTxtWrapper: {
-    backgroundColor: COLORS.whiteTrans,
-    borderRadius: 50,
-    paddingVertical: 20,
-    width: '80%',
-    marginTop: 40,
-  },
-  narrTxt: {
-    fontSize: 30,
-    color: COLORS.accent,
-    fontFamily: 'QuiapoRegular',
-  },
-})
 
 export default KindCatchCA

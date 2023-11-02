@@ -1,4 +1,8 @@
 export const db_KindCatch = {
+  instructionDuration: 10,
+  instruction:
+    'Saluhin ang mga nahuhulog na mabuting gawain at iwasan ang mga masasamang gagawin.',
+  narrator: 'uni',
   grade: [
     {
       kindnessList: [

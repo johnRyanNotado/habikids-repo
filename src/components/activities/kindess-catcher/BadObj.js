@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, StyleSheet, Vibration } from 'react-native'
+import { Text, StyleSheet, Vibration, Image } from 'react-native'
 import COLORS from '../../../constants/colors'
 import Animated, {
   Easing,
@@ -9,6 +9,7 @@ import Animated, {
 } from 'react-native-reanimated'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from '../../../constants/windowConstants'
+import { getImg } from '../../../utilities/getImg'
 
 const BASKET_DIMENSION = {
   w: 130,
@@ -19,13 +20,13 @@ const FPS = 60
 const DELTA = 1000 / FPS
 const SPEED = 3
 const OBJ_DIMENSION = {
-  w: 130,
-  h: 150,
+  w: 100,
+  h: 100,
 }
 
 const BadObj = (props) => {
   const { basketPos, wait, badness } = props
-  const { badnessObj, custText } = styles
+  const { badnessObj, custText, apple } = styles
   const { centered } = globalStyles
 
   // Get the initial position at x axis randomly
@@ -95,6 +96,7 @@ const BadObj = (props) => {
 
   const [badnessComp, setBadnessComp] = useState(
     <Animated.View style={[centered, badnessObj, badObjAnimatedStyles]}>
+      <Image source={getImg.components.badApple.link} style={apple} />
       <Text style={custText}>{badness}</Text>
     </Animated.View>
   )
@@ -111,7 +113,6 @@ const styles = StyleSheet.create({
   badnessObj: {
     height: OBJ_DIMENSION.h,
     width: OBJ_DIMENSION.w,
-    backgroundColor: COLORS.redPrimary,
     position: 'absolute',
     top: 0,
     left: 0,
@@ -123,6 +124,13 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     textAlign: 'center',
     marginTop: 10,
+  },
+  apple: {
+    height: OBJ_DIMENSION.h,
+    width: OBJ_DIMENSION.w,
+    position: 'absolute',
+    zIndex: -1,
+    aspectRatio: 1,
   },
 })
 

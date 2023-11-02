@@ -12,5 +12,6 @@ export const getImg = {
     jeepRed: { link: require('../img/buttons/jeep-red.png') },
     basket: { link: require('../img/act/kindness-catcher/basket.png') },
     apple: { link: require('../img/act/kindness-catcher/apple.png') },
+    badApple: { link: require('../img/act/kindness-catcher/bad-apple.png') },
   },
 }

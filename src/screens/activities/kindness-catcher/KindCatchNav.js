@@ -8,9 +8,6 @@ import { useChildSectionContext } from '../../context-api/ContextAPI'
 import { useSharedValue } from 'react-native-reanimated'
 
 const KindCatchStack = createStackNavigator()
-const GAME_INSTRUCTIONS =
-  'Saluhin ang mga nahuhulog na mabuting gawain at iwasan ang mga masasamang gagawin.'
-const NARRATOR = 'uni'
 
 const KindCatchNav = () => {
   const { selectedYear } = useChildSectionContext()
@@ -19,6 +16,11 @@ const KindCatchNav = () => {
   // get the game data based on selected year
   const kindnessList = db_KindCatch.grade[selectedYear - 1].kindnessList
   const badList = db_KindCatch.grade[selectedYear - 1].badList
+
+  // get the related data for narration
+  const instruction = db_KindCatch.instruction
+  const instructionDuration = db_KindCatch.instructionDuration * 1000
+  const narrator = db_KindCatch.narrator
 
   const timerLimit = useSharedValue(30)
   const score = useSharedValue(0)
@@ -33,8 +35,9 @@ const KindCatchNav = () => {
         kindnessList,
         badList,
         timerLimit,
-        GAME_INSTRUCTIONS,
-        NARRATOR,
+        instruction,
+        instructionDuration,
+        narrator,
       }}
     >
       <KindCatchStack.Navigator>
