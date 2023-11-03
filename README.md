@@ -2,7 +2,7 @@
 
 ### Instructions sa installation
 
-> Note: Dapat may vscode.
+*Note: Dapat may vscode.*
 
 1.  Install node first -> [link](//https://nodejs.org/en/download)
 2.  Install git -> [link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (Optional to, but needed if magclone)
@@ -13,7 +13,7 @@
 
 ### Instructions sa pag-run ng app sa mobile device
 
-> Note: Dapat connected yung phone and laptop sa same network. Additionally, Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka-public. Need i-change yung network to private. Make sure lang na secure yung wifi. Google mo lang "how to change network from public to private on windows"
+*Note: Dapat connected yung phone and laptop sa same network. Additionally, Di gagana yung expo go app pag naka public yung network. Kailangan naka private yung laptop/computer. Di kasi makikita ng phone yung laptop sa network pagnaka-public. <br/>Need i-change yung network to private. Make sure lang na secure yung wifi. Google mo lang "how to change network from public to private on windows"*
 
 1.  First install mo "expo go" sa mobile device. Nasa app store siya.
 2.  Sa laptop, open mo project folder sa vscode then open the terminal sa vscode. (Dapat nasa directory na ng project yung terminal)
