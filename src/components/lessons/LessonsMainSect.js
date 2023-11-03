@@ -1,7 +1,6 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
-import Button from '../Button'
 import COLORS from '../../constants/colors'
 import {
   VALUES,
@@ -15,22 +14,14 @@ import GoodHabits from './GoodHabits'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { YEAR_LEVELS } from '../../constants/dropDownItems'
 import { useLessonsContext } from '../../screens/context-api/ContextAPI'
+import Buttons from './Buttons'
 
 const LessonsMainSect = () => {
-  const {
-    content,
-    setContent,
-    isOpen,
-    setIsOpen,
-    selectedYear,
-    setSelectedYear,
-  } = useLessonsContext()
+  const { content, isOpen, setIsOpen, selectedYear, setSelectedYear } =
+    useLessonsContext()
   const {
     custContainer,
     contentWrapper,
-    btnWrapper,
-    txtStyle,
-    btnStyle,
     titleWrapper,
     title,
     subTitleWrapper,
@@ -42,63 +33,25 @@ const LessonsMainSect = () => {
   } = styles
   const { container, centered, positionAbsolute } = globalStyles
 
-  // Will set the content of the main section to values lessons
-  const handleValBtn = () => {
-    setContent(VALUES)
-  }
-
-  // Will set the content of the main section to traditions lessons
-  const handleTradBtn = () => {
-    setContent(TRADITIONS)
-  }
-
-  // Will set the content of the main section to good habits lessons
-  const handleGoodHanBtn = () => {
-    setContent(GOOD_HABITS)
-  }
-
-  const ButtonComp = (
-    <View style={[centered, container, btnWrapper]}>
-      <Button
-        label={'Values'}
-        onPress={handleValBtn}
-        txtStyle={txtStyle}
-        btnStyle={btnStyle}
-      />
-      <Button
-        label={'Traditions'}
-        onPress={handleTradBtn}
-        txtStyle={txtStyle}
-        btnStyle={btnStyle}
-      />
-      <Button
-        label={'Good Habits'}
-        onPress={handleGoodHanBtn}
-        txtStyle={txtStyle}
-        btnStyle={btnStyle}
-      />
-    </View>
-  )
-
   const getCorresComp = () => {
     switch (content) {
       case BUTTONS:
-        return ButtonComp
+        return null
       case VALUES:
         return (
-          <ScrollView style={[container]}>
+          <ScrollView style={[container, positionAbsolute]}>
             <Values />
           </ScrollView>
         )
       case TRADITIONS:
         return (
-          <ScrollView style={[container]}>
+          <ScrollView style={[container, positionAbsolute]}>
             <Traditions />
           </ScrollView>
         )
       case GOOD_HABITS:
         return (
-          <ScrollView style={[container]}>
+          <ScrollView style={[container, positionAbsolute]}>
             <GoodHabits />
           </ScrollView>
         )
@@ -112,11 +65,21 @@ const LessonsMainSect = () => {
       case BUTTONS:
         return <></>
       case VALUES:
+        return (
+          <View style={subTitleBg}>
+            <Text style={subTitle}>PRINSIPYO</Text>
+          </View>
+        )
       case TRADITIONS:
+        return (
+          <View style={subTitleBg}>
+            <Text style={subTitle}>TRADISYON</Text>
+          </View>
+        )
       case GOOD_HABITS:
         return (
           <View style={subTitleBg}>
-            <Text style={subTitle}>{content}</Text>
+            <Text style={subTitle}>MABUBUTING GAWI</Text>
           </View>
         )
       default:
@@ -155,13 +118,17 @@ const LessonsMainSect = () => {
   return (
     <View style={[container, centered, custContainer]}>
       <View style={[centered, titleWrapper]}>
-        <Text style={title}>Lessons</Text>
+        <Text style={title}>Aralin</Text>
       </View>
+
       <View style={[centered, subTitleWrapper]}>{getSubTitle()}</View>
 
       <View style={[positionAbsolute, dropDownWrapper]}>{getDropDown()}</View>
 
-      <View style={contentWrapper}>{getCorresComp()}</View>
+      <View style={contentWrapper}>
+        <Buttons />
+        {getCorresComp()}
+      </View>
     </View>
   )
 }
@@ -169,25 +136,12 @@ const LessonsMainSect = () => {
 const styles = StyleSheet.create({
   custContainer: {
     paddingBottom: 20,
-    paddingHorizontal: 20,
+    height: '100%',
+    width: '100%',
   },
   contentWrapper: {
     height: '80%',
     width: '100%',
-  },
-  btnWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingBottom: '10%',
-  },
-  btnStyle: {
-    height: 50,
-    width: 200,
-    borderColor: COLORS.white,
-    borderWidth: 3,
-    borderRadius: 20,
-    backgroundColor: COLORS.primary,
   },
   txtStyle: {
     fontFamily: 'QuiapoRegular',
@@ -210,6 +164,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 25,
     marginVertical: 10,
+    zIndex: 10,
   },
   subTitle: {
     fontFamily: 'QuiapoRegular',
@@ -218,7 +173,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   subTitleBg: {
-    width: 120,
+    width: 180,
     height: 25,
     marginVertical: 10,
     backgroundColor: COLORS.whiteTrans,
@@ -237,7 +192,7 @@ const styles = StyleSheet.create({
     width: 140,
     height: 35,
     right: 10,
-    top: 25,
+    top: 15,
     left: 'auto',
     zIndex: 10,
   },

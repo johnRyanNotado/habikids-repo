@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import {
   Activities,
@@ -16,7 +16,7 @@ import {
   LESSONS_GOODHABITS,
   LESSONS_VALUES,
   LESSONS_TRADITIONS,
-} from '../../../constants/temp_db/db_lessons'
+} from '../../../constants/temp_db/db_records_les'
 import {
   ACTIVITIES_GOODHABITS,
   ACTIVITIES_VALUES,

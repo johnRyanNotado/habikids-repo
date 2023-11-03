@@ -10,16 +10,19 @@ import LessonsRec from '../../../components/records/LessonsRec'
 import ActivitiesRec from '../../../components/records/ActivitiesRec'
 import EmptyBgSvg from '../../../svg/bg/EmptyBgSvg'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
+import ProfileCard from '../../../components/home-child/ProfileCard'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const Records = ({ navigation }) => {
+  const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const LESSONS = 'Lessons'
   const ACTIVITIES = 'Activities'
   const INITIAL = 'None'
   const TITLE = {
-    initial: 'Records',
-    activities: 'Ulat ng mga Natapos na mga Gawain',
-    lessons: 'Ulat ng mga Natapos na mga Leksiyon',
+    initial: 'Talaan',
+    activities: 'Ulat ng mga  Gawain na Natapos',
+    lessons: 'Ulat ng mga Aralin na Natapos',
   }
   const [selectedRecord, setSelectedRecord] = useState(INITIAL)
 
@@ -123,19 +126,13 @@ const Records = ({ navigation }) => {
       <View style={positionAbsolute}>
         <ChildSectNavBar backBtn={backBtn} />
       </View>
-      {/* <View style={[positionAbsolute, custPositionAbs]}>
-        <TouchableOpacity onPress={handleUndoBtn}>
-          <View style={[centered, homeBtnWrapper]}>
-            <Ionicons name="arrow-undo" size={30} color={COLORS.accent} />
-          </View>
-        </TouchableOpacity>
-      </View> */}
       <View style={[centered, recordsWrapperSection]}>
         <View style={[centered, titleWrapper]}>
           <Text style={getStyle()}>{getTitle()}</Text>
         </View>
         <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
       </View>
+      {isProfileClicked ? <ProfileCard /> : <></>}
       <EmptyBgSvg />
     </View>
   )
@@ -164,7 +161,7 @@ const styles = StyleSheet.create({
     color: COLORS.accent,
     fontSize: 30,
     fontFamily: 'Quiapo',
-    letterSpacing: 6,
+    letterSpacing: 3,
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 5,

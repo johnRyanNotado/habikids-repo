@@ -5,6 +5,7 @@ export const getImg = {
     emptyBg: { link: require('../img/bg/empty-bg.png') },
     jeepInterior: { link: require('../img/bg/jeepInterior.png') },
     lwGreenTop: { link: require('../img/bg/layered-waves-green-1.png') },
+    tableZoomedIn: { link: require('../img/bg/lessons.png') },
   },
   components: {
     records: { link: require('../img/buttons/records.png') },
@@ -15,5 +16,9 @@ export const getImg = {
     badApple: { link: require('../img/act/kindness-catcher/bad-apple.png') },
     mabait: { link: require('../img/act/arr-the-val/options/mabait.png') },
     masama: { link: require('../img/act/arr-the-val/options/masama.png') },
+    bookValues: { link: require('../img/buttons/book-values.png') },
+    bookTraditions: { link: require('../img/buttons/book-traditions.png') },
+    bookGoodHabits: { link: require('../img/buttons/book-good-habits.png') },
+    shadow: { link: require('../img/buttons/shadow.png') },
   },
 }

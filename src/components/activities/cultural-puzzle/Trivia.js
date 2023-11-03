@@ -62,7 +62,7 @@ const Trivia = (props) => {
           <View style={[centered, btnSection]}>
             <TouchableOpacity onPress={handleTriviaBtn}>
               <View style={[centered, btnWrapper]}>
-                <Text style={triviaBtnTxt}>Finish</Text>
+                <Text style={triviaBtnTxt}>Tapusin</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -118,8 +118,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   titleStyle: {
-    fontSize: 30,
-    fontWeight: '700',
+    fontSize: 34,
+    fontWeight: '400',
+    fontFamily: 'Quiapo',
   },
   triviaDescWrapper: {
     width: '100%',
@@ -128,8 +129,9 @@ const styles = StyleSheet.create({
   },
 
   triviaStyle: {
-    fontSize: 20,
-    fontWeight: '700',
+    fontSize: 23,
+    fontWeight: '400',
+    fontFamily: 'QuiapoRegular',
   },
   btnWrapper: {
     backgroundColor: COLORS.accent,

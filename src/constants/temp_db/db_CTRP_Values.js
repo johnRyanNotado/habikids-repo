@@ -1,7 +1,7 @@
 export const db_CTRP_Values = {
   instructionDuration: 10,
   instruction: `Piliin and larawan na nagpapakita ng pinakamabuting tugon.`,
-  narrator: 'vio',
+  narrator: 'uni',
   grade: [
     {
       item: [

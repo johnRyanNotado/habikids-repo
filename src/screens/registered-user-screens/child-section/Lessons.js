@@ -2,6 +2,7 @@ import React, { useEffect, useState, createContext, useContext } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {
   ImageBackground,
+  Image,
   BackHandler,
   StyleSheet,
   TouchableOpacity,
@@ -25,11 +26,13 @@ import {
   useChildSectionContext,
   LessonsContext,
 } from '../../context-api/ContextAPI'
+import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const Lessons = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
   const { homeBtnWrapper } = styles
-  const { container, centered } = globalStyles
+  const { container, centered, positionAbsolute, bgStyle } = globalStyles
 
   // useState for opening and closing the dropdown for the selected Year
   const [isOpen, setIsOpen] = useState(false)
@@ -107,17 +110,33 @@ const Lessons = ({ navigation }) => {
         setSelectedYear,
       }}
     >
-      <View style={container}>
-        <ImageBackground
-          resizeMode="cover"
-          style={{ flex: 1 }}
-          source={getImg.bg.jeepInterior.link}
-        >
+      <ImageBackground
+        source={getImg.bg.tableZoomedIn.link}
+        style={container}
+        resizeMode="contain"
+      >
+        <View style={[container, centered]}>
+          <View
+            style={[
+              positionAbsolute,
+              {
+                left: 'auto',
+                right: '-33%',
+                marginTop: '14%',
+              },
+            ]}
+          >
+            <Image
+              source={getImg.components.jeepRed.link}
+              style={{ height: 260, zIndex: -1 }}
+              resizeMode="contain"
+            />
+          </View>
           <ChildSectNavBar backBtn={backBtn} />
           <LessonsMainSect />
           {isProfileClicked ? <ProfileCard /> : <></>}
-        </ImageBackground>
-      </View>
+        </View>
+      </ImageBackground>
     </LessonsContext.Provider>
   )
 }
