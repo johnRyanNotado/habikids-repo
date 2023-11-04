@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import { Text, ImageBackground, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Button from '../../../components/Button'
-import { Ionicons } from '@expo/vector-icons'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import LessonsRec from '../../../components/records/LessonsRec'
 import ActivitiesRec from '../../../components/records/ActivitiesRec'
 import EmptyBgSvg from '../../../svg/bg/EmptyBgSvg'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
+import BackBtn from '../../../components/BackBtn'
 
 const Records = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
@@ -28,7 +27,6 @@ const Records = ({ navigation }) => {
 
   const {
     recordsWrapperSection,
-    homeBtnWrapper,
     titleWrapper,
     initialTitle,
     finalTitle,
@@ -112,19 +110,10 @@ const Records = ({ navigation }) => {
     }
   }
 
-  // Back button component
-  const backBtn = (
-    <TouchableOpacity onPress={handleUndoBtn}>
-      <View style={[centered, homeBtnWrapper]}>
-        <Ionicons name="arrow-undo" size={30} color={COLORS.accent} />
-      </View>
-    </TouchableOpacity>
-  )
-
   return (
     <View style={(container, centered)}>
       <View style={positionAbsolute}>
-        <ChildSectNavBar backBtn={backBtn} />
+        <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
       </View>
       <View style={[centered, recordsWrapperSection]}>
         <View style={[centered, titleWrapper]}>
@@ -185,14 +174,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 40,
     height: '100%',
-  },
-  homeBtnWrapper: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.white,
-    borderWidth: 3,
   },
   custPositionAbs: {
     left: 25,

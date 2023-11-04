@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, ImageBackground } from 'react-native'
+import { View, ImageBackground } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { getImg } from '../../../utilities/getImg'
 import {
@@ -23,6 +23,8 @@ const ArrTheValCA = ({ navigation }) => {
     instruction,
     instructionDuration,
     setItem,
+    timer,
+    INIT_TIMER,
   } = useArrTheValContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
@@ -35,6 +37,7 @@ const ArrTheValCA = ({ navigation }) => {
   const handleStartBtn = () => {
     setScore(0)
     setItem(1)
+    timer.value = INIT_TIMER
     setContent(INSTRUCTIONS) // first show instructions
 
     const instrucTimeout = setTimeout(() => {
@@ -49,6 +52,7 @@ const ArrTheValCA = ({ navigation }) => {
     }, instructionDuration + 500)
   }
 
+  console.log('Called: ArrTheValCA')
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}
@@ -82,5 +86,4 @@ const ArrTheValCA = ({ navigation }) => {
   )
 }
 
-const styles = StyleSheet.create({})
 export default ArrTheValCA

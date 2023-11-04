@@ -7,6 +7,7 @@ import { db_CTRP_Values } from '../../../constants/temp_db/db_CTRP_Values'
 import { GOOD_HABITS, VALUES } from '../../../constants/contentClassification'
 import { CTRPContext } from './CTRPContext'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
+import { useSharedValue } from 'react-native-reanimated'
 
 const CTRPStack = createStackNavigator()
 
@@ -19,7 +20,7 @@ const CTRPNav = () => {
   const { content } = useChildSectionContext()
   const [score, setScore] = useState(0)
   const [displayed, setDisplayed] = useState(SCENE)
-  const [timer, setTimer] = useState(INIT_TIMER)
+  const timer = useSharedValue(INIT_TIMER)
   const [item, setItem] = useState(1)
   const [gameData, setGameData] = useState(null)
 
@@ -62,7 +63,6 @@ const CTRPNav = () => {
         ? db_CTRP_GoodHabits.narrator
         : null
     )
-    console.log('SHEESH')
   }, [content])
 
   return (
@@ -73,7 +73,7 @@ const CTRPNav = () => {
         item,
         setItem,
         timer,
-        setTimer,
+        INIT_TIMER,
         displayed,
         setDisplayed,
         SCENE,

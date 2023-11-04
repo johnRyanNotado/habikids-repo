@@ -17,15 +17,21 @@ import { useKindCatchContext } from './KindCatchContext'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const KindCatchCA = ({ navigation }) => {
-  const { score, timerLimit, narrator, instruction, instructionDuration } =
-    useKindCatchContext()
+  const {
+    score,
+    timer,
+    narrator,
+    instruction,
+    instructionDuration,
+    TIMER_VALUE,
+  } = useKindCatchContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
   const handleStartBtn = () => {
     score.value = 0
-    timerLimit.value = 30
+    timer.value = TIMER_VALUE
     setContent(INSTRUCTIONS) // first show instructions
 
     const instrucTimeout = setTimeout(() => {

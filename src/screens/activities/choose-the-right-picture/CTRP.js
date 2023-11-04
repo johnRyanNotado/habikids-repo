@@ -8,14 +8,16 @@ import ItemBox from '../../../components/activities/choose-the-right-picture/Ite
 import SceneDesc from '../../../components/activities/choose-the-right-picture/SceneDesc'
 import Narrator from '../../../components/activities/Narrator'
 import { getImg } from '../../../utilities/getImg'
-
+import { useChildSectionContext } from '../../context-api/ContextAPI'
+import PausedCard from '../../../components/activities/PausedCard'
+import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useCTRPContext } from './CTRPContext'
-
 const CTRP = ({ navigation }) => {
   const { item, timer, displayed, setDisplayed, OPTIONS, SCENE, narrator } =
     useCTRPContext()
+  const { isGamePaused } = useChildSectionContext()
   const { mainSectWrapper } = styles
-  const { container, centered } = globalStyles
+  const { container, centered, positionAbsolute } = globalStyles
 
   // Displays options/scene after timer
   useEffect(() => {
@@ -23,15 +25,31 @@ const CTRP = ({ navigation }) => {
       case OPTIONS:
         setDisplayed(SCENE)
       case SCENE:
-        const displayTimeout2 = setTimeout(() => {
-          setDisplayed(OPTIONS)
-          clearTimeout(displayTimeout2)
-        }, timer * 1000)
         break
       default:
         setDisplayed(null)
     }
   }, [item])
+
+  // Sets timer for scene
+  useEffect(() => {
+    let displayTimeout
+    if (displayed === SCENE) {
+      displayTimeout = setInterval(() => {
+        if (!isGamePaused) {
+          // Decrements timer if game is not paused
+          timer.value--
+        }
+
+        if (timer.value <= 0) {
+          // Display options if timer runs out
+          clearInterval(displayTimeout)
+          setDisplayed(OPTIONS)
+        }
+      }, 1000)
+    }
+    return () => clearInterval(displayTimeout)
+  })
 
   // Determines what to be displayed depending on the useState "displayed"
   const getComponent = () => {
@@ -61,11 +79,16 @@ const CTRP = ({ navigation }) => {
       resizeMode="contain"
     >
       <View style={[container, centered]}>
+        <View style={[positionAbsolute, centered, { height: '20%' }]}>
+          <ActivityNavBar />
+        </View>
         <Animated.View entering={FadeIn} style={[centered, mainSectWrapper]}>
           <SceneDesc />
           {getComponent()}
         </Animated.View>
         <ItemBox />
+
+        {isGamePaused ? <PausedCard exitGame={goBack} /> : null}
       </View>
     </ImageBackground>
   )

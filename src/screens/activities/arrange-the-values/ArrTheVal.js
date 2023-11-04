@@ -9,28 +9,49 @@ import ItemBox from '../../../components/activities/arrange-the-values/ItemBox'
 import Narrator from '../../../components/activities/Narrator'
 import { getImg } from '../../../utilities/getImg'
 import { useArrTheValContext } from './ArrTheValContext'
+import ActivityNavBar from '../../../components/activities/ActivityNavBar'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
+import PausedCard from '../../../components/activities/PausedCard'
 
 const ArrTheVal = ({ navigation }) => {
   const { item, timer, displayed, setDisplayed, OPTIONS, SCENE, narrator } =
     useArrTheValContext()
-  const { container, centered } = globalStyles
+  const { isGamePaused } = useChildSectionContext()
+  const { container, centered, positionAbsolute } = globalStyles
   const { mainSectWrapper } = styles
 
-  // Displays options/scene after timer if item changes
+  // Changes the displayed content to SCENE if item changes
   useEffect(() => {
     switch (displayed) {
       case OPTIONS:
         setDisplayed(SCENE)
       case SCENE:
-        const displayTimeout2 = setTimeout(() => {
-          setDisplayed(OPTIONS)
-          clearTimeout(displayTimeout2)
-        }, timer * 1000)
         break
       default:
         setDisplayed(null)
     }
+    return
   }, [item])
+
+  // Sets timer for scene
+  useEffect(() => {
+    let displayTimeout
+    if (displayed === SCENE) {
+      displayTimeout = setInterval(() => {
+        if (!isGamePaused) {
+          // Decrements timer if game is not paused
+          timer.value--
+        }
+
+        if (timer.value <= 0) {
+          // Display options if timer runs out
+          clearInterval(displayTimeout)
+          setDisplayed(OPTIONS)
+        }
+      }, 1000)
+    }
+    return () => clearInterval(displayTimeout)
+  })
 
   // Determines what to be displayed depending on the useState "displayed"
   const getComponent = () => {
@@ -53,6 +74,7 @@ const ArrTheVal = ({ navigation }) => {
     navigation.goBack()
   }
 
+  console.log('Called: ArrTheVal')
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}
@@ -60,11 +82,15 @@ const ArrTheVal = ({ navigation }) => {
       resizeMode="contain"
     >
       <View style={[container, centered]}>
+        <View style={[positionAbsolute, centered, { height: '20%' }]}>
+          <ActivityNavBar />
+        </View>
         <Animated.View entering={FadeIn} style={[centered, mainSectWrapper]}>
           <SceneDesc />
           {getComponent()}
         </Animated.View>
         <ItemBox />
+        {isGamePaused ? <PausedCard exitGame={goBack} /> : null}
       </View>
     </ImageBackground>
   )

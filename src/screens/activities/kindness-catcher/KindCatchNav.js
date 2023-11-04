@@ -11,7 +11,7 @@ const KindCatchStack = createStackNavigator()
 
 const KindCatchNav = () => {
   const { selectedYear } = useChildSectionContext()
-  const TIMER_VALUE = 31000
+  const TIMER_VALUE = 31
 
   // get the game data based on selected year
   const kindnessList = db_KindCatch.grade[selectedYear - 1].kindnessList
@@ -22,7 +22,7 @@ const KindCatchNav = () => {
   const instructionDuration = db_KindCatch.instructionDuration * 1000
   const narrator = db_KindCatch.narrator
 
-  const timerLimit = useSharedValue(30)
+  const timer = useSharedValue(TIMER_VALUE)
   const score = useSharedValue(0)
 
   return (
@@ -34,7 +34,7 @@ const KindCatchNav = () => {
         TIMER_VALUE,
         kindnessList,
         badList,
-        timerLimit,
+        timer,
         instruction,
         instructionDuration,
         narrator,

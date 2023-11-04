@@ -81,6 +81,8 @@ const Buttons = () => {
             resizeMode="contain"
             style={{
               height: GOOD_HABITS_DIMENSTION.h,
+              zIndex: -1,
+              borderBottomLeftRadius: 100,
             }}
           />
         </TouchableOpacity>

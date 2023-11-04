@@ -26,6 +26,8 @@ const CTRPCA = ({ navigation }) => {
     narrator,
     instruction,
     instructionDuration,
+    timer,
+    INIT_TIMER,
   } = useCTRPContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
@@ -39,6 +41,7 @@ const CTRPCA = ({ navigation }) => {
     setScore(0)
     setDisplayed(SCENE)
     setItem(1)
+    timer.value = INIT_TIMER
     setContent(INSTRUCTIONS) // first show instructions
 
     const instrucTimeout = setTimeout(() => {

@@ -41,6 +41,7 @@ const NavScreen = () => {
       }
     })
   }
+
   return (
     <ChildDataContext.Provider
       value={{

@@ -14,8 +14,8 @@ const ProfileCard = () => {
     <View style={[positionAbsolute, centered, { zIndex: 10 }]}>
       <View style={[positionAbsolute, profileCardWrapperBg]} />
       <Animated.View
-        entering={BounceIn.duration(1000)}
-        exiting={BounceOut.duration(1000)}
+        entering={BounceIn.duration(500)}
+        exiting={BounceOut.duration(500)}
         style={profileCard}
       >
         <ProfileSection />

@@ -9,6 +9,9 @@ import { Score } from '../../../components/activities/cultural-puzzle/Score'
 import PuzzlePiece from '../../../components/activities/cultural-puzzle/PuzzlePiece'
 import PuzzleSpot from '../../../components/activities/cultural-puzzle/PuzzleSpot'
 import { getImg } from '../../../utilities/getImg'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
+import PausedCard from '../../../components/activities/PausedCard'
+import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useCultPuzzContext } from './CultPuzzContext'
 
 const CultPuzz = ({ navigation }) => {
@@ -16,38 +19,41 @@ const CultPuzz = ({ navigation }) => {
     score,
     timerLimit,
     setTimerLimit,
-    TIMER_VALUE,
     isFinished,
     setIsFinished,
     shuffledEndPos,
     narrator,
   } = useCultPuzzContext()
+  const { positionAbsolute, centered } = globalStyles
+  const { isGamePaused } = useChildSectionContext()
   const { PUZZLE_GAME_DATA } = useCultPuzzContext()
 
   const { container } = globalStyles
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      navigation.goBack()
-    }, TIMER_VALUE)
-
     const interval = setInterval(() => {
-      setTimerLimit((prevState) => prevState - 1)
-
+      if (!isGamePaused) setTimerLimit((prevState) => prevState - 1)
       if (score.value === 4) {
         setIsFinished(true)
         clearInterval(interval)
-        clearTimeout(timeout)
+      }
+
+      if (timerLimit <= 0) {
+        navigation.goBack()
       }
     }, 1000)
     return () => {
-      clearTimeout(timeout)
       clearInterval(interval)
     }
-  }, [])
+  })
 
   // handleTriviaBtn
   const handleTriviaBtn = () => {
+    navigation.goBack()
+  }
+
+  const exitGame = () => {
+    score.value = 0
     navigation.goBack()
   }
 
@@ -58,6 +64,9 @@ const CultPuzz = ({ navigation }) => {
       resizeMode="contain"
     >
       <View style={[container]}>
+        <View style={[positionAbsolute, centered, { height: '20%' }]}>
+          <ActivityNavBar />
+        </View>
         {PUZZLE_GAME_DATA.pieces.map((piece, index) => {
           return (
             <PuzzlePiece
@@ -72,7 +81,7 @@ const CultPuzz = ({ navigation }) => {
           return <PuzzleSpot index={index} theme={PUZZLE_GAME_DATA.theme} />
         })}
         <Score score={score.value} items={PUZZLE_GAME_DATA.pieces.length} />
-        <Timer timerLimit={timerLimit} />
+        <Timer timer={timerLimit} />
 
         {isFinished ? (
           <View style={container}>
@@ -86,6 +95,7 @@ const CultPuzz = ({ navigation }) => {
         ) : (
           <></>
         )}
+        {isGamePaused ? <PausedCard exitGame={exitGame} /> : null}
       </View>
     </ImageBackground>
   )

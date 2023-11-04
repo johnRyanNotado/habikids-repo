@@ -18,8 +18,16 @@ import { getImg } from '../../../utilities/getImg'
 
 const Options = (props) => {
   const { goBack } = props
-  const { item, setItem, ITEM_AMOUNT, setScore, MABUTI, MASAMA } =
-    useArrTheValContext()
+  const {
+    item,
+    setItem,
+    ITEM_AMOUNT,
+    setScore,
+    MABUTI,
+    MASAMA,
+    timer,
+    INIT_TIMER,
+  } = useArrTheValContext()
   const { selectedYear } = useChildSectionContext()
   const { gestureHandlerStyle } = styles
   const { container } = globalStyles
@@ -39,6 +47,9 @@ const Options = (props) => {
   }
 
   const handleCorrBtn = () => {
+    // Set the narration timer
+    timer.value = INIT_TIMER
+
     // Change the score, delay the setting so that the next scene wont render before the end of animation
     const renderDelay = setTimeout(() => {
       setScore((prevState) => prevState + 1)

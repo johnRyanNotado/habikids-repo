@@ -1,21 +1,13 @@
 import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import {
-  ImageBackground,
-  BackHandler,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native'
-import { getImg } from '../../../utilities/getImg'
+import { BackHandler, View } from 'react-native'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import LibraryMainSect from '../../../components/library/LibraryMainSect'
-import COLORS from '../../../constants/colors'
-import { Ionicons } from '@expo/vector-icons'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
+import BackBtn from '../../../components/BackBtn'
 const Library = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
 
@@ -49,18 +41,9 @@ const Library = ({ navigation }) => {
     navigation.navigate('Lessons')
   }
 
-  // Back button component
-  const backBtn = (
-    <TouchableOpacity onPress={handleUndoBtn}>
-      <View style={[globalStyles.centered, styles.homeBtnWrapper]}>
-        <Ionicons name="arrow-undo" size={30} color={COLORS.accent} />
-      </View>
-    </TouchableOpacity>
-  )
-
   return (
     <View style={globalStyles.container}>
-      <ChildSectNavBar backBtn={backBtn} />
+      <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
       <LibraryMainSect
         handleJeepBtn={handleJeepBtn}
         handleBooksBtn={handleBooksBtn}
@@ -71,20 +54,4 @@ const Library = ({ navigation }) => {
   )
 }
 
-const styles = StyleSheet.create({
-  btnWrapper: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 40,
-    height: '100%',
-  },
-  homeBtnWrapper: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.white,
-    borderWidth: 3,
-  },
-})
 export default Library

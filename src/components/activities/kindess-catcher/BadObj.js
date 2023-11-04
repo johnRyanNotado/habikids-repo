@@ -10,6 +10,7 @@ import Animated, {
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from '../../../constants/windowConstants'
 import { getImg } from '../../../utilities/getImg'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const BASKET_DIMENSION = {
   w: 130,
@@ -25,7 +26,8 @@ const OBJ_DIMENSION = {
 }
 
 const BadObj = (props) => {
-  const { basketPos, wait, badness } = props
+  const { basketPos, wait, badness, waitingTime, timer, setWait } = props
+  const { isGamePaused } = useChildSectionContext()
   const { badnessObj, custText, apple } = styles
   const { centered } = globalStyles
 
@@ -35,7 +37,7 @@ const BadObj = (props) => {
     initialPositionX = 0
   }
 
-  // Get the initial position at y axis above  the screen
+  // Get the initial position at y axis above the screen
   const initialPositionY = 0 - OBJ_DIMENSION.h
 
   // Set the initial position and direction
@@ -47,13 +49,48 @@ const BadObj = (props) => {
   useEffect(() => {
     let interval
     if (!wait) {
-      direction.value.y = 1
+      if (!isGamePaused) direction.value.y = 1
       interval = setInterval(() => {
         renderObj()
       }, DELTA)
     }
     return () => clearInterval(interval)
-  }, [wait])
+  })
+
+  useEffect(() => {
+    // if game is paused set the direction to none
+    if (isGamePaused) {
+      direction.value = { x: 0, y: 0 }
+    } else if (!isGamePaused && wait) {
+      // decrement wait interval every second unless the game is paused
+      direction.value.y = 1
+    }
+  }, [isGamePaused])
+
+  useEffect(() => {
+    // decrement wait interval every second unless the game is paused
+    const waitInterval = setInterval(() => {
+      if (!isGamePaused) {
+        console.log(
+          '\t',
+          'Waiting Time: ',
+          waitingTime.value,
+          '\tIs game paused: ',
+          isGamePaused
+        )
+        waitingTime.value = waitingTime.value - 1000
+      }
+      // clear interval if waiting interval is <= 0 or timer is <= 0
+      if (waitingTime.value <= 0 || timer.value <= 0) {
+        if (waitingTime.value <= 0) {
+          setWait(false)
+        }
+        clearInterval(waitInterval)
+        waitingTime.value = 0
+      }
+    }, 1000)
+    return () => clearInterval(waitInterval)
+  })
 
   const renderObj = () => {
     let nextPos = getNextPos(direction.value)

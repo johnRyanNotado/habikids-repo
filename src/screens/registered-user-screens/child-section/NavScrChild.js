@@ -59,6 +59,9 @@ const NavScrChild = ({ navigation }) => {
     navigation.navigate('Settings')
   }
 
+  // for the games to determine if the user pause a game or not
+  const [isGamePaused, setIsGamePaused] = useState(false)
+
   // useState for changing the contents of the main section
   const [content, setContent] = useState(BUTTONS)
 
@@ -67,6 +70,8 @@ const NavScrChild = ({ navigation }) => {
     setIsChildChosen(false)
     navigation.navigate('Home')
   }
+
+  console.log('Called: NacSrcChild')
 
   return (
     <ChildSectionContext.Provider
@@ -91,6 +96,8 @@ const NavScrChild = ({ navigation }) => {
         setSelectedYear,
         content,
         setContent,
+        isGamePaused,
+        setIsGamePaused,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">

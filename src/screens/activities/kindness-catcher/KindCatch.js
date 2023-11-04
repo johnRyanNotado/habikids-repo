@@ -17,6 +17,9 @@ import KindessObj from '../../../components/activities/kindess-catcher/KindessOb
 import BadObj from '../../../components/activities/kindess-catcher/BadObj'
 import { useKindCatchContext } from './KindCatchContext'
 import { getImg } from '../../../utilities/getImg'
+import ActivityNavBar from '../../../components/activities/ActivityNavBar'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
+import PausedCard from '../../../components/activities/PausedCard'
 
 const DELAY_INTERVAL = 3000
 const BASKET_DIMENSION = {
@@ -25,30 +28,31 @@ const BASKET_DIMENSION = {
 }
 
 const KindCatch = ({ navigation }) => {
-  const { score, TIMER_VALUE, kindnessList, timerLimit, badList } =
-    useKindCatchContext()
+  const { score, kindnessList, timer, badList } = useKindCatchContext()
+  const { isGamePaused } = useChildSectionContext()
   const { basketStyle, basketWrapper, custTitle } = styles
   const { container, centered, positionAbsolute, titleText } = globalStyles
   let kindnessDelay = 1000
   let badnessDelay = 1400
 
-  // Sets timer for the game
+  // Sets timer for game
   useEffect(() => {
-    // Go back after 30 sec
-    const timeout = setTimeout(() => {
-      navigation.goBack()
-    }, TIMER_VALUE)
+    const timerInterval = setInterval(() => {
+      console.log('Timer: ', timer.value)
+      if (!isGamePaused) {
+        // Decrements timer if game is not paused
+        timer.value--
+      }
 
-    // Changes the timerTxt every sec
-    const interval = setInterval(() => {
-      timerLimit.value--
+      if (timer.value <= 0) {
+        // Display options if timer runs out
+        clearInterval(timerInterval)
+        navigation.goBack()
+      }
     }, 1000)
 
-    return () => {
-      clearInterval(interval)
-      clearTimeout(timeout)
-    }
-  }, [])
+    return () => clearInterval(timerInterval)
+  })
 
   // Handles the basket's initial position
   const basketPos = useSharedValue({
@@ -77,16 +81,17 @@ const KindCatch = ({ navigation }) => {
   const getKindObj = (kindness, index) => {
     const [wait, setWait] = useState(true)
     if (index) kindnessDelay += DELAY_INTERVAL
-    setTimeout(() => {
-      setWait(false)
-    }, Math.random() * 2000 + kindnessDelay)
+    const waitingTime = useSharedValue(Math.random() * 2000 + kindnessDelay)
 
     return (
       <KindessObj
         basketPos={basketPos}
         wait={wait}
+        setWait={setWait}
         kindness={kindness}
         score={score}
+        waitingTime={waitingTime}
+        timer={timer.value}
       />
     )
   }
@@ -95,11 +100,24 @@ const KindCatch = ({ navigation }) => {
   const getBadObj = (badness, index) => {
     const [wait, setWait] = useState(true)
     if (index) badnessDelay += DELAY_INTERVAL
-    setTimeout(() => {
-      setWait(false)
-    }, Math.random() * 2000 + badnessDelay) // Add a random value to the delay so that it will be distinct
+    const waitingTime = useSharedValue(Math.random() * 2000 + badnessDelay)
 
-    return <BadObj basketPos={basketPos} wait={wait} badness={badness} />
+    return (
+      <BadObj
+        basketPos={basketPos}
+        wait={wait}
+        setWait={setWait}
+        badness={badness}
+        waitingTime={waitingTime}
+        timer={timer}
+      />
+    )
+  }
+
+  const handleExit = () => {
+    score.value = 0
+    timer.value = 0
+    navigation.goBack()
   }
 
   return (
@@ -110,6 +128,11 @@ const KindCatch = ({ navigation }) => {
     >
       <GestureHandlerRootView style={[container]}>
         <View style={[container, centered]}>
+          <View style={[positionAbsolute, centered, { height: '20%' }]}>
+            <ActivityNavBar />
+          </View>
+          {isGamePaused ? <PausedCard exitGame={handleExit} /> : null}
+
           {/* Kindess Obj */}
           {kindnessList.map((item, index) => {
             return getKindObj(item.kindness, index)
@@ -136,7 +159,7 @@ const KindCatch = ({ navigation }) => {
           <Text style={[titleText, custTitle]}>{score.value}</Text>
 
           {/* Timer */}
-          <Timer timerLimit={timerLimit.value} />
+          <Timer timer={timer.value} />
 
           <PanGestureHandler onGestureEvent={gestureHandler}>
             <Animated.View

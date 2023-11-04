@@ -5,14 +5,14 @@ import COLORS from '../constants/colors'
 import { MaterialIcons } from '@expo/vector-icons'
 
 const Timer = (props) => {
-  const { timerLimit } = props
+  const { timer } = props
   const { timerTxt, timerWrapper } = styles
-  const { centered, positionAbsolute, titleText } = globalStyles
+  const { centered, positionAbsolute } = globalStyles
 
   return (
     <View style={[positionAbsolute, centered, timerWrapper]}>
       <MaterialIcons name="timer" size={26} color={COLORS.accent} />
-      <Text style={timerTxt}>{timerLimit}</Text>
+      <Text style={timerTxt}>{timer}</Text>
     </View>
   )
 }

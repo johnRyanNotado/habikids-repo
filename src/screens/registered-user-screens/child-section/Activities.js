@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { BackHandler, StyleSheet, TouchableOpacity, View } from 'react-native'
-import COLORS from '../../../constants/colors'
-import { Ionicons } from '@expo/vector-icons'
+import { BackHandler, View } from 'react-native'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import ProfileCard from '../../../components/home-child/ProfileCard'
@@ -19,13 +17,12 @@ import {
   ActivitiesContext,
 } from '../../context-api/ContextAPI'
 import JeepSvg from '../../../svg/bg/JeepSvg'
+import BackBtn from '../../../components/BackBtn'
 
 const Activities = ({ navigation }) => {
   const { isProfileClicked, setSelectedYear, content, setContent } =
     useChildSectionContext()
-
-  const { homeBtnWrapper } = styles
-  const { container, centered } = globalStyles
+  const { container } = globalStyles
 
   // useState for opening and closing the dropdown for the selected Year
   const [isOpen, setIsOpen] = useState(false)
@@ -82,20 +79,9 @@ const Activities = ({ navigation }) => {
   // useState for identifies which function does the undo back calls
   const [undoBtnFunc, setUndoBtnFunc] = useState(() => handleUndoBtn)
 
-  // Back button component
-  const backBtn = (
-    <TouchableOpacity onPress={undoBtnFunc}>
-      <View style={[centered, homeBtnWrapper]}>
-        <Ionicons name="arrow-undo" size={30} color={COLORS.accent} />
-      </View>
-    </TouchableOpacity>
-  )
-
   return (
     <ActivitiesContext.Provider
       value={{
-        // content,
-        // setContent,
         undoBtnFunc,
         setUndoBtnFunc,
         isOpen,
@@ -105,7 +91,7 @@ const Activities = ({ navigation }) => {
     >
       <JeepSvg />
       <View style={container}>
-        <ChildSectNavBar backBtn={backBtn} />
+        <ChildSectNavBar backBtn={<BackBtn onPress={undoBtnFunc} />} />
         <ActivitiesMainSect />
         {isProfileClicked ? <ProfileCard /> : <></>}
       </View>
@@ -113,14 +99,4 @@ const Activities = ({ navigation }) => {
   )
 }
 
-const styles = StyleSheet.create({
-  homeBtnWrapper: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    backgroundColor: COLORS.primary,
-    borderColor: COLORS.white,
-    borderWidth: 3,
-  },
-})
 export default Activities
