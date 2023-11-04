@@ -12,6 +12,7 @@ import ActivityCard from '../../../components/ActivityCard'
 import ActivityNarr from '../../../components/activities/ActivityNarr'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import BackBtn from '../../../components/BackBtn'
+import ProfileCard from '../../../components/home-child/ProfileCard'
 import { useCTRPContext } from './CTRPContext'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 
