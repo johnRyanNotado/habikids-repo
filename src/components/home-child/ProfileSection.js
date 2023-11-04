@@ -8,8 +8,14 @@ import { useChildDataContext } from '../../screens/context-api/ContextAPI'
 const ProfileSection = () => {
   const { chosenChild } = useChildDataContext()
   const { name, age, avatarNum } = chosenChild
-  const { profileSection, avatar, detailsWrapper, avatarWrapper, genTxt } =
-    styles
+  const {
+    profileSection,
+    avatar,
+    detailsWrapper,
+    avatarWrapper,
+    genTxt,
+    txtWrapper,
+  } = styles
   const { centered } = globalStyles
 
   return (
@@ -18,8 +24,12 @@ const ProfileSection = () => {
         <Image source={corresIcon[avatarNum]?.link} style={avatar} />
       </View>
       <View style={[centered, detailsWrapper]}>
-        <Text style={genTxt}>{`Pangalan:  ${name}`}</Text>
-        <Text style={genTxt}>{`Edad:  ${age} Na Taon`}</Text>
+        <View style={txtWrapper}>
+          <Text style={genTxt}>{`Pangalan:  ${name}`}</Text>
+        </View>
+        <View style={txtWrapper}>
+          <Text style={genTxt}>{`Edad:  ${age} Na Taon`}</Text>
+        </View>
       </View>
     </View>
   )
@@ -35,11 +45,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   avatar: {
-    height: 100,
-    width: 100,
+    height: 110,
+    width: 110,
     borderColor: COLORS.greenPrimary,
     borderWidth: 8,
-    borderRadius: 50,
+    borderRadius: 60,
   },
   detailsWrapper: {
     height: '100%',
@@ -51,16 +61,20 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '40%',
   },
-  genTxt: {
-    fontSize: 22,
-    width: '90%',
-    fontFamily: 'QuiapoRegular',
+  txtWrapper: {
     borderColor: COLORS.greenPrimary,
     backgroundColor: COLORS.greenSecond,
-    paddingVertical: 6,
     borderWidth: 2,
-    paddingHorizontal: 15,
     borderRadius: 10,
+    paddingVertical: 3,
+    width: '100%',
+  },
+  genTxt: {
+    fontSize: 25,
+    width: '100%',
+    fontFamily: 'QuiapoRegular',
+    paddingVertical: 6,
+    paddingHorizontal: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },

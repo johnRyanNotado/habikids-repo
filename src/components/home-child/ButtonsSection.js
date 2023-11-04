@@ -25,26 +25,29 @@ const ButtonsSection = () => {
     <View style={btnSection}>
       <TouchableOpacity style={[btnElement, { flex: 1.5 }]}>
         <Button
-          label="Cancel"
+          label="Kanselahin"
           onPress={handleCancel}
           btnStyle={{
             backgroundColor: COLORS.grayPrimary,
-            width: 100,
+            width: 140,
             paddingVertical: 10,
             borderRadius: 50,
           }}
           txtStyle={{
             color: COLORS.white,
+            fontFamily: 'QuiapoRegular',
+            fontWeight: '400',
+            fontSize: 25,
           }}
         />
       </TouchableOpacity>
       <TouchableOpacity style={btnElement} onPress={handleSettingsBtn}>
-        <View style={[btnIconWrapper, centered]}>
+        <View style={[centered, btnIconWrapper]}>
           <Ionicons name="settings-sharp" size={30} color={COLORS.greenThird} />
         </View>
       </TouchableOpacity>
       <TouchableOpacity style={btnElement} onPress={handleSwitchProfBtn}>
-        <View style={[btnIconWrapper, centered]}>
+        <View style={[centered, btnIconWrapper]}>
           <MaterialCommunityIcons
             name="account-switch"
             size={30}

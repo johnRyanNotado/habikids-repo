@@ -4,7 +4,6 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Animated, { BounceInRight } from 'react-native-reanimated'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { getImg } from '../../../utilities/getImg'
 
 const Button = (props) => {
   const { handleBtn, eventHandler, animatedStyle, delay, label, source } = props
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   btnWrapper: {
-    borderWidth: 5,
     height: 200,
     width: 200,
     borderRadius: 20,

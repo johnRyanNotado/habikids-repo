@@ -28,6 +28,7 @@ import {
 } from '../../context-api/ContextAPI'
 import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
+import Jeep from '../../../components/lessons/Jeep'
 
 const Lessons = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
@@ -116,22 +117,7 @@ const Lessons = ({ navigation }) => {
         resizeMode="contain"
       >
         <View style={[container, centered]}>
-          <View
-            style={[
-              positionAbsolute,
-              {
-                left: 'auto',
-                right: '-33%',
-                marginTop: '14%',
-              },
-            ]}
-          >
-            <Image
-              source={getImg.components.jeepRed.link}
-              style={{ height: 260, zIndex: -1 }}
-              resizeMode="contain"
-            />
-          </View>
+          <Jeep />
           <ChildSectNavBar backBtn={backBtn} />
           <LessonsMainSect />
           {isProfileClicked ? <ProfileCard /> : <></>}

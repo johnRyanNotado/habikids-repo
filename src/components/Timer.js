@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
   },
   timerWrapper: {
     top: 10,
-    left: 'auto',
-    right: 20,
+    right: 'auto',
+    left: 20,
     fontWeight: '400',
     backgroundColor: COLORS.primaryTrans,
     width: 40,

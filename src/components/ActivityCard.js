@@ -47,8 +47,8 @@ const ActivityCard = (props) => {
 
 const styles = StyleSheet.create({
   gameCard: {
-    width: 400,
-    height: 220,
+    width: 350,
+    height: 200,
     backgroundColor: COLORS.white,
     borderColor: COLORS.accent,
     borderWidth: 5,

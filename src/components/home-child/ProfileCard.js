@@ -4,16 +4,20 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import ProfileSection from './ProfileSection'
 import ButtonsSection from './ButtonsSection'
-import Animated, { BounceIn } from 'react-native-reanimated'
+import Animated, { BounceIn, BounceOut } from 'react-native-reanimated'
 
 const ProfileCard = () => {
   const { profileCard, profileCardWrapperBg } = styles
   const { centered, positionAbsolute } = globalStyles
 
   return (
-    <View style={[positionAbsolute, centered]}>
+    <View style={[positionAbsolute, centered, { zIndex: 10 }]}>
       <View style={[positionAbsolute, profileCardWrapperBg]} />
-      <Animated.View entering={BounceIn} style={profileCard}>
+      <Animated.View
+        entering={BounceIn.duration(1000)}
+        exiting={BounceOut.duration(1000)}
+        style={profileCard}
+      >
         <ProfileSection />
         <ButtonsSection />
       </Animated.View>
@@ -23,16 +27,17 @@ const ProfileCard = () => {
 
 const styles = StyleSheet.create({
   profileCard: {
-    borderColor: COLORS.primary,
+    borderColor: COLORS.accent,
+    borderWidth: 5,
     backgroundColor: COLORS.white,
-    borderRadius: 20,
+    borderRadius: 10,
     elevation: 5,
     minWidth: 380,
     minHeight: 215,
     width: '30%',
-    height: '30%',
-    maxWidth: 230,
-    maxHeight: 430,
+    height: '50%',
+    maxWidth: 400,
+    maxHeight: 250,
   },
   profileCardWrapperBg: {
     backgroundColor: COLORS.grayPrimary,

@@ -10,12 +10,17 @@ import {
 } from '../../../constants/contentClassification'
 import ActivityNarr from '../../../components/activities/ActivityNarr'
 import ActivityCard from '../../../components/ActivityCard'
+import ProfileCard from '../../../components/home-child/ProfileCard'
+import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
+import BackBtn from '../../../components/BackBtn'
 import { useKindCatchContext } from './KindCatchContext'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const KindCatchCA = ({ navigation }) => {
   const { score, timerLimit, narrator, instruction, instructionDuration } =
     useKindCatchContext()
-  const { container, centered } = globalStyles
+  const { isProfileClicked } = useChildSectionContext()
+  const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
   const handleStartBtn = () => {
@@ -47,16 +52,26 @@ const KindCatchCA = ({ navigation }) => {
     >
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
-          <ActivityCard
-            score={score.value}
-            handleStartBtn={handleStartBtn}
-            handleCancelBtn={handleCancelBtn}
-          />
+          <>
+            <View
+              style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
+            >
+              <ChildSectNavBar
+                backBtn={<BackBtn onPress={handleCancelBtn} />}
+              />
+            </View>
+            <ActivityCard
+              score={score.value}
+              handleStartBtn={handleStartBtn}
+              handleCancelBtn={handleCancelBtn}
+            />
+          </>
         ) : content === INSTRUCTIONS ? (
           <ActivityNarr narrator={narrator} instruction={instruction} />
         ) : (
           <></>
         )}
+        {isProfileClicked ? <ProfileCard /> : null}
       </View>
     </ImageBackground>
   )

@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
   custContainer: { width: '100%', justifyContent: 'flex-start' },
   narrTxtWrapper: {
     backgroundColor: COLORS.whiteTrans,
-    borderRadius: 50,
+    borderRadius: 20,
     paddingVertical: 20,
+    paddingHorizontal: 20,
     width: '80%',
     marginTop: 40,
   },

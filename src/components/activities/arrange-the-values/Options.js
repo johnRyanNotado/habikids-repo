@@ -21,15 +21,17 @@ const Options = (props) => {
   const { item, setItem, ITEM_AMOUNT, setScore, MABUTI, MASAMA } =
     useArrTheValContext()
   const { selectedYear } = useChildSectionContext()
-  const { section, btnWrapper, txtStyle, gestureHandlerStyle } = styles
-  const { container, centered } = globalStyles
+  const { gestureHandlerStyle } = styles
+  const { container } = globalStyles
 
   const answer = db_ArrTheVal.grade[selectedYear - 1].item[item - 1].answer
 
   const corrScale = useSharedValue(1)
+  const corrBackgroundColor = useSharedValue(COLORS.primaryTrans)
   const corrBorderColor = useSharedValue(COLORS.accent)
 
   const wrongScale = useSharedValue(1)
+  const wrongBackgroundColor = useSharedValue(COLORS.primaryTrans)
   const wrongBorderColor = useSharedValue(COLORS.accent)
 
   const handleWrongBtn = () => {
@@ -60,6 +62,7 @@ const Options = (props) => {
     return {
       transform: [{ scale: corrScale.value }],
       borderColor: corrBorderColor.value,
+      backgroundColor: corrBackgroundColor.value,
     }
   })
 
@@ -68,6 +71,7 @@ const Options = (props) => {
     return {
       transform: [{ scale: wrongScale.value }],
       borderColor: wrongBorderColor.value,
+      backgroundColor: wrongBackgroundColor.value,
     }
   })
 
@@ -76,10 +80,14 @@ const Options = (props) => {
     onStart: (event) => {
       corrScale.value = 1.1
       corrBorderColor.value = COLORS.greenFifth
+      corrBackgroundColor.value = COLORS.greenFifth
     },
     onEnd: (event) => {
       corrScale.value = withTiming(1, { duration: 500 })
       corrBorderColor.value = withTiming(COLORS.accent, {
+        duration: 500,
+      })
+      corrBackgroundColor.value = withTiming(COLORS.primary, {
         duration: 500,
       })
     },
@@ -90,10 +98,14 @@ const Options = (props) => {
     onStart: (event) => {
       wrongScale.value = 1.1
       wrongBorderColor.value = COLORS.redThird
+      wrongBackgroundColor.value = COLORS.redThird
     },
     onEnd: (event) => {
       wrongScale.value = withTiming(1, { duration: 500 })
       wrongBorderColor.value = withTiming(COLORS.accent, { duration: 500 })
+      wrongBackgroundColor.value = withTiming(COLORS.primary, {
+        duration: 500,
+      })
     },
   })
 

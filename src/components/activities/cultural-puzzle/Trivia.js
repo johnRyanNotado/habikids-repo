@@ -142,7 +142,8 @@ const styles = StyleSheet.create({
   triviaBtnTxt: {
     color: COLORS.white,
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: 'Quiapo',
+    fontWeight: '400',
   },
 })
 

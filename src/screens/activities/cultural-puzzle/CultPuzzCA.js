@@ -10,6 +10,10 @@ import {
 } from '../../../constants/contentClassification'
 import ActivityCard from '../../../components/ActivityCard'
 import ActivityNarr from '../../../components/activities/ActivityNarr'
+import ProfileCard from '../../../components/home-child/ProfileCard'
+import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
+import BackBtn from '../../../components/BackBtn'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 import { useCultPuzzContext } from './CultPuzzContext'
 
 const CultPuzzCA = ({ navigation }) => {
@@ -23,7 +27,8 @@ const CultPuzzCA = ({ navigation }) => {
     instruction,
     instructionDuration,
   } = useCultPuzzContext()
-  const { container, centered } = globalStyles
+  const { isProfileClicked } = useChildSectionContext()
+  const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
   const handleStartBtn = () => {
@@ -59,16 +64,26 @@ const CultPuzzCA = ({ navigation }) => {
     >
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
-          <ActivityCard
-            score={score.value}
-            handleStartBtn={handleStartBtn}
-            handleCancelBtn={handleCancelBtn}
-          />
+          <>
+            <View
+              style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
+            >
+              <ChildSectNavBar
+                backBtn={<BackBtn onPress={handleCancelBtn} />}
+              />
+            </View>
+            <ActivityCard
+              score={score.value}
+              handleStartBtn={handleStartBtn}
+              handleCancelBtn={handleCancelBtn}
+            />
+          </>
         ) : content === INSTRUCTIONS ? (
           <ActivityNarr narrator={narrator} instruction={instruction} />
         ) : (
           <></>
         )}
+        {isProfileClicked ? <ProfileCard /> : null}
       </View>
     </ImageBackground>
   )

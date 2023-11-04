@@ -9,11 +9,22 @@ import {
 } from '../../../constants/contentClassification'
 import ActivityCard from '../../../components/ActivityCard'
 import ActivityNarr from '../../../components/activities/ActivityNarr'
+import ProfileCard from '../../../components/home-child/ProfileCard'
+import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
+import BackBtn from '../../../components/BackBtn'
 import { useArrTheValContext } from './ArrTheValContext'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const ArrTheValCA = ({ navigation }) => {
-  const { score, setScore, narrator, instruction, instructionDuration } =
-    useArrTheValContext()
+  const {
+    score,
+    setScore,
+    narrator,
+    instruction,
+    instructionDuration,
+    setItem,
+  } = useArrTheValContext()
+  const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
@@ -23,6 +34,7 @@ const ArrTheValCA = ({ navigation }) => {
 
   const handleStartBtn = () => {
     setScore(0)
+    setItem(1)
     setContent(INSTRUCTIONS) // first show instructions
 
     const instrucTimeout = setTimeout(() => {
@@ -45,16 +57,26 @@ const ArrTheValCA = ({ navigation }) => {
     >
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
-          <ActivityCard
-            score={score}
-            handleStartBtn={handleStartBtn}
-            handleCancelBtn={handleCancelBtn}
-          />
+          <>
+            <View
+              style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
+            >
+              <ChildSectNavBar
+                backBtn={<BackBtn onPress={handleCancelBtn} />}
+              />
+            </View>
+            <ActivityCard
+              score={score}
+              handleStartBtn={handleStartBtn}
+              handleCancelBtn={handleCancelBtn}
+            />
+          </>
         ) : content === INSTRUCTIONS ? (
           <ActivityNarr narrator={narrator} instruction={instruction} />
         ) : (
           <></>
         )}
+        {isProfileClicked ? <ProfileCard /> : null}
       </View>
     </ImageBackground>
   )
