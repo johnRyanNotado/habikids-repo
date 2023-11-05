@@ -21,13 +21,27 @@ const Stack = createStackNavigator()
 
 export default function App() {
   const [shouldPlay, setShouldPlay] = useState(false)
+  const [user, setUser] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const [isError, setIsError] = useState(false)
   // handle back press
   useEffect(handleBckPrsExit, [])
   // Hide status bar
   StatusBar.setHidden(true)
 
   return (
-    <AppContext.Provider value={{ shouldPlay, setShouldPlay }}>
+    <AppContext.Provider
+      value={{
+        shouldPlay,
+        setShouldPlay,
+        user,
+        setUser,
+        isLoading,
+        setIsLoading,
+        isError,
+        setIsError,
+      }}
+    >
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Welcome">
           <Stack.Screen

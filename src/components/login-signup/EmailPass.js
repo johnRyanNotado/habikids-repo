@@ -8,8 +8,9 @@ import {
 import React, { useState } from 'react'
 import COLORS from '../../constants/colors'
 import { MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons'
+const EmailPass = (props) => {
+  const { setEmail, setPassword } = props
 
-const EmailPass = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const {
     formWrapperEmail,
@@ -35,6 +36,7 @@ const EmailPass = () => {
             placeholder="Halimbawa: pangalan@gmail.com"
             keyboardType="email-address"
             style={inputTxt}
+            onChangeText={(newEmail) => setEmail(newEmail)}
           />
         </View>
       </View>
@@ -49,6 +51,7 @@ const EmailPass = () => {
             placeholder="Enter your password"
             secureTextEntry={isPasswordShown}
             style={inputTxt}
+            onChangeText={(newPass) => setPassword(newPass)}
           />
 
           <TouchableOpacity
@@ -56,9 +59,9 @@ const EmailPass = () => {
             onPress={() => setIsPasswordShown(!isPasswordShown)}
           >
             {isPasswordShown === false ? (
-              <Feather name="eye-off" size={24} color={COLORS.greenPrimary} />
-            ) : (
               <Feather name="eye" size={24} color={COLORS.greenPrimary} />
+            ) : (
+              <Feather name="eye-off" size={24} color={COLORS.greenPrimary} />
             )}
           </TouchableOpacity>
         </View>

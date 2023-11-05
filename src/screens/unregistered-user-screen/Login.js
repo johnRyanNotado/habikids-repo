@@ -6,7 +6,7 @@ import {
   Pressable,
   BackHandler,
 } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import Button from '../../components/Button'
@@ -14,8 +14,18 @@ import Message from '../../components/login-signup/Message'
 import EmailPass from '../../components/login-signup/EmailPass'
 import { LOGIN_MESSAGE } from '../../constants/textOptions'
 import { LWGreenTop } from '../../constants/svg/layeredWaves'
+import { useAppContext } from '../context-api/ContextAPI'
+import LoadingScreen from '../LoadingScreen'
+import { validEmail } from '../../utilities/validFields'
+import { loginUrl } from '../../constants/db_config'
+import FieldsError from '../../components/login-signup/FieldsError'
 
 const Login = ({ navigation }) => {
+  const { isLoading, isError, setIsLoading, setIsError } = useAppContext()
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
+  const [response, setResponse] = useState(null)
+  const [fieldsErr, setFieldsErr] = useState('')
   const {
     loginAccWrapper,
     askForAccWrapper,
@@ -48,16 +58,85 @@ const Login = ({ navigation }) => {
     return () => backHandler.remove()
   }, [])
 
-  const handleLogin = () => {
-    navigation.navigate('NavScreen')
+  const handleLogin = async () => {
+    let isValid = false
+    if (email && password) {
+      if (!validEmail.test(email)) {
+        setFieldsErr('Hindi tanggap ang email!')
+      } else {
+        setFieldsErr('')
+        isValid = true
+      }
+    } else {
+      setFieldsErr('Kailangan ng parehong email at password!')
+    }
+
+    const logIn = async () => {
+      try {
+        const resp = await fetch(loginUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            user_email: `${email}`,
+            user_password: `${password}`,
+          }),
+        }).catch((err) => console.log(err))
+
+        const response = await resp.json()
+        setResponse(response)
+      } catch (err) {
+        console.log('Error: ', err)
+        setIsError(true)
+      }
+      setIsLoading(false)
+    }
+
+    if (isValid) {
+      setIsLoading(true)
+      await logIn()
+    }
+  }
+
+  useEffect(() => {
+    console.log('Response: ', response)
+    if (response) {
+      if (response.id === 101) {
+        setFieldsErr('')
+        navigation.navigate('NavScreen')
+      } else if (response.id === 401) {
+        setFieldsErr('Kailangan ng parehong email at password!')
+      } else if (response.id === 403) {
+        setFieldsErr('Hindi makilala ng database ang email')
+      } else if (response.id === 404) {
+        setFieldsErr('Mali ang password')
+      } else if (response.id === 400) {
+        setIsError(true)
+      }
+      setIsLoading(false)
+    }
+  }, [response])
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+  if (isError) {
+    return (
+      <View>
+        <Text> {`Something went wrong :( `}</Text>
+      </View>
+    )
   }
 
   return (
     <View style={[container, centered]}>
       <LWGreenTop style={bgStyle} />
       <View style={loginAccWrapper}>
+        <FieldsError fieldsErr={fieldsErr} />
         <Message messageTxt={LOGIN_MESSAGE} />
-        <EmailPass />
+        <EmailPass setEmail={setEmail} setPassword={setPassword} />
         <View style={custButtonWrapper}>
           <Button
             label="Login"
@@ -67,9 +146,9 @@ const Login = ({ navigation }) => {
           />
         </View>
         <View style={askForAccWrapper}>
-          <Text style={askForAccText}>Don't have an account?</Text>
+          <Text style={askForAccText}>Wala ka pang account?</Text>
           <Pressable onPress={() => navigation.navigate('Signup')}>
-            <Text style={askForAccPressable}>Register</Text>
+            <Text style={askForAccPressable}>Mag-Register</Text>
           </Pressable>
         </View>
       </View>
