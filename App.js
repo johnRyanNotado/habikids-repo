@@ -24,6 +24,8 @@ export default function App() {
   const [user, setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
+  const [dataChanged, setDataChanged] = useState(0)
+
   // handle back press
   useEffect(handleBckPrsExit, [])
   // Hide status bar
@@ -40,6 +42,8 @@ export default function App() {
         setIsLoading,
         isError,
         setIsError,
+        dataChanged,
+        setDataChanged,
       }}
     >
       <NavigationContainer>

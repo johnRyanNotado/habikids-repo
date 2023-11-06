@@ -3,11 +3,18 @@ import { View, StyleSheet } from 'react-native'
 import COLORS from '../../constants/colors'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import Button from '../Button'
-import { useChildDataContext } from '../../screens/context-api/ContextAPI'
+import { editLearnerUrl } from '../../constants/db_config'
+import {
+  useAppContext,
+  useChildDataContext,
+  useChosenChildContext,
+} from '../../screens/context-api/ContextAPI'
 
 const ButtonSection = () => {
-  const { setChildData, chosenChild, setIsChildChosen, setChosenChild } =
+  const { chosenChild, setIsChildChosen, setChosenChild } =
     useChildDataContext()
+  const { setResponse } = useChosenChildContext()
+  const { user, setIsLoading, setIsError } = useAppContext()
   const { editBtnWrapper, okayBtn, cancelBtn } = styles
 
   // removes chosen child component
@@ -17,37 +24,52 @@ const ButtonSection = () => {
   }
 
   // saves the changes
-  const handleOkay = () => {
+  const handleOkay = async () => {
     setIsChildChosen(false)
     setChosenChild(EMPTY_CHILD_OBJ)
 
-    // replaces the value of the chosen child with a new one
-    setChildData((prevItems) =>
-      prevItems.map((item) => {
-        if (item.id === chosenChild.id) {
-          return chosenChild
-        } else {
-          return item
-        }
-      })
-    )
+    try {
+      const resp = await fetch(editLearnerUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          user_id: user.user_id,
+          learner_id: chosenChild.id,
+          name: chosenChild.name,
+          age: chosenChild.age,
+          avatarNum: chosenChild.avatarNum,
+        }),
+      }).catch((err) => console.log(err))
+
+      const response = await resp.json()
+      setResponse(response)
+    } catch (err) {
+      console.log('Error: ', err)
+      setIsError(true)
+    }
+    setIsLoading(false)
   }
   return (
     <View style={editBtnWrapper}>
       <Button
-        label="Cancel"
+        label="Kanselahin"
         onPress={handleCancel}
         btnStyle={cancelBtn}
         txtStyle={{
           color: COLORS.white,
+          fontFamily: 'QuiapoRegular',
         }}
       />
       <Button
-        label="Okay"
+        label="I-Save"
         onPress={handleOkay}
         btnStyle={okayBtn}
         txtStyle={{
           color: COLORS.white,
+          fontFamily: 'QuiapoRegular',
         }}
       />
     </View>

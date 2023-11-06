@@ -1,5 +1,12 @@
 import React, { useState, useEffect, createContext, useContext } from 'react'
-import { BackHandler, View, ScrollView, Text, Switch } from 'react-native'
+import {
+  BackHandler,
+  View,
+  ScrollView,
+  Text,
+  Switch,
+  Alert,
+} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
@@ -10,10 +17,13 @@ import ChildSect from '../../components/manage-profile/ChildSect'
 import {
   useChildDataContext,
   ChosenChildContext,
+  useAppContext,
 } from '../context-api/ContextAPI'
+import LoadingScreen from '../LoadingScreen'
 
 const ManageProfiles = ({ navigation }) => {
   const { handleChosenChild, isChildChosen } = useChildDataContext()
+  const { isLoading, isError, setDataChanged, setIsError } = useAppContext()
   const { custContainer, cardWrapper } = styles
   const { centered, container } = globalStyles
 
@@ -31,6 +41,31 @@ const ManageProfiles = ({ navigation }) => {
 
     return () => backHandler.remove()
   }, [])
+
+  // for the handling the response of the server when updating the learners
+  const [response, setResponse] = useState(null)
+
+  useEffect(() => {
+    console.log('Response: ', response)
+    if (response) {
+      if (response.id === 101) {
+        setDataChanged((prevState) => prevState + 1)
+      } else if (response.id === 408) {
+        Alert.alert(
+          'Hindi tanggap ang pangalan.',
+          'Ang pangalan na iyong inilagay ay mayroon ng kapareho.'
+        )
+      } else if (response.id === 500) {
+        console.log('Response: ', response)
+        setIsError(true)
+      } else {
+        Alert.alert(
+          'May problemang nangyari.',
+          'Maaring subukan uli pagkatapos ng ilang minuto.'
+        )
+      }
+    }
+  }, [response])
 
   // for showing the avatar selection component
   const [isChoosingAvatar, setIsChoosingAvatar] = useState(false)
@@ -53,6 +88,18 @@ const ManageProfiles = ({ navigation }) => {
     navigation.goBack()
   }
 
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return (
+      <View>
+        <Text>Something went wrong :(</Text>
+      </View>
+    )
+  }
+
   return (
     <ChosenChildContext.Provider
       value={{
@@ -64,6 +111,8 @@ const ManageProfiles = ({ navigation }) => {
         setIsMyAccOpen,
         isDeleteEnabled,
         setIsDeleteEnabled,
+        response,
+        setResponse,
       }}
     >
       <View style={[container, centered, custContainer]}>

@@ -3,3 +3,7 @@ const port = '3500'
 export const url = `http://${ip}:${port}/`
 export const signupUrl = `${url}signup`
 export const loginUrl = `${url}login`
+export const fetchLearnerUrl = `${url}fetch-learner`
+export const addLearnerUrl = `${url}add-learner`
+export const delLearnerUrl = `${url}del-learner`
+export const editLearnerUrl = `${url}edit-learner`

@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 import COLORS from '../../constants/colors'
 import { MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons'
 const EmailPass = (props) => {
-  const { setEmail, setPassword } = props
+  const { setEmail, setPassword, email, password } = props
 
   const [isPasswordShown, setIsPasswordShown] = useState(false)
   const {
@@ -36,6 +36,7 @@ const EmailPass = (props) => {
             placeholder="Halimbawa: pangalan@gmail.com"
             keyboardType="email-address"
             style={inputTxt}
+            value={email}
             onChangeText={(newEmail) => setEmail(newEmail)}
           />
         </View>
@@ -51,6 +52,7 @@ const EmailPass = (props) => {
             placeholder="Enter your password"
             secureTextEntry={isPasswordShown}
             style={inputTxt}
+            value={password}
             onChangeText={(newPass) => setPassword(newPass)}
           />
 

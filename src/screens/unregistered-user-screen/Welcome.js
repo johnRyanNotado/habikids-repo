@@ -7,10 +7,8 @@ import Button from '../../components/Button'
 import LoadingScreen from '../LoadingScreen'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
-import { LWGreenBottom } from '../../constants/svg/layeredWaves'
 import { Video, ResizeMode } from 'expo-av'
 import { getVid } from '../../utilities/getVid'
-import { useAppContext } from '../context-api/ContextAPI'
 import { useFocusEffect } from '@react-navigation/native'
 
 const Welcome = ({ navigation }) => {

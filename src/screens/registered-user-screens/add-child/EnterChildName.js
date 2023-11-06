@@ -3,13 +3,15 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import EnterChildNameNavBar from '../../../components/enter-child-name/EnterChildNameNavBar'
 import EnterChildNameMainSec from '../../../components/enter-child-name/EnterChildNameMainSec'
-import { BackHandler, ToastAndroid, View } from 'react-native'
+import { BackHandler, Vibration, View } from 'react-native'
 import EMPTY_CHILD_OBJ from '../../../constants/emptyChildObj'
 import { useChildDataContext } from '../../context-api/ContextAPI'
+import FieldsError from '../../../components/login-signup/FieldsError'
+import emptyChildObj from '../../../constants/emptyChildObj'
 
 const EnterChildName = ({ navigation }) => {
   const { childData, newChild, setNewChild } = useChildDataContext()
-
+  const [fieldsErr, setFieldsErr] = useState('')
   const { container, centered } = globalStyles
 
   // handling backpress (redirects to home screen)
@@ -25,7 +27,11 @@ const EnterChildName = ({ navigation }) => {
       backAction
     )
 
-    return () => backHandler.remove()
+    return () => {
+      setFieldsErr('')
+      setNewChild(emptyChildObj)
+      backHandler.remove()
+    }
   }, [])
 
   // This function will navigate the user to home screen
@@ -37,7 +43,8 @@ const EnterChildName = ({ navigation }) => {
   const handleRightArrBtn = () => {
     // check if name is empty
     if (!newChild.name) {
-      ToastAndroid.show('Enter a valid name!', ToastAndroid.SHORT)
+      Vibration.vibrate(1000)
+      setFieldsErr('Hindi tanggap pangalan!')
       console.log('Name is empty')
       return
     }
@@ -51,16 +58,20 @@ const EnterChildName = ({ navigation }) => {
     })
 
     if (!isUnique) {
-      console.log('name not unique!')
-      ToastAndroid.show('Name should be unique!', ToastAndroid.SHORT)
+      Vibration.vibrate(1000)
+      setFieldsErr('Dapat walang kapareho ang pangalan!')
       return
     }
-
+    setFieldsErr('')
     navigation.navigate('EnterChildAge')
   }
 
   return (
     <View style={[centered, container]}>
+      <FieldsError
+        fieldsErr={fieldsErr}
+        custStyle={{ top: '85%', zIndex: 5 }}
+      />
       <EnterChildNameNavBar
         handleLeftArrBtn={handleLeftArrBtn}
         handleRightArrBtn={handleRightArrBtn}

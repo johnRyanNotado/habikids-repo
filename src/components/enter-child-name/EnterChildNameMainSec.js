@@ -21,7 +21,7 @@ const EnterChildNameMainSec = () => {
 
   // This function will change the name of the new child whenever the value of the text input changes
   const handleChangeText = (new_name) => {
-    setNewChild({ ...EMPTY_CHILD_OBJ, name: new_name })
+    setNewChild({ ...EMPTY_CHILD_OBJ, name: String(new_name).toUpperCase() })
   }
 
   return (

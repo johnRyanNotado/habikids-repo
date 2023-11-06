@@ -11,19 +11,22 @@ import {
 } from './index.js'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import { sampleListChildObj } from '../../constants/temp_db/childList'
-import { ChildDataContext } from '../context-api/ContextAPI'
+import { ChildDataContext, useAppContext } from '../context-api/ContextAPI'
+import useFetchLearner from '../../hooks/useFetchLearner.js'
 
 const RegisteredUserStack = createStackNavigator()
 
 const NavScreen = () => {
+  const { user, setUser, isLoading, setIsLoading } = useAppContext()
+
+  // for the data of all the children
+  const { childData, setChildData } = useFetchLearner()
+
   // for the identifying if there is a chosen child (used in managing profile and child section)
   const [isChildChosen, setIsChildChosen] = useState(false)
 
   // for the selected child (used in managing profile and child section)
   const [chosenChild, setChosenChild] = useState(EMPTY_CHILD_OBJ)
-
-  // for the data of all the children
-  const [childData, setChildData] = useState(sampleListChildObj)
 
   // for the new child that will be added (used in EnterChildName and EnterChildAge screens)
   const [newChild, setNewChild] = useState(EMPTY_CHILD_OBJ)

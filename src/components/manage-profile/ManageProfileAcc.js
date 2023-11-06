@@ -5,13 +5,15 @@ import { MY_ACC_ITEMS } from '../../constants/dropDownItems'
 import {
   useChosenChildContext,
   useChildDataContext,
+  useAppContext,
 } from '../../screens/context-api/ContextAPI'
 
 const ManageProfileAcc = (props) => {
   const { handleLogout } = props
   const { isChildChosen } = useChildDataContext()
+  const { user } = useAppContext()
   const { isMyAccOpen, setIsMyAccOpen } = useChosenChildContext()
-  const [selectedAcc, setSelectedAcc] = useState('sample@gmail.com')
+  const [selectedAcc, setSelectedAcc] = useState(user.user_email)
   const {
     sectionWrapper,
     genFont,
@@ -28,7 +30,10 @@ const ManageProfileAcc = (props) => {
   }, [isChildChosen])
 
   // items for dropdown
-  const items = MY_ACC_ITEMS
+  const items = [
+    { label: user.user_email, value: user.user_email },
+    { label: 'Logout', value: 'Logout' },
+  ]
 
   return (
     <View style={sectionWrapper}>

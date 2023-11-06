@@ -21,7 +21,8 @@ import { loginUrl } from '../../constants/db_config'
 import FieldsError from '../../components/login-signup/FieldsError'
 
 const Login = ({ navigation }) => {
-  const { isLoading, isError, setIsLoading, setIsError } = useAppContext()
+  const { isLoading, isError, setIsLoading, setIsError, setUser } =
+    useAppContext()
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
   const [response, setResponse] = useState(null)
@@ -55,7 +56,12 @@ const Login = ({ navigation }) => {
       backAction
     )
 
-    return () => backHandler.remove()
+    return () => {
+      setEmail(null)
+      setPassword(null)
+      setResponse(null)
+      backHandler.remove()
+    }
   }, [])
 
   const handleLogin = async () => {
@@ -105,6 +111,11 @@ const Login = ({ navigation }) => {
     if (response) {
       if (response.id === 101) {
         setFieldsErr('')
+        setUser({
+          user_id: response.user_id,
+          user_email: email,
+          user_password: password,
+        })
         navigation.navigate('NavScreen')
       } else if (response.id === 401) {
         setFieldsErr('Kailangan ng parehong email at password!')
@@ -114,8 +125,12 @@ const Login = ({ navigation }) => {
         setFieldsErr('Mali ang password')
       } else if (response.id === 400) {
         setIsError(true)
+      } else {
+        Alert.alert(
+          'May problemang nangyari.',
+          'Maaring subukan uli pagkatapos ng ilang minuto.'
+        )
       }
-      setIsLoading(false)
     }
   }, [response])
 
@@ -130,13 +145,25 @@ const Login = ({ navigation }) => {
     )
   }
 
+  const handleRegisterBtn = () => {
+    setEmail(null)
+    setPassword(null)
+    setResponse(null)
+    navigation.navigate('Signup')
+  }
+
   return (
     <View style={[container, centered]}>
       <LWGreenTop style={bgStyle} />
       <View style={loginAccWrapper}>
         <FieldsError fieldsErr={fieldsErr} />
         <Message messageTxt={LOGIN_MESSAGE} />
-        <EmailPass setEmail={setEmail} setPassword={setPassword} />
+        <EmailPass
+          setEmail={setEmail}
+          setPassword={setPassword}
+          email={email}
+          password={password}
+        />
         <View style={custButtonWrapper}>
           <Button
             label="Login"
@@ -147,7 +174,7 @@ const Login = ({ navigation }) => {
         </View>
         <View style={askForAccWrapper}>
           <Text style={askForAccText}>Wala ka pang account?</Text>
-          <Pressable onPress={() => navigation.navigate('Signup')}>
+          <Pressable onPress={handleRegisterBtn}>
             <Text style={askForAccPressable}>Mag-Register</Text>
           </Pressable>
         </View>

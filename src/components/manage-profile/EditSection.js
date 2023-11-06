@@ -44,7 +44,7 @@ const EditSection = () => {
   const handleNameChange = (newName) => {
     handleChosenChild({
       id: id,
-      name: newName,
+      name: String(newName).toUpperCase(),
       age: age,
       avatarNum: avatarNum,
     })

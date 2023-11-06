@@ -1,12 +1,12 @@
 // made a sample list of child object then render by iterating through all
 
 export const sampleListChildObj = [
-  // {
-  //   id: 1,
-  //   name: 'Issa',
-  //   age: 8,
-  //   avatarNum: 1,
-  // },
+  {
+    id: 1,
+    name: 'Issa',
+    age: 8,
+    avatarNum: 1,
+  },
   // {
   //   id: 2,
   //   name: 'Botchog',

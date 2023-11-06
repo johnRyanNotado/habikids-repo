@@ -4,11 +4,11 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 
 const FieldsError = (props) => {
-  const { fieldsErr } = props
+  const { fieldsErr, custStyle } = props
   const { fieldsErrWrapper, fieldsErrTxt } = styles
   const { centered } = globalStyles
   return (
-    <View style={[centered, fieldsErrWrapper]}>
+    <View style={[centered, fieldsErrWrapper, custStyle]}>
       <Text style={fieldsErrTxt}>{fieldsErr}</Text>
     </View>
   )

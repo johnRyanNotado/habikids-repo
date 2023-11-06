@@ -1,19 +1,21 @@
 import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../styles/GlobalStyles'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 import HomeNavBar from '../../components/home/HomeNavBar'
 import HomeMainSection from '../../components/home/HomeMainSection'
 import HomeFooterSection from '../../components/home/HomeFooterSection'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { SWGreenMain } from '../../constants/svg/stackedWaves'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
-import { useChildDataContext } from '../context-api/ContextAPI'
+import { useAppContext, useChildDataContext } from '../context-api/ContextAPI'
+import LoadingScreen from '../LoadingScreen'
 
 const Home = ({ navigation }) => {
   const { container, centered, bgStyleWNavBar } = globalStyles
   const { handleChosenChild, setChosenChild, setIsChildChosen, chosenChild } =
     useChildDataContext()
+  const { isLoading, isError } = useAppContext()
 
   // Handle back press: when click => exit app
   useEffect(handleBckPrsExit, [])
@@ -43,6 +45,18 @@ const Home = ({ navigation }) => {
   const handleOnChildChosen = (childObj) => {
     handleChosenChild(childObj)
     navigation.navigate('NavScrChild')
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return (
+      <View>
+        <Text>Something went wrong :(</Text>
+      </View>
+    )
   }
 
   return (

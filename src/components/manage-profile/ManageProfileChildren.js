@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   View,
   StyleSheet,
@@ -12,13 +12,16 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import ListChild from '../home/ListChild'
 import { MaterialIcons } from '@expo/vector-icons'
 import {
+  useAppContext,
   useChildDataContext,
   useChosenChildContext,
 } from '../../screens/context-api/ContextAPI'
+import { delLearnerUrl } from '../../constants/db_config'
 
 const ManageProfileChildren = () => {
   const { childData, setChildData, handleChosenChild } = useChildDataContext()
-  const { isDeleteEnabled } = useChosenChildContext()
+  const { isDeleteEnabled, setResponse } = useChosenChildContext()
+  const { user, setIsLoading, setIsError } = useAppContext()
   const {
     custNameStyle,
     custBorderStyle,
@@ -29,18 +32,42 @@ const ManageProfileChildren = () => {
   } = styles
   const { centered } = globalStyles
 
+  const deleteLearner = async (id) => {
+    try {
+      const resp = await fetch(delLearnerUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          user_id: user.user_id,
+          learner_id: id,
+        }),
+      }).catch((err) => console.log(err))
+
+      const response = await resp.json()
+      setResponse(response)
+    } catch (err) {
+      console.log('Error: ', err)
+      setIsError(true)
+    }
+    setIsLoading(false)
+  }
+
   // This function will alert the user, asking for confirmation about the delete request.
   const handleDeleteBtn = (id, name) => {
     Alert.alert('Saglit!', `Sigurado ka bang gusto mong i-delete si ${name}?`, [
       {
-        text: 'Cancel',
+        text: 'Kanselahin',
         onPress: () => null,
         style: 'cancel',
       },
       {
-        text: 'YES',
+        text: 'Oo',
         onPress: () => {
-          setChildData(childData.filter((child) => child.id !== id)) // Filter out the selected child
+          setIsLoading(true)
+          deleteLearner(id)
         },
       },
     ])

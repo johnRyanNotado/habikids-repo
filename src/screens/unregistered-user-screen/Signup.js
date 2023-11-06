@@ -22,7 +22,8 @@ import FieldsError from '../../components/login-signup/FieldsError'
 import Success from '../../components/login-signup/Success'
 
 const Signup = ({ navigation }) => {
-  const { isLoading, isError, setIsLoading, setIsError } = useAppContext()
+  const { isLoading, isError, setIsLoading, setIsError, setUser } =
+    useAppContext()
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
   const [response, setResponse] = useState(null)
@@ -43,6 +44,7 @@ const Signup = ({ navigation }) => {
   useEffect(() => {
     const backAction = () => {
       setFieldsErr('')
+      setIsSuccess(false)
       navigation.reset({
         index: 0,
         routes: [
@@ -118,8 +120,12 @@ const Signup = ({ navigation }) => {
         setFieldsErr('Mayroon ng gumagamit ng iyong email!')
       } else if (response.id === 400) {
         setIsError(true)
+      } else {
+        Alert.alert(
+          'May problemang nangyari.',
+          'Maaring subukan uli pagkatapos ng ilang minuto.'
+        )
       }
-      setIsLoading(false)
     }
   }, [response])
 
@@ -136,8 +142,20 @@ const Signup = ({ navigation }) => {
 
   const handleContinueBtn = () => {
     navigation.navigate('NavScreen', { screen: 'EnterChildName' })
+    setUser({
+      id: response.user_id,
+      user_email: email,
+      user_password: password,
+    })
     setIsSuccess(false)
     setResponse(null)
+  }
+
+  const handleLoginBtn = () => {
+    setEmail(null)
+    setPassword(null)
+    setResponse(null)
+    navigation.navigate('Login')
   }
 
   return (
@@ -146,7 +164,12 @@ const Signup = ({ navigation }) => {
       <View style={createAccWrapper}>
         <FieldsError fieldsErr={fieldsErr} />
         <Message messageTxt={SIGNUP_MESSAGE} />
-        <EmailPass setEmail={setEmail} setPassword={setPassword} />
+        <EmailPass
+          setEmail={setEmail}
+          setPassword={setPassword}
+          email={email}
+          password={password}
+        />
         <View style={custButtonWrapper}>
           <Button
             label="Mag-Signup"
@@ -157,7 +180,7 @@ const Signup = ({ navigation }) => {
         </View>
         <View style={[askForAccWrapper]}>
           <Text style={[askForAccText]}>Mayroon ka nang account?</Text>
-          <Pressable onPress={() => navigation.navigate('Login')}>
+          <Pressable onPress={handleLoginBtn}>
             <Text style={[askForAccPressable]}>Mag-Login</Text>
           </Pressable>
         </View>
