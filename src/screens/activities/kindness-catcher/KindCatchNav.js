@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { KindCatch, KindCatchCA } from './'
@@ -10,13 +10,20 @@ import { useSharedValue } from 'react-native-reanimated'
 const KindCatchStack = createStackNavigator()
 
 const KindCatchNav = () => {
-  const { selectedYear } = useChildSectionContext()
+  const { selectedYear, actID } = useChildSectionContext()
   const TIMER_VALUE = 31
 
-  // get the game data based on selected year
-  const kindnessList = db_KindCatch.grade[selectedYear - 1].kindnessList
-  const badList = db_KindCatch.grade[selectedYear - 1].badList
+  let kindnessList
+  let badList
 
+  useEffect(() => {
+    db_KindCatch.grade[selectedYear - 1].map((item) => {
+      if (actID === item.id) {
+        kindnessList = item.kindnessList
+        badList = item.badList
+      }
+    })
+  }, [])
   // get the related data for narration
   const instruction = db_KindCatch.instruction
   const instructionDuration = db_KindCatch.instructionDuration * 1000

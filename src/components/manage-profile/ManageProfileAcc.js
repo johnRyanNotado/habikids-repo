@@ -13,7 +13,14 @@ const ManageProfileAcc = (props) => {
   const { isChildChosen } = useChildDataContext()
   const { user } = useAppContext()
   const { isMyAccOpen, setIsMyAccOpen } = useChosenChildContext()
-  const [selectedAcc, setSelectedAcc] = useState(user.user_email)
+  const [selectedAcc, setSelectedAcc] = useState(null)
+
+  useEffect(() => {
+    if (user) {
+      setSelectedAcc(user.user_email)
+    }
+  }, [])
+
   const {
     sectionWrapper,
     genFont,
@@ -31,7 +38,7 @@ const ManageProfileAcc = (props) => {
 
   // items for dropdown
   const items = [
-    { label: user.user_email, value: user.user_email },
+    { label: selectedAcc, value: selectedAcc },
     { label: 'Logout', value: 'Logout' },
   ]
 

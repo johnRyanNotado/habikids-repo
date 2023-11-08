@@ -16,7 +16,7 @@ import { useChildSectionContext } from '../../context-api/ContextAPI'
 const CultPuzzStack = createStackNavigator()
 
 const CultPuzzNav = () => {
-  const { selectedYear } = useChildSectionContext()
+  const { selectedYear, actID } = useChildSectionContext()
   const score = useSharedValue(0)
   const TIMER_VALUE = 30000
   const [timerLimit, setTimerLimit] = useState(TIMER_VALUE / 1000)
@@ -34,7 +34,12 @@ const CultPuzzNav = () => {
   ]
 
   // get the data using the selected year
-  const PUZZLE_GAME_DATA = db_CultPuzz.grade[selectedYear - 1]
+  let PUZZLE_GAME_DATA
+  db_CultPuzz.grade[selectedYear - 1].map((item) => {
+    if (actID === item.id) {
+      PUZZLE_GAME_DATA = item
+    }
+  })
 
   // get the related data for narration
   const instruction = db_CultPuzz.instruction

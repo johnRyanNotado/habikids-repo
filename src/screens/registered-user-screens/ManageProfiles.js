@@ -24,7 +24,8 @@ import ErrorScreen from '../ErrorScreen'
 
 const ManageProfiles = ({ navigation }) => {
   const { handleChosenChild, isChildChosen } = useChildDataContext()
-  const { isLoading, isError, setDataChanged, setIsError } = useAppContext()
+  const { isLoading, isError, setDataChanged, setIsError, setUser } =
+    useAppContext()
   const { custContainer, cardWrapper } = styles
   const { centered, container } = globalStyles
 
@@ -83,6 +84,7 @@ const ManageProfiles = ({ navigation }) => {
   // for logout
   const handleLogout = () => {
     navigation.navigate('Welcome')
+    setUser(null)
   }
 
   const handleLeftArrBtn = () => {

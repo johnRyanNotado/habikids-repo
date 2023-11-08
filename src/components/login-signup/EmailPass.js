@@ -11,7 +11,7 @@ import { MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons'
 const EmailPass = (props) => {
   const { setEmail, setPassword, email, password } = props
 
-  const [isPasswordShown, setIsPasswordShown] = useState(false)
+  const [isPasswordShown, setIsPasswordShown] = useState(true)
   const {
     formWrapperEmail,
     formWrapperPassword,

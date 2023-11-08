@@ -69,6 +69,38 @@ export const ACTIVITIES_TRADITIONS = {
         img: require('../../img/bg/empty-bg.png'),
       },
     ],
+    [
+      {
+        id: 1,
+        actNum: 1,
+        title: 'Cultural Puzzle Quest',
+        screen: 'CultPuzzNav',
+        img: require('../../img/bg/empty-bg.png'),
+      },
+      {
+        id: 2,
+        actNum: 2,
+        title: 'Dress Up in Culture',
+        screen: 'CultPuzzNav',
+        img: require('../../img/bg/empty-bg.png'),
+      },
+    ],
+    [
+      {
+        id: 1,
+        actNum: 1,
+        title: 'Cultural Puzzle Quest',
+        screen: 'CultPuzzNav',
+        img: require('../../img/bg/empty-bg.png'),
+      },
+      {
+        id: 2,
+        actNum: 2,
+        title: 'Dress Up in Culture',
+        screen: 'CultPuzzNav',
+        img: require('../../img/bg/empty-bg.png'),
+      },
+    ],
   ],
 }
 
@@ -118,7 +150,6 @@ export const ACTIVITIES_VALUES = {
         img: require('../../img/bg/empty-bg.png'),
       },
     ],
-
     [
       {
         id: 1,
@@ -149,7 +180,6 @@ export const ACTIVITIES_VALUES = {
         img: require('../../img/bg/empty-bg.png'),
       },
     ],
-
     [
       {
         id: 1,

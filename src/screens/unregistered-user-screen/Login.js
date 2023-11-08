@@ -38,6 +38,7 @@ const Login = ({ navigation }) => {
     btnTxtStyle,
   } = styles
   const { container, centered, bgStyle } = globalStyles
+
   // handling backpress (redirects to welcome screen)
   useEffect(() => {
     const backAction = () => {
@@ -117,6 +118,7 @@ const Login = ({ navigation }) => {
           user_email: email,
           user_password: password,
         })
+        navigation.removeListener
         navigation.navigate('NavScreen')
       } else if (response.id === 401) {
         setFieldsErr('Kailangan ng parehong email at password!')
