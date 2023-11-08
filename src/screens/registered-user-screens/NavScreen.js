@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../constants/headerOption'
 import {
@@ -10,7 +10,6 @@ import {
   NavScrChild,
 } from './index.js'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
-import { sampleListChildObj } from '../../constants/temp_db/childList'
 import { ChildDataContext, useAppContext } from '../context-api/ContextAPI'
 import useFetchLearner from '../../hooks/useFetchLearner.js'
 

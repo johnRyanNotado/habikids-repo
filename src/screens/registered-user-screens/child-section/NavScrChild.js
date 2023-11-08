@@ -10,6 +10,7 @@ import {
   KindCatchNav,
   ArrTheValNav,
   CTRPNav,
+  Illustration,
 } from './index'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import {
@@ -75,6 +76,10 @@ const NavScrChild = ({ navigation }) => {
     navigation.navigate('Home')
   }
 
+  // For hiding/showing the arrows in the lessons
+  const [isLeftShown, setIsLeftShown] = useState(true)
+  const [isRightShown, setIsRightShown] = useState(true)
+
   return (
     <ChildSectionContext.Provider
       value={{
@@ -104,6 +109,10 @@ const NavScrChild = ({ navigation }) => {
         setActID,
         lesID,
         setLesID,
+        isLeftShown,
+        setIsLeftShown,
+        isRightShown,
+        setIsRightShown,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">
@@ -150,6 +159,12 @@ const NavScrChild = ({ navigation }) => {
         <ChildSectionStack.Screen
           name={'CTRPNav'}
           component={CTRPNav}
+          options={MAIN_HEADER_OPT}
+        />
+
+        <ChildSectionStack.Screen
+          name={'Illustration'}
+          component={Illustration}
           options={MAIN_HEADER_OPT}
         />
       </ChildSectionStack.Navigator>

@@ -50,7 +50,7 @@ export const LESSONS_VALUES = {
         id: 1,
         lesNum: 1,
         title: 'Title',
-        screen: 'SHEESH',
+        screen: 'Illustration',
         img: require('../../img/bg/empty-bg.png'),
       },
       {

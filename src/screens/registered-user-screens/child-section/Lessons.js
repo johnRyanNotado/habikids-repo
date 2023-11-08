@@ -1,8 +1,7 @@
-import React, { useEffect, useState, createContext, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {
   ImageBackground,
-  Image,
   BackHandler,
   StyleSheet,
   TouchableOpacity,
@@ -26,14 +25,12 @@ import {
   useChildSectionContext,
   LessonsContext,
 } from '../../context-api/ContextAPI'
-import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import Jeep from '../../../components/lessons/Jeep'
 
 const Lessons = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
   const { homeBtnWrapper } = styles
-  const { container, centered, positionAbsolute, bgStyle } = globalStyles
+  const { container, centered } = globalStyles
 
   // useState for opening and closing the dropdown for the selected Year
   const [isOpen, setIsOpen] = useState(false)
