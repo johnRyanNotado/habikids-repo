@@ -54,7 +54,9 @@ const NavScrChild = ({ navigation }) => {
   // useState for serving as the value of the dropdown for the selected Year
   const [selectedYear, setSelectedYear] = useState(YEAR_LEVELS[0].value)
 
+  // for identifying which activity or lesson is currently being used
   const [actID, setActID] = useState(null)
+  const [lesID, setLesID] = useState(null)
 
   // This function will navigate the user to the settings screen.
   const handleSettingsBtn = () => {
@@ -100,6 +102,8 @@ const NavScrChild = ({ navigation }) => {
         setIsGamePaused,
         actID,
         setActID,
+        lesID,
+        setLesID,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">

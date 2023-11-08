@@ -98,6 +98,11 @@ const Lessons = ({ navigation }) => {
     </TouchableOpacity>
   )
 
+  // handle which lessons is selected
+  const handleSelectedLes = (screen) => {
+    navigation.navigate(screen)
+  }
+
   return (
     <LessonsContext.Provider
       value={{
@@ -109,6 +114,7 @@ const Lessons = ({ navigation }) => {
         setIsOpen,
         selectedYear,
         setSelectedYear,
+        handleSelectedLes,
       }}
     >
       <ImageBackground

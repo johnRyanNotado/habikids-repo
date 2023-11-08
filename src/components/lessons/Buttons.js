@@ -74,14 +74,20 @@ const Buttons = () => {
         <TouchableOpacity
           enable={content === BUTTONS ? true : false}
           onPress={handleGoodHanBtn}
-          style={[centered, { width: GOOD_HABITS_DIMENSTION.w }]}
+          style={[
+            centered,
+            {
+              width: GOOD_HABITS_DIMENSTION.w,
+              borderBottomStartRadius: 1000,
+            },
+          ]}
         >
           <Image
             source={getImg.components.bookGoodHabits.link}
             resizeMode="contain"
             style={{
               height: GOOD_HABITS_DIMENSTION.h,
-              zIndex: -1,
+              zIndex: -5,
               borderBottomLeftRadius: 100,
             }}
           />

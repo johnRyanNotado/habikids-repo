@@ -31,6 +31,7 @@ const CultPuzz = ({ navigation }) => {
   const { container } = globalStyles
 
   useEffect(() => {
+    if (isFinished) return
     const interval = setInterval(() => {
       if (!isGamePaused) setTimerLimit((prevState) => prevState - 1)
       if (score.value === 4) {

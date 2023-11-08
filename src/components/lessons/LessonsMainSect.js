@@ -15,6 +15,12 @@ import DropDownPicker from 'react-native-dropdown-picker'
 import { YEAR_LEVELS } from '../../constants/dropDownItems'
 import { useLessonsContext } from '../../screens/context-api/ContextAPI'
 import Buttons from './Buttons'
+import RenderLessons from './RenderLessons'
+import {
+  LESSONS_GOODHABITS,
+  LESSONS_TRADITIONS,
+  LESSONS_VALUES,
+} from '../../constants/temp_db/db_lessons'
 
 const LessonsMainSect = () => {
   const { content, isOpen, setIsOpen, selectedYear, setSelectedYear } =
@@ -40,19 +46,19 @@ const LessonsMainSect = () => {
       case VALUES:
         return (
           <ScrollView style={[container, positionAbsolute]}>
-            <Values />
+            <RenderLessons data={LESSONS_VALUES} />
           </ScrollView>
         )
       case TRADITIONS:
         return (
           <ScrollView style={[container, positionAbsolute]}>
-            <Traditions />
+            <RenderLessons data={LESSONS_TRADITIONS} />
           </ScrollView>
         )
       case GOOD_HABITS:
         return (
           <ScrollView style={[container, positionAbsolute]}>
-            <GoodHabits />
+            <RenderLessons data={LESSONS_GOODHABITS} />
           </ScrollView>
         )
       default:
