@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BackHandler, View } from 'react-native'
+import { BackHandler, ImageBackground, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import HomeChildMainSect from '../../../components/home-child/HomeChildMainSect'
@@ -10,6 +10,7 @@ import {
   HomeChildSectionContext,
 } from '../../context-api/ContextAPI'
 import HomePageSvg from '../../../svg/bg/HomePageSvg'
+import { getImg } from '../../../utilities/getImg'
 
 const HomeChild = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
@@ -46,13 +47,15 @@ const HomeChild = ({ navigation }) => {
         handleBooksBtn,
       }}
     >
-      <View style={container}>
-        <ChildSectNavBar />
-        <HomeChildMainSect />
+      <ImageBackground source={getImg.bg.bahayKubo.link} style={container}>
+        <View style={container}>
+          <ChildSectNavBar />
+          <HomeChildMainSect />
 
-        {isProfileClicked ? <ProfileCard /> : <></>}
-        <HomePageSvg />
-      </View>
+          {isProfileClicked ? <ProfileCard /> : <></>}
+          {/* <HomePageSvg /> */}
+        </View>
+      </ImageBackground>
     </HomeChildSectionContext.Provider>
   )
 }

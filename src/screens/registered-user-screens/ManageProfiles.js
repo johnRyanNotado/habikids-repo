@@ -20,6 +20,7 @@ import {
   useAppContext,
 } from '../context-api/ContextAPI'
 import LoadingScreen from '../LoadingScreen'
+import ErrorScreen from '../ErrorScreen'
 
 const ManageProfiles = ({ navigation }) => {
   const { handleChosenChild, isChildChosen } = useChildDataContext()
@@ -93,11 +94,7 @@ const ManageProfiles = ({ navigation }) => {
   }
 
   if (isError) {
-    return (
-      <View>
-        <Text>Something went wrong :(</Text>
-      </View>
-    )
+    return <ErrorScreen />
   }
 
   return (

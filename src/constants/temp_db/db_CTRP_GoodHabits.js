@@ -1,154 +1,59 @@
 export const db_CTRP_GoodHabits = {
-  instructionDuration: 10,
-  instruction: `Piliin and larawan na nagpapakita ng pinakamabuting tugon.`,
-  narrator: 'vio',
+  narrator: 'uni',
   grade: [
-    {
-      item: [
-        {
-          desc: 'Nakita mo na nag-aaway ang iyong mga kaibigan. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
+    [
+      {
+        id: 2,
+        instructionDuration: 10,
+        instruction: `Piliin ang mas mabuting gawin sa ipinapakitang bagay sa larawan upang mapakinabangan pa ito.`,
+        item: [
+          {
+            desc: 'Mayroon kayong mga nakatambak na bote ng softdrinks. Ano ang dapat mong gawin?',
+            scene: {
+              desc: 'Scene',
+              img: require('../../img/act/ctrp/grade-one/first/scene.png'),
+            },
+            right: {
+              desc: 'Gawin itong flower vase',
+              img: require('../../img/act/ctrp/grade-one/first/right.png'),
+            },
+            wrong: {
+              desc: 'Itapon na, hindi na ito magagamit',
+              img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
+            },
           },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
+          {
+            desc: 'Mayroon kayong mga lumang damit. Ano ang iyong gagawin?',
+            scene: {
+              desc: 'Scene',
+              img: require('../../img/act/ctrp/grade-one/first/scene.png'),
+            },
+            right: {
+              desc: 'Ibahagi sa nangangailangan',
+              img: require('../../img/act/ctrp/grade-one/first/right.png'),
+            },
+            wrong: {
+              desc: 'Itapon na, hindi ko na ito gusto',
+              img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
+            },
           },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
+          {
+            desc: 'Mayroon kang mga lumang laruan. Ano ang iyong gagawin?',
+            scene: {
+              desc: 'Scene',
+              img: require('../../img/act/ctrp/grade-one/first/scene.png'),
+            },
+            right: {
+              desc: 'Ibahagi sa may gusto',
+              img: require('../../img/act/ctrp/grade-one/first/right.png'),
+            },
+            wrong: {
+              desc: 'Itapon na, hindi ko na ito gusto',
+              img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
+            },
           },
-        },
-        {
-          desc: 'Nakita mo ulit silang nag-aaway. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-        {
-          desc: 'Dahil makukulit sila, nag-away nanaman sila. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-      ],
-    },
-    {
-      item: [
-        {
-          desc: 'Nakita mo na nag-aaway ang iyong mga kaibigan. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-        {
-          desc: 'Nakita mo ulit silang nag-aaway. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-        {
-          desc: 'Dahil makukulit sila, nag-away nanaman sila. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-      ],
-    },
-    {
-      item: [
-        {
-          desc: 'Nakita mo na nag-aaway ang iyong mga kaibigan. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-        {
-          desc: 'Nakita mo ulit silang nag-aaway. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-        {
-          desc: 'Dahil makukulit sila, nag-away nanaman sila. Ano ang iyong gagawin?',
-          scene: {
-            desc: 'Scene',
-            img: require('../../img/act/ctrp/grade-one/first/scene.png'),
-          },
-          right: {
-            desc: 'Pigilan',
-            img: require('../../img/act/ctrp/grade-one/first/right.png'),
-          },
-          wrong: {
-            desc: 'Makisali',
-            img: require('../../img/act/ctrp/grade-one/first/wrong.png'),
-          },
-        },
-      ],
-    },
+        ],
+      },
+    ],
   ],
 }

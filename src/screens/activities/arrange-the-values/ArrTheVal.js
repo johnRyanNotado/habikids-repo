@@ -14,8 +14,16 @@ import { useChildSectionContext } from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
 
 const ArrTheVal = ({ navigation }) => {
-  const { item, timer, displayed, setDisplayed, OPTIONS, SCENE, narrator } =
-    useArrTheValContext()
+  const {
+    item,
+    timer,
+    displayed,
+    setDisplayed,
+    OPTIONS,
+    SCENE,
+    narrator,
+    INIT_TIMER,
+  } = useArrTheValContext()
   const { isGamePaused } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const { mainSectWrapper } = styles
@@ -47,6 +55,7 @@ const ArrTheVal = ({ navigation }) => {
           // Display options if timer runs out
           clearInterval(displayTimeout)
           setDisplayed(OPTIONS)
+          timer.value = INIT_TIMER
         }
       }, 1000)
     }
@@ -74,7 +83,6 @@ const ArrTheVal = ({ navigation }) => {
     navigation.goBack()
   }
 
-  console.log('Called: ArrTheVal')
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}

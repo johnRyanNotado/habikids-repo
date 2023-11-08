@@ -1,20 +1,16 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
 import COLORS from '../../../constants/colors'
 import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
-import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const SceneDesc = () => {
-  const { item } = useArrTheValContext()
-  const { selectedYear } = useChildSectionContext()
+  const { item, data } = useArrTheValContext()
   const { centered } = globalStyles
   const { descSect, descTxt } = styles
   const properItem = item - 1
-  const properGrade = selectedYear - 1
 
-  const desc = `${db_ArrTheVal.grade[properGrade]?.item[properItem]?.desc} ${db_ArrTheVal.grade[properGrade]?.item[properItem]?.question}`
+  const desc = `${data[properItem]?.desc}\n${data[properItem]?.question}`
   return (
     <View style={[centered, descSect]}>
       <Text style={descTxt}>{desc}</Text>

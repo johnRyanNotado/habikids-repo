@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderRadius: 10,
     elevation: 5,
-    minWidth: 380,
+    minWidth: 410,
     minHeight: 215,
     width: '30%',
     height: '50%',
-    maxWidth: 400,
+    maxWidth: 450,
     maxHeight: 250,
   },
   profileCardWrapperBg: {

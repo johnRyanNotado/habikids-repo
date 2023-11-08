@@ -17,12 +17,10 @@ import Animated, {
 import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
 import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const WrongSection = (props) => {
   const { enteringProps } = props
   const { item, gameData } = useCTRPContext()
-  const { selectedYear } = useChildSectionContext()
   const { section, imgBox, txtBox, txtStyle, imgStyle, tapGestureStyle } =
     styles
   const { centered } = globalStyles
@@ -30,7 +28,6 @@ const WrongSection = (props) => {
   const wrongScale = useSharedValue(1)
   const wrongBorderColor = useSharedValue(COLORS.accent)
 
-  const properGrade = selectedYear - 1
   const properItem = item - 1
 
   const handleWrongBtn = () => {
@@ -63,7 +60,7 @@ const WrongSection = (props) => {
             onGestureEvent={wrongEventHandler}
           >
             <Animated.Image
-              source={gameData.grade[properGrade]?.item[properItem]?.wrong.img}
+              source={gameData[properItem]?.wrong.img}
               style={[imgStyle, wrongAnimatedStyle]}
               entering={BounceInRight.duration(enteringProps.duration).delay(
                 enteringProps.delay
@@ -73,9 +70,7 @@ const WrongSection = (props) => {
         </TouchableHighlight>
       </View>
       <View style={[centered, txtBox]}>
-        <Text style={txtStyle}>
-          {gameData.grade[properGrade]?.item[properItem]?.wrong.desc}
-        </Text>
+        <Text style={txtStyle}>{gameData[properItem]?.wrong.desc}</Text>
       </View>
     </Animated.View>
   )
@@ -95,12 +90,12 @@ const styles = StyleSheet.create({
     height: '20%',
 
     backgroundColor: COLORS.whiteTrans,
-    width: 200,
+    width: '90%',
     borderRadius: 40,
     marginTop: 5,
   },
   txtStyle: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: '400',
     fontFamily: 'QuiapoRegular',
   },

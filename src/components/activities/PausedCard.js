@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import ProfileSection from '../home-child/ProfileSection'
-import Animated, { BounceIn, BounceOut } from 'react-native-reanimated'
+import Animated, { BounceIn, BounceOut, FadeOut } from 'react-native-reanimated'
 import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 
 const PausedCard = (props) => {
@@ -22,7 +22,10 @@ const PausedCard = (props) => {
   }
   return (
     <View style={[positionAbsolute, centered, { zIndex: 10 }]}>
-      <View style={[positionAbsolute, profileCardWrapperBg]} />
+      <Animated.View
+        style={[positionAbsolute, profileCardWrapperBg]}
+        exiting={FadeOut.duration(500)}
+      />
       <Animated.View
         entering={BounceIn.duration(500)}
         exiting={BounceOut.duration(500)}
@@ -63,11 +66,11 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderRadius: 10,
     elevation: 5,
-    minWidth: 380,
+    minWidth: 410,
     minHeight: 215,
     width: '30%',
     height: '50%',
-    maxWidth: 400,
+    maxWidth: 450,
     maxHeight: 250,
   },
   profileCardWrapperBg: {

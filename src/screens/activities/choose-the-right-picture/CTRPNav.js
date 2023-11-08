@@ -17,7 +17,7 @@ const SCENE = 'scene'
 const OPTIONS = 'options'
 
 const CTRPNav = () => {
-  const { content } = useChildSectionContext()
+  const { content, selectedYear, actID } = useChildSectionContext()
   const [score, setScore] = useState(0)
   const [displayed, setDisplayed] = useState(SCENE)
   const timer = useSharedValue(INIT_TIMER)
@@ -32,37 +32,22 @@ const CTRPNav = () => {
   const [narrator, setNarrator] = useState(db_CTRP_Values.narrator)
 
   useEffect(() => {
-    setGameData(
+    let wholeGameData =
       content === VALUES
         ? db_CTRP_Values
         : content === GOOD_HABITS
         ? db_CTRP_GoodHabits
         : null
-    )
 
-    setInstruction(
-      content === VALUES
-        ? db_CTRP_Values.instruction
-        : content === GOOD_HABITS
-        ? db_CTRP_GoodHabits.instruction
-        : null
-    )
+    wholeGameData.grade[selectedYear - 1].map((item) => {
+      if (item.id === actID) {
+        setGameData(item.item)
+        setInstruction(item.instruction)
+        setInstructionDuration(item.instructionDuration * 1000)
+      }
+    })
 
-    setInstructionDuration(
-      content === VALUES
-        ? db_CTRP_Values.instructionDuration * 1000
-        : content === GOOD_HABITS
-        ? db_CTRP_GoodHabits.instructionDuration * 1000
-        : null
-    )
-
-    setNarrator(
-      content === VALUES
-        ? db_CTRP_Values.narrator
-        : content === GOOD_HABITS
-        ? db_CTRP_GoodHabits.narrator
-        : null
-    )
+    setNarrator(wholeGameData.narrator)
   }, [content])
 
   return (

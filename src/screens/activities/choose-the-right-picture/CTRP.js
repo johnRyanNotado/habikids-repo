@@ -13,8 +13,16 @@ import PausedCard from '../../../components/activities/PausedCard'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useCTRPContext } from './CTRPContext'
 const CTRP = ({ navigation }) => {
-  const { item, timer, displayed, setDisplayed, OPTIONS, SCENE, narrator } =
-    useCTRPContext()
+  const {
+    item,
+    timer,
+    displayed,
+    setDisplayed,
+    OPTIONS,
+    SCENE,
+    narrator,
+    INIT_TIMER,
+  } = useCTRPContext()
   const { isGamePaused } = useChildSectionContext()
   const { mainSectWrapper } = styles
   const { container, centered, positionAbsolute } = globalStyles
@@ -45,6 +53,7 @@ const CTRP = ({ navigation }) => {
           // Display options if timer runs out
           clearInterval(displayTimeout)
           setDisplayed(OPTIONS)
+          timer.value = INIT_TIMER
         }
       }, 1000)
     }

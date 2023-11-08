@@ -4,7 +4,7 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 
 const Card = (props) => {
-  const { img, num, title, label, screen, onPress } = props
+  const { id, img, num, title, label, screen, onPress } = props
   const {
     custContainer,
     bg,
@@ -18,7 +18,7 @@ const Card = (props) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        onPress(screen)
+        onPress(screen, id)
       }}
     >
       <View style={[container, centered, custContainer]}>

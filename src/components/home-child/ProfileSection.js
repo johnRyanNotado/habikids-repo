@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
   },
   detailsWrapper: {
     height: '100%',
-    width: '60%',
+    width: '65%',
     gap: 5,
     alignItems: 'flex-start',
   },
   avatarWrapper: {
     height: '100%',
-    width: '40%',
+    width: '35%',
   },
   txtWrapper: {
     borderColor: COLORS.greenPrimary,

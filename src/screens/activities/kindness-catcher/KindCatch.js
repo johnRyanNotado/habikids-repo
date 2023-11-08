@@ -38,7 +38,6 @@ const KindCatch = ({ navigation }) => {
   // Sets timer for game
   useEffect(() => {
     const timerInterval = setInterval(() => {
-      console.log('Timer: ', timer.value)
       if (!isGamePaused) {
         // Decrements timer if game is not paused
         timer.value--

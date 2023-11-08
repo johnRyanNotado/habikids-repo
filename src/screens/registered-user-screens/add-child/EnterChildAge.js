@@ -12,6 +12,7 @@ import FieldsError from '../../../components/login-signup/FieldsError'
 import emptyChildObj from '../../../constants/emptyChildObj'
 import LoadingScreen from '../../LoadingScreen'
 import { addLearnerUrl } from '../../../constants/db_config'
+import ErrorScreen from '../../ErrorScreen'
 
 const EnterChildAge = ({ navigation }) => {
   const { newChild, setNewChild } = useChildDataContext()
@@ -119,11 +120,7 @@ const EnterChildAge = ({ navigation }) => {
   }
 
   if (isError) {
-    return (
-      <View>
-        <Text>Something went wrong :(</Text>
-      </View>
-    )
+    return <ErrorScreen />
   }
 
   return (

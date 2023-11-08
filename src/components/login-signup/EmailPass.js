@@ -49,7 +49,7 @@ const EmailPass = (props) => {
         </View>
         <View style={inputView}>
           <TextInput
-            placeholder="Enter your password"
+            placeholder="Password"
             secureTextEntry={isPasswordShown}
             style={inputTxt}
             value={password}

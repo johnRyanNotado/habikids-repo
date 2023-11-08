@@ -54,6 +54,8 @@ const NavScrChild = ({ navigation }) => {
   // useState for serving as the value of the dropdown for the selected Year
   const [selectedYear, setSelectedYear] = useState(YEAR_LEVELS[0].value)
 
+  const [actID, setActID] = useState(null)
+
   // This function will navigate the user to the settings screen.
   const handleSettingsBtn = () => {
     navigation.navigate('Settings')
@@ -70,8 +72,6 @@ const NavScrChild = ({ navigation }) => {
     setIsChildChosen(false)
     navigation.navigate('Home')
   }
-
-  console.log('Called: NacSrcChild')
 
   return (
     <ChildSectionContext.Provider
@@ -98,6 +98,8 @@ const NavScrChild = ({ navigation }) => {
         setContent,
         isGamePaused,
         setIsGamePaused,
+        actID,
+        setActID,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">

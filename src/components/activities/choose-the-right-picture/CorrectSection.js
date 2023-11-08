@@ -11,13 +11,11 @@ import Animated, {
 import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
 import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
-import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const CorrectSection = (props) => {
   const { goBack, enteringProps } = props
   const { gameData } = useCTRPContext()
   const { item, setItem, ITEM_AMOUNT, setScore } = useCTRPContext()
-  const { selectedYear } = useChildSectionContext()
   const { section, imgBox, txtBox, txtStyle, imgStyle, tapGestureStyle } =
     styles
   const { centered } = globalStyles
@@ -25,7 +23,6 @@ const CorrectSection = (props) => {
   const corrScale = useSharedValue(1)
   const corrBorderColor = useSharedValue(COLORS.accent)
 
-  const properGrade = selectedYear - 1
   const properItem = item - 1
 
   const handleCorrectBtn = () => {
@@ -76,7 +73,7 @@ const CorrectSection = (props) => {
             onGestureEvent={correctEventHandler}
           >
             <Animated.Image
-              source={gameData.grade[properGrade]?.item[properItem]?.right.img}
+              source={gameData[properItem]?.right.img}
               style={[imgStyle, correctAnimatedStyle]}
               entering={BounceInRight.duration(enteringProps.duration).delay(
                 enteringProps.delay
@@ -86,9 +83,7 @@ const CorrectSection = (props) => {
         </TouchableHighlight>
       </View>
       <View style={[centered, txtBox]}>
-        <Text style={txtStyle}>
-          {gameData.grade[properGrade]?.item[properItem]?.right.desc}
-        </Text>
+        <Text style={txtStyle}>{gameData[properItem]?.right.desc}</Text>
       </View>
     </Animated.View>
   )
@@ -107,12 +102,12 @@ const styles = StyleSheet.create({
     height: '20%',
 
     backgroundColor: COLORS.whiteTrans,
-    width: 200,
+    width: '90%',
     borderRadius: 40,
     marginTop: 5,
   },
   txtStyle: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: '400',
     fontFamily: 'QuiapoRegular',
   },

@@ -5,11 +5,17 @@ import EnterChildNameNavBar from '../../../components/enter-child-name/EnterChil
 import EnterChildNameMainSec from '../../../components/enter-child-name/EnterChildNameMainSec'
 import { BackHandler, Vibration, View } from 'react-native'
 import EMPTY_CHILD_OBJ from '../../../constants/emptyChildObj'
-import { useChildDataContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildDataContext,
+} from '../../context-api/ContextAPI'
 import FieldsError from '../../../components/login-signup/FieldsError'
 import emptyChildObj from '../../../constants/emptyChildObj'
+import ErrorScreen from '../../ErrorScreen'
+import LoadingScreen from '../../LoadingScreen'
 
 const EnterChildName = ({ navigation }) => {
+  const { isError, isLoading } = useAppContext()
   const { childData, newChild, setNewChild } = useChildDataContext()
   const [fieldsErr, setFieldsErr] = useState('')
   const { container, centered } = globalStyles
@@ -64,6 +70,14 @@ const EnterChildName = ({ navigation }) => {
     }
     setFieldsErr('')
     navigation.navigate('EnterChildAge')
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

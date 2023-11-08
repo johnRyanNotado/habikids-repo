@@ -52,7 +52,6 @@ const ArrTheValCA = ({ navigation }) => {
     }, instructionDuration + 500)
   }
 
-  console.log('Called: ArrTheValCA')
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}

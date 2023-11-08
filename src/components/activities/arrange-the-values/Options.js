@@ -11,9 +11,7 @@ import Animated, {
 } from 'react-native-reanimated'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
-import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
 import Button from './Button'
-import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 import { getImg } from '../../../utilities/getImg'
 
 const Options = (props) => {
@@ -23,16 +21,16 @@ const Options = (props) => {
     setItem,
     ITEM_AMOUNT,
     setScore,
-    MABUTI,
-    MASAMA,
+    TAMA,
+    MALI,
     timer,
     INIT_TIMER,
+    data,
   } = useArrTheValContext()
-  const { selectedYear } = useChildSectionContext()
   const { gestureHandlerStyle } = styles
   const { container } = globalStyles
 
-  const answer = db_ArrTheVal.grade[selectedYear - 1].item[item - 1].answer
+  const answer = data[item - 1].answer
 
   const corrScale = useSharedValue(1)
   const corrBackgroundColor = useSharedValue(COLORS.primaryTrans)
@@ -68,7 +66,7 @@ const Options = (props) => {
     }
   }
 
-  // will get assigned to a button depending on the correct answer ('mabuti'/'masama')
+  // will get assigned to a button depending on the correct answer ('mabuti'/'MALI')
   const corrAnimatedStyle = useAnimatedStyle(() => {
     return {
       transform: [{ scale: corrScale.value }],
@@ -77,7 +75,7 @@ const Options = (props) => {
     }
   })
 
-  // will get assigned to a button depending on the correct answer ('mabuti'/'masama')
+  // will get assigned to a button depending on the correct answer ('mabuti'/'MALI')
   const wrongAnimatedStyle = useAnimatedStyle(() => {
     return {
       transform: [{ scale: wrongScale.value }],
@@ -86,7 +84,7 @@ const Options = (props) => {
     }
   })
 
-  // will get assigned to a button depending on the correct answer ('mabuti'/'masama')
+  // will get assigned to a button depending on the correct answer ('mabuti'/'MALI')
   const corrEventHandler = useAnimatedGestureHandler({
     onStart: (event) => {
       corrScale.value = 1.1
@@ -104,7 +102,7 @@ const Options = (props) => {
     },
   })
 
-  // will get assigned to a button depending on the correct answer ('mabuti'/'masama')
+  // will get assigned to a button depending on the correct answer ('mabuti'/'MALI')
   const wrongEventHandler = useAnimatedGestureHandler({
     onStart: (event) => {
       wrongScale.value = 1.1
@@ -120,21 +118,20 @@ const Options = (props) => {
     },
   })
 
-  // Assigning the animation-style depending on the correct answer ('mabuti'/'masama')
+  // Assigning the animation-style depending on the correct answer ('mabuti'/'MALI')
   const goodAnimatedStyle =
-    MABUTI === answer ? corrAnimatedStyle : wrongAnimatedStyle
+    TAMA === answer ? corrAnimatedStyle : wrongAnimatedStyle
   const badAnimatedStyle =
-    MASAMA === answer ? corrAnimatedStyle : wrongAnimatedStyle
+    MALI === answer ? corrAnimatedStyle : wrongAnimatedStyle
 
-  // Assigning the gesture-event-handler depending on the correct answer ('mabuti'/'masama')
+  // Assigning the gesture-event-handler depending on the correct answer ('mabuti'/'MALI')
   const goodEventHandler =
-    MABUTI === answer ? corrEventHandler : wrongEventHandler
-  const badEventHandler =
-    MASAMA === answer ? corrEventHandler : wrongEventHandler
+    TAMA === answer ? corrEventHandler : wrongEventHandler
+  const badEventHandler = MALI === answer ? corrEventHandler : wrongEventHandler
 
-  // Assigning the button-handler depending on the correct answer ('mabuti'/'masama')
-  const handleGoodBtn = MABUTI === answer ? handleCorrBtn : handleWrongBtn
-  const handleBadBtn = MASAMA === answer ? handleCorrBtn : handleWrongBtn
+  // Assigning the button-handler depending on the correct answer ('mabuti'/'MALI')
+  const handleGoodBtn = TAMA === answer ? handleCorrBtn : handleWrongBtn
+  const handleBadBtn = MALI === answer ? handleCorrBtn : handleWrongBtn
 
   return (
     <GestureHandlerRootView style={gestureHandlerStyle}>
@@ -147,7 +144,7 @@ const Options = (props) => {
           eventHandler={goodEventHandler}
           animatedStyle={goodAnimatedStyle}
           delay={300}
-          label={MABUTI}
+          label={TAMA}
           source={getImg.components.mabait.link}
         />
         <Button
@@ -155,7 +152,7 @@ const Options = (props) => {
           eventHandler={badEventHandler}
           animatedStyle={badAnimatedStyle}
           delay={1300}
-          label={MASAMA}
+          label={MALI}
           source={getImg.components.masama.link}
         />
       </Animated.View>

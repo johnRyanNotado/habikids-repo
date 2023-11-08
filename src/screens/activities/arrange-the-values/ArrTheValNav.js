@@ -5,6 +5,7 @@ import { ArrTheVal, ArrTheValCA } from './index'
 import { ArrTheValContext } from './ArrTheValContext'
 import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
 import { useSharedValue } from 'react-native-reanimated'
+import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const ArrTheValStack = createStackNavigator()
 
@@ -12,18 +13,27 @@ const INIT_TIMER = 8
 const ITEM_AMOUNT = 3
 const SCENE = 'scene'
 const OPTIONS = 'options'
-const MABUTI = 'mabuti'
-const MASAMA = 'masama'
+const TAMA = 'TAMA'
+const MALI = 'MALI'
 
 const ArrTheValNav = () => {
+  const { selectedYear, actID } = useChildSectionContext()
   const [score, setScore] = useState(0)
   const [displayed, setDisplayed] = useState(SCENE)
   const timer = useSharedValue(INIT_TIMER)
   const [item, setItem] = useState(1)
 
   // get the related data for narration
-  const instruction = db_ArrTheVal.instruction
-  const instructionDuration = db_ArrTheVal.instructionDuration * 1000
+  let instruction
+  let instructionDuration
+  let data
+  db_ArrTheVal.grade[selectedYear - 1].map((item) => {
+    if (actID === item.id) {
+      instruction = item.instruction
+      instructionDuration = item.instructionDuration * 1000
+      data = item.item
+    }
+  })
   const narrator = db_ArrTheVal.narrator
 
   console.log('Called: ArrTheValNav')
@@ -41,11 +51,12 @@ const ArrTheValNav = () => {
         OPTIONS,
         ITEM_AMOUNT,
         INIT_TIMER,
-        MABUTI,
-        MASAMA,
+        TAMA,
+        MALI,
         instruction,
         instructionDuration,
         narrator,
+        data,
       }}
     >
       <ArrTheValStack.Navigator>

@@ -10,8 +10,10 @@ import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { Video, ResizeMode } from 'expo-av'
 import { getVid } from '../../utilities/getVid'
 import { useFocusEffect } from '@react-navigation/native'
+import { useAppContext } from '../context-api/ContextAPI'
 
 const Welcome = ({ navigation }) => {
+  const { user } = useAppContext()
   const {
     welcomeTitle,
     welcomeTitleShadow,
@@ -66,6 +68,10 @@ const Welcome = ({ navigation }) => {
       video.current.playAsync()
     }
   })
+
+  if (user) {
+    navigation.navigate('NavScreen')
+  }
 
   if (fontsLoaded) {
     return (

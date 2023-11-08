@@ -3,11 +3,9 @@ import { StyleSheet, Image } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { BounceIn } from 'react-native-reanimated'
 import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
-import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const Scene = () => {
   const { item, gameData } = useCTRPContext()
-  const { selectedYear } = useChildSectionContext()
   const { imgSect, imgStyle } = styles
   const { centered } = globalStyles
 
@@ -16,10 +14,7 @@ const Scene = () => {
       entering={BounceIn.duration(1500)}
       style={[centered, imgSect]}
     >
-      <Image
-        source={gameData.grade[selectedYear - 1]?.item[item - 1]?.scene.img}
-        style={imgStyle}
-      />
+      <Image source={gameData[item - 1]?.scene.img} style={imgStyle} />
     </Animated.View>
   )
 }

@@ -20,9 +20,10 @@ import LoadingScreen from '../LoadingScreen'
 import { validEmail, validPassword } from '../../utilities/validFields'
 import FieldsError from '../../components/login-signup/FieldsError'
 import Success from '../../components/login-signup/Success'
+import ErrorScreen from '../ErrorScreen'
 
 const Signup = ({ navigation }) => {
-  const { isLoading, isError, setIsLoading, setIsError, setUser } =
+  const { isLoading, isError, setIsLoading, setIsError, setUser, user } =
     useAppContext()
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
@@ -129,17 +130,6 @@ const Signup = ({ navigation }) => {
     }
   }, [response])
 
-  if (isLoading) {
-    return <LoadingScreen />
-  }
-  if (isError) {
-    return (
-      <View>
-        <Text> {`Something went wrong :( `}</Text>
-      </View>
-    )
-  }
-
   const handleContinueBtn = () => {
     navigation.navigate('NavScreen', { screen: 'EnterChildName' })
     setUser({
@@ -156,6 +146,17 @@ const Signup = ({ navigation }) => {
     setPassword(null)
     setResponse(null)
     navigation.navigate('Login')
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+  if (isError) {
+    return <ErrorScreen />
+  }
+
+  if (user) {
+    navigation.navigate('NavScreen')
   }
 
   return (

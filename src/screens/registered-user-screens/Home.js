@@ -10,6 +10,7 @@ import { SWGreenMain } from '../../constants/svg/stackedWaves'
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import { useAppContext, useChildDataContext } from '../context-api/ContextAPI'
 import LoadingScreen from '../LoadingScreen'
+import ErrorScreen from '../ErrorScreen'
 
 const Home = ({ navigation }) => {
   const { container, centered, bgStyleWNavBar } = globalStyles
@@ -52,11 +53,7 @@ const Home = ({ navigation }) => {
   }
 
   if (isError) {
-    return (
-      <View>
-        <Text>Something went wrong :(</Text>
-      </View>
-    )
+    return <ErrorScreen />
   }
 
   return (

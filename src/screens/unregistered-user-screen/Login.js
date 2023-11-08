@@ -19,12 +19,13 @@ import LoadingScreen from '../LoadingScreen'
 import { validEmail } from '../../utilities/validFields'
 import { loginUrl } from '../../constants/db_config'
 import FieldsError from '../../components/login-signup/FieldsError'
+import ErrorScreen from '../ErrorScreen'
 
 const Login = ({ navigation }) => {
-  const { isLoading, isError, setIsLoading, setIsError, setUser } =
+  const { isLoading, isError, setIsLoading, setIsError, setUser, user } =
     useAppContext()
-  const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
+  const [email, setEmail] = useState('ryan.08.moy@gmail.com')
+  const [password, setPassword] = useState('ewanko')
   const [response, setResponse] = useState(null)
   const [fieldsErr, setFieldsErr] = useState('')
   const {
@@ -134,22 +135,22 @@ const Login = ({ navigation }) => {
     }
   }, [response])
 
-  if (isLoading) {
-    return <LoadingScreen />
-  }
-  if (isError) {
-    return (
-      <View>
-        <Text> {`Something went wrong :( `}</Text>
-      </View>
-    )
-  }
-
   const handleRegisterBtn = () => {
     setEmail(null)
     setPassword(null)
     setResponse(null)
     navigation.navigate('Signup')
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+  if (isError) {
+    return <ErrorScreen />
+  }
+
+  if (user) {
+    navigation.navigate('NavScreen')
   }
 
   return (

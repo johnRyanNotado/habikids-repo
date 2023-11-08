@@ -19,7 +19,7 @@ const ItemBox = () => {
 const styles = StyleSheet.create({
   itemWrapper: {
     backgroundColor: COLORS.primaryTrans,
-    width: 90,
+    width: 70,
     height: 50,
     borderRadius: 10,
     top: 'auto',
