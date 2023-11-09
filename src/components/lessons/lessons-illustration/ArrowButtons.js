@@ -2,13 +2,14 @@ import React from 'react'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import { AntDesign } from '@expo/vector-icons'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const ArrowButtons = (props) => {
-  const { handleLeftBtn, handleRightBtn } = props
+  const { handleLeftBtn, handleRightBtn, isFinished, handleFinishedBtn } = props
   const { isLeftShown, isRightShown } = useChildSectionContext()
   const { centered, positionAbsolute } = globalStyles
+  console.log('isFinished?', isFinished)
   return (
     <View style={[positionAbsolute, styles.btnSection]}>
       {isLeftShown ? (
@@ -27,6 +28,14 @@ const ArrowButtons = (props) => {
           <TouchableOpacity onPress={handleRightBtn}>
             <View style={[centered, styles.arrBtnStyle]}>
               <AntDesign name="right" size={25} color={COLORS.white} />
+            </View>
+          </TouchableOpacity>
+        </View>
+      ) : isFinished ? (
+        <View style={[centered, styles.btnSectionElement]}>
+          <TouchableOpacity onPress={handleFinishedBtn}>
+            <View style={[centered, styles.finishBtnStyle]}>
+              <Text style={styles.finishBtnTxt}>Tapusin ></Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -57,6 +66,21 @@ const styles = StyleSheet.create({
   },
   btnSectionElement: {
     width: '13%',
+  },
+  finishBtnStyle: {
+    backgroundColor: COLORS.accent,
+    width: 120,
+    paddingVertical: 10,
+    borderRadius: 30,
+    borderWidth: 3,
+    borderColor: COLORS.white,
+    marginRight: 40,
+  },
+  finishBtnTxt: {
+    color: COLORS.white,
+    fontSize: 20,
+    fontFamily: 'Quiapo',
+    fontWeight: '400',
   },
 })
 

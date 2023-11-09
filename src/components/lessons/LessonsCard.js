@@ -1,19 +1,21 @@
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
-import { globalStyles } from '../styles/GlobalStyles'
-import COLORS from '../constants/colors'
+import { globalStyles } from '../../styles/GlobalStyles'
+import COLORS from '../../constants/colors'
 import Animated, { SlideInUp, SlideOutUp } from 'react-native-reanimated'
+import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 
-const ActivityCard = (props) => {
-  const { score, handleStartBtn, handleCancelBtn } = props
+const LessonsCard = (props) => {
+  const { content } = useChildSectionContext()
+  const { title, handleStartBtn, handleCancelBtn, lesNum } = props
   const { container, centered, positionAbsolute } = globalStyles
   const {
     gameCard,
     overlayWrapper,
     startBtnWrapper,
-    scoreWrapper,
+    titleWrapper,
     startTxt,
-    scoreTxt,
-    scoreLabel,
+    titleTxt,
+    titleLabel,
     goBackBtnWrapper,
     btnSection,
   } = styles
@@ -24,9 +26,9 @@ const ActivityCard = (props) => {
       exiting={SlideOutUp.duration(1000)}
     >
       <View style={[centered, gameCard]}>
-        <View style={[centered, scoreWrapper]}>
-          <Text style={scoreLabel}>Puntos</Text>
-          <Text style={scoreTxt}>{score}</Text>
+        <View style={[centered, titleWrapper]}>
+          <Text style={titleLabel}>{`${content} #${lesNum}`}</Text>
+          <Text style={titleTxt}>{title}</Text>
         </View>
         <View style={[centered, btnSection]}>
           <TouchableOpacity onPress={handleCancelBtn}>
@@ -72,16 +74,19 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontFamily: 'QuiapoRegular',
   },
-  scoreWrapper: {
-    paddingBottom: 30,
+  titleWrapper: {
+    paddingBottom: 20,
+    gap: 10,
+    paddingHorizontal: 40,
   },
-  scoreTxt: {
+  titleTxt: {
     color: COLORS.accent,
-    fontSize: 60,
-    fontFamily: 'Quiapo',
+    fontSize: 30,
+    fontFamily: 'QuiapoRegular',
     fontWeight: '400',
+    textAlign: 'center',
   },
-  scoreLabel: {
+  titleLabel: {
     color: COLORS.accent,
     fontFamily: 'QuiapoRegular',
     fontSize: 20,
@@ -93,4 +98,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default ActivityCard
+export default LessonsCard

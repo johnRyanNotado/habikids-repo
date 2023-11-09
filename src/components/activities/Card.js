@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.greenSecond,
   },
   card: {
-    height: 210,
+    minHeight: 240,
+    height: 240,
     width: 230,
     minHeight: 200,
     borderRadius: 25,
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     height: '30%',
     marginBottom: '3%',
     borderRadius: 20,
-    paddingHorizontal: 5,
+    paddingHorizontal: 10,
     borderColor: COLORS.accent,
     borderWidth: 2,
   },
@@ -84,7 +85,6 @@ const styles = StyleSheet.create({
   titleStyle: {
     fontFamily: 'QuiapoRegular',
     fontSize: 20,
-    letterSpacing: 1,
     color: COLORS.accent,
   },
 })

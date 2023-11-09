@@ -11,6 +11,7 @@ const RenderLessons = (props) => {
   const { selectedYear, setLesID } = useChildSectionContext()
   const { handleSelectedLes } = useLessonsContext()
   const onPress = (screen, id) => {
+    console.log('ID changed to ', id)
     setLesID(id)
     handleSelectedLes(screen)
   }

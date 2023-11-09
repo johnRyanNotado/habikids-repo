@@ -8,12 +8,12 @@ import {
   GOOD_HABITS,
   BUTTONS,
 } from '../../constants/contentClassification'
-import Values from './Values'
-import Traditions from './Traditions'
-import GoodHabits from './GoodHabits'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { YEAR_LEVELS } from '../../constants/dropDownItems'
-import { useLessonsContext } from '../../screens/context-api/ContextAPI'
+import {
+  useChildSectionContext,
+  useLessonsContext,
+} from '../../screens/context-api/ContextAPI'
 import Buttons from './Buttons'
 import RenderLessons from './RenderLessons'
 import {
@@ -23,8 +23,9 @@ import {
 } from '../../constants/temp_db/db_lessons'
 
 const LessonsMainSect = () => {
-  const { content, isOpen, setIsOpen, selectedYear, setSelectedYear } =
+  const { isOpen, setIsOpen, selectedYear, setSelectedYear } =
     useLessonsContext()
+  const { content } = useChildSectionContext()
   const {
     custContainer,
     contentWrapper,

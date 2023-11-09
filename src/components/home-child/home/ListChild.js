@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { corresIcon } from '../../utilities/determineAvatar'
-import COLORS from '../../constants/colors'
-import { globalStyles } from '../../styles/GlobalStyles'
+import { corresIcon } from '../../../utilities/determineAvatar'
+import COLORS from '../../../constants/colors'
+import { globalStyles } from '../../../styles/GlobalStyles'
 
 const ListChild = (props) => {
   const {

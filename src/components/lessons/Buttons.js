@@ -6,7 +6,7 @@ import {
   GOOD_HABITS,
   BUTTONS,
 } from '../../constants/contentClassification'
-import { useLessonsContext } from '../../screens/context-api/ContextAPI'
+import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 import { getImg } from '../../utilities/getImg'
 import { globalStyles } from '../../styles/GlobalStyles'
 
@@ -15,7 +15,7 @@ const TRADITION_DIMENSTION = { h: 240, w: 79 }
 const GOOD_HABITS_DIMENSTION = { h: 235, w: 150 }
 
 const Buttons = () => {
-  const { content, setContent } = useLessonsContext()
+  const { content, setContent } = useChildSectionContext()
   const { btnWrapper, btnShadow, shadowWrapper } = styles
   const { centered } = globalStyles
 

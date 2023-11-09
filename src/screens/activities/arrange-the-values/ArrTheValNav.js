@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { ArrTheVal, ArrTheValCA } from './index'

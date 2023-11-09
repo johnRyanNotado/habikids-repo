@@ -28,7 +28,7 @@ import {
 import Jeep from '../../../components/lessons/Jeep'
 
 const Lessons = ({ navigation }) => {
-  const { isProfileClicked } = useChildSectionContext()
+  const { isProfileClicked, content, setContent } = useChildSectionContext()
   const { homeBtnWrapper } = styles
   const { container, centered } = globalStyles
 
@@ -52,9 +52,6 @@ const Lessons = ({ navigation }) => {
 
     return () => backHandler.remove()
   }, [])
-
-  // useState for changing the contents of the main section
-  const [content, setContent] = useState(BUTTONS)
 
   // will set the handle button to show the Buttons when clicked
   const setButtonsVal = () => {
@@ -103,8 +100,6 @@ const Lessons = ({ navigation }) => {
   return (
     <LessonsContext.Provider
       value={{
-        content,
-        setContent,
         undoBtnFunc,
         setUndoBtnFunc,
         isOpen,

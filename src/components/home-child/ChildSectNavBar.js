@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     minHeight: 60,
+    elevation: 5,
   },
   navBarElement: {
     width: '40%',

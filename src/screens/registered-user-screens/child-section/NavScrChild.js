@@ -10,7 +10,7 @@ import {
   KindCatchNav,
   ArrTheValNav,
   CTRPNav,
-  Illustration,
+  LessonsNav,
 } from './index'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import {
@@ -163,8 +163,8 @@ const NavScrChild = ({ navigation }) => {
         />
 
         <ChildSectionStack.Screen
-          name={'Illustration'}
-          component={Illustration}
+          name={'LessonsNav'}
+          component={LessonsNav}
           options={MAIN_HEADER_OPT}
         />
       </ChildSectionStack.Navigator>
