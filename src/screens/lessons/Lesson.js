@@ -45,7 +45,11 @@ const Lesson = ({ navigation }) => {
         setIsRightShown(true)
       }
 
-      if (1 >= item) {
+      if (
+        lessonData.item[item - 1].data.length > 1 &&
+        scriptNum <= 0 &&
+        item <= 1
+      ) {
         setIsLeftShown(false)
       } else {
         setIsLeftShown(true)
@@ -103,11 +107,10 @@ const Lesson = ({ navigation }) => {
 
   const handleLeftBtn = () => {
     if (lessonData) {
-      if (1 < item) {
-        setItem((prevState) => prevState - 1)
-      }
       if (scriptNum) {
-        setScriptNum(0)
+        setScriptNum((prevState) => prevState - 1)
+      } else if (1 < item) {
+        setItem((prevState) => prevState - 1)
       }
     }
   }
