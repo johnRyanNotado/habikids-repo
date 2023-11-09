@@ -10,7 +10,7 @@ import {
 } from '../../../constants/puzzleConstants'
 import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 import { CultPuzzContext } from './CultPuzzContext'
-import { db_CultPuzz } from '../../../constants/temp_db/db_CultPuzz'
+import { db_CultPuzz } from '../../../constants/temp_db/activities/db_CultPuzz'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const CultPuzzStack = createStackNavigator()

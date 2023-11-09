@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { ArrTheVal, ArrTheValCA } from './index'
 import { ArrTheValContext } from './ArrTheValContext'
-import { db_ArrTheVal } from '../../../constants/temp_db/db_ArrTheVal'
+import { db_ArrTheVal } from '../../../constants/temp_db/activities/db_ArrTheVal'
 import { useSharedValue } from 'react-native-reanimated'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 

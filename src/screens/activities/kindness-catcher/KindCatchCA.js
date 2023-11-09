@@ -24,6 +24,7 @@ const KindCatchCA = ({ navigation }) => {
     instruction,
     instructionDuration,
     TIMER_VALUE,
+    kindnessList,
   } = useKindCatchContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { KindCatch, KindCatchCA } from './'
 import { KindCatchContext } from './KindCatchContext'
-import { db_KindCatch } from '../../../constants/temp_db/db_KindCatch'
+import { db_KindCatch } from '../../../constants/temp_db/activities/db_KindCatch'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 import { useSharedValue } from 'react-native-reanimated'
 
@@ -12,18 +12,17 @@ const KindCatchStack = createStackNavigator()
 const KindCatchNav = () => {
   const { selectedYear, actID } = useChildSectionContext()
   const TIMER_VALUE = 31
-
-  let kindnessList
-  let badList
+  const [kindnessList, setKindnessList] = useState(null)
+  const [badList, setBadList] = useState(null)
 
   useEffect(() => {
     db_KindCatch.grade[selectedYear - 1].map((item) => {
       if (actID === item.id) {
-        kindnessList = item.kindnessList
-        badList = item.badList
+        setKindnessList(item.kindnessList)
+        setBadList(item.badList)
       }
     })
-  }, [])
+  }, [selectedYear])
   // get the related data for narration
   const instruction = db_KindCatch.instruction
   const instructionDuration = db_KindCatch.instructionDuration * 1000
@@ -36,7 +35,6 @@ const KindCatchNav = () => {
     <KindCatchContext.Provider
       value={{
         score,
-        kindnessList,
         badList,
         TIMER_VALUE,
         kindnessList,

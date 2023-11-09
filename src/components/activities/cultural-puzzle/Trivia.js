@@ -1,21 +1,10 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
-import { getAni } from '../../../utilities/getAni'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
-import {
-  ENTER_DELAY,
-  ENTER_DURATION,
-  EXIT_DURATION,
-} from '../../../constants/narrConstants'
-
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import Animated, {
-  BounceIn,
-  SlideInRight,
-  SlideOutRight,
-} from 'react-native-reanimated'
+import Animated, { BounceIn } from 'react-native-reanimated'
 import { useCultPuzzContext } from '../../../screens/activities/cultural-puzzle/CultPuzzContext'
 
 const Trivia = (props) => {
@@ -35,8 +24,6 @@ const Trivia = (props) => {
     triviaStyle,
     btnWrapper,
     triviaBtnTxt,
-    narrStyle,
-    narrWrapper,
   } = styles
   const { positionAbsolute, centered } = globalStyles
   const title = String(theme).toUpperCase()

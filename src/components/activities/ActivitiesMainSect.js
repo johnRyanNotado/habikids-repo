@@ -14,7 +14,7 @@ import {
   ACTIVITIES_GOODHABITS,
   ACTIVITIES_VALUES,
   ACTIVITIES_TRADITIONS,
-} from '../../constants/temp_db/db_activity'
+} from '../../constants/temp_db/activities/db_activity'
 import RenderActivities from './RenderActivities'
 import {
   useActivitiesContext,
