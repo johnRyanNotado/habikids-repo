@@ -11,6 +11,10 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
 import Animated, { ZoomIn } from 'react-native-reanimated'
 import { useSpecificLessonContext } from './LessonsContext'
 import Script from '../../components/lessons/lessons-illustration/Script'
+import Narrator from '../../components/activities/Narrator'
+import Instruction from '../../components/lessons/lessons-illustration/Instruction'
+import MultipleChoice from '../../components/activities/multiple-choice/MultipleChoice'
+import MultilplePicture from '../../components/activities/multiple-choices-pic/MultilplePicture'
 
 const Lesson = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
@@ -27,36 +31,43 @@ const Lesson = ({ navigation }) => {
     scriptComp,
     setScriptComp,
     isFinished,
+    narrator,
+    setNarrator,
+    isNarrating,
+    setIsNarrating,
+    isActFin,
+    setIsActFin,
+    instruction,
+    setInstruction,
+    selected,
+    setSelected,
   } = useSpecificLessonContext()
-  console.log('\n\nCalled: Lesson')
-  console.log('Lesson from Lesson: ', lessonData, '\n\n')
 
   useEffect(() => {
     if (lessonData) {
-      if (lessonData.item[item - 1].type != 'activity') {
-        timer.value =
-          lessonData.item[item - 1].data[scriptNum].narrationDuration
-      }
-      // check if its the last item
-      console.log('Item: ', item, '\tLesson Length: ', lessonData.item.length)
-      if (lessonData.item.length <= item) {
-        setIsRightShown(false)
-      } else {
-        setIsRightShown(true)
-      }
+      timer.value = lessonData.item[item - 1].data[scriptNum].narrationDuration
 
-      if (
-        lessonData.item[item - 1].data.length > 1 &&
-        scriptNum <= 0 &&
-        item <= 1
-      ) {
-        setIsLeftShown(false)
-      } else {
-        setIsLeftShown(true)
-      }
-
-      // set a delay for the script
+      // set a delay for the script and narrator
       setScriptComp(null)
+      setNarrator(null)
+      setInstruction(null)
+      console.log('\n\n', lessonData.item[item - 1].data[scriptNum], '\n\n')
+
+      const narratorTimout = setTimeout(() => {
+        if (lessonData.item[item - 1].data[scriptNum].isNarratorShown) {
+          setNarrator(
+            <Narrator
+              narrator={lessonData.item[item - 1].data[scriptNum].narrator}
+              custImgStyle={{ height: 200, width: 200 }}
+              custDuration={1000}
+              custDelay={1000}
+              isBackgroundShown={true}
+            />
+          )
+        }
+
+        clearTimeout(narratorTimout)
+      }, 500)
 
       if (lessonData.item[item - 1].type !== 'activity') {
         const scriptTimeout = setTimeout(() => {
@@ -76,19 +87,80 @@ const Lesson = ({ navigation }) => {
           )
           clearTimeout(scriptTimeout)
         }, 500)
+      } else {
+        const instructionTimeout = setTimeout(() => {
+          setInstruction(
+            <Instruction
+              top={lessonData.item[item - 1].data[scriptNum].style.top}
+              bottom={lessonData.item[item - 1].data[scriptNum].style.bottom}
+              right={lessonData.item[item - 1].data[scriptNum].style.right}
+              left={lessonData.item[item - 1].data[scriptNum].style.left}
+              width={lessonData.item[item - 1].data[scriptNum].style.width}
+              script={
+                lessonData
+                  ? lessonData.item[item - 1].data[scriptNum].instruction
+                  : null
+              }
+            />
+          )
+          clearTimeout(instructionTimeout)
+        }, 500)
       }
     }
   }, [item, scriptNum])
 
   useEffect(() => {
+    if (lessonData) {
+      console.log(
+        'Is Act fin: ',
+        isActFin,
+        '\tType: ',
+        lessonData.item[item - 1].type
+      )
+
+      if (lessonData.item[item - 1].type === 'activity') {
+        console.log('Hihi: ', item)
+
+        // dont show right btn until activity is finish
+        if (lessonData.item.length <= item || !isActFin) {
+          setIsRightShown(false)
+        } else {
+          setIsRightShown(true)
+        }
+      } else {
+        // do not show right arr btn if its the last item or is narrating
+        if (lessonData.item.length <= item || isNarrating) {
+          setIsRightShown(false)
+        } else {
+          setIsRightShown(true)
+        }
+      }
+      // do not show left btn if...
+      if (
+        lessonData.item[item - 1].data.length > 1 && // if the scripts length is greater than 1
+        scriptNum <= 0 && // and the first script
+        item <= 1 // and if its the first item
+      ) {
+        setIsLeftShown(false)
+      } else {
+        setIsLeftShown(true)
+      }
+    }
+  }, [item, scriptNum, isNarrating, isActFin])
+
+  useEffect(() => {
     let narrInterval
     if (lessonData) {
+      if (timer.value > 0) {
+        setIsNarrating(true)
+      }
       narrInterval = setInterval(() => {
         if (lessonData.item[item - 1].data[scriptNum]) {
           timer.value--
-          console.log('Timer: ', timer.value)
+          console.log('Timer: ', timer.value, '\tisNarrating: ', isNarrating)
           if (timer.value <= 0) {
             console.log('Narration done.\n\n')
+            setIsNarrating(false)
             clearInterval(narrInterval)
             if (lessonData.item.length <= item) {
               setIsFinished(true)
@@ -112,6 +184,10 @@ const Lesson = ({ navigation }) => {
       } else if (1 < item) {
         setItem((prevState) => prevState - 1)
       }
+      if (isActFin || selected) {
+        setSelected(null)
+        setIsActFin(false)
+      }
     }
   }
 
@@ -129,6 +205,10 @@ const Lesson = ({ navigation }) => {
         if (scriptNum) {
           setScriptNum(0)
         }
+        if (isActFin || selected) {
+          setSelected(null)
+          setIsActFin(false)
+        }
       }
     }
   }
@@ -140,11 +220,39 @@ const Lesson = ({ navigation }) => {
     return (
       <Animated.Image
         source={lessonData ? lessonData.item[item - 1].img : null}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '77%' }}
         resizeMode="contain"
         entering={ZoomIn.delay(500).duration(1000)}
       />
     )
+  }
+
+  const getActComp = () => {
+    if (!lessonData || lessonData.item[item - 1].type !== 'activity') {
+      return null
+    } else {
+      if (lessonData.item[item - 1].data[scriptNum].activityType === 1) {
+        return (
+          <MultipleChoice
+            choices={lessonData.item[item - 1].data[scriptNum].choices}
+          />
+        )
+      } else if (lessonData.item[item - 1].data[scriptNum].activityType === 2) {
+        return (
+          <MultilplePicture
+            choices={lessonData.item[item - 1].data[scriptNum].choices}
+          />
+        )
+      } else if (lessonData.item[item - 1].data[scriptNum].activityType === 3) {
+        return (
+          <MultipleChoice
+            choices={lessonData.item[item - 1].data[scriptNum].choices}
+          />
+        )
+      } else {
+        return null
+      }
+    }
   }
 
   const handleFinishedBtn = () => {
@@ -166,11 +274,18 @@ const Lesson = ({ navigation }) => {
               width: WINDOW_WIDTH,
               height: WINDOW_HEIGHT,
               zIndex: -1,
+              backgroundColor:
+                lessonData.item[item - 1].type !== 'activity'
+                  ? COLORS.black
+                  : null,
             },
           ]}
         >
           {getLesImg()}
+          {getActComp()}
           {scriptComp}
+          {instruction}
+          {narrator}
         </View>
         <ArrowButtons
           handleLeftBtn={handleLeftBtn}

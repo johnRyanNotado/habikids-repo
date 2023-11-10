@@ -18,6 +18,11 @@ const LessonsNav = () => {
   const [scriptComp, setScriptComp] = useState(null)
   const [title, setTitle] = useState(null)
   const [lesNum, setLesNum] = useState(null)
+  const [instruction, setInstruction] = useState(null)
+  const [narrator, setNarrator] = useState(null)
+  const [isNarrating, setIsNarrating] = useState(false)
+  const [isActFin, setIsActFin] = useState(false)
+  const [selected, setSelected] = useState(null)
   const timer = useSharedValue(0)
 
   useEffect(() => {
@@ -49,6 +54,16 @@ const LessonsNav = () => {
         setTitle,
         lesNum,
         setLesNum,
+        narrator,
+        setNarrator,
+        instruction,
+        setInstruction,
+        isNarrating,
+        setIsNarrating,
+        isActFin,
+        setIsActFin,
+        selected,
+        setSelected,
       }}
     >
       <LessonsStack.Navigator>

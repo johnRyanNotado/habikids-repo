@@ -4,7 +4,7 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Animated, { ZoomIn } from 'react-native-reanimated'
 
-const Script = (props) => {
+const Instruction = (props) => {
   const { positionAbsolute } = globalStyles
   const { top, left, bottom, right, width, script } = props
   return (
@@ -23,7 +23,7 @@ const Script = (props) => {
       <View
         style={{
           width: width,
-          backgroundColor: COLORS.whiteTrans,
+          backgroundColor: COLORS.primaryTrans,
           paddingHorizontal: 10,
           paddingVertical: 15,
           borderRadius: 20,
@@ -31,7 +31,7 @@ const Script = (props) => {
       >
         <Text
           style={{
-            fontSize: 20,
+            fontSize: 24,
             fontFamily: 'QuiapoRegular',
             textAlign: 'center',
           }}
@@ -43,4 +43,4 @@ const Script = (props) => {
   )
 }
 
-export default Script
+export default Instruction

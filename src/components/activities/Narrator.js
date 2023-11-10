@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Image } from 'react-native'
+import { StyleSheet, Image, View } from 'react-native'
 import {
   ENTER_DELAY,
   ENTER_DURATION,
@@ -8,21 +8,50 @@ import {
 import Animated, { SlideInRight, SlideOutRight } from 'react-native-reanimated'
 import { globalStyles } from '../../styles/GlobalStyles'
 import { getAni } from '../../utilities/getAni'
+import COLORS from '../../constants/colors'
 
 const Narrator = (props) => {
-  const { narrator, custWrapperStyle, custImgStyle } = props
+  const {
+    narrator,
+    custWrapperStyle,
+    custImgStyle,
+    custDelay,
+    custDuration,
+    isBackgroundShown,
+  } = props
   const { positionAbsolute } = globalStyles
   const { narrStyle, narrWrapper } = styles
   return (
     <Animated.View
       style={[positionAbsolute, narrWrapper, custWrapperStyle]}
-      entering={SlideInRight.duration(ENTER_DURATION).delay(ENTER_DELAY)}
+      entering={SlideInRight.duration(
+        custDelay ? custDelay : ENTER_DURATION
+      ).delay(custDuration ? custDuration : ENTER_DELAY)}
       exiting={SlideOutRight.duration(EXIT_DURATION)}
     >
       <Image
         style={[narrStyle, custImgStyle]}
         source={getAni.characters[narrator]?.link}
       />
+      {isBackgroundShown ? (
+        <View
+          style={[
+            positionAbsolute,
+            narrStyle,
+            {
+              height: '100%',
+              width: '120%',
+              backgroundColor: COLORS.white,
+              zIndex: -1,
+              borderRadius: 2000,
+              left: 'auto',
+              top: 'auto',
+              right: '-40%',
+              bottom: '-40%',
+            },
+          ]}
+        />
+      ) : null}
     </Animated.View>
   )
 }
