@@ -178,8 +178,9 @@ const styles = StyleSheet.create({
   },
   txtStyle: {
     fontSize: 30,
-    fontWeight: '700',
+    fontWeight: '400',
     color: COLORS.white,
+    fontFamily: 'Quiapo',
   },
 })
 

@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
   },
   itemTxt: {
     fontSize: 26,
-    fontWeight: '700',
+    fontWeight: '400',
     color: COLORS.accent,
+    fontFamily: 'Quiapo',
   },
 })
 export default ItemBox

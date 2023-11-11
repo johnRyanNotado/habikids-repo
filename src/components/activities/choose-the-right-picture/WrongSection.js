@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   txtStyle: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: '400',
     fontFamily: 'QuiapoRegular',
   },

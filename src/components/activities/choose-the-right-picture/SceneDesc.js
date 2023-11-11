@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   descTxt: {
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: '400',
     fontFamily: 'QuiapoRegular',
     textAlign: 'center',

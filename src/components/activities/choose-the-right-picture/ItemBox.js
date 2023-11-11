@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   itemTxt: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: '400',
-    fontFamily: 'Quiapo',
     color: COLORS.accent,
+    fontFamily: 'Quiapo',
   },
 })
 export default ItemBox
