@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ImageBackground, View, StyleSheet, Text } from 'react-native'
+import { ImageBackground, View, StyleSheet } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import { getImg } from '../../utilities/getImg'
 import COLORS from '../../constants/colors'
@@ -15,6 +15,7 @@ import Narrator from '../../components/activities/Narrator'
 import Instruction from '../../components/lessons/lessons-illustration/Instruction'
 import MultipleChoice from '../../components/activities/multiple-choice/MultipleChoice'
 import MultilplePicture from '../../components/activities/multiple-choices-pic/MultilplePicture'
+import ConnectTheDots from '../../components/activities/connect-the-dots/ConnectTheDots'
 
 const Lesson = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
@@ -41,16 +42,20 @@ const Lesson = ({ navigation }) => {
     setInstruction,
     selected,
     setSelected,
+    activity,
+    setActivity,
   } = useSpecificLessonContext()
 
+  // for managing the components shown
   useEffect(() => {
     if (lessonData) {
       timer.value = lessonData.item[item - 1].data[scriptNum].narrationDuration
 
-      // set a delay for the script and narrator
+      // set a delay for before showing the script, instruction, and narrator
       setScriptComp(null)
       setNarrator(null)
       setInstruction(null)
+      setActivity(null)
       console.log('\n\n', lessonData.item[item - 1].data[scriptNum], '\n\n')
 
       const narratorTimout = setTimeout(() => {
@@ -101,14 +106,53 @@ const Lesson = ({ navigation }) => {
                   ? lessonData.item[item - 1].data[scriptNum].instruction
                   : null
               }
+              narrationDuration={
+                lessonData.item[item - 1].data[scriptNum].narrationDuration
+              }
+              instructTemp={
+                lessonData.item[item - 1].data[scriptNum].activityType === 3
+                  ? true
+                  : false
+              }
             />
           )
           clearTimeout(instructionTimeout)
         }, 500)
       }
+
+      if (!lessonData || lessonData.item[item - 1].type === 'activity') {
+        const actTimeout = setTimeout(() => {
+          if (lessonData.item[item - 1].data[scriptNum].activityType === 1) {
+            setActivity(
+              <MultipleChoice
+                choices={lessonData.item[item - 1].data[scriptNum].choices}
+              />
+            )
+          } else if (
+            lessonData.item[item - 1].data[scriptNum].activityType === 2
+          ) {
+            setActivity(
+              <MultilplePicture
+                choices={lessonData.item[item - 1].data[scriptNum].choices}
+              />
+            )
+          } else if (
+            lessonData.item[item - 1].data[scriptNum].activityType === 3
+          ) {
+            setActivity(
+              <ConnectTheDots
+                data={lessonData.item[item - 1].data[scriptNum].data}
+              />
+            )
+          }
+
+          clearTimeout(actTimeout)
+        }, 500)
+      }
     }
   }, [item, scriptNum])
 
+  // for managing the arrow btns
   useEffect(() => {
     if (lessonData) {
       console.log(
@@ -133,6 +177,7 @@ const Lesson = ({ navigation }) => {
           setIsRightShown(false)
         } else {
           setIsRightShown(true)
+          setIsFinished(false)
         }
       }
       // do not show left btn if...
@@ -148,6 +193,7 @@ const Lesson = ({ navigation }) => {
     }
   }, [item, scriptNum, isNarrating, isActFin])
 
+  // for setting the timer for narrating
   useEffect(() => {
     let narrInterval
     if (lessonData) {
@@ -227,34 +273,6 @@ const Lesson = ({ navigation }) => {
     )
   }
 
-  const getActComp = () => {
-    if (!lessonData || lessonData.item[item - 1].type !== 'activity') {
-      return null
-    } else {
-      if (lessonData.item[item - 1].data[scriptNum].activityType === 1) {
-        return (
-          <MultipleChoice
-            choices={lessonData.item[item - 1].data[scriptNum].choices}
-          />
-        )
-      } else if (lessonData.item[item - 1].data[scriptNum].activityType === 2) {
-        return (
-          <MultilplePicture
-            choices={lessonData.item[item - 1].data[scriptNum].choices}
-          />
-        )
-      } else if (lessonData.item[item - 1].data[scriptNum].activityType === 3) {
-        return (
-          <MultipleChoice
-            choices={lessonData.item[item - 1].data[scriptNum].choices}
-          />
-        )
-      } else {
-        return null
-      }
-    }
-  }
-
   const handleFinishedBtn = () => {
     navigation.goBack()
     navigation.goBack()
@@ -282,7 +300,7 @@ const Lesson = ({ navigation }) => {
           ]}
         >
           {getLesImg()}
-          {getActComp()}
+          {activity}
           {scriptComp}
           {instruction}
           {narrator}

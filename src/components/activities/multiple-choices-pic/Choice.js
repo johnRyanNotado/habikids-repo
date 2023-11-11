@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Vibration,
@@ -10,26 +9,24 @@ import {
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Animated, {
-  BounceInLeft,
   BounceInRight,
   useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
-  ZoomIn,
   withTiming,
 } from 'react-native-reanimated'
-import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 import {
   GestureHandlerRootView,
   TapGestureHandler,
 } from 'react-native-gesture-handler'
-import { TAMA, MALI } from '../../../constants/temp_db/lessons/db_les_values'
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
+
+const TAMA = 'TAMA'
 
 const Choice = (props) => {
   const { choice, selected, setSelected } = props
-  const { choiceWrapper, choiceBox, choiceBtn, choiceTxt } = styles
-  const { container, centered } = globalStyles
+  const { choiceWrapper, choiceBox, choiceBtn } = styles
+  const { centered } = globalStyles
   const { setIsActFin } = useSpecificLessonContext()
   const scale = useSharedValue(1)
   const backgroundColor = useSharedValue(COLORS.greenSecond)

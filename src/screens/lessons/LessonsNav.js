@@ -14,15 +14,16 @@ const LessonsNav = () => {
   const [item, setItem] = useState(1)
   const [lessonData, setLessonData] = useState(null)
   const [isFinished, setIsFinished] = useState(false)
+  const [isNarrating, setIsNarrating] = useState(false)
   const [scriptNum, setScriptNum] = useState(0)
   const [scriptComp, setScriptComp] = useState(null)
   const [title, setTitle] = useState(null)
   const [lesNum, setLesNum] = useState(null)
   const [instruction, setInstruction] = useState(null)
   const [narrator, setNarrator] = useState(null)
-  const [isNarrating, setIsNarrating] = useState(false)
   const [isActFin, setIsActFin] = useState(false)
   const [selected, setSelected] = useState(null)
+  const [activity, setActivity] = useState(null)
   const timer = useSharedValue(0)
 
   useEffect(() => {
@@ -64,6 +65,8 @@ const LessonsNav = () => {
         setIsActFin,
         selected,
         setSelected,
+        activity,
+        setActivity,
       }}
     >
       <LessonsStack.Navigator>

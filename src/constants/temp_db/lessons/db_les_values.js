@@ -273,7 +273,7 @@ export const db_Les_Values = {
             img: require('../../../img/les/values/grade-1/lesson-1/1.8.png'),
             data: [
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'juan',
                 narrationDuration: 5,
                 style: {
@@ -287,7 +287,7 @@ export const db_Les_Values = {
                   'Ah ang pamilya ay isa sa pinakamahalagang bahagi ng lipunan.',
               },
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'vio',
                 narrationDuration: 5,
                 style: {
@@ -308,7 +308,7 @@ export const db_Les_Values = {
             img: require('../../../img/les/values/grade-1/lesson-1/1.9.png'),
             data: [
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 4,
                 style: {
@@ -336,7 +336,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 300,
@@ -351,7 +351,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 220,
@@ -373,7 +373,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'vio',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 120,
@@ -395,7 +395,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -410,7 +410,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -424,7 +424,7 @@ export const db_Les_Values = {
               },
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -445,7 +445,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 190,
@@ -459,7 +459,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 190,
@@ -481,7 +481,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -496,7 +496,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -553,7 +553,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -812,7 +812,7 @@ export const db_Les_Values = {
             img: getImg.bg.emptyBg.link,
             data: [
               {
-                activityType: 1,
+                activityType: 3,
                 isNarratorShown: true,
                 narrator: 'uni',
                 narrationDuration: 5,
@@ -823,24 +823,22 @@ export const db_Les_Values = {
                   right: 'auto',
                   left: 'auto',
                 },
-                instruction: 'Sino-sino ang mga kasapi ng Pamilya Cruz?',
-                choices: [
-                  {
-                    id: 1,
-                    answer: TAMA,
-                    value: 'Mang Manny, Aling Annie, John, at Sofie',
-                  },
-                  {
-                    id: 2,
-                    answer: MALI,
-                    value: 'Mang Robert, Aling Maria, Ronald, at Sofie',
-                  },
-                  {
-                    id: 3,
-                    answer: MALI,
-                    value: 'Mang June, Aling Susan, John, at Kittie',
-                  },
-                ],
+                instruction:
+                  'I-konekta ang mga panauhin sa kaliwang hanay sa tamang pangyayari sa kanang hanay.”',
+                data: {
+                  firstColumn: [
+                    { id: 1, img: 'sample', value: 'Sofie' },
+                    { id: 2, img: 'sample', value: 'Manong Manny' },
+                    { id: 3, img: 'sample', value: 'Aling Annie' },
+                    { id: 4, img: 'sample', value: 'John' },
+                  ],
+                  secondColumn: [
+                    { id: 1, img: 'sample', value: 'Sofie' },
+                    { id: 2, img: 'sample', value: 'Manong Manny' },
+                    { id: 3, img: 'sample', value: 'Aling Annie' },
+                    { id: 4, img: 'sample', value: 'John' },
+                  ],
+                },
               },
             ],
           },
@@ -852,7 +850,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -867,7 +865,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -887,7 +885,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 300,
@@ -908,7 +906,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'vio',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 300,
@@ -930,7 +928,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -951,7 +949,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -972,7 +970,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -999,7 +997,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -1021,7 +1019,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'vio',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 230,

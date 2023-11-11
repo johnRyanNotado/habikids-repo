@@ -9,21 +9,19 @@ import {
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Animated, {
-  BounceInLeft,
   BounceInRight,
   useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
-  ZoomIn,
   withTiming,
 } from 'react-native-reanimated'
-import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 import {
   GestureHandlerRootView,
   TapGestureHandler,
 } from 'react-native-gesture-handler'
-import { TAMA, MALI } from '../../../constants/temp_db/lessons/db_les_values'
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
+
+const TAMA = 'TAMA'
 
 const Choice = (props) => {
   const { choice, selected, setSelected } = props
