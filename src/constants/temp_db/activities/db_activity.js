@@ -65,7 +65,7 @@ export const ACTIVITIES_TRADITIONS = {
         id: 2,
         actNum: 2,
         title: 'Dress Up in Culture',
-        screen: 'CultPuzzNav',
+        screen: 'DressUpNav',
         img: require('../../../img/bg/empty-bg.png'),
       },
     ],

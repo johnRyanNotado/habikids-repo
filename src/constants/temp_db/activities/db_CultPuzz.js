@@ -6,7 +6,6 @@ export const db_CultPuzz = {
     [
       {
         id: 1,
-        title: 'Cultural Puzzle Quest',
         trivia:
           'Alam mo ba na ang Fiesta ay isang sikat na tradisyon sa Pilipinas? Tuwing Fiesta, nagdiriwang at nag hahanda ang mga tao ng maraming pagkain.',
         theme: 'fiesta',
@@ -23,7 +22,6 @@ export const db_CultPuzz = {
     [
       {
         id: 1,
-        title: 'Cultural Puzzle Quest',
         trivia: 'Alam mo ba na ang mga Filipino ay madasalin?',
         theme: 'madasalin',
         pieces: [1, 2, 3, 4],
@@ -39,7 +37,6 @@ export const db_CultPuzz = {
     [
       {
         id: 1,
-        title: 'Cultural Puzzle Quest',
         trivia: 'Alam mo ba na ang mga Filipino ay madasalin?',
         theme: 'madasalin',
         pieces: [1, 2, 3, 4],

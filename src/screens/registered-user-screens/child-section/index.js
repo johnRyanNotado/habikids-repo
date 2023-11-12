@@ -7,6 +7,7 @@ import CultPuzzNav from '../../activities/cultural-puzzle/CultPuzzNav'
 import KindCatchNav from '../../activities/kindness-catcher/KindCatchNav'
 import ArrTheValNav from '../../activities/arrange-the-values/ArrTheValNav'
 import CTRPNav from '../../activities/choose-the-right-picture/CTRPNav'
+import DressUpNav from '../../activities/dressup-in-culture/DressUpNav'
 import LessonsNav from '../../lessons/LessonsNav'
 
 export {
@@ -20,4 +21,5 @@ export {
   ArrTheValNav,
   CTRPNav,
   LessonsNav,
+  DressUpNav,
 }
