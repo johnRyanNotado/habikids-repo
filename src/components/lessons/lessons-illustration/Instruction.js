@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Animated, {
@@ -11,7 +11,6 @@ import Animated, {
 } from 'react-native-reanimated'
 
 const Instruction = (props) => {
-  const { positionAbsolute } = globalStyles
   const {
     top,
     left,
@@ -22,7 +21,8 @@ const Instruction = (props) => {
     instructTemp,
     narrationDuration,
   } = props
-
+  const { instructionWrapper, instructionTxt } = styles
+  const { positionAbsolute } = globalStyles
   const timer = useSharedValue(narrationDuration)
   const [displayIntruct, setDisplayIntruct] = useState(true)
 
@@ -64,23 +64,14 @@ const Instruction = (props) => {
         exiting={SlideOutUp.duration(1000)}
       >
         <View
-          style={{
-            width: width,
-            backgroundColor: COLORS.primaryTrans,
-            paddingHorizontal: 10,
-            paddingVertical: 15,
-            borderRadius: 20,
-          }}
+          style={[
+            instructionWrapper,
+            {
+              width: width,
+            },
+          ]}
         >
-          <Text
-            style={{
-              fontSize: 24,
-              fontFamily: 'QuiapoRegular',
-              textAlign: 'center',
-            }}
-          >
-            {script}
-          </Text>
+          <Text style={instructionTxt}>{script}</Text>
         </View>
       </Animated.View>
     )
@@ -88,5 +79,19 @@ const Instruction = (props) => {
     return null
   }
 }
+
+const styles = StyleSheet.create({
+  instructionWrapper: {
+    backgroundColor: COLORS.primaryTrans,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    borderRadius: 20,
+  },
+  instructionTxt: {
+    fontSize: 24,
+    fontFamily: 'QuiapoRegular',
+    textAlign: 'center',
+  },
+})
 
 export default Instruction

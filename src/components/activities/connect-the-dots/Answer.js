@@ -18,7 +18,7 @@ const Answer = (props) => {
         {
           top: endPosY - VALUE_DIMENSION.h / 2 + COMP_DIMENSION.h / 2,
           left: endPosX + VALUE_DIMENSION.w - 50,
-          width: VALUE_DIMENSION.w + 75,
+          width: VALUE_DIMENSION.w + 100,
           height: VALUE_DIMENSION.h,
         },
       ]}
@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     zIndex: 20,
     alignItems: 'flex-start',
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
   text: {
-    fontSize: 24,
+    fontSize: 20,
     fontFamily: 'QuiapoRegular',
     textAlign: 'left',
   },

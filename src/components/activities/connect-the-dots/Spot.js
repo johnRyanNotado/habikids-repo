@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import COLORS from '../../../constants/colors'
 
-import { COMP_DIMENSION, VALUE_DIMENSION, sampleData } from './constants'
+import { COMP_DIMENSION } from './constants'
 const Spot = (props) => {
   const { x, y } = props
 

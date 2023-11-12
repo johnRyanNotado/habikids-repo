@@ -8,7 +8,7 @@ import COLORS from '../../../constants/colors'
 import Answer from './Answer'
 import Spot from './Spot'
 
-import { COMP_DIMENSION, VALUE_DIMENSION, sampleData } from './constants'
+import { COMP_DIMENSION, VALUE_DIMENSION } from './constants'
 import { useSharedValue } from 'react-native-reanimated'
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
 
@@ -27,7 +27,7 @@ const ConnectTheDots = (props) => {
   const score = useSharedValue(0)
 
   useEffect(() => {
-    const initPosTemp = sampleData.firstColumn.map((item, index) => {
+    const initPosTemp = data.firstColumn.map((item, index) => {
       const gap = 10 + 10 * index
       arr.push(index)
       return {
@@ -37,7 +37,7 @@ const ConnectTheDots = (props) => {
     })
     setInitPos(initPosTemp)
     setEndPos(
-      sampleData.firstColumn.map((item, index) => {
+      data.firstColumn.map((item, index) => {
         return { x: initialPosX + 200, y: initPosTemp[index].y }
       })
     )
@@ -46,14 +46,14 @@ const ConnectTheDots = (props) => {
   useEffect(() => {
     if (endPos) {
       arr = []
-      sampleData.firstColumn.map((item, index) => {
+      data.firstColumn.map((item, index) => {
         arr.push(index)
       })
       // randomize the indices
       arr = arr.sort(() => Math.random() - 0.5)
       for (let i = 0; i < arr.length; i++) {
         tempEndPos.push(endPos[arr[i]])
-        tempAns.push(sampleData.secondColumn[arr[i]])
+        tempAns.push(data.secondColumn[arr[i]])
       }
 
       setShuffledEndPos(tempEndPos)
@@ -63,7 +63,7 @@ const ConnectTheDots = (props) => {
   useEffect(() => {
     const scoreInterval = setInterval(() => {
       console.log('Score: ', score.value)
-      if (score.value >= sampleData.firstColumn.length) {
+      if (score.value >= data.firstColumn.length) {
         setIsActFin(true)
         clearInterval(scoreInterval)
       }
@@ -84,12 +84,12 @@ const ConnectTheDots = (props) => {
     >
       {/* the images/values */}
       {initPos && endPos
-        ? sampleData.firstColumn.map((item, index) => {
+        ? data.firstColumn.map((item, index) => {
             return (
               <Choice
                 initialPosX={initPos[index].x}
                 initialPosY={initPos[index].y}
-                label={sampleData.firstColumn[index].value}
+                label={data.firstColumn[index].value}
               />
             )
           })
@@ -97,7 +97,7 @@ const ConnectTheDots = (props) => {
 
       {/* the dot to be dragged */}
       {initPos && endPos && shuffledEndPos
-        ? sampleData.firstColumn.map((item, index) => {
+        ? data.firstColumn.map((item, index) => {
             return (
               <Dot
                 initialPosX={initPos[index].x}
@@ -113,25 +113,25 @@ const ConnectTheDots = (props) => {
         : null}
 
       {initPos && endPos
-        ? sampleData.firstColumn.map((item, index) => {
+        ? data.firstColumn.map((item, index) => {
             return <Spot x={initPos[index].x} y={initPos[index].y} />
           })
         : null}
 
       {initPos && endPos
-        ? sampleData.firstColumn.map((item, index) => {
+        ? data.firstColumn.map((item, index) => {
             console.log('End pos: ', endPos)
             return <Spot x={endPos[index].x} y={endPos[index].y} />
           })
         : null}
 
       {initPos && endPos && shuffledEndPos
-        ? sampleData.firstColumn.map((item, index) => {
+        ? data.firstColumn.map((item, index) => {
             return (
               <Answer
                 endPosX={shuffledEndPos[index].x}
                 endPosY={shuffledEndPos[index].y}
-                label={sampleData.secondColumn[index].value}
+                label={data.secondColumn[index].value}
               />
             )
           })

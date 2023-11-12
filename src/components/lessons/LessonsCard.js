@@ -22,7 +22,7 @@ const LessonsCard = (props) => {
   return (
     <Animated.View
       style={[container, centered, positionAbsolute, overlayWrapper]}
-      entering={SlideInUp.duration(1000).delay(2000)}
+      entering={SlideInUp.duration(1000).delay(1000)}
       exiting={SlideOutUp.duration(1000)}
     >
       <View style={[centered, gameCard]}>

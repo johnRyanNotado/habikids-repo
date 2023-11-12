@@ -827,16 +827,28 @@ export const db_Les_Values = {
                   'I-konekta ang mga panauhin sa kaliwang hanay sa tamang pangyayari sa kanang hanay.”',
                 data: {
                   firstColumn: [
-                    { id: 1, img: 'sample', value: 'Sofie' },
-                    { id: 2, img: 'sample', value: 'Manong Manny' },
-                    { id: 3, img: 'sample', value: 'Aling Annie' },
-                    { id: 4, img: 'sample', value: 'John' },
+                    { id: 1, img: null, value: 'Sofie' },
+                    { id: 2, img: null, value: 'Manong Manny' },
+                    { id: 3, img: null, value: 'Aling Annie' },
                   ],
                   secondColumn: [
-                    { id: 1, img: 'sample', value: 'Sofie' },
-                    { id: 2, img: 'sample', value: 'Manong Manny' },
-                    { id: 3, img: 'sample', value: 'Aling Annie' },
-                    { id: 4, img: 'sample', value: 'John' },
+                    {
+                      id: 1,
+                      img: null,
+                      value:
+                        'Inalagaan ang may sakit na miyembro ng pamilya at ang nakakabatang kapatid',
+                    },
+                    {
+                      id: 2,
+                      img: null,
+                      value:
+                        'Nasiyahan sa ipinakitang pagtutulungan ng magkapatid',
+                    },
+                    {
+                      id: 3,
+                      img: null,
+                      value: 'Isang araw siya ay nagkasakit',
+                    },
                   ],
                 },
               },

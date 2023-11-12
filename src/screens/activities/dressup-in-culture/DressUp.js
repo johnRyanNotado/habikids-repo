@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
@@ -7,14 +7,33 @@ import PausedCard from '../../../components/activities/PausedCard'
 import { useDressUpContext } from './DressUpContext'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 import { getImg } from '../../../utilities/getImg'
+import SelectionCard from '../../../components/activities/dress-up/SelectionCard'
+import Narrator from '../../../components/activities/Narrator'
+import DisplayClothes from '../../../components/activities/dress-up/DisplayClothes'
+import Character from '../../../components/activities/dress-up/Character'
 
 const DressUp = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
-  const { score } = useDressUpContext()
+  const { selectionWrapper, imgWrapper } = styles
+  const {
+    score,
+    charSelection,
+    topSelection,
+    bottomSelection,
+    shoesSelection,
+    accessSelection,
+    isFinished,
+    narrator,
+  } = useDressUpContext()
   const { isGamePaused } = useChildSectionContext()
 
   const exitGame = () => {
     score.value = 0
+    navigation.goBack()
+  }
+
+  // handleTriviaBtn
+  const handleFinishBtn = () => {
     navigation.goBack()
   }
   return (
@@ -23,15 +42,44 @@ const DressUp = ({ navigation }) => {
       style={container}
       resizeMode="contain"
     >
-      <View style={[container, centered]}>
-        <View style={[positionAbsolute, centered, { height: '20%' }]}>
+      <View style={[container, centered, { flexDirection: 'row' }]}>
+        <View style={[positionAbsolute, centered, { height: 80, zIndex: 10 }]}>
           <ActivityNavBar />
         </View>
-        <Text>SHEESH</Text>
+        <View style={[centered, selectionWrapper]}>
+          {charSelection}
+          {topSelection}
+          {bottomSelection}
+          {shoesSelection}
+          {accessSelection}
+        </View>
+
+        <View style={[centered, imgWrapper]}>
+          <Character />
+        </View>
+        {isFinished ? (
+          <View style={[positionAbsolute, container, { zIndex: 10 }]}>
+            <DisplayClothes handleFinishBtn={handleFinishBtn} />
+            <Narrator narrator={narrator} custWrapperStyle={{ right: -30 }} />
+          </View>
+        ) : null}
         {isGamePaused ? <PausedCard exitGame={exitGame} /> : null}
       </View>
     </ImageBackground>
   )
 }
+
+const styles = StyleSheet.create({
+  selectionWrapper: {
+    width: '60%',
+    height: '100%',
+    alignItems: 'flex-start',
+    zIndex: 5,
+  },
+  imgWrapper: {
+    width: '40%',
+    height: '100%',
+  },
+})
 
 export default DressUp

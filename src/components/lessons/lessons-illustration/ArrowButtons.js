@@ -8,14 +8,21 @@ import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 const ArrowButtons = (props) => {
   const { handleLeftBtn, handleRightBtn, isFinished, handleFinishedBtn } = props
   const { isLeftShown, isRightShown } = useChildSectionContext()
+  const {
+    btnSection,
+    arrBtnStyle,
+    btnSectionElement,
+    finishBtnStyle,
+    finishBtnTxt,
+  } = styles
   const { centered, positionAbsolute } = globalStyles
-  console.log('isFinished?', isFinished)
+
   return (
-    <View style={[positionAbsolute, styles.btnSection]}>
+    <View style={[positionAbsolute, btnSection]}>
       {isLeftShown ? (
-        <View style={[centered, styles.btnSectionElement]}>
+        <View style={[centered, btnSectionElement]}>
           <TouchableOpacity onPress={handleLeftBtn}>
-            <View style={[centered, styles.arrBtnStyle]}>
+            <View style={[centered, arrBtnStyle]}>
               <AntDesign name="left" size={25} color={COLORS.white} />
             </View>
           </TouchableOpacity>
@@ -24,18 +31,18 @@ const ArrowButtons = (props) => {
         <View />
       )}
       {isRightShown ? (
-        <View style={[centered, styles.btnSectionElement]}>
+        <View style={[centered, btnSectionElement]}>
           <TouchableOpacity onPress={handleRightBtn}>
-            <View style={[centered, styles.arrBtnStyle]}>
+            <View style={[centered, arrBtnStyle]}>
               <AntDesign name="right" size={25} color={COLORS.white} />
             </View>
           </TouchableOpacity>
         </View>
       ) : isFinished ? (
-        <View style={[centered, styles.btnSectionElement]}>
+        <View style={[centered, btnSectionElement]}>
           <TouchableOpacity onPress={handleFinishedBtn}>
-            <View style={[centered, styles.finishBtnStyle]}>
-              <Text style={styles.finishBtnTxt}>Tapusin ></Text>
+            <View style={[centered, finishBtnStyle]}>
+              <Text style={finishBtnTxt}>{`Tapusin >`}</Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -17,13 +17,42 @@ import ProfileCard from '../../../components/home-child/ProfileCard'
 
 const DressUpCA = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
-  const { score, narrator, instruction, instructionDuration } =
-    useDressUpContext()
+  const {
+    gameData,
+    score,
+    narrator,
+    instruction,
+    instructionDuration,
+    setCharacter,
+    setGender,
+    setTop,
+    setShoes,
+    setAccessories,
+    setBottom,
+    setTopSelection,
+    setBottomSelection,
+    setShoesSelection,
+    setAccessSelection,
+    setNumOfClothes,
+    setIsFinished,
+  } = useDressUpContext()
   const { isProfileClicked } = useChildSectionContext()
   const [content, setContent] = useState(ACTIVITY_CARD)
 
   const handleStartBtn = () => {
     score.value = 0
+    setCharacter(gameData.data.character[0].img)
+    setGender(gameData.data.character[0].gender)
+    setNumOfClothes(0)
+    setTop(null)
+    setBottom(null)
+    setShoes(null)
+    setAccessories(null)
+    setTopSelection(null)
+    setBottomSelection(null)
+    setShoesSelection(null)
+    setAccessSelection(null)
+    setIsFinished(false)
     setContent(INSTRUCTIONS) // first show instructions
 
     const instrucTimeout = setTimeout(() => {

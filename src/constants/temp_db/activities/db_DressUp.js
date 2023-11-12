@@ -1,13 +1,130 @@
 export const db_DressUp = {
-  instructionDuration: 10,
+  instructionDuration: 3,
   instruction:
     'Subukan na bihisan ang mga virtual na karakter sa tradisyonal na kasuotan ng Pilipinas.',
   narrator: 'juan',
+  title: 'Dress Up in Culture',
   grade: [
     [
       {
-        id: 1,
-        title: 'Dress Up in Culture',
+        id: 2,
+        data: {
+          character: [
+            {
+              id: 1,
+              name: 'boy',
+              gender: 'boy',
+              img: require('../../../img/act/dress-up/grade-one/first/boy/character-boy.png'),
+            },
+
+            {
+              id: 2,
+              name: 'girl',
+              gender: 'girl',
+              img: require('../../../img/act/dress-up/grade-one/first/girl/character-girl.png'),
+            },
+          ],
+          boy: {
+            top: [
+              {
+                id: 1,
+                name: 'top-1',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/top-1.png'),
+              },
+              {
+                id: 2,
+                name: 'top-2',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/top-2.png'),
+              },
+            ],
+            bottom: [
+              {
+                id: 1,
+                name: 'bottom-1',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/bottom-1.png'),
+              },
+              {
+                id: 2,
+                name: 'bottom-2',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/bottom-2.png'),
+              },
+            ],
+            shoes: [
+              {
+                id: 1,
+                name: 'shoes-1',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/shoes-1.png'),
+              },
+              {
+                id: 2,
+                name: 'shoes-2',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/shoes-2.png'),
+              },
+            ],
+            accessories: [
+              {
+                id: 1,
+                name: 'accessory-1',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/accessories-1.png'),
+              },
+              {
+                id: 2,
+                name: 'accessory-2',
+                img: require('../../../img/act/dress-up/grade-one/first/boy/accessories-2.png'),
+              },
+            ],
+          },
+          girl: {
+            top: [
+              {
+                id: 1,
+                name: 'top-1',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/top-1.png'),
+              },
+              {
+                id: 2,
+                name: 'top-2',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/top-2.png'),
+              },
+            ],
+            bottom: [
+              {
+                id: 1,
+                name: 'bottom-1',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/bottom-1.png'),
+              },
+              {
+                id: 2,
+                name: 'bottom-2',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/bottom-2.png'),
+              },
+            ],
+            shoes: [
+              {
+                id: 1,
+                name: 'shoes-1',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/shoes-1.png'),
+              },
+              {
+                id: 2,
+                name: 'shoes-2',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/shoes-2.png'),
+              },
+            ],
+            accessories: [
+              {
+                id: 1,
+                name: 'accessory-1',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/accessories-1.png'),
+              },
+              {
+                id: 2,
+                name: 'accessory-2',
+                img: require('../../../img/act/dress-up/grade-one/first/girl/accessories-2.png'),
+              },
+            ],
+          },
+        },
       },
     ],
   ],
