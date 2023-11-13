@@ -10,6 +10,7 @@ import Character from './Character'
 const DisplayClothes = (props) => {
   const { handleFinishBtn } = props
   const {
+    label,
     clotheOverlayWrapper,
     clotheCard,
     imgSection,

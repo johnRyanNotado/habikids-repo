@@ -14,6 +14,7 @@ import SelectionNavbar from './SelectionNavbar'
 import Animated, { SlideInLeft, SlideOutLeft } from 'react-native-reanimated'
 import { useDressUpContext } from '../../../screens/activities/dressup-in-culture/DressUpContext'
 import Choice from './Choice'
+import { WINDOW_HEIGHT } from '../../../constants/windowConstants'
 
 const SelectionCard = (props) => {
   const {
@@ -30,6 +31,7 @@ const SelectionCard = (props) => {
     checker,
     showSave,
     marginTop,
+    label,
   } = props
   const { numOfClothes, setNumOfClothes } = useDressUpContext()
   const { centered, container } = globalStyles
@@ -68,7 +70,7 @@ const SelectionCard = (props) => {
 
     return (
       <Choice
-        img={item.img}
+        img={item.prev}
         name={item.name}
         position={position}
         height={height}
@@ -106,6 +108,7 @@ const SelectionCard = (props) => {
         hideRightArr={hideRightArr}
         showSave={showSave}
         checker={checker}
+        label={label}
       />
     </Animated.View>
   )
@@ -114,7 +117,7 @@ const SelectionCard = (props) => {
 const styles = StyleSheet.create({
   selectionCard: {
     width: '100%',
-    height: '90%',
+    height: WINDOW_HEIGHT * 0.9,
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
     borderWidth: 3,
@@ -124,7 +127,7 @@ const styles = StyleSheet.create({
     bottom: 'auto',
   },
   listContainer: {
-    height: '80%',
+    height: WINDOW_HEIGHT * 0.9 - 70,
     width: '100%',
   },
 })

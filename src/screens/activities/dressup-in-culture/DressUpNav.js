@@ -71,7 +71,7 @@ const DressUpNav = () => {
           marginTop={60}
           height={300}
           putOn={(link) => setAccessories(link)}
-          label={'Accessories'}
+          label={'Akseso'}
           hideRightArr={true}
           showSave={true}
         />
@@ -87,9 +87,9 @@ const DressUpNav = () => {
           handleLeftBtn={() => setShoesSelection(null)}
           handleRightBtn={() => setAccessSelection(tempAccessSelect)}
           checker={3}
-          position={{ ...custPosition, bottom: 10 }}
+          position={{ ...custPosition }}
           putOn={(link) => setShoes(link)}
-          label={'Accessories'}
+          label={'Pangyapak'}
         />
       )
       let tempBottomSelect = (
@@ -103,9 +103,9 @@ const DressUpNav = () => {
           handleLeftBtn={() => setBottomSelection(null)}
           handleRightBtn={() => setShoesSelection(tempShoesSelect)}
           checker={2}
-          position={{ ...custPosition, bottom: -5 }}
+          position={{ ...custPosition }}
           putOn={(link) => setBottom(link)}
-          label={'Accessories'}
+          label={'Pang-ibaba'}
         />
       )
       let tempTopSelect = (
@@ -119,7 +119,7 @@ const DressUpNav = () => {
           checker={1}
           position={{ ...custPosition }}
           putOn={(link) => setTop(link)}
-          label={'Accessories'}
+          label={'Pang-itaas'}
         />
       )
 
@@ -130,10 +130,10 @@ const DressUpNav = () => {
           handleLeftBtn={() => setTopSelection(null)}
           handleRightBtn={() => setTopSelection(tempTopSelect)}
           checker={0}
-          position={{ ...custPosition, top: 25 }}
+          position={{ ...custPosition }}
           height={250}
           putOn={(link) => setCharacter(link)}
-          label={'Accessories'}
+          label={'Karakter'}
           setGender={handleGenderChanged}
           hideLeftArr={true}
         />

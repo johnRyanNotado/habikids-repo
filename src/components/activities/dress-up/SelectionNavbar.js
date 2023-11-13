@@ -13,6 +13,7 @@ const SelectionNavbar = (props) => {
     hideLeftArr,
     showSave,
     checker,
+    label,
   } = props
   const { centered } = globalStyles
   const { numOfClothes, setIsFinished, score } = useDressUpContext()
@@ -42,7 +43,20 @@ const SelectionNavbar = (props) => {
         )}
       </View>
       <View style={[centered, navBarElement]}>
-        {/* <Text style={{}}>SHEESH</Text> */}
+        <View
+          style={{
+            backgroundColor: COLORS.secondary,
+            paddingHorizontal: 20,
+            paddingVertical: 10,
+            borderRadius: 10,
+          }}
+        >
+          <Text
+            style={{ color: COLORS.accent, fontFamily: 'Quiapo', fontSize: 35 }}
+          >
+            {label}
+          </Text>
+        </View>
       </View>
 
       <View style={[centered, navBarElement]}>
