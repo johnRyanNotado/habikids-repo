@@ -19,8 +19,14 @@ import ConnectTheDots from '../../components/activities/connect-the-dots/Connect
 
 const Lesson = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
-  const { isGamePaused, setIsLeftShown, setIsRightShown } =
-    useChildSectionContext()
+  const {
+    isGamePaused,
+    setIsLeftShown,
+    setIsRightShown,
+    isCheckBtnShown,
+    setIsCheckBtnShown,
+    setIsDisabled,
+  } = useChildSectionContext()
   const {
     item,
     setItem,
@@ -163,15 +169,18 @@ const Lesson = ({ navigation }) => {
       )
 
       if (lessonData.item[item - 1].type === 'activity') {
-        console.log('Hihi: ', item)
-
-        // dont show right btn until activity is finish
-        if (lessonData.item.length <= item || !isActFin) {
-          setIsRightShown(false)
-        } else {
-          setIsRightShown(true)
+        setIsRightShown(false)
+        setIsCheckBtnShown(true)
+        setIsDisabled(true)
+        if (isActFin) {
+          setIsDisabled(false)
         }
       } else {
+        if (isCheckBtnShown) {
+          setIsCheckBtnShown(false)
+          setIsDisabled(true)
+        }
+
         // do not show right arr btn if its the last item or is narrating
         if (lessonData.item.length <= item || isNarrating) {
           setIsRightShown(false)
@@ -282,7 +291,7 @@ const Lesson = ({ navigation }) => {
     <ImageBackground style={container} source={getImg.bg.emptyBg.link}>
       <View style={[centered, container]}>
         <View style={[positionAbsolute, styles.navBarWrapper]}>
-          <LessonsNavBar />
+          <LessonsNavBar backgroundColor={COLORS.grayPrimary} />
         </View>
         <View
           style={[
@@ -294,7 +303,7 @@ const Lesson = ({ navigation }) => {
               zIndex: -1,
               backgroundColor:
                 lessonData.item[item - 1].type !== 'activity'
-                  ? COLORS.black
+                  ? COLORS.white
                   : null,
             },
           ]}
@@ -310,6 +319,7 @@ const Lesson = ({ navigation }) => {
           handleRightBtn={handleRightBtn}
           handleFinishedBtn={handleFinishedBtn}
           isFinished={isFinished}
+          isActFin={isActFin}
         />
         {isGamePaused ? <LessonCard exitLesson={exitLesson} /> : <></>}
       </View>

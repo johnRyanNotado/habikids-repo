@@ -41,8 +41,7 @@ const MultipleChoice = (props) => {
 
 const styles = StyleSheet.create({
   custContainer: {
-    width: '75%',
-    paddingTop: 70,
+    width: '100%',
   },
 })
 

@@ -20,16 +20,18 @@ import {
   TapGestureHandler,
 } from 'react-native-gesture-handler'
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const TAMA = 'TAMA'
 
 const Choice = (props) => {
+  const { isDisabled, setIsDisabled } = useChildSectionContext()
   const { choice, selected, setSelected } = props
   const { choiceWrapper, choiceBox, choiceBtn } = styles
   const { centered } = globalStyles
   const { setIsActFin } = useSpecificLessonContext()
   const scale = useSharedValue(1)
-  const backgroundColor = useSharedValue(COLORS.greenSecond)
+  const backgroundColor = useSharedValue(COLORS.whitePrimary)
   const boxAnimatedStyle = useAnimatedStyle(() => {
     return {
       backgroundColor: backgroundColor.value,
@@ -44,7 +46,7 @@ const Choice = (props) => {
     },
     onEnd: () => {
       scale.value = withTiming(1, { duration: 1000 })
-      backgroundColor.value = withTiming(COLORS.greenSecond, { duration: 500 })
+      backgroundColor.value = withTiming(COLORS.whitePrimary, { duration: 500 })
     },
   })
 
@@ -55,12 +57,15 @@ const Choice = (props) => {
     },
     onEnd: () => {
       scale.value = withTiming(1, { duration: 500 })
-      backgroundColor.value = withTiming(COLORS.greenSecond, { duration: 1000 })
+      backgroundColor.value = withTiming(COLORS.whitePrimary, {
+        duration: 1000,
+      })
     },
   })
 
   const handleSelection = () => {
     setSelected(choice.id)
+    setIsDisabled(false)
     if (choice.answer === TAMA) {
       setIsActFin(true)
     } else {
@@ -104,13 +109,13 @@ const Choice = (props) => {
 
 const styles = StyleSheet.create({
   choiceWrapper: {
-    width: '50%',
     alignItems: 'center',
     justifyContent: 'center',
+    marginHorizontal: 20,
   },
   choiceBox: {
-    borderRadius: 40,
-    paddingHorizontal: 30,
+    borderRadius: 10,
+    paddingHorizontal: 20,
     paddingVertical: 10,
     flexDirection: 'row',
     marginBottom: 20,

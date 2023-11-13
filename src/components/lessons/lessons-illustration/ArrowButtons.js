@@ -2,39 +2,89 @@ import React from 'react'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import { AntDesign } from '@expo/vector-icons'
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
+import {
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  Vibration,
+} from 'react-native'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
+import { Feather } from '@expo/vector-icons'
+import Animated, { SlideInRight, SlideOutRight } from 'react-native-reanimated'
+import {
+  ENTER_DELAY,
+  ENTER_DURATION,
+  EXIT_DURATION,
+} from '../../../constants/narrConstants'
 
 const ArrowButtons = (props) => {
-  const { handleLeftBtn, handleRightBtn, isFinished, handleFinishedBtn } = props
-  const { isLeftShown, isRightShown } = useChildSectionContext()
+  const {
+    handleLeftBtn,
+    handleRightBtn,
+    isFinished,
+    handleFinishedBtn,
+    isActFin,
+  } = props
+  const { isLeftShown, isRightShown, isCheckBtnShown, isDisabled } =
+    useChildSectionContext()
   const {
     btnSection,
     arrBtnStyle,
     btnSectionElement,
     finishBtnStyle,
     finishBtnTxt,
+    checkBtnWrapper,
+    checkBtnBox,
   } = styles
   const { centered, positionAbsolute } = globalStyles
 
+  const wrongAnswer = () => {
+    Vibration.vibrate(1000)
+  }
   return (
     <View style={[positionAbsolute, btnSection]}>
       {isLeftShown ? (
         <View style={[centered, btnSectionElement]}>
           <TouchableOpacity onPress={handleLeftBtn}>
             <View style={[centered, arrBtnStyle]}>
-              <AntDesign name="left" size={25} color={COLORS.white} />
+              <AntDesign name="left" size={25} color={COLORS.grayPrimary} />
             </View>
           </TouchableOpacity>
         </View>
       ) : (
         <View />
       )}
-      {isRightShown ? (
+      {isCheckBtnShown ? (
+        <Animated.View
+          style={checkBtnWrapper}
+          entering={SlideInRight.duration(ENTER_DURATION).delay(ENTER_DELAY)}
+          exiting={SlideOutRight.duration(EXIT_DURATION)}
+        >
+          <TouchableOpacity
+            onPress={isActFin ? handleRightBtn : wrongAnswer}
+            disabled={isDisabled}
+          >
+            <View
+              style={[
+                centered,
+                checkBtnBox,
+                {
+                  backgroundColor: isDisabled
+                    ? COLORS.grayPrimary
+                    : COLORS.greenPrimary,
+                },
+              ]}
+            >
+              <Feather name="check" size={40} color={COLORS.white} />
+            </View>
+          </TouchableOpacity>
+        </Animated.View>
+      ) : isRightShown ? (
         <View style={[centered, btnSectionElement]}>
           <TouchableOpacity onPress={handleRightBtn}>
             <View style={[centered, arrBtnStyle]}>
-              <AntDesign name="right" size={25} color={COLORS.white} />
+              <AntDesign name="right" size={25} color={COLORS.grayPrimary} />
             </View>
           </TouchableOpacity>
         </View>
@@ -68,8 +118,8 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 24,
     borderWidth: 3,
-    backgroundColor: COLORS.accent,
-    borderColor: COLORS.white,
+    backgroundColor: COLORS.blueFifth,
+    borderColor: COLORS.grayPrimary,
   },
   btnSectionElement: {
     width: '13%',
@@ -88,6 +138,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Quiapo',
     fontWeight: '400',
+  },
+  checkBtnWrapper: {
+    position: 'absolute',
+    right: 200,
+    left: 'auto',
+    top: 'auto',
+    bottom: 15,
+    zIndex: 20,
+  },
+  checkBtnBox: {
+    width: 90,
+    height: 60,
+    borderWidth: 3,
+    borderColor: COLORS.white,
+    borderRadius: 10,
   },
 })
 

@@ -15,9 +15,17 @@ const SelectionNavbar = (props) => {
     checker,
     label,
   } = props
-  const { centered } = globalStyles
   const { numOfClothes, setIsFinished, score } = useDressUpContext()
-  const { navBarWrapper, navBarElement, arrBtnStyle } = styles
+  const { centered } = globalStyles
+  const {
+    navBarWrapper,
+    navBarElement,
+    arrBtnStyle,
+    labelWrapper,
+    labelStyle,
+    finishBtnStyle,
+    finishBtnTxt,
+  } = styles
   const handleSave = () => {
     console.log(
       'Go next\tChecker: ',
@@ -43,19 +51,8 @@ const SelectionNavbar = (props) => {
         )}
       </View>
       <View style={[centered, navBarElement]}>
-        <View
-          style={{
-            backgroundColor: COLORS.secondary,
-            paddingHorizontal: 20,
-            paddingVertical: 10,
-            borderRadius: 10,
-          }}
-        >
-          <Text
-            style={{ color: COLORS.accent, fontFamily: 'Quiapo', fontSize: 35 }}
-          >
-            {label}
-          </Text>
+        <View style={labelWrapper}>
+          <Text style={labelStyle}>{label}</Text>
         </View>
       </View>
 
@@ -69,8 +66,8 @@ const SelectionNavbar = (props) => {
         )}
         {showSave ? (
           <TouchableOpacity onPress={handleSave}>
-            <View style={[centered, styles.finishBtnStyle]}>
-              <Text style={styles.finishBtnTxt}>{`Tapusin >`}</Text>
+            <View style={[centered, finishBtnStyle]}>
+              <Text style={finishBtnTxt}>{`I-Save >`}</Text>
             </View>
           </TouchableOpacity>
         ) : null}
@@ -83,7 +80,6 @@ const styles = StyleSheet.create({
   navBarWrapper: {
     width: '100%',
     height: 70,
-    // backgroundColor: COLORS.whiteTrans,
     flexDirection: 'row',
     zIndex: 10,
   },
@@ -114,6 +110,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Quiapo',
     fontWeight: '400',
   },
+  labelWrapper: {
+    backgroundColor: COLORS.secondary,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 10,
+  },
+  labelStyle: { color: COLORS.accent, fontFamily: 'Quiapo', fontSize: 35 },
 })
 
 export default SelectionNavbar

@@ -23,7 +23,12 @@ const MultilplePicture = (props) => {
   }
   return (
     <Animated.View
-      style={[container, centered, custContainer]}
+      style={[
+        container,
+        centered,
+        custContainer,
+        { alignItems: 'flex-start', paddingLeft: 100 },
+      ]}
       entering={ZoomIn}
     >
       <FlatList
@@ -32,7 +37,7 @@ const MultilplePicture = (props) => {
         numColumns={2}
         contentContainerStyle={{
           justifyContent: 'center',
-          flexGrow: 1,
+          marginBottom: 100,
         }}
       />
     </Animated.View>
@@ -41,7 +46,7 @@ const MultilplePicture = (props) => {
 
 const styles = StyleSheet.create({
   custContainer: {
-    width: '75%',
+    width: '100%',
     paddingTop: 110,
   },
 })

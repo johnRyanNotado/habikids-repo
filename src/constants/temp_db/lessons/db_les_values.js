@@ -1,4 +1,5 @@
 import { getImg } from '../../../utilities/getImg'
+import { WINDOW_WIDTH } from '../../windowConstants'
 
 export const TAMA = 'TAMA'
 export const MALI = 'MALI'
@@ -32,7 +33,7 @@ export const db_Les_Values = {
                   'Hello! Kamusta ka. Nagbabasa lang kami dito tungkol sa pagkakabuklod-buklod ng pamilya. Kilala mo ba ang mga kasapi ng iyong pamilya? Tara alamin natin!',
               },
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
@@ -54,7 +55,7 @@ export const db_Les_Values = {
             img: require('../../../img/les/values/grade-1/lesson-1/1.2.png'),
             data: [
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
@@ -76,7 +77,7 @@ export const db_Les_Values = {
             img: require('../../../img/les/values/grade-1/lesson-1/1.3.png'),
             data: [
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
@@ -98,7 +99,7 @@ export const db_Les_Values = {
             img: require('../../../img/les/values/grade-1/lesson-1/1.4.png'),
             data: [
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
@@ -120,7 +121,7 @@ export const db_Les_Values = {
             img: require('../../../img/les/values/grade-1/lesson-1/1.5.png'),
             data: [
               {
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
@@ -146,28 +147,28 @@ export const db_Les_Values = {
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
-                  width: 650,
-                  top: 20,
+                  width: 250,
+                  top: 'auto',
                   bottom: 'auto',
-                  right: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
                   left: 'auto',
                 },
                 instruction:
-                  'Kompletuhin ang pangungusap. "Ang susi ng pagkakabuklod ng isang pamilya ay ___."',
+                  'Kompletuhin ang pangungusap. "Ang susi ng pagkakabuklod ng isang pamilya ay _____."',
                 choices: [
                   {
                     id: 1,
-                    answer: MALI,
+                    answer: TAMA,
                     value: 'Pagkakaisa',
                   },
                   {
                     id: 2,
                     answer: MALI,
-                    value: 'Pagsasama-sama',
+                    value: 'Pagkakagalit',
                   },
                   {
                     id: 3,
-                    answer: TAMA,
+                    answer: MALI,
                     value: 'Pag-iiwan',
                   },
                 ],
@@ -190,7 +191,7 @@ export const db_Les_Values = {
                   top: 20,
                   bottom: 'auto',
                   right: 'auto',
-                  left: 'auto',
+                  left: 80,
                 },
                 instruction:
                   'Alin sa mga larawang ito ang nagpapakita ng pagkakabuklod-buklod. Pindutin ang mga larawang nagpapakita nito.',
@@ -236,7 +237,7 @@ export const db_Les_Values = {
                   top: 20,
                   bottom: 'auto',
                   right: 'auto',
-                  left: 'auto',
+                  left: 80,
                 },
                 instruction:
                   'Alin sa mga larawang ito ang HINDI nagpapakita ng pagkakabuklod-buklod? Pindutin ang mga larawang HINDI nagpapakita nito.',
@@ -517,7 +518,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -532,7 +533,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -575,7 +576,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 180,
@@ -596,7 +597,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -621,10 +622,10 @@ export const db_Les_Values = {
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
-                  width: 650,
-                  top: 20,
+                  width: 250,
+                  top: 'auto',
                   bottom: 'auto',
-                  right: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
                   left: 'auto',
                 },
                 instruction: 'Sino-sino ang mga kasapi ng Pamilya Cruz?',
@@ -656,7 +657,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -678,7 +679,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -699,7 +700,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -720,7 +721,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -734,7 +735,7 @@ export const db_Les_Values = {
               },
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -755,7 +756,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -777,7 +778,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -791,7 +792,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 400,
@@ -1053,7 +1054,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 230,
@@ -1075,7 +1076,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -1096,7 +1097,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -1118,7 +1119,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -1132,7 +1133,7 @@ export const db_Les_Values = {
               },
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -1146,7 +1147,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -1167,7 +1168,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -1181,7 +1182,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 150,
@@ -1196,7 +1197,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 240,
@@ -1218,7 +1219,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'juan',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 400,
@@ -1239,7 +1240,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -1253,7 +1254,7 @@ export const db_Les_Values = {
               },
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -1268,7 +1269,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 260,
@@ -1288,7 +1289,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -1302,7 +1303,7 @@ export const db_Les_Values = {
 
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -1323,7 +1324,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -1345,7 +1346,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -1366,7 +1367,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,
@@ -1388,7 +1389,7 @@ export const db_Les_Values = {
             data: [
               {
                 narrator: 'uni',
-                isNarratorShown: true,
+                isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
                   width: 200,

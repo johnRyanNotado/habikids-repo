@@ -79,7 +79,9 @@ const NavScrChild = ({ navigation }) => {
 
   // For hiding/showing the arrows in the lessons
   const [isLeftShown, setIsLeftShown] = useState(true)
-  const [isRightShown, setIsRightShown] = useState(true)
+  const [isRightShown, setIsRightShown] = useState(false)
+  const [isCheckBtnShown, setIsCheckBtnShown] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(false)
 
   return (
     <ChildSectionContext.Provider
@@ -114,6 +116,10 @@ const NavScrChild = ({ navigation }) => {
         setIsLeftShown,
         isRightShown,
         setIsRightShown,
+        isCheckBtnShown,
+        setIsCheckBtnShown,
+        isDisabled,
+        setIsDisabled,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">

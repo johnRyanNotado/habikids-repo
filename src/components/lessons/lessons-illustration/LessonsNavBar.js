@@ -8,7 +8,7 @@ import {
 } from '../../../screens/context-api/ContextAPI'
 
 const LessonsNavBar = (props) => {
-  const { backBtn } = props
+  const { backBtn, backgroundColor } = props
   const { chosenChild } = useChildDataContext()
   const { setIsGamePaused } = useChildSectionContext()
   const { avatarNum } = chosenChild
@@ -25,7 +25,15 @@ const LessonsNavBar = (props) => {
       <View style={navBarElement}></View>
       <View style={[navBarElement, { width: '13%' }]}>
         <TouchableOpacity onPress={handleProfileBtn}>
-          <Image source={corresIcon[avatarNum].link} style={avatarStyle} />
+          <Image
+            source={corresIcon[avatarNum].link}
+            style={[
+              avatarStyle,
+              {
+                borderColor: backgroundColor ? backgroundColor : COLORS.white,
+              },
+            ]}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -52,7 +60,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     marginBottom: 4,
     borderWidth: 3,
-    borderColor: COLORS.white,
     borderRadius: 25,
   },
 })

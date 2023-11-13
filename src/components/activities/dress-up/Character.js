@@ -11,9 +11,9 @@ const Character = () => {
   return (
     <View style={[centered, { width: '100%', height: '100%' }]}>
       <Image source={character} style={imgStyle} resizeMode="contain" />
-      <Image source={top} style={imgStyle} resizeMode="contain" />
       <Image source={bottom} style={imgStyle} resizeMode="contain" />
       <Image source={shoes} style={imgStyle} resizeMode="contain" />
+      <Image source={top} style={imgStyle} resizeMode="contain" />
       <Image source={accessories} style={imgStyle} resizeMode="contain" />
     </View>
   )

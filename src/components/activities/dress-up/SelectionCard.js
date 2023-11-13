@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Image,
-  TouchableOpacity,
-  Vibration,
-} from 'react-native'
+import { View, StyleSheet, FlatList, Vibration } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import SelectionNavbar from './SelectionNavbar'
