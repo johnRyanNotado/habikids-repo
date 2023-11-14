@@ -105,6 +105,8 @@ const styles = StyleSheet.create({
   },
   labelWrapper: {
     backgroundColor: COLORS.secondary,
+    borderWidth: 3,
+    borderColor: COLORS.white,
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 10,

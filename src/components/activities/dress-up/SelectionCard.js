@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     height: WINDOW_HEIGHT * 0.9,
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
-    borderWidth: 3,
+    borderWidth: 5,
     borderColor: COLORS.accent,
     position: 'absolute',
     top: 'auto',

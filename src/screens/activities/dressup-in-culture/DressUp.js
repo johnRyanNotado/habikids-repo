@@ -24,6 +24,7 @@ const DressUp = ({ navigation }) => {
     accessSelection,
     isFinished,
     narrator,
+    gameData,
   } = useDressUpContext()
   const { isGamePaused } = useChildSectionContext()
 
@@ -59,7 +60,11 @@ const DressUp = ({ navigation }) => {
         </View>
         {isFinished ? (
           <View style={[positionAbsolute, container, { zIndex: 10 }]}>
-            <DisplayClothes handleFinishBtn={handleFinishBtn} />
+            <DisplayClothes
+              handleFinishBtn={handleFinishBtn}
+              title={gameData.title}
+              trivia={gameData.trivia}
+            />
             <Narrator narrator={narrator} custWrapperStyle={{ right: -30 }} />
           </View>
         ) : null}

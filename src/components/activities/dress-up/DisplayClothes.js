@@ -8,7 +8,7 @@ import Animated, { BounceIn } from 'react-native-reanimated'
 import Character from './Character'
 
 const DisplayClothes = (props) => {
-  const { handleFinishBtn } = props
+  const { handleFinishBtn, title, trivia } = props
   const {
     label,
     clotheOverlayWrapper,
@@ -34,12 +34,10 @@ const DisplayClothes = (props) => {
         <View style={[centered, clotheSection]}>
           <View style={clotheWrapper}>
             <View style={[centered, clotheTitleWrapper]}>
-              <Text style={titleStyle}>{`Mahusay!`}</Text>
+              <Text style={titleStyle}>{title}</Text>
             </View>
             <View style={[centered, clotheDescWrapper]}>
-              <Text
-                style={clotheStyle}
-              >{`Ang ganda ng napili mong tradisyonal na kasuotan!`}</Text>
+              <Text style={clotheStyle}>{trivia}</Text>
             </View>
           </View>
           <View style={[centered, btnSection]}>

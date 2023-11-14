@@ -1,13 +1,17 @@
 export const db_DressUp = {
   instructionDuration: 3,
+
   instruction:
     'Subukan na bihisan ang mga virtual na karakter sa tradisyonal na kasuotan ng Pilipinas.',
   narrator: 'juan',
+
   title: 'Dress Up in Culture',
   grade: [
     [
       {
         id: 2,
+        title: `Barong at Baro't Saya`,
+        trivia: `Alam mo ba na ang Barong Tagalog at Baro't Saya ay mga pinakatanyag na mga damit na naging malaking bahagi ng pagkakakilanlan ng Pilipino.`,
         data: {
           character: [
             {
@@ -30,13 +34,13 @@ export const db_DressUp = {
             top: [
               {
                 id: 1,
-                name: 'top-1',
+                name: 'Barong #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/top-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/top-1.png'),
               },
               {
                 id: 2,
-                name: 'top-2',
+                name: 'Barong #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/top-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/top-2.png'),
               },
@@ -44,13 +48,13 @@ export const db_DressUp = {
             bottom: [
               {
                 id: 1,
-                name: 'bottom-1',
+                name: 'Pang-ibaba #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/bottom-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/bottom-1.png'),
               },
               {
                 id: 2,
-                name: 'bottom-2',
+                name: 'Pang-ibaba #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/bottom-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/bottom-2.png'),
               },
@@ -58,13 +62,13 @@ export const db_DressUp = {
             shoes: [
               {
                 id: 1,
-                name: 'shoes-1',
+                name: 'Sapatos #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/shoes-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/shoes-1.png'),
               },
               {
                 id: 2,
-                name: 'shoes-2',
+                name: 'Sapatos #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/shoes-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/shoes-2.png'),
               },
@@ -72,13 +76,13 @@ export const db_DressUp = {
             accessories: [
               {
                 id: 1,
-                name: 'accessory-1',
+                name: 'Akseso #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/accessories-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/accessories-1.png'),
               },
               {
                 id: 2,
-                name: 'accessory-2',
+                name: 'Akseso #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/accessories-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/boy/accessories-2.png'),
               },
@@ -88,13 +92,13 @@ export const db_DressUp = {
             top: [
               {
                 id: 1,
-                name: 'top-1',
+                name: `Baro't Saya #1`,
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/top-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/top-1.png'),
               },
               {
                 id: 2,
-                name: 'top-2',
+                name: `Baro't Saya #2`,
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/top-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/top-2.png'),
               },
@@ -102,13 +106,13 @@ export const db_DressUp = {
             bottom: [
               {
                 id: 1,
-                name: 'bottom-1',
+                name: 'Pang-ibaba #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/bottom-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/bottom-1.png'),
               },
               {
                 id: 2,
-                name: 'bottom-2',
+                name: 'Pang-ibaba #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/bottom-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/bottom-2.png'),
               },
@@ -116,13 +120,13 @@ export const db_DressUp = {
             shoes: [
               {
                 id: 1,
-                name: 'shoes-1',
+                name: 'Sapatos #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/shoes-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/shoes-1.png'),
               },
               {
                 id: 2,
-                name: 'shoes-2',
+                name: 'Sapatos #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/shoes-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/shoes-2.png'),
               },
@@ -130,13 +134,13 @@ export const db_DressUp = {
             accessories: [
               {
                 id: 1,
-                name: 'accessory-1',
+                name: 'Akseso #1',
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/accessories-1-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/accessories-1.png'),
               },
               {
                 id: 2,
-                name: 'accessory-2',
+                name: 'Akseso #2',
                 prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/accessories-2-prev.png'),
                 img: require('../../../img/act/dress-up/grade-one/first/girl/accessories-2.png'),
               },
