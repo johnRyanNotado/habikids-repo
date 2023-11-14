@@ -32,12 +32,6 @@ const Instruction = (props) => {
     if (instructTemp && displayIntruct) {
       instructionInterval = setInterval(() => {
         timer.value--
-        console.log(
-          'Instruct temporary: ',
-          instructTemp,
-          '\tTimer: ',
-          timer.value
-        )
         if (timer.value <= 0) {
           setDisplayIntruct(false)
           clearInterval(instructionInterval)

@@ -7,7 +7,6 @@ const Character = () => {
   const { character, top, bottom, shoes, accessories } = useDressUpContext()
   const { centered } = globalStyles
   const { imgStyle } = styles
-  console.log('Character: ', character)
   return (
     <View style={[centered, { width: '100%', height: '100%' }]}>
       <Image source={character} style={imgStyle} resizeMode="contain" />

@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     width: '13%',
   },
   finishBtnStyle: {
-    backgroundColor: COLORS.accent,
+    backgroundColor: COLORS.blueFifth,
     width: 120,
     paddingVertical: 10,
     borderRadius: 30,

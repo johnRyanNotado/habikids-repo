@@ -30,12 +30,6 @@ const SelectionCard = (props) => {
   const { selectionCard, listContainer } = styles
 
   const goNext = () => {
-    console.log(
-      'Go next\tChecker: ',
-      checker,
-      '\tNum of Clothes: ',
-      numOfClothes
-    )
     if (checker <= numOfClothes) {
       handleRightBtn()
     } else {
@@ -52,12 +46,6 @@ const SelectionCard = (props) => {
       if (numOfClothes < checker) {
         setNumOfClothes((prevState) => prevState + 1)
       }
-      console.log(
-        'Changed\tChecker: ',
-        checker,
-        '\tNum of Clothes: ',
-        numOfClothes
-      )
     }
 
     return (

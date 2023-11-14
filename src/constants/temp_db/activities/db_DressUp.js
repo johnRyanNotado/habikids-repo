@@ -15,7 +15,7 @@ export const db_DressUp = {
               name: 'Totoy',
               gender: 'boy',
               prev: require('../../../img/act/dress-up/grade-one/first/boy/character-boy.png'),
-              img: require('../../../img/act/dress-up/grade-one/first/boy/character-boy.png'),
+              img: require('../../../img/act/dress-up/grade-one/first/boy/character-boy.gif'),
             },
 
             {

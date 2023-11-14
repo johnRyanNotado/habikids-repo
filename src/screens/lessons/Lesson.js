@@ -182,7 +182,11 @@ const Lesson = ({ navigation }) => {
         }
 
         // do not show right arr btn if its the last item or is narrating
-        if (lessonData.item.length <= item || isNarrating) {
+        if (
+          (lessonData.item.length <= item &&
+            lessonData.item[item - 1].data.length <= scriptNum + 1) ||
+          isNarrating
+        ) {
           setIsRightShown(false)
         } else {
           setIsRightShown(true)
@@ -217,7 +221,10 @@ const Lesson = ({ navigation }) => {
             console.log('Narration done.\n\n')
             setIsNarrating(false)
             clearInterval(narrInterval)
-            if (lessonData.item.length <= item) {
+            if (
+              lessonData.item.length <= item &&
+              lessonData.item[item - 1].data.length <= scriptNum + 1
+            ) {
               setIsFinished(true)
               console.log('Tapos na haha')
             }

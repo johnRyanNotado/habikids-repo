@@ -1223,9 +1223,9 @@ export const db_Les_Values = {
                 narrationDuration: 4,
                 style: {
                   width: 400,
-                  top: 'auto',
-                  bottom: 20,
-                  right: 100,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
                   left: 'auto',
                 },
                 script:
@@ -1285,7 +1285,7 @@ export const db_Les_Values = {
           {
             id: '3.10',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.9.png'),
+            img: require('../../../img/les/values/grade-1/lesson-3/3.10.png'),
             data: [
               {
                 narrator: 'uni',
@@ -1293,7 +1293,7 @@ export const db_Les_Values = {
                 narrationDuration: 4,
                 style: {
                   width: 200,
-                  top: 50,
+                  top: 10,
                   bottom: 'auto',
                   right: 'auto',
                   left: 180,
@@ -1306,8 +1306,8 @@ export const db_Les_Values = {
                 isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
-                  width: 200,
-                  top: 50,
+                  width: 400,
+                  top: 10,
                   bottom: 'auto',
                   right: 'auto',
                   left: 180,
@@ -1320,16 +1320,16 @@ export const db_Les_Values = {
           {
             id: '3.11',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.9.png'),
+            img: require('../../../img/les/values/grade-1/lesson-3/3.11.png'),
             data: [
               {
                 narrator: 'uni',
                 isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
-                  width: 200,
-                  top: 50,
-                  bottom: 'auto',
+                  width: 400,
+                  top: 'auto',
+                  bottom: 20,
                   right: 'auto',
                   left: 180,
                 },
@@ -1342,18 +1342,18 @@ export const db_Les_Values = {
           {
             id: '3.12',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.9.png'),
+            img: require('../../../img/les/values/grade-1/lesson-3/3.12.png'),
             data: [
               {
                 narrator: 'uni',
                 isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
-                  width: 200,
-                  top: 50,
+                  width: 250,
+                  top: 10,
                   bottom: 'auto',
                   right: 'auto',
-                  left: 180,
+                  left: 60,
                 },
                 script:
                   'Nakangiting nilapitan ni Amie ang kaniyang mga magulang. Humalik at yumakap nang mahigpit sabay bigkas ng mga salitang: “Salamat po, inay at itay. Masayang-masaya po ako sa araw na ito.',
@@ -1363,7 +1363,7 @@ export const db_Les_Values = {
           {
             id: '3.13',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.9.png'),
+            img: require('../../../img/les/values/grade-1/lesson-3/3.13.png'),
             data: [
               {
                 narrator: 'uni',
@@ -1371,7 +1371,7 @@ export const db_Les_Values = {
                 narrationDuration: 4,
                 style: {
                   width: 200,
-                  top: 50,
+                  top: 10,
                   bottom: 'auto',
                   right: 'auto',
                   left: 180,
@@ -1385,21 +1385,48 @@ export const db_Les_Values = {
           {
             id: '3.14',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.9.png'),
+            img: require('../../../img/les/values/grade-1/lesson-3/3.14.png'),
             data: [
               {
                 narrator: 'uni',
                 isNarratorShown: false,
                 narrationDuration: 4,
                 style: {
-                  width: 200,
-                  top: 50,
+                  width: 250,
+                  top: 20,
                   bottom: 'auto',
-                  right: 'auto',
-                  left: 180,
+                  right: 100,
+                  left: 'auto',
                 },
                 script:
-                  'Ang paggalang at pagmamahal sa magulang o kapamilya ay tanda ng pagmamahal mo sa kanila. Ito ay maituturing na kagandahang–asal. Ang pagiging magalang at mapagmahal ay kinagigiliwan ng nakararami. Naipakikita ito sa pamamagitan ng salita, kilos o gawa. Sa pagkakataong ito ay tiyak na handa ka nang ipamalas ang iyong natutuhan. Kaya mo na bang magpatuloy sa iba pang mga gawain?',
+                  'Ang paggalang at pagmamahal sa magulang o kapamilya ay tanda ng pagmamahal mo sa kanila. Ito ay maituturing na kagandahang–asal.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 4,
+                style: {
+                  width: 250,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 100,
+                  left: 'auto',
+                },
+                script:
+                  'Ang pagiging magalang at mapagmahal ay kinagigiliwan ng nakararami. Naipakikita ito sa pamamagitan ng salita, kilos o gawa. Sa pagkakataong ito ay tiyak na handa ka nang ipamalas ang iyong natutuhan.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 4,
+                style: {
+                  width: 250,
+                  top: 40,
+                  bottom: 'auto',
+                  right: 100,
+                  left: 'auto',
+                },
+                script: 'Kaya mo na bang magpatuloy sa iba pang mga gawain?',
               },
             ],
           },

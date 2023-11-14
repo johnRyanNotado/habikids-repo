@@ -27,16 +27,9 @@ const SelectionNavbar = (props) => {
     finishBtnTxt,
   } = styles
   const handleSave = () => {
-    console.log(
-      'Go next\tChecker: ',
-      checker,
-      '\tNum of Clothes: ',
-      numOfClothes
-    )
     if (checker <= numOfClothes) {
       setIsFinished(true)
       score.value = 4
-      console.log('Saved?')
     }
   }
   return (
