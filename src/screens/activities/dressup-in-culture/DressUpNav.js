@@ -47,7 +47,6 @@ const DressUpNav = () => {
   }
 
   useEffect(() => {
-    console.log('Sheesh: ', top)
     if (gameData) {
       const custPosition = {
         position: 'absolute',

@@ -14,7 +14,7 @@ export const db_DressUp = {
               id: 1,
               name: 'Totoy',
               gender: 'boy',
-              prev: require('../../../img/act/dress-up/grade-one/first/boy/character-boy.png'),
+              prev: require('../../../img/act/dress-up/grade-one/first/boy/preview/character-boy-prev.png'),
               img: require('../../../img/act/dress-up/grade-one/first/boy/character-boy.gif'),
             },
 
@@ -22,8 +22,8 @@ export const db_DressUp = {
               id: 2,
               name: 'Inday',
               gender: 'girl',
-              prev: require('../../../img/act/dress-up/grade-one/first/girl/character-girl.png'),
-              img: require('../../../img/act/dress-up/grade-one/first/girl/character-girl.png'),
+              prev: require('../../../img/act/dress-up/grade-one/first/girl/preview/character-girl-prev.png'),
+              img: require('../../../img/act/dress-up/grade-one/first/girl/character-girl.gif'),
             },
           ],
           boy: {
