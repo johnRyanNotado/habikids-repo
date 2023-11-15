@@ -1,5 +1,5 @@
 export const db_HabitBuilder = {
-  instructionDuration: 2,
+  instructionDuration: 5,
   instruction:
     'Tulungan ang isang karakter na magkaroon ng mabubuting kaugalian sa pamamagitan ng pag-gabay sa kanila sa buong araw.',
   narrator: 'vio',
@@ -52,7 +52,7 @@ export const db_HabitBuilder = {
             ],
           },
           {
-            sceneDesc: `Kailangan ng maligo ni Pedro, hanapin ang gamit na kakailanganin niya sa pagligo. `,
+            sceneDesc: `Kailangan ng maligo ni Pedro, hanapin ang gamit na kakailanganin niya sa pagligo.`,
             narrationDuration: 5,
             bg: {
               id: 1,
@@ -94,11 +94,62 @@ export const db_HabitBuilder = {
               },
             ],
           },
+          {
+            sceneDesc: `Ilagay sa plato ang mga pagkain na dapat kainin ni Pedro upang siya ay manatiling malusog. `,
+            narrationDuration: 5,
+            bg: {
+              id: 1,
+              img: require(`../../../img/act/habit-builder/grade-one/first/third-item/bg.png`),
+            },
+            character: {
+              id: 1,
+              img: require(`../../../img/act/habit-builder/grade-one/first/third-item/character.png`),
+            },
+            correctComponents: [
+              {
+                id: 1,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/chicken.png`),
+                dimension: { w: 100, x: -400, y: 100 },
+                endPos: { x: -280, y: -150 },
+              },
+              {
+                id: 2,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/fruit.png`),
+                dimension: { w: 100, x: -40, y: 100 },
+                endPos: { x: 80, y: -150 },
+              },
+              {
+                id: 3,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/fish.png`),
+                dimension: { w: 100, x: 80, y: 100 },
+                endPos: { x: -160, y: -150 },
+              },
+              {
+                id: 4,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/corn.png`),
+                dimension: { w: 100, x: 320, y: 100 },
+                endPos: { x: 200, y: -150 },
+              },
+            ],
+            wrongComponents: [
+              {
+                id: 1,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/softdrinks.png`),
+                dimension: { w: 100, x: -280, y: 100 },
+              },
+              {
+                id: 2,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/chocolate.png`),
+                dimension: { w: 100, x: -160, y: 100 },
+              },
+              {
+                id: 3,
+                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/candies.png`),
+                dimension: { w: 100, x: 200, y: 100 },
+              },
+            ],
+          },
         ],
-      },
-      {
-        id: 2,
-        sceneDesc: `Kailangan ng maligo ni Pedro, hanapin ang gamit na kakailanganin niya sa pagligo.`,
       },
     ],
   ],

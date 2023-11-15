@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react'
-import { Image, ImageBackground, Text, View } from 'react-native'
+import React from 'react'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { getImg } from '../../../utilities/getImg'
-import { db_HabitBuilder } from '../../../constants/temp_db/activities/db_HabitBuilder'
-import CorrectComp from './CorrectComp'
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import { useHabitBuilderContext } from '../../../screens/activities/habit-builder/HabitBuilderContext'
-import WrongComp from './WrongComp'
 import RenderComponents from './RenderComponents'
-import Animated, { SlideInRight, SlideOutRight } from 'react-native-reanimated'
+import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated'
 
 const HabitBuilderComp = (props) => {
   const {
@@ -26,7 +20,7 @@ const HabitBuilderComp = (props) => {
     <Animated.View
       style={[container, { zIndex: -1 }]}
       entering={SlideInRight.duration(500)}
-      exiting={SlideOutRight.duration(500)}
+      exiting={SlideOutLeft.duration(500)}
     >
       <RenderComponents
         corrData={correctComponents}
