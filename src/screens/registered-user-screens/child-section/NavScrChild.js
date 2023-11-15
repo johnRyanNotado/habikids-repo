@@ -12,6 +12,7 @@ import {
   CTRPNav,
   LessonsNav,
   DressUpNav,
+  HabitBuilderNav,
 } from './index'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import {
@@ -171,6 +172,12 @@ const NavScrChild = ({ navigation }) => {
         <ChildSectionStack.Screen
           name={'DressUpNav'}
           component={DressUpNav}
+          options={MAIN_HEADER_OPT}
+        />
+
+        <ChildSectionStack.Screen
+          name={'HabitBuilderNav'}
+          component={HabitBuilderNav}
           options={MAIN_HEADER_OPT}
         />
 

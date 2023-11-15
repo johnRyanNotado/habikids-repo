@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { BackHandler, View } from 'react-native'
+import { BackHandler, View, ImageBackground } from 'react-native'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import ProfileCard from '../../../components/home-child/ProfileCard'
@@ -18,6 +18,7 @@ import {
 } from '../../context-api/ContextAPI'
 import JeepSvg from '../../../svg/bg/JeepSvg'
 import BackBtn from '../../../components/BackBtn'
+import { getImg } from '../../../utilities/getImg'
 
 const Activities = ({ navigation }) => {
   const { isProfileClicked, setSelectedYear, content, setContent } =
@@ -89,12 +90,18 @@ const Activities = ({ navigation }) => {
         handleSelectedAct,
       }}
     >
-      <JeepSvg />
-      <View style={container}>
-        <ChildSectNavBar backBtn={<BackBtn onPress={undoBtnFunc} />} />
-        <ActivitiesMainSect />
-        {isProfileClicked ? <ProfileCard /> : <></>}
-      </View>
+      <ImageBackground
+        source={getImg.bg.jeepInterior.link}
+        style={container}
+        resizeMode="contain"
+      >
+        {/* <JeepSvg /> */}
+        <View style={container}>
+          <ChildSectNavBar backBtn={<BackBtn onPress={undoBtnFunc} />} />
+          <ActivitiesMainSect />
+          {isProfileClicked ? <ProfileCard /> : <></>}
+        </View>
+      </ImageBackground>
     </ActivitiesContext.Provider>
   )
 }

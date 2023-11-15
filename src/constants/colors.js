@@ -8,7 +8,9 @@ const COLORS = {
   greenPrimary: '#347B38',
   greenPrimaryTrans: 'rgba(52, 123, 56, 0.3)',
   greenSecond: '#CDE5C5',
+  greenSecondTrans: 'rgba(205, 229, 197, 0.8)',
   greenThird: '#68966C',
+  greenThirdTrans: 'rgba(104, 150, 108, 0.6)',
   greenFourth: '#DDF2D1',
   greenFifth: '#9FD4A3',
   yellowPrimary: '#FCF6BD',
@@ -17,6 +19,7 @@ const COLORS = {
   yellowFourth: '#F48C06',
   yellowFifth: '#E85D04',
   redPrimary: '#FFCCD5',
+  redPrimaryTrans: 'rgba(255, 204, 213, 0.8)',
   redSecond: '#FFB3C1',
   redThird: '#D00000',
   redFourth: '#9D0208',
@@ -37,6 +40,7 @@ const COLORS = {
   grayPrimary: '#CCCCCC',
   graySecond: '#D3D3D3',
   grayThird: '#F5F3F4',
+  none: 'rgba(0,0,0,0)',
 }
 
 export default COLORS
