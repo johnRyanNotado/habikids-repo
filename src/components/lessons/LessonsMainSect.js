@@ -23,9 +23,8 @@ import {
 } from '../../constants/temp_db/lessons/db_lessons'
 
 const LessonsMainSect = () => {
-  const { isOpen, setIsOpen, selectedYear, setSelectedYear } =
-    useLessonsContext()
-  const { content } = useChildSectionContext()
+  const { isOpen, setIsOpen } = useLessonsContext()
+  const { content, selectedYear, setSelectedYear } = useChildSectionContext()
   const {
     custContainer,
     contentWrapper,

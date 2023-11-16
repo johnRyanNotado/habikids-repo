@@ -62,7 +62,7 @@ const ArrowButtons = (props) => {
           exiting={SlideOutRight.duration(EXIT_DURATION)}
         >
           <TouchableOpacity
-            onPress={isActFin ? handleRightBtn : wrongAnswer}
+            onPress={isActFin === true ? handleRightBtn : wrongAnswer}
             disabled={isDisabled}
           >
             <View
@@ -130,11 +130,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 30,
     borderWidth: 3,
-    borderColor: COLORS.white,
+    borderColor: COLORS.grayPrimary,
     marginRight: 40,
   },
   finishBtnTxt: {
-    color: COLORS.white,
+    color: COLORS.grayPrimary,
     fontSize: 20,
     fontFamily: 'Quiapo',
     fontWeight: '400',

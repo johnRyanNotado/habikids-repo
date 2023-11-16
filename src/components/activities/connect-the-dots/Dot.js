@@ -25,7 +25,7 @@ const Dot = (props) => {
   const scale = useSharedValue(0.9)
   const z = useSharedValue(1)
   const isEnabled = useSharedValue(0.9)
-  const safeSpacing = COMP_DIMENSION.h / 2
+  const safeSpacing = COMP_DIMENSION.h
 
   const initDotPosX = initialPosX + COMP_DIMENSION.h / 2
   const initDotPosY = initialPosY + COMP_DIMENSION.h / 2

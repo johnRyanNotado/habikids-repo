@@ -50,6 +50,7 @@ const Lesson = ({ navigation }) => {
     setSelected,
     activity,
     setActivity,
+    FALSE_AGAIN,
   } = useSpecificLessonContext()
 
   // for managing the components shown
@@ -161,18 +162,11 @@ const Lesson = ({ navigation }) => {
   // for managing the arrow btns
   useEffect(() => {
     if (lessonData) {
-      console.log(
-        'Is Act fin: ',
-        isActFin,
-        '\tType: ',
-        lessonData.item[item - 1].type
-      )
-
       if (lessonData.item[item - 1].type === 'activity') {
         setIsRightShown(false)
         setIsCheckBtnShown(true)
         setIsDisabled(true)
-        if (isActFin) {
+        if (isActFin === true || isActFin === FALSE_AGAIN) {
           setIsDisabled(false)
         }
       } else {
@@ -246,7 +240,7 @@ const Lesson = ({ navigation }) => {
       } else if (1 < item) {
         setItem((prevState) => prevState - 1)
       }
-      if (isActFin || selected) {
+      if (isActFin === true || selected) {
         setSelected(null)
         setIsActFin(false)
       }
@@ -267,7 +261,7 @@ const Lesson = ({ navigation }) => {
         if (scriptNum) {
           setScriptNum(0)
         }
-        if (isActFin || selected) {
+        if (isActFin === true || selected) {
           setSelected(null)
           setIsActFin(false)
         }
@@ -357,7 +351,6 @@ const styles = StyleSheet.create({
   navBarWrapper: {
     bottom: 'auto',
     top: 10,
-    height: '20%',
   },
 })
 

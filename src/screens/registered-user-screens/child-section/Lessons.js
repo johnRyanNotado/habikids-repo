@@ -28,7 +28,13 @@ import {
 import Jeep from '../../../components/lessons/Jeep'
 
 const Lessons = ({ navigation }) => {
-  const { isProfileClicked, content, setContent } = useChildSectionContext()
+  const {
+    isProfileClicked,
+    content,
+    setContent,
+    selectedYear,
+    setSelectedYear,
+  } = useChildSectionContext()
   const { homeBtnWrapper } = styles
   const { container, centered } = globalStyles
 
@@ -36,7 +42,7 @@ const Lessons = ({ navigation }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   // useState for serving as the value of the dropdown for the selected Year
-  const [selectedYear, setSelectedYear] = useState(YEAR_LEVELS[0].value)
+  // const [] = useState(YEAR_LEVELS[0].value)
 
   // handle back press -> navigate to library
   useEffect(() => {
@@ -104,8 +110,6 @@ const Lessons = ({ navigation }) => {
         setUndoBtnFunc,
         isOpen,
         setIsOpen,
-        selectedYear,
-        setSelectedYear,
         handleSelectedLes,
       }}
     >

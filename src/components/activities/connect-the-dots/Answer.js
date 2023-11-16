@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { COMP_DIMENSION, VALUE_DIMENSION } from './constants'
 import COLORS from '../../../constants/colors'
 import Animated, { BounceInRight } from 'react-native-reanimated'
 
 const Answer = (props) => {
-  const { endPosX, endPosY, label } = props
+  const { endPosX, endPosY, label, img } = props
   const { wrapper, text } = styles
   const { centered } = globalStyles
 
@@ -24,7 +24,15 @@ const Answer = (props) => {
       ]}
       entering={BounceInRight.duration(1000).delay(2000)}
     >
-      <Text style={text}>{label}</Text>
+      {img ? (
+        <Image
+          style={{ width: VALUE_DIMENSION.w }}
+          source={img}
+          resizeMode="contain"
+        />
+      ) : (
+        <Text style={text}>{label}</Text>
+      )}
     </Animated.View>
   )
 }
@@ -32,16 +40,15 @@ const Answer = (props) => {
 const styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
-    backgroundColor: COLORS.greenSecond,
+    backgroundColor: COLORS.whitePrimary,
     borderRadius: 20,
     zIndex: 20,
-    alignItems: 'flex-start',
     paddingHorizontal: 10,
   },
   text: {
     fontSize: 20,
     fontFamily: 'QuiapoRegular',
-    textAlign: 'left',
+    textAlign: 'center',
   },
 })
 

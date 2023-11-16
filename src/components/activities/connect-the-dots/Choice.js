@@ -32,7 +32,7 @@ const Choice = (props) => {
 const styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
-    backgroundColor: COLORS.greenSecond,
+    backgroundColor: COLORS.whitePrimary,
     borderRadius: 20,
     zIndex: 20,
     alignItems: 'flex-start',

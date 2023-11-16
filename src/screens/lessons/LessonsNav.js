@@ -6,11 +6,19 @@ import { MAIN_HEADER_OPT } from '../../constants/headerOption'
 import { useChildSectionContext } from '../context-api/ContextAPI'
 import { db_Les_Values } from '../../constants/temp_db/lessons/db_les_values'
 import { useSharedValue } from 'react-native-reanimated'
+import {
+  GOOD_HABITS,
+  VALUES,
+  TRADITIONS,
+} from '../../constants/contentClassification'
+import { db_Les_Traditions } from '../../constants/temp_db/lessons/db_les_traditions'
+
+const FALSE_AGAIN = 'FALSE-AGAIN'
 
 const LessonsStack = createStackNavigator()
 
 const LessonsNav = () => {
-  const { selectedYear, lesID } = useChildSectionContext()
+  const { selectedYear, lesID, content } = useChildSectionContext()
   const [item, setItem] = useState(1)
   const [lessonData, setLessonData] = useState(null)
   const [isFinished, setIsFinished] = useState(false)
@@ -27,14 +35,23 @@ const LessonsNav = () => {
   const timer = useSharedValue(0)
 
   useEffect(() => {
-    db_Les_Values.grade[selectedYear - 1].map((item) => {
+    let tempLessonDB =
+      content === VALUES
+        ? db_Les_Values
+        : content === TRADITIONS
+        ? db_Les_Traditions
+        : content === GOOD_HABITS
+        ? db_Les_Values
+        : null
+
+    tempLessonDB.grade[selectedYear - 1].map((item) => {
       if (item.id === lesID) {
-        setLessonData((prevState) => item)
+        setLessonData(item)
         setTitle(item.title)
         setLesNum(item.lesNum)
       }
     })
-  }, [lesID])
+  }, [lesID, content])
 
   console.log('\n\nCalled: LessonNav')
   return (
@@ -67,6 +84,7 @@ const LessonsNav = () => {
         setSelected,
         activity,
         setActivity,
+        FALSE_AGAIN,
       }}
     >
       <LessonsStack.Navigator>

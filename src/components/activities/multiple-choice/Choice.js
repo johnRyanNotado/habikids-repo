@@ -30,7 +30,7 @@ const Choice = (props) => {
   const { choice, selected, setSelected } = props
   const { choiceWrapper, choiceBox, choiceBtn, choiceTxt } = styles
   const { container, centered } = globalStyles
-  const { setIsActFin } = useSpecificLessonContext()
+  const { setIsActFin, FALSE_AGAIN } = useSpecificLessonContext()
   const scale = useSharedValue(1)
   const backgroundColor = useSharedValue(COLORS.whitePrimary)
   const boxAnimatedStyle = useAnimatedStyle(() => {
@@ -70,6 +70,7 @@ const Choice = (props) => {
     if (choice.answer === TAMA) {
       setIsActFin(true)
     } else {
+      setIsActFin(FALSE_AGAIN)
       Vibration.vibrate(1000)
     }
   }
@@ -100,7 +101,7 @@ const Choice = (props) => {
             </TapGestureHandler>
           </TouchableOpacity>
         </View>
-        <View style={[centered, { marginLeft: 30 }]}>
+        <View style={[centered, { marginLeft: 20 }]}>
           <Text style={choiceTxt}>{choice.value}</Text>
         </View>
       </Animated.View>
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     marginLeft: WINDOW_WIDTH / 2 - 30,
   },
   choiceBox: {
-    width: 300,
+    width: 370,
     borderRadius: 10,
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.accent,
     borderRadius: 50,
   },
-  choiceTxt: { fontSize: 24, fontFamily: 'QuiapoRegular' },
+  choiceTxt: { fontSize: 24, fontFamily: 'QuiapoRegular', paddingRight: 15 },
 })
 
 export default Choice

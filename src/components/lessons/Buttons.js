@@ -60,7 +60,7 @@ const Buttons = () => {
         <TouchableOpacity
           enable={content === BUTTONS ? true : false}
           onPress={handleTradBtn}
-          style={[centered, { width: TRADITION_DIMENSTION.w }]}
+          style={[centered, { width: TRADITION_DIMENSTION.w, zIndex: 5 }]}
         >
           <Image
             source={getImg.components.bookTraditions.link}

@@ -29,7 +29,7 @@ const Choice = (props) => {
   const { choice, selected, setSelected } = props
   const { choiceWrapper, choiceBox, choiceBtn } = styles
   const { centered } = globalStyles
-  const { setIsActFin } = useSpecificLessonContext()
+  const { setIsActFin, FALSE_AGAIN } = useSpecificLessonContext()
   const scale = useSharedValue(1)
   const backgroundColor = useSharedValue(COLORS.whitePrimary)
   const boxAnimatedStyle = useAnimatedStyle(() => {
@@ -69,6 +69,7 @@ const Choice = (props) => {
     if (choice.answer === TAMA) {
       setIsActFin(true)
     } else {
+      setIsActFin(FALSE_AGAIN)
       Vibration.vibrate(1000)
     }
   }
@@ -99,7 +100,7 @@ const Choice = (props) => {
             </TapGestureHandler>
           </TouchableOpacity>
         </View>
-        <View style={[centered, { marginLeft: 30 }]}>
+        <View style={[centered, { marginLeft: 20 }]}>
           <Image source={choice.img} style={{ width: 150, height: 150 }} />
         </View>
       </Animated.View>
