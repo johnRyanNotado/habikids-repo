@@ -9,14 +9,13 @@ export const db_CultPuzz = {
         trivia:
           'Alam mo ba na ang Fiesta ay isang sikat na tradisyon sa Pilipinas? Tuwing Fiesta, nagdiriwang at nag hahanda ang mga tao ng maraming pagkain.',
         theme: 'fiesta',
-        pieces: [1, 2, 3, 4],
-        fiesta: [
+        pieces: [
           require('../../../img/act/culture-puzzle/fiesta/img-1.png'),
           require('../../../img/act/culture-puzzle/fiesta/img-2.png'),
           require('../../../img/act/culture-puzzle/fiesta/img-3.png'),
           require('../../../img/act/culture-puzzle/fiesta/img-4.png'),
-          require('../../../img/act/culture-puzzle/fiesta/whole-img.png'),
         ],
+        wholeImg: require('../../../img/act/culture-puzzle/fiesta/whole-img.png'),
       },
     ],
     [
@@ -24,14 +23,13 @@ export const db_CultPuzz = {
         id: 1,
         trivia: 'Alam mo ba na ang mga Filipino ay madasalin?',
         theme: 'madasalin',
-        pieces: [1, 2, 3, 4],
-        madasalin: [
+        pieces: [
           require('../../../img/act/culture-puzzle/madasalin/img-1.png'),
           require('../../../img/act/culture-puzzle/madasalin/img-2.png'),
           require('../../../img/act/culture-puzzle/madasalin/img-3.png'),
           require('../../../img/act/culture-puzzle/madasalin/img-4.png'),
-          require('../../../img/act/culture-puzzle/madasalin/whole-img.png'),
         ],
+        wholeImg: require('../../../img/act/culture-puzzle/madasalin/whole-img.png'),
       },
     ],
     [
@@ -39,14 +37,13 @@ export const db_CultPuzz = {
         id: 1,
         trivia: 'Alam mo ba na ang mga Filipino ay madasalin?',
         theme: 'madasalin',
-        pieces: [1, 2, 3, 4],
-        madasalin: [
+        pieces: [
           require('../../../img/act/culture-puzzle/madasalin/img-1.png'),
           require('../../../img/act/culture-puzzle/madasalin/img-2.png'),
           require('../../../img/act/culture-puzzle/madasalin/img-3.png'),
           require('../../../img/act/culture-puzzle/madasalin/img-4.png'),
-          require('../../../img/act/culture-puzzle/madasalin/whole-img.png'),
         ],
+        wholeImg: require('../../../img/act/culture-puzzle/madasalin/whole-img.png'),
       },
     ],
   ],

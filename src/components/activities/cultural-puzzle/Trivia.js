@@ -33,8 +33,7 @@ const Trivia = (props) => {
       <Animated.View entering={BounceIn} style={triviaCard}>
         <View style={[centered, imgSection]}>
           <View>
-            {/* In db_cultpuzz, the whole images are on fourths index, placed after the four individual pieces  */}
-            <Image source={PUZZLE_GAME_DATA[`${theme}`][4]} style={imgStyle} />
+            <Image source={PUZZLE_GAME_DATA.wholeImg} style={imgStyle} />
           </View>
         </View>
         <View style={[centered, triviaSection]}>
