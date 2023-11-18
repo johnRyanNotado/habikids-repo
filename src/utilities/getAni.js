@@ -1,6 +1,8 @@
 export const getAni = {
   background: {
-    welcome: { link: require('../vid/welcome_ani.mp4') },
+    welcome: {
+      link: require('../animation/background/ani-welcome-screen.gif'),
+    },
   },
   characters: {
     juan: {

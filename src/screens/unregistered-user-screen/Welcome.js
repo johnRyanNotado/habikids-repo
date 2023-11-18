@@ -5,12 +5,19 @@ import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import Button from '../../components/Button'
 import LoadingScreen from '../LoadingScreen'
-import { View, Text, StyleSheet, Pressable } from 'react-native'
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  ImageBackground,
+} from 'react-native'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { Video, ResizeMode } from 'expo-av'
 import { getVid } from '../../utilities/getVid'
 import { useFocusEffect } from '@react-navigation/native'
 import { useAppContext } from '../context-api/ContextAPI'
+import { getAni } from '../../utilities/getAni'
 
 const Welcome = ({ navigation }) => {
   const { user } = useAppContext()
@@ -46,28 +53,28 @@ const Welcome = ({ navigation }) => {
   // handling back press
   useEffect(handleBckPrsExit, [])
 
-  const video = useRef(null)
-  const [status, setStatus] = useState({})
+  // const video = useRef(null)
+  // const [status, setStatus] = useState({})
 
   // pause video before exiting this screen
   const handleSignUp = () => {
-    video.current.pauseAsync()
+    // video.current.pauseAsync()
     navigation.navigate('Signup')
   }
 
   // pause video before exiting this screen
 
   const handleLogin = () => {
-    video.current.pauseAsync()
+    // video.current.pauseAsync()
     navigation.navigate('Login')
   }
 
   // Play background vid if this screen is on focus
-  useFocusEffect(() => {
-    if (video.current !== null) {
-      video.current.playAsync()
-    }
-  })
+  // useFocusEffect(() => {
+  //   if (video.current !== null) {
+  //     video.current.playAsync()
+  //   }
+  // })
 
   if (user) {
     navigation.navigate('NavScreen')
@@ -75,8 +82,12 @@ const Welcome = ({ navigation }) => {
 
   if (fontsLoaded) {
     return (
-      <View style={[container]}>
-        <Video
+      <ImageBackground
+        style={container}
+        source={getAni.background.welcome.link}
+      >
+        <View style={[container]}>
+          {/* <Video
           ref={video}
           style={bgStyle}
           source={getVid.bg.welcome}
@@ -84,37 +95,38 @@ const Welcome = ({ navigation }) => {
           isLooping
           onPlaybackStatusUpdate={(status) => setStatus(() => status)}
           shouldPlay
-        />
-        <View style={[container, titleWrapper]}>
-          <View>
-            <Text
-              style={[textCenterAlign, positionAbsolute, welcomeTitleShadow]}
-            >
-              HabiKids
-            </Text>
-            <Text style={[textCenterAlign, welcomeTitle]}>HabiKids</Text>
-          </View>
-          <View style={btnWrapper}>
-            <Button
-              label="Mag-Signup"
-              onPress={handleSignUp}
-              btnStyle={btnStyle}
-              txtStyle={[txtShadowSmall, btnTxtStyle]}
-              color={COLORS.white}
-            />
-            <View style={[positionAbsolute, btnShadow]} />
-          </View>
+        /> */}
+          <View style={[container, titleWrapper]}>
+            <View>
+              <Text
+                style={[textCenterAlign, positionAbsolute, welcomeTitleShadow]}
+              >
+                HabiKids
+              </Text>
+              <Text style={[textCenterAlign, welcomeTitle]}>HabiKids</Text>
+            </View>
+            <View style={btnWrapper}>
+              <Button
+                label="Mag-Signup"
+                onPress={handleSignUp}
+                btnStyle={btnStyle}
+                txtStyle={[txtShadowSmall, btnTxtStyle]}
+                color={COLORS.white}
+              />
+              <View style={[positionAbsolute, btnShadow]} />
+            </View>
 
-          <View style={askForAccWrapper}>
-            <Text style={[txtShadow, askForAccText]}>
-              Mayroon ka nang account?
-            </Text>
-            <Pressable onPress={handleLogin}>
-              <Text style={[txtShadow, askForAccPressable]}>Mag-Login</Text>
-            </Pressable>
+            <View style={askForAccWrapper}>
+              <Text style={[txtShadow, askForAccText]}>
+                Mayroon ka nang account?
+              </Text>
+              <Pressable onPress={handleLogin}>
+                <Text style={[txtShadow, askForAccPressable]}>Mag-Login</Text>
+              </Pressable>
+            </View>
           </View>
         </View>
-      </View>
+      </ImageBackground>
     )
   }
   return <LoadingScreen />

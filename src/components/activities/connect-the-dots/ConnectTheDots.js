@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, ScrollView } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import Dot from './Dot'
 import Choice from './Choice'
-import COLORS from '../../../constants/colors'
 import Answer from './Answer'
 import Spot from './Spot'
 
