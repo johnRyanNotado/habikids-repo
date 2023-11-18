@@ -8,9 +8,6 @@ import { useChildSectionContext } from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
 import HabitBuilderComp from '../../../components/activities/habit-builder/HabitBuilderComp'
 import ItemBox from '../../../components/activities/habit-builder/ItemBox'
-import Narrator from '../../../components/activities/Narrator'
-import COLORS from '../../../constants/colors'
-import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import Scene from '../../../components/activities/habit-builder/Scene'
 
 const HabitBuilder = ({ navigation }) => {
@@ -35,69 +32,58 @@ const HabitBuilder = ({ navigation }) => {
     let compDelay
     let narrDelay
     let goBackDelay
-    const unmountCompDelay = setTimeout(() => {
-      setComponent(null)
-      setNarratorComp(null)
-    }, 1000)
-
-    if (!(item <= gameData.item.length - 1)) {
-      goBackDelay = setTimeout(() => {
-        navigation.goBack()
+    let unmountCompDelay
+    if (gameData) {
+      unmountCompDelay = setTimeout(() => {
+        setComponent(null)
+        setNarratorComp(null)
       }, 1000)
-    } else {
-      setIsNarrating(true)
-      console.log('SHEESH')
-      timer.value = gameData.item[item].narrationDuration
-      itemScore.value = 0
-      const correctComponents = gameData.item[item].correctComponents
-      const wrongComponents = gameData.item[item].wrongComponents
-      const bg = gameData.item[item].bg.img
-      const char = gameData.item[item].character.img
-      compDelay = setTimeout(() => {
-        setComponent(
-          <HabitBuilderComp
-            correctComponents={correctComponents}
-            wrongComponents={wrongComponents}
-            bg={bg}
-            char={char}
-          />
-        )
-      }, 1500)
-      narrDelay = setTimeout(() => {
-        setNarratorComp(
-          <Scene
-            narrator={narrator}
-            sceneDesc={gameData.item[item].sceneDesc}
-          />
-        )
-      }, 2500)
-    }
+      // if there is no more items, go back
+      if (!(item <= gameData.item.length - 1)) {
+        goBackDelay = setTimeout(() => {
+          navigation.goBack()
+        }, 1000)
+      } else {
+        setIsNarrating(true)
+        timer.value = gameData.item[item].narrationDuration
+        itemScore.value = 0
+        const correctComponents = gameData.item[item].correctComponents
+        const wrongComponents = gameData.item[item].wrongComponents
 
+        const bg = gameData.item[item].bg.img
+        const char = gameData.item[item].character.img
+        compDelay = setTimeout(() => {
+          setComponent(
+            <HabitBuilderComp
+              correctComponents={correctComponents}
+              wrongComponents={wrongComponents}
+              bg={bg}
+              char={char}
+            />
+          )
+        }, 1500)
+        narrDelay = setTimeout(() => {
+          setNarratorComp(
+            <Scene
+              narrator={narrator}
+              sceneDesc={gameData.item[item].sceneDesc}
+            />
+          )
+        }, 2500)
+      }
+    }
     return () => {
       clearTimeout(compDelay)
       clearTimeout(narrDelay)
       clearTimeout(goBackDelay)
       clearTimeout(unmountCompDelay)
     }
-  }, [item])
+  }, [item, gameData])
 
   useEffect(() => {
     let narrInterval
     if (isNarrating) {
       narrInterval = setInterval(() => {
-        console.log('SHEESH2')
-        console.log(
-          'Timer: ',
-          timer.value,
-          '\tIsGamePaused? ',
-          isGamePaused,
-          '\tItem: ',
-          item,
-          '\tGameLength: ',
-          gameData.item.length,
-          '\tisNarrating: ',
-          isNarrating
-        )
         timer.value--
         if (timer.value <= 0) {
           setIsNarrating(false)
@@ -112,8 +98,6 @@ const HabitBuilder = ({ navigation }) => {
   useEffect(() => {
     let itemDelay
     const renderInterval = setInterval(() => {
-      console.log('Item: ', item, '\tItemLength: ', gameData.item.length - 1)
-
       if (item <= gameData.item.length - 1) {
         if (!isGamePaused) {
           setRenderScr((prevState) => !prevState)

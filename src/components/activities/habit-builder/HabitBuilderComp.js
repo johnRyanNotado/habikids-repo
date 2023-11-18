@@ -5,14 +5,7 @@ import RenderComponents from './RenderComponents'
 import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated'
 
 const HabitBuilderComp = (props) => {
-  const {
-    correctComponents,
-    wrongComponents,
-    bg,
-    char,
-    narrator,
-    isNarrating,
-  } = props
+  const { correctComponents, wrongComponents, bg, char } = props
   const { container } = globalStyles
   const { score, itemScore } = useHabitBuilderContext()
 
@@ -29,8 +22,6 @@ const HabitBuilderComp = (props) => {
         itemScore={itemScore}
         bg={bg}
         char={char}
-        narrator={narrator}
-        isNarrating={isNarrating}
       />
     </Animated.View>
   )

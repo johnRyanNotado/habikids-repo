@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { HabitBuilderCA, HabitBuilder } from './index'
@@ -6,6 +6,7 @@ import { HabitBuilderContext } from './HabitBuilderContext'
 import { useSharedValue } from 'react-native-reanimated'
 import { db_HabitBuilder } from '../../../constants/temp_db/activities/db_HabitBuilder'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const HabitBuilderStack = createStackNavigator()
 
@@ -18,17 +19,21 @@ const HabitBuilderNav = ({ navigation }) => {
   const [isNarrating, setIsNarrating] = useState(false)
 
   // get the related data for narration
-  let gameData
-  db_HabitBuilder.grade[selectedYear - 1].map((item) => {
-    if (actID === item.id) {
-      gameData = item
-    }
-  })
+  const [gameData, setGameData] = useState(null)
+
+  useEffect(() => {
+    db_HabitBuilder.grade[selectedYear - 1].map((item) => {
+      if (actID === item.id) {
+        setGameData(item)
+      }
+    })
+  }, [selectedYear, actID])
 
   // get the related data for narration
   const instruction = db_HabitBuilder.instruction
   const instructionDuration = db_HabitBuilder.instructionDuration * 1000
   const narrator = db_HabitBuilder.narrator
+
   return (
     <HabitBuilderContext.Provider
       value={{
