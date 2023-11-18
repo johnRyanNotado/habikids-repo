@@ -57,18 +57,20 @@ const EnterChildName = ({ navigation }) => {
 
     // check if name is not unique
     let isUnique = true
-    childData.forEach((element) => {
-      if (element.name === newChild.name) {
-        isUnique = false
-      }
-    })
+    if (childData) {
+      childData.forEach((element) => {
+        if (element.name === newChild.name) {
+          isUnique = false
+        }
+      })
 
-    if (!isUnique) {
-      Vibration.vibrate(1000)
-      setFieldsErr('Dapat walang kapareho ang pangalan!')
-      return
+      if (!isUnique) {
+        Vibration.vibrate(1000)
+        setFieldsErr('Dapat walang kapareho ang pangalan!')
+        return
+      }
+      setFieldsErr('')
     }
-    setFieldsErr('')
     navigation.navigate('EnterChildAge')
   }
 

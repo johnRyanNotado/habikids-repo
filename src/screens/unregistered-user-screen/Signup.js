@@ -132,8 +132,9 @@ const Signup = ({ navigation }) => {
 
   const handleContinueBtn = () => {
     navigation.navigate('NavScreen', { screen: 'EnterChildName' })
+    navigation.navigate('Home')
     setUser({
-      id: response.user_id,
+      user_id: response.user_id,
       user_email: email,
       user_password: password,
     })
@@ -181,13 +182,13 @@ const Signup = ({ navigation }) => {
         </View>
         <View style={[askForAccWrapper]}>
           <Text style={[askForAccText]}>Mayroon ka nang account?</Text>
-          <Pressable onPress={handleLoginBtn}>
+          <Pressable onPress={() => handleLoginBtn()}>
             <Text style={[askForAccPressable]}>Mag-Login</Text>
           </Pressable>
         </View>
       </View>
 
-      {isSuccess ? <Success onPress={handleContinueBtn} /> : <></>}
+      {isSuccess ? <Success onPress={() => handleContinueBtn()} /> : <></>}
     </View>
   )
 }
