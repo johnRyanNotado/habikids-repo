@@ -14,7 +14,7 @@ const Scene = () => {
       entering={BounceIn.duration(1500)}
       style={[centered, imgSect]}
     >
-      <Image source={gameData[item - 1]?.scene.img} style={imgStyle} />
+      <Image source={gameData[item - 1]?.sceneImg} style={imgStyle} />
     </Animated.View>
   )
 }

@@ -60,7 +60,7 @@ const WrongSection = (props) => {
             onGestureEvent={wrongEventHandler}
           >
             <Animated.Image
-              source={gameData[properItem]?.wrong.img}
+              source={gameData[properItem]?.wrongImg}
               style={[imgStyle, wrongAnimatedStyle]}
               entering={BounceInRight.duration(enteringProps.duration).delay(
                 enteringProps.delay
@@ -70,7 +70,7 @@ const WrongSection = (props) => {
         </TouchableHighlight>
       </View>
       <View style={[centered, txtBox]}>
-        <Text style={txtStyle}>{gameData[properItem]?.wrong.desc}</Text>
+        <Text style={txtStyle}>{gameData[properItem]?.wrongDesc}</Text>
       </View>
     </Animated.View>
   )

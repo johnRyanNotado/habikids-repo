@@ -10,7 +10,7 @@ const SceneDesc = () => {
   const { descSect, descTxt } = styles
   const properItem = item - 1
 
-  const desc = `${data[properItem]?.desc}\n${data[properItem]?.question}`
+  const desc = `${data[properItem]?.sceneDesc}\n${data[properItem]?.question}`
   return (
     <View style={[centered, descSect]}>
       <Text style={descTxt}>{desc}</Text>

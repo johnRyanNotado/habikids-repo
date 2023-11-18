@@ -12,7 +12,7 @@ const SceneDesc = () => {
 
   return (
     <View style={[centered, descSect]}>
-      <Text style={descTxt}>{gameData[properItem]?.desc}</Text>
+      <Text style={descTxt}>{gameData[properItem]?.sceneDesc}</Text>
     </View>
   )
 }
