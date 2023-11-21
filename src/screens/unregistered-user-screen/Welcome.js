@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useFonts } from 'expo-font'
 import { globalStyles } from '../../styles/GlobalStyles'
@@ -13,9 +13,6 @@ import {
   ImageBackground,
 } from 'react-native'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
-import { Video, ResizeMode } from 'expo-av'
-import { getVid } from '../../utilities/getVid'
-import { useFocusEffect } from '@react-navigation/native'
 import { useAppContext } from '../context-api/ContextAPI'
 import { getAni } from '../../utilities/getAni'
 

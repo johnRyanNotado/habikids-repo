@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
+import { imgUrl } from '../../constants/db_config'
 
 const Card = (props) => {
   const { id, img, num, title, label, screen, onPress } = props
@@ -24,7 +25,11 @@ const Card = (props) => {
       <View style={[container, centered, custContainer]}>
         <View style={[centered, card]}>
           <View style={imgWrapper}>
-            <Image source={img} resizeMode="cover" style={imgStyle} />
+            <Image
+              source={{ uri: `${imgUrl}${img}` }}
+              resizeMode="cover"
+              style={imgStyle}
+            />
           </View>
           <View style={[centered, titleWrapper]}>
             <Text style={titleStyle}>{`${label} ${num}: ${title}`}</Text>

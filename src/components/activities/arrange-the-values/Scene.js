@@ -3,6 +3,7 @@ import { StyleSheet, Image } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { BounceIn } from 'react-native-reanimated'
 import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
+import { imgUrl } from '../../../constants/db_config'
 
 const Scene = () => {
   const { item, data } = useArrTheValContext()
@@ -14,7 +15,10 @@ const Scene = () => {
       entering={BounceIn.duration(1500)}
       style={[centered, imgSect]}
     >
-      <Image source={data[item - 1]?.img} style={imgStyle} />
+      <Image
+        source={{ uri: `${imgUrl}${data[item - 1]?.img}` }}
+        style={imgStyle}
+      />
     </Animated.View>
   )
 }

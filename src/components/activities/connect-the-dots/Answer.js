@@ -27,7 +27,11 @@ const Answer = (props) => {
     >
       {img ? (
         <Image
-          style={{ width: VALUE_DIMENSION.w, height: VALUE_DIMENSION.w }}
+          style={{
+            width: VALUE_DIMENSION.w + 90,
+            height: VALUE_DIMENSION.w,
+            borderRadius: 20,
+          }}
           source={{ uri: `${imgUrl}${img}` }}
           resizeMode="contain"
         />
