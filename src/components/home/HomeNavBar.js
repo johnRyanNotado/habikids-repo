@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import COLORS from '../../constants/colors'
 import { globalStyles } from '../../styles/GlobalStyles'
+import { Ionicons } from '@expo/vector-icons'
 
 const HomeNavBar = (props) => {
   const { handleSettingsBtn, handleManageProfileBtn } = props
@@ -19,10 +20,7 @@ const HomeNavBar = (props) => {
     <View style={navBarWrapper}>
       <View style={[navBarElement, { width: '13%' }]}>
         <TouchableOpacity onPress={handleSettingsBtn}>
-          <Image
-            style={settingsIcon}
-            source={require('../../img/white-settings-icon.png')}
-          />
+          <Ionicons name="md-settings-sharp" size={30} color={COLORS.white} />
         </TouchableOpacity>
       </View>
       <View style={navBarElement}>
@@ -30,10 +28,7 @@ const HomeNavBar = (props) => {
       </View>
       <View style={[navBarElement, { width: '13%' }]}>
         <TouchableOpacity onPress={handleManageProfileBtn}>
-          <Image
-            style={manageProfileIcon}
-            source={require('../../img/profile-icon.png')}
-          />
+          <Ionicons name="person" size={30} color={COLORS.white} />
         </TouchableOpacity>
       </View>
     </View>
@@ -65,6 +60,7 @@ const styles = StyleSheet.create({
   settingsIcon: {
     width: 25,
     height: 25,
+    backgroundColor: 'lightpink',
   },
   manageProfileIcon: {
     width: 25,

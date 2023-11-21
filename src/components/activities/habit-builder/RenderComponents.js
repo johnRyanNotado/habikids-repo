@@ -17,7 +17,8 @@ const RenderComponents = (props) => {
   let numOfComponents
 
   const centerX = WINDOW_WIDTH / 2
-  const centerPos = centerX - 100 / 2
+  const COMP_WIDTH = 100
+  const centerPos = centerX - COMP_WIDTH / 2
   useEffect(() => {
     numOfComponents = corrData.length + wrongData.length
     let tempInitPos = [{ id: 0, x: centerPos, y: WINDOW_HEIGHT - 130 }]
@@ -62,7 +63,7 @@ const RenderComponents = (props) => {
     const corrEndPos = endPos[index]
     return (
       <CorrectComp
-        width={item.dimension.w}
+        width={COMP_WIDTH}
         source={item.img}
         endPos={{
           x: corrEndPos.x,
@@ -79,7 +80,7 @@ const RenderComponents = (props) => {
     const wrongInitPos = initPos[index + corrData.length]
     return (
       <WrongComp
-        width={item.dimension.w}
+        width={COMP_WIDTH}
         source={item.img}
         initialPosX={wrongInitPos.x}
         initialPosY={wrongInitPos.y}

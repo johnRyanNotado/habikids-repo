@@ -9,14 +9,14 @@ export const db_Les_Traditions = {
   grade: [
     [
       {
-        id: 1,
+        id: `ls-20231121-77b8a999-2e08-4579-81af-75c2a8812c5c`,
         lesNum: 1,
         title: 'Pagsunod sa mga Gawaing Panrelihiyon',
         item: [
           {
-            id: '1.1',
+            id: 'li-20231121-fcb14b64-7c85-4706-bdbc-d5c6e06e5137',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.1.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.1.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -35,9 +35,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.2',
+            id: 'li-20231121-df03ae00-4972-4a82-9514-933a8aa55754',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.2.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.2.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -57,7 +57,7 @@ export const db_Les_Traditions = {
           },
 
           {
-            id: '1.3',
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
             type: 'activity',
             img: getImg.bg.emptyBg.link,
             data: [
@@ -92,9 +92,9 @@ export const db_Les_Traditions = {
           },
 
           {
-            id: '1.4',
+            id: 'li-20231121-e25bbaf8-0d31-43bb-891c-bda7df3ac7e6',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 1,
@@ -125,9 +125,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.5',
+            id: 'li-20231121-0867df2e-a186-4720-b0dd-f6c41d261743',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 1,
@@ -159,9 +159,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.6',
+            id: 'li-20231121-663915d7-f00c-4b51-848a-3bb43d9f6176',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.1.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.1.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -208,9 +208,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.7',
+            id: 'li-20231121-9727e829-812f-4300-a5a0-971f262dbf97',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.6.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.6.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -228,9 +228,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.8',
+            id: 'li-20231121-2c2fdb5a-d474-4949-a3d4-66e6984e0ec2',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.7.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.7.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -263,9 +263,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.9',
+            id: 'li-20231121-f016a196-48e6-4606-b2aa-393ce23ecdae',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.9.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.9.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -284,9 +284,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.10',
+            id: 'li-20231121-109b1bc6-1698-4499-aa1e-4b23249fb9c3',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.10.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.10.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -305,9 +305,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.11',
+            id: 'li-20231121-4140d088-eb16-436d-93c4-b62bdadfd382',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.11.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.11.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -340,9 +340,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.12',
+            id: 'li-20231121-61f335f0-ead6-4fdd-b24b-9237d9763769',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 1,
@@ -374,9 +374,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.13',
+            id: 'li-20231121-061be119-0721-4a9f-8159-56fa2881937a',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 1,
@@ -408,9 +408,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.14',
+            id: 'li-20231121-5c528dc0-9282-4385-8c13-cd1b56907e53',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.1.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.1.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -471,9 +471,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.16',
+            id: 'li-20231121-d326cb3f-ce39-45c8-b17a-96a5d9d0459e',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.16.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.16.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -491,9 +491,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.17',
+            id: 'li-20231121-14a582b5-d48c-4236-976a-4dc1b67b502b',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.17.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.17.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -511,9 +511,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.18',
+            id: 'li-20231121-2a608cde-a09d-4a5e-8c4c-8f668dadaee1',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.18.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.18.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -532,9 +532,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.19',
+            id: 'li-20231121-ef7d1c4d-f581-48c0-8df2-5664c79cf4f4',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 3,
@@ -559,19 +559,19 @@ export const db_Les_Traditions = {
                   secondColumn: [
                     {
                       id: 1,
-                      img: require('../../../img/les/traditions/grade-1/lesson-1/1.19/1.19.1.png'),
+                      img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.19%201.19.1.png`,
                       value:
                         'Inalagaan ang may sakit na miyembro ng pamilya at ang nakakabatang kapatid',
                     },
                     {
                       id: 2,
-                      img: require('../../../img/les/traditions/grade-1/lesson-1/1.19/1.19.3.png'),
+                      img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.19%201.19.3.png`,
                       value:
                         'Nasiyahan sa ipinakitang pagtutulungan ng magkapatid',
                     },
                     {
                       id: 3,
-                      img: require('../../../img/les/traditions/grade-1/lesson-1/1.19/1.19.2.png'),
+                      img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.19%201.19.2.png`,
                       value: 'Isang araw siya ay nagkasakit',
                     },
                   ],
@@ -580,9 +580,9 @@ export const db_Les_Traditions = {
             ],
           },
           {
-            id: '1.20',
+            id: 'li-20231121-bdabd23e-4022-474c-a730-23aa979ed036',
             type: 'story',
-            img: require('../../../img/les/traditions/grade-1/lesson-1/1.1.png'),
+            img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.1.png`,
             data: [
               {
                 isNarratorShown: false,

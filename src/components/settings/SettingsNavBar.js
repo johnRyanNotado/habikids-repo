@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import COLORS from '../../constants/colors'
 import { globalStyles } from '../../styles/GlobalStyles'
+import { Ionicons } from '@expo/vector-icons'
 
 const SettingsNavBar = (props) => {
   const { handleLeftArrBtn } = props
@@ -12,9 +13,10 @@ const SettingsNavBar = (props) => {
     <View style={navBarWrapper}>
       <View style={navBarElement}>
         <TouchableOpacity onPress={handleLeftArrBtn}>
-          <Image
-            style={styles.navBtn}
-            source={require('../../img/left-arrow-btn.png')}
+          <Ionicons
+            name="chevron-back-circle-sharp"
+            size={40}
+            color={COLORS.white}
           />
         </TouchableOpacity>
       </View>

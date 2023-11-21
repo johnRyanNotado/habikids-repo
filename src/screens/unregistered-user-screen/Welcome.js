@@ -85,6 +85,7 @@ const Welcome = ({ navigation }) => {
       <ImageBackground
         style={container}
         source={getAni.background.welcome.link}
+        resizeMode="cover"
       >
         <View style={[container]}>
           {/* <Video

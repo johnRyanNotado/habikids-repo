@@ -90,6 +90,7 @@ const Login = ({ navigation }) => {
           body: JSON.stringify({
             user_email: `${email}`,
             user_password: `${password}`,
+            user_type: `P`,
           }),
         }).catch((err) => console.log(err))
 

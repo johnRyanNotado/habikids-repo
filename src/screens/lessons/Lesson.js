@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ImageBackground, View, StyleSheet } from 'react-native'
+import { ImageBackground, Image, View, StyleSheet } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import { getImg } from '../../utilities/getImg'
 import COLORS from '../../constants/colors'
@@ -16,6 +16,7 @@ import Instruction from '../../components/lessons/lessons-illustration/Instructi
 import MultipleChoice from '../../components/activities/multiple-choice/MultipleChoice'
 import MultilplePicture from '../../components/activities/multiple-choices-pic/MultilplePicture'
 import ConnectTheDots from '../../components/activities/connect-the-dots/ConnectTheDots'
+import { imgUrl } from '../../constants/db_config'
 
 const Lesson = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
@@ -273,10 +274,11 @@ const Lesson = ({ navigation }) => {
     if (!lessonData || lessonData.item[item - 1].type === 'activity') {
       return null
     }
+
     return (
       <Animated.Image
-        source={lessonData ? lessonData.item[item - 1].img : null}
-        style={{ width: '77%' }}
+        src={lessonData ? `${imgUrl}${lessonData.item[item - 1].img}` : null}
+        style={{ width: '77%', height: '100%' }}
         resizeMode="contain"
         entering={ZoomIn.delay(500).duration(1000)}
       />

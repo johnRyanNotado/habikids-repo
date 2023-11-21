@@ -4,6 +4,7 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import { COMP_DIMENSION, VALUE_DIMENSION } from './constants'
 import COLORS from '../../../constants/colors'
 import Animated, { BounceInRight } from 'react-native-reanimated'
+import { imgUrl } from '../../../constants/db_config'
 
 const Answer = (props) => {
   const { endPosX, endPosY, label, img } = props
@@ -26,8 +27,8 @@ const Answer = (props) => {
     >
       {img ? (
         <Image
-          style={{ width: VALUE_DIMENSION.w }}
-          source={img}
+          style={{ width: VALUE_DIMENSION.w, height: VALUE_DIMENSION.w }}
+          source={{ uri: `${imgUrl}${img}` }}
           resizeMode="contain"
         />
       ) : (

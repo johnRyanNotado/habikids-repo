@@ -82,7 +82,10 @@ const Choice = (props) => {
         entering={BounceInRight.duration(1000).delay(2000)}
       >
         <View>
-          <TouchableOpacity onPress={handleSelection}>
+          <TouchableOpacity
+            onPress={handleSelection}
+            style={{ borderRadius: 20 }}
+          >
             <TapGestureHandler
               onGestureEvent={
                 choice.answer === TAMA ? correctGestureEvent : wrongGestureEvent

@@ -21,6 +21,7 @@ import {
 } from 'react-native-gesture-handler'
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
+import { imgUrl } from '../../../constants/db_config'
 
 const TAMA = 'TAMA'
 
@@ -81,7 +82,10 @@ const Choice = (props) => {
         entering={BounceInRight.duration(1000).delay(2000)}
       >
         <View>
-          <TouchableOpacity onPress={handleSelection}>
+          <TouchableOpacity
+            onPress={handleSelection}
+            style={{ borderRadius: 20 }}
+          >
             <TapGestureHandler
               onGestureEvent={
                 choice.answer === TAMA ? correctGestureEvent : wrongGestureEvent
@@ -101,7 +105,10 @@ const Choice = (props) => {
           </TouchableOpacity>
         </View>
         <View style={[centered, { marginLeft: 20 }]}>
-          <Image source={choice.img} style={{ width: 150, height: 150 }} />
+          <Image
+            source={{ uri: `${imgUrl}${choice.img}` }}
+            style={{ width: 150, height: 150 }}
+          />
         </View>
       </Animated.View>
     </GestureHandlerRootView>

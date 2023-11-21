@@ -9,14 +9,14 @@ export const db_Les_Values = {
   grade: [
     [
       {
-        id: 1,
+        id: `ls-20231121-2e25072f-fa25-4b81-b980-400adc6a6c05`,
         lesNum: 1,
         title: 'Pagkakabuklod-buklod ng Pamilya',
         item: [
           {
-            id: '1.1',
+            id: 'li-20231121-04166a0b-893c-4e0d-b2c4-293f1454216f',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.1.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -50,9 +50,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.2',
+            id: 'li-20231121-f3f9efb6-bcec-43ec-bc11-df983458bf1d',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.2.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.2.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -72,9 +72,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.3',
+            id: 'li-20231121-dece3e97-c1c0-41ae-88fd-7f0fbcf220eb',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.3.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.3.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -94,9 +94,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.4',
+            id: 'li-20231121-d977700d-a7a3-4ea0-84d4-fd8f40640d15',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.4.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.4.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -116,9 +116,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.5',
+            id: 'li-20231121-754bad99-e967-4aff-a48d-de14c9b08c5b',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.5.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.5.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -137,9 +137,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '1.6',
+            id: 'li-20231121-fdad51a9-ce10-4c4d-bfba-a2bb78c06bf1',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 1,
@@ -177,9 +177,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.7',
+            id: 'li-20231121-dc17c6ee-da3d-4004-a239-b53d65e69eac',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 2,
@@ -200,22 +200,22 @@ export const db_Les_Values = {
                   {
                     id: 1,
                     answer: MALI,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.7/1.7.1.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.7%201.7.1.png`,
                   },
                   {
                     id: 2,
                     answer: MALI,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.7/1.7.2.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.7%201.7.2.png`,
                   },
                   {
                     id: 3,
                     answer: TAMA,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.7/1.7.3.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.7%201.7.3.png`,
                   },
                   {
                     id: 4,
                     answer: MALI,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.7/1.7.4.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.7%201.7.4.png`,
                   },
                 ],
               },
@@ -223,9 +223,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.8',
+            id: 'li-20231121-cc17a9f2-c6b2-4fb5-a11a-95f344f9d515',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 2,
@@ -246,22 +246,22 @@ export const db_Les_Values = {
                   {
                     id: 1,
                     answer: MALI,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.8/1.8.1.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.8%201.8.1.png`,
                   },
                   {
                     id: 2,
                     answer: MALI,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.8/1.8.2.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.8%201.8.2.png`,
                   },
                   {
                     id: 3,
                     answer: MALI,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.8/1.8.3.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.8%201.8.3.png`,
                   },
                   {
                     id: 4,
                     answer: TAMA,
-                    img: require('../../../img/les/values/grade-1/lesson-1/1.8/1.8.4.png'),
+                    img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.8%201.8.4.png`,
                   },
                 ],
               },
@@ -269,9 +269,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '1.9',
+            id: 'li-20231121-84443ca2-587e-45be-b4be-7686b1a7312c',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.8.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.9.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -304,9 +304,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '1.10',
+            id: 'li-20231121-a02a76b5-b337-4304-8373-cb4bd644e8e0',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-1/1.9.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.10.png`,
             data: [
               {
                 isNarratorShown: false,
@@ -326,14 +326,14 @@ export const db_Les_Values = {
         ],
       },
       {
-        id: 2,
+        id: `ls-20231121-0404bf51-ba87-41d6-acf8-b611eec218b1`,
         lesNum: 2,
         title: 'Pagmamalasakit sa mga Kasapi ng Pamilya',
         item: [
           {
-            id: '2.1',
+            id: 'li-20231121-c7d79729-f7f0-451e-80ef-e23c7d71c413',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.1.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.1.png`,
             data: [
               {
                 narrator: 'juan',
@@ -368,9 +368,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.2',
+            id: 'li-20231121-5b2c209a-3d19-4c7d-bc94-b7040aea8eca',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.2.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.2.png`,
             data: [
               {
                 narrator: 'vio',
@@ -390,9 +390,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.3',
+            id: 'li-20231121-b8726165-4b15-4951-bd76-25db328b4718',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.3.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.3.png`,
             data: [
               {
                 narrator: 'uni',
@@ -440,9 +440,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.4',
+            id: 'li-20231121-69a3561a-7167-4700-8b08-3c00d619ca2d',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.4.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.4.png`,
             data: [
               {
                 narrator: 'juan',
@@ -476,9 +476,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.5',
+            id: 'li-20231121-92529fd1-1487-4e99-abe9-3e921c2e2ac1',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.5.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.5.png`,
             data: [
               {
                 narrator: 'uni',
@@ -512,9 +512,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.6',
+            id: 'li-20231121-7faf7f88-6441-4769-936a-628d1ffbd961',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.6.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.6.png`,
             data: [
               {
                 narrator: 'uni',
@@ -548,9 +548,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.7',
+            id: 'li-20231121-be5c3ea9-76d1-4640-ad55-8c4014350ac3',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.7.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.7.png`,
             data: [
               {
                 narrator: 'uni',
@@ -570,9 +570,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.8',
+            id: 'li-20231121-392002cb-f492-46d2-a107-c2f81de1ba23',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.8.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.8.png`,
             data: [
               {
                 narrator: 'uni',
@@ -591,9 +591,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.9',
+            id: 'li-20231121-55ffd45f-f6c6-4736-978d-2e38498b0734',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.9.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.9.png`,
             data: [
               {
                 narrator: 'uni',
@@ -612,9 +612,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.10',
+            id: 'li-20231121-692560f9-529b-4f06-bf71-1a72163d64ab',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 1,
@@ -651,9 +651,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.11',
+            id: 'li-20231121-4f8b4717-e693-4f4f-b9d7-9a92eca372f3',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.11.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.11.png`,
             data: [
               {
                 narrator: 'uni',
@@ -673,9 +673,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.12',
+            id: 'li-20231121-33c46bcc-a2be-47a0-8f42-7ca50b7bca75',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.12.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.12.png`,
             data: [
               {
                 narrator: 'uni',
@@ -694,9 +694,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.13',
+            id: 'li-20231121-bce13cee-1d9a-4e6a-b679-8da805e73da1',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.13.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.13.png`,
             data: [
               {
                 narrator: 'uni',
@@ -715,9 +715,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.14',
+            id: 'li-20231121-4aafa425-c194-429c-968f-b8850dcab20d',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.14.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.14.png`,
             data: [
               {
                 narrator: 'uni',
@@ -750,9 +750,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.15',
+            id: 'li-20231121-6049f08e-8342-4f20-922f-d126d027800b',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.15.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.15.png`,
             data: [
               {
                 narrator: 'uni',
@@ -772,9 +772,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.16',
+            id: 'li-20231121-8a1be1df-fcd4-4a63-9dc1-eb155c262800',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.16.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.16.png`,
             data: [
               {
                 narrator: 'uni',
@@ -808,9 +808,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.17',
+            id: 'li-20231121-9759fe29-38a7-439f-bea9-2a85f00879a8',
             type: 'activity',
-            img: getImg.bg.emptyBg.link,
+            img: null,
             data: [
               {
                 activityType: 3,
@@ -857,9 +857,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: 2.18,
+            id: `li-20231121-2363948f-d5bf-4033-bca1-5df66740cc91`,
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.18.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.18.png`,
             data: [
               {
                 narrator: 'uni',
@@ -892,9 +892,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.19',
+            id: 'li-20231121-140d78c0-ae22-4d67-b64a-36fcf78dabeb',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.19.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.19.png`,
             data: [
               {
                 narrator: 'juan',
@@ -913,9 +913,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '2.20',
+            id: 'li-20231121-6e44e964-d968-488d-abc7-cd52b0c2cef3',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.20.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.20.png`,
             data: [
               {
                 narrator: 'vio',
@@ -935,9 +935,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.21',
+            id: 'li-20231121-04858a22-d61c-4470-893f-01dca409167a',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.21.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.21.png`,
             data: [
               {
                 narrator: 'juan',
@@ -956,9 +956,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.22',
+            id: 'li-20231121-35ed9efc-fb2f-4274-a87c-271dffe587ef',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.22.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.22.png`,
             data: [
               {
                 narrator: 'uni',
@@ -977,9 +977,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '2.23',
+            id: 'li-20231121-9dd1b471-4ed1-4a99-9f30-e31bda4386a7',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-2/2.23.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-2%202.23.png`,
             data: [
               {
                 narrator: 'uni',
@@ -999,14 +999,14 @@ export const db_Les_Values = {
         ],
       },
       {
-        id: 3,
+        id: `ls-20231121-1820259d-cbc7-4c4c-a7b0-17aa11701aa5`,
         lesNum: 3,
         title: 'Pagmamalasakit sa mga Kasapi ng Pamilya',
         item: [
           {
-            id: '3.1',
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.1.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
             data: [
               {
                 narrator: 'juan',
@@ -1026,9 +1026,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.2',
+            id: 'li-20231121-11765e3e-ee01-4714-98b4-4aea217c13f2',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.2.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.2.png`,
             data: [
               {
                 narrator: 'vio',
@@ -1048,9 +1048,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.3',
+            id: 'li-20231121-f1de10d6-49ca-4e42-aae7-936f7183a817',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.3.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.3.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1070,9 +1070,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.4',
+            id: 'li-20231121-2fb8be2b-7e81-47b5-951f-1478f7c6d03e',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.4.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.4.png`,
             data: [
               {
                 narrator: 'juan',
@@ -1091,9 +1091,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.5',
+            id: 'li-20231121-d0c0b438-02bb-4e24-8d35-8af0676dbbc3',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.5.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.5.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1113,9 +1113,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.6',
+            id: 'li-20231121-92ac8986-5115-485a-8253-ea089fe4636d',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.6.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.6.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1162,9 +1162,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '3.7',
+            id: 'li-20231121-2a5935c3-c5c1-425f-8ee3-53548dea9737',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.7.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.7.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1213,9 +1213,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.8',
+            id: 'li-20231121-d6468f38-4327-472c-b6ee-099c735b2ee8',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.8.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.8.png`,
             data: [
               {
                 narrator: 'juan',
@@ -1234,9 +1234,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '3.9',
+            id: 'li-20231121-3ebc14a9-fc92-4877-8fc8-dae1fd8735a1',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.9.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.9.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1283,9 +1283,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '3.10',
+            id: 'li-20231121-91964d95-a4d3-4d45-924e-913dde16e883',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.10.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.10.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1318,9 +1318,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '3.11',
+            id: 'li-20231121-f9a3c7c3-ff0f-4c0d-bfac-4011eb7b6f1e',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.11.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.11.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1340,9 +1340,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.12',
+            id: 'li-20231121-034f4775-68f6-4a7f-a28a-275c9b107b6e',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.12.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.12.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1361,9 +1361,9 @@ export const db_Les_Values = {
             ],
           },
           {
-            id: '3.13',
+            id: 'li-20231121-3e4dc6d0-bace-435c-b4df-acf4ef193e98',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.13.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.13.png`,
             data: [
               {
                 narrator: 'uni',
@@ -1383,9 +1383,9 @@ export const db_Les_Values = {
           },
 
           {
-            id: '3.14',
+            id: 'li-20231121-861b8e73-2c0a-4e1e-8693-4fbd38ab5d6e',
             type: 'story',
-            img: require('../../../img/les/values/grade-1/lesson-3/3.14.png'),
+            img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.14.png`,
             data: [
               {
                 narrator: 'uni',

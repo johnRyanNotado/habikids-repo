@@ -7,3 +7,4 @@ export const fetchLearnerUrl = `${url}fetch-learner`
 export const addLearnerUrl = `${url}add-learner`
 export const delLearnerUrl = `${url}del-learner`
 export const editLearnerUrl = `${url}edit-learner`
+export const imgUrl = `${url}images/`
