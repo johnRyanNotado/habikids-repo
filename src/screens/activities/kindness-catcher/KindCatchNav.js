@@ -14,19 +14,21 @@ const KindCatchNav = () => {
   const TIMER_VALUE = 31
   const [kindnessList, setKindnessList] = useState(null)
   const [badList, setBadList] = useState(null)
+  const [instruction, setInstruction] = useState('')
+  const [instructionDuration, setInstructionDuration] = useState(0)
+  const [narrator, setNarrator] = useState('uni')
 
   useEffect(() => {
     db_KindCatch.grade[selectedYear - 1].map((item) => {
       if (actID === item.id) {
         setKindnessList(item.kindnessList)
         setBadList(item.badList)
+        setInstruction(item.instruction)
+        setInstructionDuration(item.instructionDuration * 1000)
+        setNarrator(item.narrator)
       }
     })
-  }, [selectedYear])
-  // get the related data for narration
-  const instruction = db_KindCatch.instruction
-  const instructionDuration = db_KindCatch.instructionDuration * 1000
-  const narrator = db_KindCatch.narrator
+  }, [selectedYear, actID])
 
   const timer = useSharedValue(TIMER_VALUE)
   const score = useSharedValue(0)

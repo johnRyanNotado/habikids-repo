@@ -39,16 +39,15 @@ const CTRPNav = () => {
         ? db_CTRP_GoodHabits
         : null
 
-    wholeGameData.grade[selectedYear - 1].map((item) => {
+    wholeGameData?.grade[selectedYear - 1]?.map((item) => {
       if (item.id === actID) {
         setGameData(item.item)
+        setNarrator(item.narrator)
         setInstruction(item.instruction)
         setInstructionDuration(item.instructionDuration * 1000)
       }
     })
-
-    setNarrator(wholeGameData.narrator)
-  }, [content])
+  }, [content, actID, selectedYear])
 
   return (
     <CTRPContext.Provider

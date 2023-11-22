@@ -33,18 +33,21 @@ const CultPuzzNav = () => {
     { x: CENTER_X + minimumDistanceX, y: CENTER_Y + minimumDistanceY },
   ]
 
+  // get the related data for narration
+  let instruction
+  let instructionDuration
+  let narrator
+
   // get the data using the selected year
   let PUZZLE_GAME_DATA
   db_CultPuzz.grade[selectedYear - 1].map((item) => {
     if (actID === item.id) {
       PUZZLE_GAME_DATA = item
+      instruction = item.instruction
+      instructionDuration = item.instructionDuration * 1000
+      narrator = item.narrator
     }
   })
-
-  // get the related data for narration
-  const instruction = db_CultPuzz.instruction
-  const instructionDuration = db_CultPuzz.instructionDuration * 1000
-  const narrator = db_CultPuzz.narrator
 
   return (
     <CultPuzzContext.Provider

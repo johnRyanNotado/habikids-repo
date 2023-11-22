@@ -2,6 +2,8 @@ import React from 'react'
 import { TouchableOpacity, View, Text, Image, StyleSheet } from 'react-native'
 import COLORS from '../../constants/colors'
 
+import { FontAwesome5 } from '@expo/vector-icons'
+
 const EnterChileAgeNavBar = (props) => {
   const { handleLeftArrBtn, handleRightArrBtn } = props
   const { navBarWrapper, navBarElement, appName, navBtn } = styles
@@ -9,9 +11,10 @@ const EnterChileAgeNavBar = (props) => {
     <View style={navBarWrapper}>
       <View style={[navBarElement, { width: '13%' }]}>
         <TouchableOpacity onPress={handleLeftArrBtn}>
-          <Image
-            style={navBtn}
-            source={require('../../img/left-arrow-btn.png')}
+          <FontAwesome5
+            name="arrow-circle-left"
+            size={35}
+            color={COLORS.white}
           />
         </TouchableOpacity>
       </View>
@@ -20,9 +23,10 @@ const EnterChileAgeNavBar = (props) => {
       </View>
       <View style={[navBarElement, { width: '13%' }]}>
         <TouchableOpacity onPress={handleRightArrBtn}>
-          <Image
-            style={navBtn}
-            source={require('../../img/right-arrow-btn.png')}
+          <FontAwesome5
+            name="arrow-circle-right"
+            size={35}
+            color={COLORS.white}
           />
         </TouchableOpacity>
       </View>

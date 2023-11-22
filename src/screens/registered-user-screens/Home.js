@@ -68,7 +68,7 @@ const Home = ({ navigation }) => {
           handleAddBtn={handleAddBtn}
           handleOnChildChosen={handleOnChildChosen}
         />
-        <HomeFooterSection />
+        {/* <HomeFooterSection /> */}
       </View>
     </View>
   )

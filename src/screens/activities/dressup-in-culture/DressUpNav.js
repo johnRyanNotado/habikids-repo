@@ -28,14 +28,20 @@ const DressUpNav = () => {
   const [shoesSelection, setShoesSelection] = useState(null)
   const [accessSelection, setAccessSelection] = useState(null)
   const [numOfClothes, setNumOfClothes] = useState(0)
+  const [instruction, setInstruction] = useState('')
+  const [instructionDuration, setInstructionDuration] = useState(0)
+  const [narrator, setNarrator] = useState('uni')
 
   useEffect(() => {
     db_DressUp.grade[selectedYear - 1].map((item) => {
       if (actID === item.id) {
         setGameData(item)
+        setInstruction(item.instruction)
+        setInstructionDuration(item.instructionDuration * 1000)
+        setNarrator(item.narrator)
       }
     })
-  }, [actID])
+  }, [selectedYear, actID])
 
   const handleGenderChanged = (gender) => {
     setNumOfClothes(0)
@@ -139,11 +145,6 @@ const DressUpNav = () => {
       )
     }
   }, [gameData, character, top, bottom, accessories, shoes, gender])
-
-  // get the related data for narration
-  const instruction = db_DressUp.instruction
-  const instructionDuration = db_DressUp.instructionDuration * 1000
-  const narrator = db_DressUp.narrator
 
   return (
     <DressUpContext.Provider

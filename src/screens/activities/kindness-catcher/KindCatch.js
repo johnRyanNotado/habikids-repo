@@ -84,6 +84,7 @@ const KindCatch = ({ navigation }) => {
 
     return (
       <KindessObj
+        key={index}
         basketPos={basketPos}
         wait={wait}
         setWait={setWait}
@@ -103,6 +104,7 @@ const KindCatch = ({ navigation }) => {
 
     return (
       <BadObj
+        key={index}
         basketPos={basketPos}
         wait={wait}
         setWait={setWait}

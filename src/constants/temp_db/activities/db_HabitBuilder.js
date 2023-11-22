@@ -1,16 +1,16 @@
 export const db_HabitBuilder = {
-  instructionDuration: 5,
-  instruction:
-    'Tulungan ang isang karakter na magkaroon ng mabubuting kaugalian sa pamamagitan ng pag-gabay sa kanila sa buong araw.',
-  narrator: 'vio',
   grade: [
     [
       {
-        id: 1,
+        id: 'ac-20231122-3f08b1a4-e0eb-44d5-8ddf-d46ff06134b4',
+        instructionDuration: 8,
+        instruction:
+          'Tulungan ang isang karakter na magkaroon ng mabubuting kaugalian sa pamamagitan ng pag-gabay sa kanila sa buong araw.',
+        narrator: 'vio',
         item: [
           {
             sceneDesc: `Sinabihan si Pedro ng kaniyang magulang na magsipilyo. Tulungan mo si Pedro na hanapin ang kaniyang toothbrush at toothpaste upang siya ay makapagsipilyo na.`,
-            narrationDuration: 5,
+            narrationDuration: 8,
             bg: {
               id: 1,
               img: require(`../../../img/act/habit-builder/grade-one/first/first-item/bg.png`),
@@ -46,7 +46,7 @@ export const db_HabitBuilder = {
           },
           {
             sceneDesc: `Kailangan ng maligo ni Pedro, hanapin ang gamit na kakailanganin niya sa pagligo.`,
-            narrationDuration: 5,
+            narrationDuration: 8,
             bg: {
               id: 1,
               img: require(`../../../img/act/habit-builder/grade-one/first/second-item/bg.png`),
@@ -82,7 +82,7 @@ export const db_HabitBuilder = {
           },
           {
             sceneDesc: `Ilagay sa plato ang mga pagkain na dapat kainin ni Pedro upang siya ay manatiling malusog. `,
-            narrationDuration: 5,
+            narrationDuration: 8,
             bg: {
               id: 1,
               img: require(`../../../img/act/habit-builder/grade-one/first/third-item/bg.png`),

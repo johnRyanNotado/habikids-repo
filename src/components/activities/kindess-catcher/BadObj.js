@@ -71,13 +71,6 @@ const BadObj = (props) => {
     // decrement wait interval every second unless the game is paused
     const waitInterval = setInterval(() => {
       if (!isGamePaused) {
-        console.log(
-          '\t',
-          'Waiting Time: ',
-          waitingTime.value,
-          '\tIs game paused: ',
-          isGamePaused
-        )
         waitingTime.value = waitingTime.value - 1000
       }
       // clear interval if waiting interval is <= 0 or timer is <= 0

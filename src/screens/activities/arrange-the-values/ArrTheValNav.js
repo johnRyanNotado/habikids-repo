@@ -27,14 +27,15 @@ const ArrTheValNav = () => {
   let instruction
   let instructionDuration
   let data
+  let narrator
   db_ArrTheVal.grade[selectedYear - 1].map((item) => {
     if (actID === item.id) {
       instruction = item.instruction
+      narrator = item.narrator
       instructionDuration = item.instructionDuration * 1000
       data = item.item
     }
   })
-  const narrator = db_ArrTheVal.narrator
 
   console.log('Called: ArrTheValNav')
   return (

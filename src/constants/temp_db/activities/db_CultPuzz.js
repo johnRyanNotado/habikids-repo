@@ -1,11 +1,11 @@
 export const db_CultPuzz = {
-  instructionDuration: 10,
-  instruction: 'Buuin ang mga piraso ng puzzle sa loob ng 30 na segundo.',
-  narrator: 'juan',
   grade: [
     [
       {
-        id: 1,
+        id: 'ac-20231122-f0175d14-7a48-42f4-b164-c985b37434e3',
+        instructionDuration: 10,
+        instruction: 'Buuin ang mga piraso ng puzzle sa loob ng 30 na segundo.',
+        narrator: 'juan',
         trivia:
           'Alam mo ba na ang Fiesta ay isang sikat na tradisyon sa Pilipinas? Tuwing Fiesta, nagdiriwang at nag hahanda ang mga tao ng maraming pagkain.',
         theme: 'fiesta',
@@ -21,6 +21,9 @@ export const db_CultPuzz = {
     [
       {
         id: 1,
+        instructionDuration: 10,
+        instruction: 'Buuin ang mga piraso ng puzzle sa loob ng 30 na segundo.',
+        narrator: 'juan',
         trivia: 'Alam mo ba na ang mga Filipino ay madasalin?',
         theme: 'madasalin',
         pieces: [
@@ -35,6 +38,9 @@ export const db_CultPuzz = {
     [
       {
         id: 1,
+        instructionDuration: 10,
+        instruction: 'Buuin ang mga piraso ng puzzle sa loob ng 30 na segundo.',
+        narrator: 'juan',
         trivia: 'Alam mo ba na ang mga Filipino ay madasalin?',
         theme: 'madasalin',
         pieces: [

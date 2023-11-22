@@ -122,7 +122,7 @@ const PuzzlePiece = (props) => {
   })
 
   return (
-    <PanGestureHandler onGestureEvent={panGestureHandler}>
+    <PanGestureHandler onGestureEvent={panGestureHandler} key={index}>
       <Animated.View style={[styles.imgWrapper, imgAnimatedStyle]}>
         <Image
           source={PUZZLE_GAME_DATA.pieces[index]}

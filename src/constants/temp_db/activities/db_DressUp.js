@@ -1,15 +1,12 @@
 export const db_DressUp = {
-  instructionDuration: 3,
-
-  instruction:
-    'Subukan na bihisan ang mga virtual na karakter sa tradisyonal na kasuotan ng Pilipinas.',
-  narrator: 'juan',
-
-  title: 'Dress Up in Culture',
   grade: [
     [
       {
-        id: 2,
+        id: 'ac-20231122-4b7c3df0-7829-4d4a-a004-8e1babfbfa9a',
+        instructionDuration: 8,
+        instruction:
+          'Subukan na bihisan ang mga virtual na karakter sa tradisyonal na kasuotan ng Pilipinas.',
+        narrator: 'juan',
         title: `Barong at Baro't Saya`,
         trivia: `Alam mo ba na ang Barong Tagalog at Baro't Saya ay mga pinakatanyag na mga damit na naging malaking bahagi ng pagkakakilanlan ng Pilipino.`,
         data: {

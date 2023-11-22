@@ -17,6 +17,9 @@ const HabitBuilderNav = ({ navigation }) => {
   const [item, setItem] = useState(0)
   const itemScore = useSharedValue(0)
   const [isNarrating, setIsNarrating] = useState(false)
+  const [instruction, setInstruction] = useState('')
+  const [instructionDuration, setInstructionDuration] = useState(0)
+  const [narrator, setNarrator] = useState('vio')
 
   // get the related data for narration
   const [gameData, setGameData] = useState(null)
@@ -25,14 +28,12 @@ const HabitBuilderNav = ({ navigation }) => {
     db_HabitBuilder.grade[selectedYear - 1].map((item) => {
       if (actID === item.id) {
         setGameData(item)
+        setInstruction(item.instruction)
+        setInstructionDuration(item.instructionDuration * 1000)
+        setNarrator(item.narrator)
       }
     })
   }, [selectedYear, actID])
-
-  // get the related data for narration
-  const instruction = db_HabitBuilder.instruction
-  const instructionDuration = db_HabitBuilder.instructionDuration * 1000
-  const narrator = db_HabitBuilder.narrator
 
   return (
     <HabitBuilderContext.Provider

@@ -1,12 +1,12 @@
 export const db_KindCatch = {
-  instructionDuration: 10,
-  instruction:
-    'Saluhin ang mga nahuhulog na mabuting gawain at iwasan ang mga masasamang gagawin.',
-  narrator: 'uni',
   grade: [
     [
       {
-        id: 1,
+        id: 'ac-20231122-e0a53cde-be49-43ca-8b49-c45338a27602',
+        instructionDuration: 10,
+        instruction:
+          'Saluhin ang mga nahuhulog na mabuting prinsipyo at iwasan ang mga masasamang prinsipyo.',
+        narrator: 'uni',
         kindnessList: [
           { id: 1, kindness: 'Pagmamano' },
           { id: 2, kindness: 'Pagsunod sa utos' },
@@ -40,7 +40,11 @@ export const db_KindCatch = {
     ],
     [
       {
-        id: 1,
+        id: 'ac-20231122-6dc4077d-1328-473e-a944-796302f56890',
+        instructionDuration: 10,
+        instruction:
+          'Saluhin ang mga nahuhulog na mabuting gawain at iwasan ang mga masasamang gagawin.',
+        narrator: 'uni',
         kindnessList: [
           { id: 1, kindness: 'Magtiwala' },
           { id: 2, kindness: 'Pagmamahal' },
@@ -75,6 +79,10 @@ export const db_KindCatch = {
     [
       {
         id: 1,
+        instructionDuration: 10,
+        instruction:
+          'Saluhin ang mga nahuhulog na mabuting gawain at iwasan ang mga masasamang gagawin.',
+        narrator: 'uni',
         kindnessList: [
           { id: 1, kindness: 'Magalang' },
           { id: 2, kindness: 'Madasalin' },

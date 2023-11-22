@@ -72,6 +72,7 @@ const CultPuzz = ({ navigation }) => {
           return (
             <PuzzlePiece
               index={index}
+              key={index}
               endPos={shuffledEndPos[index]}
               theme={PUZZLE_GAME_DATA.theme}
               score={score}
@@ -79,7 +80,13 @@ const CultPuzz = ({ navigation }) => {
           )
         })}
         {PUZZLE_GAME_DATA.pieces.map((piece, index) => {
-          return <PuzzleSpot index={index} theme={PUZZLE_GAME_DATA.theme} />
+          return (
+            <PuzzleSpot
+              index={index}
+              key={index}
+              theme={PUZZLE_GAME_DATA.theme}
+            />
+          )
         })}
         <Score score={score.value} items={PUZZLE_GAME_DATA.pieces.length} />
         <Timer timer={timerLimit} />
