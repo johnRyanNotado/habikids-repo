@@ -6,6 +6,7 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import WrongComp from './WrongComp'
 import Character from './Character'
 import { useHabitBuilderContext } from '../../../screens/activities/habit-builder/HabitBuilderContext'
+import { imgUrl } from '../../../constants/db_config'
 
 const RenderComponents = (props) => {
   const { corrData, wrongData, bg, char, score, itemScore, positionAbsolute } =
@@ -63,6 +64,7 @@ const RenderComponents = (props) => {
     const corrEndPos = endPos[index]
     return (
       <CorrectComp
+        key={index}
         width={COMP_WIDTH}
         source={item.img}
         endPos={{
@@ -80,6 +82,7 @@ const RenderComponents = (props) => {
     const wrongInitPos = initPos[index + corrData.length]
     return (
       <WrongComp
+        key={index}
         width={COMP_WIDTH}
         source={item.img}
         initialPosX={wrongInitPos.x}
@@ -90,7 +93,7 @@ const RenderComponents = (props) => {
   return (
     <View style={[container]}>
       <Image
-        source={bg}
+        source={{ uri: `${imgUrl}${bg}` }}
         style={[
           positionAbsolute,
           container,

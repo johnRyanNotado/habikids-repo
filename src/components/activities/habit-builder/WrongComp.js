@@ -13,6 +13,7 @@ import Animated, {
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import COLORS from '../../../constants/colors'
 import { globalStyles } from '../../../styles/GlobalStyles'
+import { imgUrl } from '../../../constants/db_config'
 
 const WrongComp = (props) => {
   const { width, source, initialPosX, initialPosY } = props
@@ -111,7 +112,7 @@ const WrongComp = (props) => {
         ]}
       >
         <Image
-          source={source}
+          source={{ uri: `${imgUrl}${source}` }}
           style={{ width: width, height: width }}
           resizeMode="contain"
         />

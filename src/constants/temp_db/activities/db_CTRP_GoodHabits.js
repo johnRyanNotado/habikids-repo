@@ -10,29 +10,28 @@ export const db_CTRP_GoodHabits = {
           {
             sceneDesc:
               'Mayroon kayong mga nakatambak na bote ng softdrinks. Ano ang dapat mong gawin?',
-            scene_img: require('../../../img/act/ctrp/grade-one/first/scene.png'),
+            sceneImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20scene.png`,
             corrDesc: 'Gawin itong flower vase',
-            corrImg: require('../../../img/act/ctrp/grade-one/first/right.png'),
+            corrImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20correct.png`,
             wrongDesc: 'Itapon na, hindi na ito magagamit',
-            wrongImg: require('../../../img/act/ctrp/grade-one/first/wrong.png'),
+            wrongImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20wrong.png`,
           },
           {
             sceneDesc:
               'Mayroon kayong mga lumang damit. Ano ang iyong gagawin?',
-            scene_img: require('../../../img/act/ctrp/grade-one/first/scene.png'),
+            sceneImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20scene.png`,
             corrDesc: 'Ibahagi sa nangangailangan',
-            corrImg: require('../../../img/act/ctrp/grade-one/first/right.png'),
-
+            corrImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20correct.png`,
             wrongDesc: 'Itapon na, hindi ko na ito gusto',
-            wrongImg: require('../../../img/act/ctrp/grade-one/first/wrong.png'),
+            wrongImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20wrong.png`,
           },
           {
             sceneDesc: 'Mayroon kang mga lumang laruan. Ano ang iyong gagawin?',
-            sceneImg: require('../../../img/act/ctrp/grade-one/first/scene.png'),
+            sceneImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20scene.png`,
             corrDesc: 'Ibahagi sa may gusto',
-            corrImg: require('../../../img/act/ctrp/grade-one/first/right.png'),
+            corrImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20correct.png`,
             wrongDesc: 'Itapon na, hindi ko na ito gusto',
-            wrongImg: require('../../../img/act/ctrp/grade-one/first/wrong.png'),
+            wrongImg: `%20images%20activities%20grade-1%20values%20ctrp%20item-3%201%20wrong.png`,
           },
         ],
       },

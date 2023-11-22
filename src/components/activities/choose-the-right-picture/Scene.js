@@ -3,6 +3,7 @@ import { StyleSheet, Image } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import Animated, { BounceIn } from 'react-native-reanimated'
 import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
+import { imgUrl } from '../../../constants/db_config'
 
 const Scene = () => {
   const { item, gameData } = useCTRPContext()
@@ -14,7 +15,10 @@ const Scene = () => {
       entering={BounceIn.duration(1500)}
       style={[centered, imgSect]}
     >
-      <Image source={gameData[item - 1]?.sceneImg} style={imgStyle} />
+      <Image
+        source={{ uri: `${imgUrl}${gameData[item - 1]?.sceneImg}` }}
+        style={imgStyle}
+      />
     </Animated.View>
   )
 }

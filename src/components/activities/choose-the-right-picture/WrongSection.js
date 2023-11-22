@@ -17,6 +17,7 @@ import Animated, {
 import { useCTRPContext } from '../../../screens/activities/choose-the-right-picture/CTRPContext'
 import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
+import { imgUrl } from '../../../constants/db_config'
 
 const WrongSection = (props) => {
   const { enteringProps } = props
@@ -60,7 +61,7 @@ const WrongSection = (props) => {
             onGestureEvent={wrongEventHandler}
           >
             <Animated.Image
-              source={gameData[properItem]?.wrongImg}
+              source={{ uri: `${imgUrl}${gameData[properItem]?.wrongImg}` }}
               style={[imgStyle, wrongAnimatedStyle]}
               entering={BounceInRight.duration(enteringProps.duration).delay(
                 enteringProps.delay

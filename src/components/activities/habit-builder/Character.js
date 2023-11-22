@@ -1,12 +1,13 @@
 import React from 'react'
 import { Image } from 'react-native'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
+import { imgUrl } from '../../../constants/db_config'
 
 const Character = (props) => {
   const { char } = props
   return (
     <Image
-      source={char}
+      source={{ uri: `${imgUrl}${char}` }}
       style={[
         {
           position: 'absolute',

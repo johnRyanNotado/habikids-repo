@@ -17,6 +17,7 @@ import {
   CENTER_X,
   CENTER_Y,
 } from '../../../constants/puzzleConstants'
+import { imgUrl } from '../../../constants/db_config'
 import { useCultPuzzContext } from '../../../screens/activities/cultural-puzzle/CultPuzzContext'
 
 const PuzzlePiece = (props) => {
@@ -125,7 +126,7 @@ const PuzzlePiece = (props) => {
     <PanGestureHandler onGestureEvent={panGestureHandler} key={index}>
       <Animated.View style={[styles.imgWrapper, imgAnimatedStyle]}>
         <Image
-          source={PUZZLE_GAME_DATA.pieces[index]}
+          source={{ uri: `${imgUrl}${PUZZLE_GAME_DATA.pieces[index]}` }}
           style={styles.imgStyle}
         />
       </Animated.View>

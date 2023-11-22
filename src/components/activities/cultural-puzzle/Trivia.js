@@ -5,6 +5,7 @@ import COLORS from '../../../constants/colors'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Animated, { BounceIn } from 'react-native-reanimated'
+import { imgUrl } from '../../../constants/db_config'
 import { useCultPuzzContext } from '../../../screens/activities/cultural-puzzle/CultPuzzContext'
 
 const Trivia = (props) => {
@@ -33,7 +34,10 @@ const Trivia = (props) => {
       <Animated.View entering={BounceIn} style={triviaCard}>
         <View style={[centered, imgSection]}>
           <View>
-            <Image source={PUZZLE_GAME_DATA.wholeImg} style={imgStyle} />
+            <Image
+              source={{ uri: `${imgUrl}${PUZZLE_GAME_DATA.wholeImg}` }}
+              style={imgStyle}
+            />
           </View>
         </View>
         <View style={[centered, triviaSection]}>

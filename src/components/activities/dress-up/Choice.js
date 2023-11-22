@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import COLORS from '../../../constants/colors'
+import { imgUrl } from '../../../constants/db_config'
 
 const Choice = (props) => {
   const { img, name, position, height, handlePress, marginTop } = props
@@ -24,7 +25,7 @@ const Choice = (props) => {
       >
         <TouchableOpacity onPress={handlePress}>
           <Image
-            source={img}
+            source={{ uri: `${imgUrl}${img}` }}
             style={{
               // height: height ? height : 400,
               width: WINDOW_WIDTH * 0.25,

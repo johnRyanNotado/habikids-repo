@@ -13,34 +13,34 @@ export const db_HabitBuilder = {
             narrationDuration: 8,
             bg: {
               id: 1,
-              img: require(`../../../img/act/habit-builder/grade-one/first/first-item/bg.png`),
+              img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20bg.png`,
             },
             character: {
               id: 1,
-              img: require(`../../../img/act/habit-builder/grade-one/first/first-item/character.gif`),
+              img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20character.gif`,
             },
             correctComponents: [
               {
                 id: 1,
-                img: require(`../../../img/act/habit-builder/grade-one/first/first-item/toothpaste.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20toothpaste.png`,
               },
               {
                 id: 2,
-                img: require(`../../../img/act/habit-builder/grade-one/first/first-item/toothbrush.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20toothbrush.png`,
               },
             ],
             wrongComponents: [
               {
                 id: 1,
-                img: require(`../../../img/act/habit-builder/grade-one/first/first-item/tabo.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20tabo.png`,
               },
               {
                 id: 2,
-                img: require(`../../../img/act/habit-builder/grade-one/first/first-item/timba.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20timba.png`,
               },
               {
                 id: 3,
-                img: require(`../../../img/act/habit-builder/grade-one/first/first-item/towel.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%201%20towel.png`,
               },
             ],
           },
@@ -49,34 +49,34 @@ export const db_HabitBuilder = {
             narrationDuration: 8,
             bg: {
               id: 1,
-              img: require(`../../../img/act/habit-builder/grade-one/first/second-item/bg.png`),
+              img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20bg.png`,
             },
             character: {
               id: 1,
-              img: require(`../../../img/act/habit-builder/grade-one/first/second-item/character.gif`),
+              img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20character.gif`,
             },
             correctComponents: [
               {
                 id: 1,
-                img: require(`../../../img/act/habit-builder/grade-one/first/second-item/shampoo.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20shampoo.png`,
               },
               {
                 id: 2,
-                img: require(`../../../img/act/habit-builder/grade-one/first/second-item/soap.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20soap.png`,
               },
             ],
             wrongComponents: [
               {
                 id: 1,
-                img: require(`../../../img/act/habit-builder/grade-one/first/second-item/hair-dryer.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20hair-dryer.png`,
               },
               {
                 id: 2,
-                img: require(`../../../img/act/habit-builder/grade-one/first/second-item/tissue.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20tissue.png`,
               },
               {
                 id: 3,
-                img: require(`../../../img/act/habit-builder/grade-one/first/second-item/cellphone.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%202%20cellphone.png`,
               },
             ],
           },
@@ -85,42 +85,42 @@ export const db_HabitBuilder = {
             narrationDuration: 8,
             bg: {
               id: 1,
-              img: require(`../../../img/act/habit-builder/grade-one/first/third-item/bg.png`),
+              img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20bg.png`,
             },
             character: {
               id: 1,
-              img: require(`../../../img/act/habit-builder/grade-one/first/third-item/character.png`),
+              img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20character.png`,
             },
             correctComponents: [
               {
                 id: 1,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/chicken.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20chicken.png`,
               },
               {
                 id: 2,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/fruit.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20fruit.png`,
               },
               {
                 id: 3,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/fish.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20fish.png`,
               },
               {
                 id: 4,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/corn.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20corn.png`,
               },
             ],
             wrongComponents: [
               {
                 id: 1,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/softdrinks.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20softdrinks.png`,
               },
               {
                 id: 2,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/chocolate.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20chocolate.png`,
               },
               {
                 id: 3,
-                img: require(`../../../img/act/habit-builder/grade-one/first/third-item/candies.png`),
+                img: `%20images%20activities%20grade-1%20good-habits%20habit-builder%20item-1%203%20candies.png`,
               },
             ],
           },
