@@ -87,6 +87,7 @@ const ConnectTheDots = (props) => {
           ? data.firstColumn.map((item, index) => {
               return (
                 <Choice
+                  key={index}
                   initialPosX={initPos[index].x}
                   initialPosY={initPos[index].y}
                   label={data.firstColumn[index].value}
@@ -100,6 +101,7 @@ const ConnectTheDots = (props) => {
           ? data.firstColumn.map((item, index) => {
               return (
                 <Dot
+                  key={index}
                   initialPosX={initPos[index].x}
                   initialPosY={initPos[index].y}
                   endPos={{
@@ -114,14 +116,18 @@ const ConnectTheDots = (props) => {
 
         {initPos && endPos
           ? data.firstColumn.map((item, index) => {
-              return <Spot x={initPos[index].x} y={initPos[index].y} />
+              return (
+                <Spot key={index} x={initPos[index].x} y={initPos[index].y} />
+              )
             })
           : null}
 
         {initPos && endPos
           ? data.firstColumn.map((item, index) => {
               console.log('End pos: ', endPos)
-              return <Spot x={endPos[index].x} y={endPos[index].y} />
+              return (
+                <Spot key={index} x={endPos[index].x} y={endPos[index].y} />
+              )
             })
           : null}
 
@@ -129,6 +135,7 @@ const ConnectTheDots = (props) => {
           ? data.firstColumn.map((item, index) => {
               return (
                 <Answer
+                  key={index}
                   endPosX={shuffledEndPos[index].x}
                   endPosY={shuffledEndPos[index].y}
                   label={data.secondColumn[index].value}
