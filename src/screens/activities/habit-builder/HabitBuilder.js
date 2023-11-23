@@ -4,11 +4,16 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import { getImg } from '../../../utilities/getImg'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useHabitBuilderContext } from './HabitBuilderContext'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
 import HabitBuilderComp from '../../../components/activities/habit-builder/HabitBuilderComp'
 import ItemBox from '../../../components/activities/habit-builder/ItemBox'
 import Scene from '../../../components/activities/habit-builder/Scene'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const HabitBuilder = ({ navigation }) => {
   const { container, centered, positionAbsolute } = globalStyles
@@ -23,8 +28,9 @@ const HabitBuilder = ({ navigation }) => {
     isNarrating,
     narrator,
   } = useHabitBuilderContext()
-  const { isGamePaused } = useChildSectionContext()
+  const { isGamePaused, saveAct } = useChildSectionContext()
   const [component, setComponent] = useState(null)
+  const { isLoading, isError } = useAppContext()
   const [narratorComp, setNarratorComp] = useState(null)
   const [renderScr, setRenderScr] = useState(true)
 
@@ -40,7 +46,8 @@ const HabitBuilder = ({ navigation }) => {
       }, 1000)
       // if there is no more items, go back
       if (!(item <= gameData.item.length - 1)) {
-        goBackDelay = setTimeout(() => {
+        goBackDelay = setTimeout(async () => {
+          await saveAct(score.value)
           navigation.goBack()
         }, 1000)
       } else {
@@ -117,6 +124,14 @@ const HabitBuilder = ({ navigation }) => {
   const exitGame = () => {
     score.value = 0
     navigation.goBack()
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

@@ -8,10 +8,15 @@ import ItemBox from '../../../components/activities/choose-the-right-picture/Ite
 import SceneDesc from '../../../components/activities/choose-the-right-picture/SceneDesc'
 import Narrator from '../../../components/activities/Narrator'
 import { getImg } from '../../../utilities/getImg'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useCTRPContext } from './CTRPContext'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 const CTRP = ({ navigation }) => {
   const {
     item,
@@ -23,6 +28,7 @@ const CTRP = ({ navigation }) => {
     narrator,
     INIT_TIMER,
   } = useCTRPContext()
+  const { isLoading, isError } = useAppContext()
   const { isGamePaused } = useChildSectionContext()
   const { mainSectWrapper } = styles
   const { container, centered, positionAbsolute } = globalStyles
@@ -79,6 +85,14 @@ const CTRP = ({ navigation }) => {
 
   const goBack = () => {
     navigation.goBack()
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

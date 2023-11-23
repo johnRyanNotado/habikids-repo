@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { View, StyleSheet, Text, Image, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
@@ -18,8 +18,13 @@ import BadObj from '../../../components/activities/kindess-catcher/BadObj'
 import { useKindCatchContext } from './KindCatchContext'
 import { getImg } from '../../../utilities/getImg'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const DELAY_INTERVAL = 3000
 const BASKET_DIMENSION = {
@@ -30,6 +35,8 @@ const BASKET_DIMENSION = {
 const KindCatch = ({ navigation }) => {
   const { score, kindnessList, timer, badList } = useKindCatchContext()
   const { isGamePaused } = useChildSectionContext()
+
+  const { isLoading, isError } = useAppContext()
   const { basketStyle, basketWrapper, custTitle } = styles
   const { container, centered, positionAbsolute, titleText } = globalStyles
   let kindnessDelay = 1000
@@ -37,7 +44,7 @@ const KindCatch = ({ navigation }) => {
 
   // Sets timer for game
   useEffect(() => {
-    const timerInterval = setInterval(() => {
+    const timerInterval = setInterval(async () => {
       if (!isGamePaused) {
         // Decrements timer if game is not paused
         timer.value--
@@ -50,7 +57,9 @@ const KindCatch = ({ navigation }) => {
       }
     }, 1000)
 
-    return () => clearInterval(timerInterval)
+    return () => {
+      clearInterval(timerInterval)
+    }
   })
 
   // Handles the basket's initial position
@@ -78,7 +87,6 @@ const KindCatch = ({ navigation }) => {
 
   // Will get each kindndess object and will pass a delay that increments each time
   const getKindObj = (kindness, index) => {
-    const [wait, setWait] = useState(true)
     if (index) kindnessDelay += DELAY_INTERVAL
     const waitingTime = useSharedValue(Math.random() * 2000 + kindnessDelay)
 
@@ -86,8 +94,6 @@ const KindCatch = ({ navigation }) => {
       <KindessObj
         key={index}
         basketPos={basketPos}
-        wait={wait}
-        setWait={setWait}
         kindness={kindness}
         score={score}
         waitingTime={waitingTime}
@@ -98,7 +104,6 @@ const KindCatch = ({ navigation }) => {
 
   // Will get each bad object and will pass a delay that increments each time
   const getBadObj = (badness, index) => {
-    const [wait, setWait] = useState(true)
     if (index) badnessDelay += DELAY_INTERVAL
     const waitingTime = useSharedValue(Math.random() * 2000 + badnessDelay)
 
@@ -106,8 +111,6 @@ const KindCatch = ({ navigation }) => {
       <BadObj
         key={index}
         basketPos={basketPos}
-        wait={wait}
-        setWait={setWait}
         badness={badness}
         waitingTime={waitingTime}
         timer={timer}
@@ -121,12 +124,22 @@ const KindCatch = ({ navigation }) => {
     navigation.goBack()
   }
 
+  // if (isLoading) {
+  //   return
+  // }
+
+  // if (isError) {
+  //   return <ErrorScreen />
+  // }
+
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}
       style={container}
       resizeMode="contain"
     >
+      {isLoading ? <LoadingScreen /> : null}
+      {isError ? <isError /> : null}
       <GestureHandlerRootView style={[container]}>
         <View style={[container, centered]}>
           <View style={[positionAbsolute, centered, { height: '20%' }]}>

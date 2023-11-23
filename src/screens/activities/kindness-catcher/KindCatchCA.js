@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { View, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
@@ -14,7 +14,13 @@ import ProfileCard from '../../../components/home-child/ProfileCard'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import BackBtn from '../../../components/BackBtn'
 import { useKindCatchContext } from './KindCatchContext'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
+import { useFocusEffect } from '@react-navigation/native'
 
 const KindCatchCA = ({ navigation }) => {
   const {
@@ -24,10 +30,31 @@ const KindCatchCA = ({ navigation }) => {
     instruction,
     instructionDuration,
     TIMER_VALUE,
+    displayedScore,
+    setDisplayedScore,
   } = useKindCatchContext()
-  const { isProfileClicked } = useChildSectionContext()
+  const { isProfileClicked, saveAct } = useChildSectionContext()
+
+  const { isLoading, isError } = useAppContext()
   const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
+
+  useEffect(() => {
+    console.log('Saving...')
+    const saveIt = async () => {
+      await saveAct(score.value)
+    }
+    if (score.value !== 0 && displayedScore !== score.value) {
+      setDisplayedScore(score.value)
+    }
+    return () => {
+      if (score.value > 0) {
+        console.log('Saving2...')
+        saveIt()
+        score.value = 0
+      }
+    }
+  })
 
   const handleStartBtn = () => {
     score.value = 0
@@ -50,12 +77,22 @@ const KindCatchCA = ({ navigation }) => {
     navigation.goBack()
   }
 
+  // if (isLoading) {
+  //   return <LoadingScreen />
+  // }
+
+  // if (isError) {
+  //   return <ErrorScreen />
+  // }
+
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}
       style={container}
       resizeMode="contain"
     >
+      {isLoading ? <LoadingScreen /> : null}
+      {isError ? <isError /> : null}
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>
@@ -67,7 +104,7 @@ const KindCatchCA = ({ navigation }) => {
               />
             </View>
             <ActivityCard
-              score={score.value}
+              score={displayedScore}
               handleStartBtn={handleStartBtn}
               handleCancelBtn={handleCancelBtn}
             />

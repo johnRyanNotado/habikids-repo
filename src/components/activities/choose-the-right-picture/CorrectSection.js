@@ -12,11 +12,13 @@ import { useCTRPContext } from '../../../screens/activities/choose-the-right-pic
 import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { imgUrl } from '../../../constants/db_config'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const CorrectSection = (props) => {
   const { goBack, enteringProps } = props
   const { gameData } = useCTRPContext()
-  const { item, setItem, ITEM_AMOUNT, setScore } = useCTRPContext()
+  const { item, setItem, ITEM_AMOUNT, setScore, score } = useCTRPContext()
+  const { saveAct } = useChildSectionContext()
   const { section, imgBox, txtBox, txtStyle, imgStyle, tapGestureStyle } =
     styles
   const { centered } = globalStyles
@@ -26,7 +28,7 @@ const CorrectSection = (props) => {
 
   const properItem = item - 1
 
-  const handleCorrectBtn = () => {
+  const handleCorrectBtn = async () => {
     // Change the score, delay the setting so that the next scene wont render before the end of animation
     const renderDelay = setTimeout(() => {
       setScore((prevState) => prevState + 1)
@@ -35,6 +37,7 @@ const CorrectSection = (props) => {
 
     // If the value of item is equal to or greater than the number of items, go back and end the game
     if (ITEM_AMOUNT <= item) {
+      await saveAct(3)
       goBack()
     } else {
       // else change the value of item which will run the useEffect in ArrTheVal which will dislpay the next scene

@@ -12,8 +12,13 @@ import BackBtn from '../../../components/BackBtn'
 import ActivityCard from '../../../components/ActivityCard'
 import { useDressUpContext } from './DressUpContext'
 import ActivityNarr from '../../../components/activities/ActivityNarr'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import ProfileCard from '../../../components/home-child/ProfileCard'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const DressUpCA = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
@@ -37,6 +42,7 @@ const DressUpCA = ({ navigation }) => {
     setIsFinished,
   } = useDressUpContext()
   const { isProfileClicked } = useChildSectionContext()
+  const { isLoading, isError } = useAppContext()
   const [content, setContent] = useState(ACTIVITY_CARD)
 
   const handleStartBtn = () => {
@@ -69,6 +75,14 @@ const DressUpCA = ({ navigation }) => {
 
   const handleCancelBtn = () => {
     navigation.goBack()
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

@@ -26,9 +26,9 @@ const OBJ_DIMENSION = {
 }
 
 const KindessObj = (props) => {
-  const { basketPos, wait, kindness, score, waitingTime, timer, setWait } =
-    props
+  const { basketPos, kindness, score, waitingTime, timer } = props
   const { isGamePaused } = useChildSectionContext()
+  const [wait, setWait] = useState(true)
   const { kindnessObj, custText, apple } = styles
   const { centered } = globalStyles
 

@@ -26,8 +26,9 @@ const OBJ_DIMENSION = {
 }
 
 const BadObj = (props) => {
-  const { basketPos, wait, badness, waitingTime, timer, setWait } = props
+  const { basketPos, badness, waitingTime, timer } = props
   const { isGamePaused } = useChildSectionContext()
+  const [wait, setWait] = useState(true)
   const { badnessObj, custText, apple } = styles
   const { centered } = globalStyles
 

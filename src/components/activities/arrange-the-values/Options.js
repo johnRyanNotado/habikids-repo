@@ -13,6 +13,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { useArrTheValContext } from '../../../screens/activities/arrange-the-values/ArrTheValContext'
 import Button from './Button'
 import { getImg } from '../../../utilities/getImg'
+import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 
 const Options = (props) => {
   const { goBack } = props
@@ -21,12 +22,14 @@ const Options = (props) => {
     setItem,
     ITEM_AMOUNT,
     setScore,
+    score,
     TAMA,
     MALI,
     timer,
     INIT_TIMER,
     data,
   } = useArrTheValContext()
+  const { saveAct } = useChildSectionContext()
   const { gestureHandlerStyle } = styles
   const { container } = globalStyles
 
@@ -44,7 +47,7 @@ const Options = (props) => {
     Vibration.vibrate(1000)
   }
 
-  const handleCorrBtn = () => {
+  const handleCorrBtn = async () => {
     // Set the narration timer
     timer.value = INIT_TIMER
 
@@ -56,6 +59,7 @@ const Options = (props) => {
 
     // If the value of item is equal to or greater than the number of items, go back and end the game
     if (ITEM_AMOUNT <= item) {
+      await saveAct(3)
       goBack()
     } else {
       // else change the value of item which will run the useEffect in ArrTheVal which will dislpay the next scene

@@ -28,14 +28,18 @@ import {
 import {
   useChildDataContext,
   ChildSectionContext,
+  useAppContext,
 } from '../../../screens/context-api/ContextAPI'
 import { YEAR_LEVELS } from '../../../constants/dropDownItems'
 import { BUTTONS } from '../../../constants/contentClassification'
+import { saveActivityUrl } from '../../../constants/db_config'
 
 const ChildSectionStack = createStackNavigator()
 
 const NavScrChild = ({ navigation }) => {
   const { setIsChildChosen } = useChildDataContext()
+  const { chosenChild } = useChildDataContext()
+  const { user, setIsError, setIsLoading } = useAppContext()
 
   const [lessonsGHData, setLessonsGHData] = useState(LESSONS_GOODHABITS) // Data for the good habits lessons
 
@@ -84,6 +88,34 @@ const NavScrChild = ({ navigation }) => {
   const [isCheckBtnShown, setIsCheckBtnShown] = useState(false)
   const [isDisabled, setIsDisabled] = useState(false)
 
+  const saveAct = async (score) => {
+    const save = async () => {
+      try {
+        const resp = await fetch(saveActivityUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            user_id: user.user_id,
+            actId: actID,
+            learnerId: chosenChild.id,
+            score: score,
+          }),
+        })
+        const response = await resp.json()
+        console.log('Response: ', response)
+      } catch (err) {
+        console.log('Error: ', err)
+        setIsError(true)
+      }
+      setIsLoading(false)
+    }
+    setIsLoading(true)
+    await save()
+  }
+
   return (
     <ChildSectionContext.Provider
       value={{
@@ -121,6 +153,7 @@ const NavScrChild = ({ navigation }) => {
         setIsCheckBtnShown,
         isDisabled,
         setIsDisabled,
+        saveAct,
       }}
     >
       <ChildSectionStack.Navigator initialRouteName="HomeChild">

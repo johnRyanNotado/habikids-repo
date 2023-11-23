@@ -5,12 +5,17 @@ import COLORS from '../../../constants/colors'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import PausedCard from '../../../components/activities/PausedCard'
 import { useDressUpContext } from './DressUpContext'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import { getImg } from '../../../utilities/getImg'
 import SelectionCard from '../../../components/activities/dress-up/SelectionCard'
 import Narrator from '../../../components/activities/Narrator'
 import DisplayClothes from '../../../components/activities/dress-up/DisplayClothes'
 import Character from '../../../components/activities/dress-up/Character'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const DressUp = ({ navigation }) => {
   const { centered, container, positionAbsolute } = globalStyles
@@ -26,7 +31,8 @@ const DressUp = ({ navigation }) => {
     narrator,
     gameData,
   } = useDressUpContext()
-  const { isGamePaused } = useChildSectionContext()
+  const { isLoading, isError } = useAppContext()
+  const { isGamePaused, saveAct } = useChildSectionContext()
 
   const exitGame = () => {
     score.value = 0
@@ -34,9 +40,19 @@ const DressUp = ({ navigation }) => {
   }
 
   // handleTriviaBtn
-  const handleFinishBtn = () => {
+  const handleFinishBtn = async () => {
+    await saveAct(4)
     navigation.goBack()
   }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
+  }
+
   return (
     <ImageBackground
       source={getImg.bg.jeepInterior.link}

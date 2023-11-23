@@ -9,10 +9,15 @@ import { Score } from '../../../components/activities/cultural-puzzle/Score'
 import PuzzlePiece from '../../../components/activities/cultural-puzzle/PuzzlePiece'
 import PuzzleSpot from '../../../components/activities/cultural-puzzle/PuzzleSpot'
 import { getImg } from '../../../utilities/getImg'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useCultPuzzContext } from './CultPuzzContext'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const CultPuzz = ({ navigation }) => {
   const {
@@ -24,8 +29,9 @@ const CultPuzz = ({ navigation }) => {
     shuffledEndPos,
     narrator,
   } = useCultPuzzContext()
+  const { isLoading, isError } = useAppContext()
   const { positionAbsolute, centered } = globalStyles
-  const { isGamePaused } = useChildSectionContext()
+  const { isGamePaused, saveAct } = useChildSectionContext()
   const { PUZZLE_GAME_DATA } = useCultPuzzContext()
 
   const { container } = globalStyles
@@ -49,13 +55,22 @@ const CultPuzz = ({ navigation }) => {
   })
 
   // handleTriviaBtn
-  const handleTriviaBtn = () => {
+  const handleTriviaBtn = async () => {
+    await saveAct(4)
     navigation.goBack()
   }
 
   const exitGame = () => {
     score.value = 0
     navigation.goBack()
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

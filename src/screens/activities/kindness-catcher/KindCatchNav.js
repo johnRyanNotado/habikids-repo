@@ -9,14 +9,16 @@ import { useSharedValue } from 'react-native-reanimated'
 
 const KindCatchStack = createStackNavigator()
 
+const TIMER_VALUE = 31
+
 const KindCatchNav = () => {
   const { selectedYear, actID } = useChildSectionContext()
-  const TIMER_VALUE = 31
   const [kindnessList, setKindnessList] = useState(null)
   const [badList, setBadList] = useState(null)
   const [instruction, setInstruction] = useState('')
   const [instructionDuration, setInstructionDuration] = useState(0)
   const [narrator, setNarrator] = useState('uni')
+  const [displayedScore, setDisplayedScore] = useState(0)
 
   useEffect(() => {
     db_KindCatch.grade[selectedYear - 1].map((item) => {
@@ -29,6 +31,17 @@ const KindCatchNav = () => {
       }
     })
   }, [selectedYear, actID])
+
+  // useEffect(() => {
+  //   let saveActTimeout
+  //   if (score.value) {
+  //     saveActTimeout = setTimeout(async () => {
+  //       await saveAct(score.value)
+  //     }, 500)
+  //   }
+
+  //   return () => clearTimeout(saveActTimeout)
+  // }, [saveToggle])
 
   const timer = useSharedValue(TIMER_VALUE)
   const score = useSharedValue(0)
@@ -45,6 +58,8 @@ const KindCatchNav = () => {
         instruction,
         instructionDuration,
         narrator,
+        displayedScore,
+        setDisplayedScore,
       }}
     >
       <KindCatchStack.Navigator>

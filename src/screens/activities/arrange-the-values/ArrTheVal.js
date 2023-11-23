@@ -10,8 +10,13 @@ import Narrator from '../../../components/activities/Narrator'
 import { getImg } from '../../../utilities/getImg'
 import { useArrTheValContext } from './ArrTheValContext'
 import ActivityNavBar from '../../../components/activities/ActivityNavBar'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import PausedCard from '../../../components/activities/PausedCard'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const ArrTheVal = ({ navigation }) => {
   const {
@@ -24,6 +29,7 @@ const ArrTheVal = ({ navigation }) => {
     narrator,
     INIT_TIMER,
   } = useArrTheValContext()
+  const { isLoading, isError } = useAppContext()
   const { isGamePaused } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const { mainSectWrapper } = styles
@@ -81,6 +87,14 @@ const ArrTheVal = ({ navigation }) => {
 
   const goBack = () => {
     navigation.goBack()
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

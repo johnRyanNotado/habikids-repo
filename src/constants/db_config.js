@@ -6,6 +6,7 @@ export const loginUrl = `${url}login`
 export const fetchLearnerUrl = `${url}fetch-learner`
 export const fetchLesAct = `${url}fetch-les-act`
 export const saveLessonUrl = `${url}save-lesson`
+export const saveActivityUrl = `${url}save-activity`
 export const addLearnerUrl = `${url}add-learner`
 export const delLearnerUrl = `${url}del-learner`
 export const editLearnerUrl = `${url}edit-learner`
