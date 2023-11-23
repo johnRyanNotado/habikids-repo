@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import Button from '../Button'
 import {
   useActivitiesContext,
@@ -13,6 +13,8 @@ import {
 } from '../../constants/contentClassification'
 import COLORS from '../../constants/colors'
 import ValuesSvg from '../../svg/activities/buttons/ValuesSvg'
+import { getImg } from '../../utilities/getImg'
+import { CENTER_X } from '../../constants/puzzleConstants'
 
 const Buttons = () => {
   const { setContent } = useChildSectionContext()
@@ -30,31 +32,49 @@ const Buttons = () => {
   }
 
   // Will set the content of the main section to good habits activities
-  const handleGoodHanBtn = () => {
+  const handleGoodHabitBtn = () => {
     setContent(GOOD_HABITS)
   }
   return (
     <View style={[centered, container, btnWrapper]}>
-      <View>
+      <View style={{ position: 'absolute', top: 0, right: CENTER_X - 50 }}>
         <TouchableOpacity onPress={handleValBtn}>
           <View style={{ elavation: 5 }}>
-            <ValuesSvg />
+            <Image
+              source={getImg.components.cardValues.link}
+              style={{ width: 150, height: 90 }}
+              resizeMode="contain"
+            />
           </View>
         </TouchableOpacity>
       </View>
-      <View>
-        <Button
-          label={'Tradisyon'}
-          onPress={handleTradBtn}
-          txtStyle={txtStyle}
-          btnStyle={btnStyle}
-        />
-        <Button
-          label={'Mabubuting Gawi'}
-          onPress={handleGoodHanBtn}
-          txtStyle={txtStyle}
-          btnStyle={btnStyle}
-        />
+      <View style={{ position: 'absolute', top: 0, right: CENTER_X - 220 }}>
+        <TouchableOpacity onPress={handleTradBtn}>
+          <View style={{ elavation: 5 }}>
+            <Image
+              source={getImg.components.cardTraditions.link}
+              style={{
+                width: 150,
+                height: 90,
+              }}
+              resizeMode="contain"
+            />
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={{ position: 'absolute', right: CENTER_X - 150 }}>
+        <TouchableOpacity onPress={handleGoodHabitBtn}>
+          <View style={{ elavation: 5 }}>
+            <Image
+              source={getImg.components.cardGoodHabits.link}
+              style={{
+                width: 160,
+                height: 90,
+              }}
+              resizeMode="contain"
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   )

@@ -6,6 +6,7 @@ export const getImg = {
     jeepInterior: { link: require('../img/bg/jeepInterior.png') },
     lwGreenTop: { link: require('../img/bg/layered-waves-green-1.png') },
     tableZoomedIn: { link: require('../img/bg/lessons.png') },
+    records: { link: require('../img/bg/records.png') },
   },
   components: {
     records: { link: require('../img/buttons/records.png') },
@@ -19,6 +20,9 @@ export const getImg = {
     bookValues: { link: require('../img/buttons/book-values.png') },
     bookTraditions: { link: require('../img/buttons/book-traditions.png') },
     bookGoodHabits: { link: require('../img/buttons/book-good-habits.png') },
+    cardValues: { link: require('../img/buttons/card-values.png') },
+    cardTraditions: { link: require('../img/buttons/card-traditions.png') },
+    cardGoodHabits: { link: require('../img/buttons/card-good-habits.png') },
     shadow: { link: require('../img/buttons/shadow.png') },
   },
 }

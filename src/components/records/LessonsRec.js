@@ -67,9 +67,7 @@ const LessonsRec = () => {
 const styles = StyleSheet.create({
   lessonsListWrapper: {
     backgroundColor: COLORS.white,
-    borderWidth: 1,
-    borderColor: COLORS.primary,
-    width: '90%',
+    width: '100%',
     height: '90%',
     borderRadius: 10,
     paddingHorizontal: 15,

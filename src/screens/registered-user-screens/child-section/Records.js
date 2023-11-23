@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
@@ -11,6 +11,8 @@ import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 import BackBtn from '../../../components/BackBtn'
+import { getImg } from '../../../utilities/getImg'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const Records = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
@@ -111,19 +113,24 @@ const Records = ({ navigation }) => {
   }
 
   return (
-    <View style={(container, centered)}>
-      <View style={positionAbsolute}>
-        <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
-      </View>
-      <View style={[centered, recordsWrapperSection]}>
-        <View style={[centered, titleWrapper]}>
-          <Text style={getStyle()}>{getTitle()}</Text>
+    <ImageBackground
+      source={getImg.bg.records.link}
+      style={container}
+      resizeMode="contain"
+    >
+      <View style={(container, centered)}>
+        <View style={positionAbsolute}>
+          <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
         </View>
-        <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
+        <View style={[centered, recordsWrapperSection]}>
+          <View style={[centered, titleWrapper]}>
+            <Text style={getStyle()}>{getTitle()}</Text>
+          </View>
+          <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
+        </View>
+        {isProfileClicked ? <ProfileCard /> : <></>}
       </View>
-      {isProfileClicked ? <ProfileCard /> : <></>}
-      <EmptyBgSvg />
-    </View>
+    </ImageBackground>
   )
 }
 
@@ -131,13 +138,11 @@ const styles = StyleSheet.create({
   recordsWrapperSection: {
     width: 400,
     height: '100%',
-    backgroundColor: '#E5E5E5',
-    borderColor: COLORS.accent,
-    borderWidth: 10,
   },
   initialTitle: {
+    width: '100%',
     textAlign: 'center',
-    color: COLORS.accent,
+    color: COLORS.white,
     fontSize: 48,
     fontFamily: 'Quiapo',
     letterSpacing: 8,
@@ -147,7 +152,8 @@ const styles = StyleSheet.create({
   },
   finalTitle: {
     textAlign: 'center',
-    color: COLORS.accent,
+    width: '100%',
+    color: COLORS.white,
     fontSize: 30,
     fontFamily: 'Quiapo',
     letterSpacing: 3,
@@ -156,10 +162,16 @@ const styles = StyleSheet.create({
     textShadowRadius: 5,
   },
   titleWrapper: {
-    height: '25%',
+    height: WINDOW_HEIGHT * 0.15,
     alignItems: 'flex-end',
     flexDirection: 'row',
     gap: 10,
+    justifyContent: 'flex-start',
+    position: 'absolute',
+    top: 20,
+    bottom: 'auto',
+    right: (WINDOW_WIDTH / 2) * 0.125 - 24,
+    width: '75%',
   },
   dataWrapper: {
     height: '70%',
@@ -168,6 +180,11 @@ const styles = StyleSheet.create({
     gap: 20,
     justifyContent: 'flex-start',
     marginTop: '5%',
+    position: 'absolute',
+    top: 'auto',
+    bottom: 0,
+    right: 'auto',
+    left: 10,
   },
   btnWrapper: {
     alignItems: 'center',
