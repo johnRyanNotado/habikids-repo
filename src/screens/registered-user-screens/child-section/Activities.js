@@ -15,14 +15,19 @@ import { YEAR_LEVELS } from '../../../constants/dropDownItems'
 import {
   useChildSectionContext,
   ActivitiesContext,
+  useAppContext,
 } from '../../context-api/ContextAPI'
 import JeepSvg from '../../../svg/bg/JeepSvg'
 import BackBtn from '../../../components/BackBtn'
 import { getImg } from '../../../utilities/getImg'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const Activities = ({ navigation }) => {
   const { isProfileClicked, setSelectedYear, content, setContent } =
     useChildSectionContext()
+
+  const { isLoading, isError } = useAppContext()
   const { container } = globalStyles
 
   // useState for opening and closing the dropdown for the selected Year
@@ -79,6 +84,14 @@ const Activities = ({ navigation }) => {
 
   // useState for identifies which function does the undo back calls
   const [undoBtnFunc, setUndoBtnFunc] = useState(() => handleUndoBtn)
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
+  }
 
   return (
     <ActivitiesContext.Provider

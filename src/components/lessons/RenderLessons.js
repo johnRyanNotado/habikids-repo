@@ -18,7 +18,7 @@ const RenderLessons = (props) => {
 
   // Create a card for each activities
   const renderItem = ({ item }) => {
-    const { img, lesNum, title, screen, id } = item
+    const { img, lesNum, title, id } = item
     return (
       <Card
         id={id}
@@ -26,7 +26,7 @@ const RenderLessons = (props) => {
         num={lesNum}
         title={title}
         label={`Aralin`}
-        screen={screen}
+        screen={`LessonsNav`}
         year={selectedYear}
         onPress={onPress}
       />

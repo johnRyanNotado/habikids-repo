@@ -53,7 +53,6 @@ const LessonsNav = () => {
     })
   }, [lesID, content])
 
-  console.log('\n\nCalled: LessonNav')
   return (
     <SpecificLessonContext.Provider
       value={{

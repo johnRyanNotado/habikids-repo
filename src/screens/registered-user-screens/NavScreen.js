@@ -12,6 +12,7 @@ import {
 import EMPTY_CHILD_OBJ from '../../constants/emptyChildObj'
 import { ChildDataContext, useAppContext } from '../context-api/ContextAPI'
 import useFetchLearner from '../../hooks/useFetchLearner.js'
+import useFetchLesAct from '../../hooks/useFetchLesAct.js'
 
 const RegisteredUserStack = createStackNavigator()
 
@@ -44,6 +45,9 @@ const NavScreen = () => {
     })
   }
 
+  const { lessonsData, activitiesData, setLessonsData, setActivitiesData } =
+    useFetchLesAct()
+
   return (
     <ChildDataContext.Provider
       value={{
@@ -56,6 +60,8 @@ const NavScreen = () => {
         setChosenChild,
         setNewChild,
         handleChosenChild,
+        lessonsData,
+        activitiesData,
       }}
     >
       <RegisteredUserStack.Navigator initialRouteName="Home">

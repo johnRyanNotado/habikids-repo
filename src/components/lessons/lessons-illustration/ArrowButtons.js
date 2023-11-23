@@ -90,7 +90,11 @@ const ArrowButtons = (props) => {
         </View>
       ) : isFinished ? (
         <View style={[centered, btnSectionElement]}>
-          <TouchableOpacity onPress={handleFinishedBtn}>
+          <TouchableOpacity
+            onPress={async () => {
+              await handleFinishedBtn()
+            }}
+          >
             <View style={[centered, finishBtnStyle]}>
               <Text style={finishBtnTxt}>{`Tapusin >`}</Text>
             </View>

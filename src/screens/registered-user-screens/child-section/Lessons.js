@@ -24,8 +24,11 @@ import { YEAR_LEVELS } from '../../../constants/dropDownItems'
 import {
   useChildSectionContext,
   LessonsContext,
+  useAppContext,
 } from '../../context-api/ContextAPI'
 import Jeep from '../../../components/lessons/Jeep'
+import LoadingScreen from '../../LoadingScreen'
+import ErrorScreen from '../../ErrorScreen'
 
 const Lessons = ({ navigation }) => {
   const {
@@ -35,6 +38,7 @@ const Lessons = ({ navigation }) => {
     selectedYear,
     setSelectedYear,
   } = useChildSectionContext()
+  const { isLoading, isError } = useAppContext()
   const { homeBtnWrapper } = styles
   const { container, centered } = globalStyles
 
@@ -101,6 +105,14 @@ const Lessons = ({ navigation }) => {
   // handle which lessons is selected
   const handleSelectedLes = (screen) => {
     navigation.navigate(screen)
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ImageBackground, Image, View, StyleSheet } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import { getImg } from '../../utilities/getImg'
 import COLORS from '../../constants/colors'
 import ArrowButtons from '../../components/lessons/lessons-illustration/ArrowButtons'
 import LessonsNavBar from '../../components/lessons/lessons-illustration/LessonsNavBar'
-import { useChildSectionContext } from '../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildDataContext,
+  useChildSectionContext,
+} from '../context-api/ContextAPI'
 import LessonCard from '../../components/lessons/lessons-illustration/LessonCard'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
 import Animated, { ZoomIn } from 'react-native-reanimated'
@@ -16,9 +20,15 @@ import Instruction from '../../components/lessons/lessons-illustration/Instructi
 import MultipleChoice from '../../components/activities/multiple-choice/MultipleChoice'
 import MultilplePicture from '../../components/activities/multiple-choices-pic/MultilplePicture'
 import ConnectTheDots from '../../components/activities/connect-the-dots/ConnectTheDots'
-import { imgUrl } from '../../constants/db_config'
+import { imgUrl, saveLessonUrl } from '../../constants/db_config'
+import LoadingScreen from '../LoadingScreen'
+import ErrorScreen from '../ErrorScreen'
 
 const Lesson = ({ navigation }) => {
+  const { lesID } = useChildSectionContext()
+  const { chosenChild } = useChildDataContext()
+  const { user, setIsError, setIsLoading } = useAppContext()
+  const { isLoading, isError } = useAppContext()
   const { centered, container, positionAbsolute } = globalStyles
   const {
     isGamePaused,
@@ -53,6 +63,7 @@ const Lesson = ({ navigation }) => {
     setActivity,
     FALSE_AGAIN,
   } = useSpecificLessonContext()
+  const [response, setResponse] = useState(null)
 
   // for managing the components shown
   useEffect(() => {
@@ -285,9 +296,57 @@ const Lesson = ({ navigation }) => {
     )
   }
 
-  const handleFinishedBtn = () => {
-    navigation.goBack()
-    navigation.goBack()
+  const handleFinishedBtn = async () => {
+    const fetchLearner = async () => {
+      try {
+        const resp = await fetch(saveLessonUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            user_id: user.user_id,
+            lesId: lesID,
+            learnerId: chosenChild.id,
+          }),
+        })
+        const response = await resp.json()
+        setResponse(response)
+      } catch (err) {
+        console.log('Error: ', err)
+        setIsError(true)
+      }
+      setIsLoading(false)
+    }
+    setIsLoading(true)
+    await fetchLearner()
+  }
+
+  useEffect(() => {
+    console.log('Response: ', response)
+    if (response) {
+      if (response.id === 101 || response.id === 102) {
+        // go back afterwards
+        navigation.goBack()
+        navigation.goBack()
+      } else if (response.id === 400) {
+        setIsError(true)
+      } else {
+        Alert.alert(
+          'May problemang nangyari.',
+          'Maaring subukan uli pagkatapos ng ilang minuto.'
+        )
+      }
+    }
+  }, [response])
+
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
   }
 
   return (

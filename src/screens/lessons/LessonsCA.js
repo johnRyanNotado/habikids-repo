@@ -5,13 +5,19 @@ import { getImg } from '../../utilities/getImg'
 import ChildSectNavBar from '../../components/home-child/ChildSectNavBar'
 import BackBtn from '../../components/BackBtn'
 import ProfileCard from '../../components/home-child/ProfileCard'
-import { useChildSectionContext } from '../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../context-api/ContextAPI'
 import LessonsCard from '../../components/lessons/LessonsCard'
 import COLORS from '../../constants/colors'
 import { useSpecificLessonContext } from './LessonsContext'
+import LoadingScreen from '../LoadingScreen'
+import ErrorScreen from '../ErrorScreen'
 
 const LessonsCA = ({ navigation }) => {
   const { isProfileClicked } = useChildSectionContext()
+  const { isLoading, isError } = useAppContext()
   const { setItem, setIsFinished, setScriptNum, title, lesNum } =
     useSpecificLessonContext()
   const { container, positionAbsolute, centered } = globalStyles
@@ -25,7 +31,13 @@ const LessonsCA = ({ navigation }) => {
     navigation.navigate('Lesson')
   }
 
-  console.log('\n\nCalled LessonsCA')
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
+  if (isError) {
+    return <ErrorScreen />
+  }
 
   return (
     <ImageBackground style={container} source={getImg.bg.emptyBg.link}>
