@@ -12,6 +12,7 @@ import {
   TRADITIONS,
 } from '../../constants/contentClassification'
 import { db_Les_Traditions } from '../../constants/temp_db/lessons/db_les_traditions'
+import { db_Les_GoodHabits } from '../../constants/temp_db/lessons/db_les_goodhabits'
 
 const FALSE_AGAIN = 'FALSE-AGAIN'
 
@@ -41,7 +42,7 @@ const LessonsNav = () => {
         : content === TRADITIONS
         ? db_Les_Traditions
         : content === GOOD_HABITS
-        ? db_Les_Values
+        ? db_Les_GoodHabits
         : null
 
     tempLessonDB.grade[selectedYear - 1].map((item) => {

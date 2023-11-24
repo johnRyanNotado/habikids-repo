@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import COLORS from '../../constants/colors'
 import { globalStyles } from '../../styles/GlobalStyles'
-import { Ionicons } from '@expo/vector-icons'
+import { FontAwesome5 } from '@expo/vector-icons'
 
 const ManageProfileNavBar = (props) => {
   const { handleLeftArrBtn } = props
@@ -13,9 +13,9 @@ const ManageProfileNavBar = (props) => {
     <View style={navBarWrapper}>
       <View style={navBarElement}>
         <TouchableOpacity onPress={handleLeftArrBtn}>
-          <Ionicons
-            name="chevron-back-circle-sharp"
-            size={40}
+          <FontAwesome5
+            name="arrow-circle-left"
+            size={35}
             color={COLORS.white}
           />
         </TouchableOpacity>

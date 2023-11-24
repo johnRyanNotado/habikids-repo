@@ -9,7 +9,7 @@ export const LESSONS_GOODHABITS = {
         img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
       },
       {
-        id: `ac-20231123-3e4d732a-f3cf-4a56-a43f-b422f90781ac`,
+        id: `ls-20231123-3e4d732a-f3cf-4a56-a43f-b422f90781ac`,
         lesNum: 2,
         title: 'Pagsasabi ng tama at totoo',
         screen: 'SHEESH',

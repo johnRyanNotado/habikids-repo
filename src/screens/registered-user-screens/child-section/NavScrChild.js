@@ -62,14 +62,13 @@ const NavScrChild = ({ navigation }) => {
       if (item.id === chosenChild.id) {
         childRec = item.learnerRecords
       }
-      setLessonsGHData(childRec.LESSONS_GOODHABITS)
-      setLessonsTData(childRec.LESSONS_TRADITIONS)
-      setLessonsVData(childRec.LESSONS_VALUES)
-
-      setActivitiesGHData(childRec.ACTIVITIES_GOODHABITS)
-      setActivitiesTData(childRec.ACTIVITIES_TRADITIONS)
-      setActivitiesVData(childRec.ACTIVITIES_VALUES)
     })
+    setLessonsGHData(childRec.LESSONS_GOODHABITS)
+    setLessonsTData(childRec.LESSONS_TRADITIONS)
+    setLessonsVData(childRec.LESSONS_VALUES)
+    setActivitiesGHData(childRec.ACTIVITIES_GOODHABITS)
+    setActivitiesTData(childRec.ACTIVITIES_TRADITIONS)
+    setActivitiesVData(childRec.ACTIVITIES_VALUES)
   }, [dataChanged, chosenChild, childData])
 
   // use state for profile card in home-child screen

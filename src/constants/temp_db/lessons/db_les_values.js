@@ -32,23 +32,43 @@ export const db_Les_Values = {
                 script:
                   'Hello! Kamusta ka. Nagbabasa lang kami dito tungkol sa pagkakabuklod-buklod ng pamilya. Kilala mo ba ang mga kasapi ng iyong pamilya? Tara alamin natin!',
               },
+            ],
+          },
+          {
+            id: 'li-20231121-f569ebf8-0228-411a-a6b5-9b1cd153392d',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.3.png`,
+            data: [
               {
                 isNarratorShown: false,
                 narrator: 'uni',
                 narrationDuration: 5,
                 style: {
                   width: 500,
-                  top: 20,
+                  top: 10,
                   bottom: 'auto',
                   right: 'auto',
                   left: 'auto',
                 },
                 script:
-                  'Ang pamilya o mag anak ay ang pinakamaliit na bahagi ng Lipunan. Ito ay karaniwang binubuo ng ama, ina, at mga anak. May mga pagkakataon na maliban sa kanila ay may iba pang kasama sa pamilya tulad ng lola, lolo, tiyo, tiya, at mga pinsan.',
+                  'Ang pamilya o mag anak ay ang pinakamaliit na bahagi ng Lipunan. Ito ay karaniwang binubuo ng ama, ina, at mga anak.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 5,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'May mga pagkakataon na maliban sa kanila ay may iba pang kasama sa pamilya tulad ng lola, lolo, tiyo, tiya, at mga pinsan.',
               },
             ],
           },
-
           {
             id: 'li-20231121-f3f9efb6-bcec-43ec-bc11-df983458bf1d',
             type: 'story',
