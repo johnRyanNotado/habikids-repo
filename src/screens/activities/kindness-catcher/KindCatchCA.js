@@ -20,7 +20,6 @@ import {
 } from '../../context-api/ContextAPI'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
-import { useFocusEffect } from '@react-navigation/native'
 
 const KindCatchCA = ({ navigation }) => {
   const {
@@ -30,8 +29,7 @@ const KindCatchCA = ({ navigation }) => {
     instruction,
     instructionDuration,
     TIMER_VALUE,
-    displayedScore,
-    setDisplayedScore,
+    setTimer,
   } = useKindCatchContext()
   const { isProfileClicked, saveAct } = useChildSectionContext()
 
@@ -39,26 +37,10 @@ const KindCatchCA = ({ navigation }) => {
   const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
 
-  useEffect(() => {
-    console.log('Saving...')
-    const saveIt = async () => {
-      await saveAct(score.value)
-    }
-    if (score.value !== 0 && displayedScore !== score.value) {
-      setDisplayedScore(score.value)
-    }
-    return () => {
-      if (score.value > 0) {
-        console.log('Saving2...')
-        saveIt()
-        score.value = 0
-      }
-    }
-  })
-
   const handleStartBtn = () => {
     score.value = 0
-    timer.value = TIMER_VALUE
+    // timer.value = TIMER_VALUE
+    setTimer(TIMER_VALUE)
     setContent(INSTRUCTIONS) // first show instructions
 
     const instrucTimeout = setTimeout(() => {
@@ -91,8 +73,16 @@ const KindCatchCA = ({ navigation }) => {
       style={container}
       resizeMode="contain"
     >
-      {isLoading ? <LoadingScreen /> : null}
-      {isError ? <isError /> : null}
+      {isLoading ? (
+        <View style={[positionAbsolute, { zIndex: 10 }]}>
+          <LoadingScreen />
+        </View>
+      ) : null}
+      {isError ? (
+        <View style={[positionAbsolute, { zIndex: 10 }]}>
+          <ErrorScreen />
+        </View>
+      ) : null}
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>
@@ -104,7 +94,7 @@ const KindCatchCA = ({ navigation }) => {
               />
             </View>
             <ActivityCard
-              score={displayedScore}
+              score={score.value}
               handleStartBtn={handleStartBtn}
               handleCancelBtn={handleCancelBtn}
             />

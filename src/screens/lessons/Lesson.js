@@ -27,7 +27,7 @@ import ErrorScreen from '../ErrorScreen'
 const Lesson = ({ navigation }) => {
   const { lesID } = useChildSectionContext()
   const { chosenChild } = useChildDataContext()
-  const { user, setIsError, setIsLoading } = useAppContext()
+  const { user, setIsError, setIsLoading, setDataChanged } = useAppContext()
   const { isLoading, isError } = useAppContext()
   const { centered, container, positionAbsolute } = globalStyles
   const {
@@ -320,6 +320,7 @@ const Lesson = ({ navigation }) => {
       setIsLoading(false)
     }
     setIsLoading(true)
+    setDataChanged((prevState) => prevState + 1)
     await fetchLearner()
   }
 

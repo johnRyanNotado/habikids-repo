@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, View, StyleSheet, FlatList } from 'react-native'
 import COLORS from '../../constants/colors'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { TOPICS_ITEMS } from '../../constants/dropDownItems'
 import ActivitiesData from './ActivitiesData'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../screens/context-api/ContextAPI'
 
-const ActivitiesRec = () => {
-  const { activitiesGHData, activitiesVData, activitiesTData } =
+const ActivitiesRec = (props) => {
+  const { selectedTopic, setSelectedTopic } = props
+  const { activitiesGHData, activitiesVData, activitiesTData, selectedYear } =
     useChildSectionContext()
-
+  const { dataChanged } = useAppContext()
   const { activitiesListWrapper, titleWrapper, title, dropDownContainerStyle } =
     styles
 
@@ -17,17 +21,20 @@ const ActivitiesRec = () => {
   const getCorresData = (value) => {
     switch (value) {
       case 'Good Habits':
-        return activitiesGHData
+        return activitiesGHData.grade[selectedYear - 1]
       case 'Values':
-        return activitiesVData
+        return activitiesVData.grade[selectedYear - 1]
       case 'Traditions':
-        return activitiesTData
+        return activitiesTData.grade[selectedYear - 1]
       default:
         console.log('something went wrong')
     }
   }
 
-  const [selectedTopic, setSelectedTopic] = useState(TOPICS_ITEMS[0].value)
+  useEffect(() => {
+    handleDropDownChange(TOPICS_ITEMS[0].value)
+  }, [selectedYear, dataChanged])
+
   const [listData, setListData] = useState(getCorresData(TOPICS_ITEMS[0].value))
   const [isOpen, setIsOpen] = useState(false)
 
@@ -38,13 +45,13 @@ const ActivitiesRec = () => {
   }
 
   const renderItem = ({ item }) => {
-    const { id, actNum, title, date, score, items } = item
-    const scoreOverItems = `Done | ${score}/${items}`
+    const { id, actNum, title, date, score } = item
+    const scoreText = `Done | score: ${score}`
     return (
       <ActivitiesData
         title={title}
         date={date}
-        scoreOverItems={scoreOverItems}
+        score={scoreText}
         actNum={actNum}
       />
     )

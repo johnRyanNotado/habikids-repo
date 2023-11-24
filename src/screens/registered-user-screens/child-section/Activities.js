@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { BackHandler, View, ImageBackground } from 'react-native'
+import { BackHandler, View, ImageBackground, StyleSheet } from 'react-native'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import ProfileCard from '../../../components/home-child/ProfileCard'
@@ -22,12 +22,15 @@ import BackBtn from '../../../components/BackBtn'
 import { getImg } from '../../../utilities/getImg'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
+import DropDownPicker from 'react-native-dropdown-picker'
+import COLORS from '../../../constants/colors'
 
 const Activities = ({ navigation }) => {
   const { isProfileClicked, setSelectedYear, content, setContent } =
     useChildSectionContext()
 
   const { isLoading, isError } = useAppContext()
+  const { dropDownBg, dropDownWrapper, dropDownContainerStyle } = styles
   const { container } = globalStyles
 
   // useState for opening and closing the dropdown for the selected Year
@@ -82,6 +85,34 @@ const Activities = ({ navigation }) => {
     }
   }, [content])
 
+  const getDropDown = () => {
+    switch (content) {
+      case BUTTONS:
+        return <></>
+      case VALUES:
+      case TRADITIONS:
+      case GOOD_HABITS:
+        return (
+          <View style={dropDownBg}>
+            <DropDownPicker
+              items={YEAR_LEVELS}
+              open={isOpen}
+              setOpen={setIsOpen}
+              value={selectedYear}
+              setValue={setSelectedYear}
+              dropDownDirection="BOTTOM"
+              dropDownContainerStyle={dropDownContainerStyle}
+              onChangeValue={(value) => {}}
+              textStyle={subTitle}
+              style={{ borderWidth: 0, backgroundColor: 'transparent' }}
+            />
+          </View>
+        )
+      default:
+        return <Text>Something went wrong</Text>
+    }
+  }
+
   // useState for identifies which function does the undo back calls
   const [undoBtnFunc, setUndoBtnFunc] = useState(() => handleUndoBtn)
 
@@ -118,5 +149,33 @@ const Activities = ({ navigation }) => {
     </ActivitiesContext.Provider>
   )
 }
+
+const styles = StyleSheet.create({
+  dropDownBg: {
+    backgroundColor: COLORS.primary,
+    borderColor: COLORS.accent,
+    borderWidth: 2,
+    height: 30,
+    right: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+  },
+  dropDownContainerStyle: {
+    backgroundColor: COLORS.primaryTrans,
+    borderColor: COLORS.accent,
+    borderWidth: 2,
+  },
+  dropDownWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 140,
+    height: 35,
+    right: 10,
+    top: 15,
+    left: 'auto',
+    zIndex: 10,
+  },
+})
 
 export default Activities

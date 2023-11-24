@@ -17,11 +17,6 @@ import {
 } from '../../screens/context-api/ContextAPI'
 import Buttons from './Buttons'
 import RenderLessons from './RenderLessons'
-import {
-  LESSONS_GOODHABITS,
-  LESSONS_TRADITIONS,
-  LESSONS_VALUES,
-} from '../../constants/temp_db/lessons/db_lessons'
 
 const LessonsMainSect = () => {
   const { isOpen, setIsOpen } = useLessonsContext()

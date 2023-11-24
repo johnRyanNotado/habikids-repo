@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, StyleSheet, View, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
@@ -9,13 +9,20 @@ import ActivitiesRec from '../../../components/records/ActivitiesRec'
 import EmptyBgSvg from '../../../svg/bg/EmptyBgSvg'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import ProfileCard from '../../../components/home-child/ProfileCard'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import BackBtn from '../../../components/BackBtn'
 import { getImg } from '../../../utilities/getImg'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
+import { TOPICS_ITEMS, YEAR_LEVELS } from '../../../constants/dropDownItems'
+import DropDownPicker from 'react-native-dropdown-picker'
 
 const Records = ({ navigation }) => {
-  const { isProfileClicked } = useChildSectionContext()
+  const { isProfileClicked, selectedYear, setSelectedYear } =
+    useChildSectionContext()
+  const { dataChanged } = useAppContext()
   const { container, centered, positionAbsolute } = globalStyles
   const LESSONS = 'Lessons'
   const ACTIVITIES = 'Activities'
@@ -25,8 +32,11 @@ const Records = ({ navigation }) => {
     activities: 'Ulat ng mga  Gawain na Natapos',
     lessons: 'Ulat ng mga Aralin na Natapos',
   }
-  const [selectedRecord, setSelectedRecord] = useState(INITIAL)
 
+  const [selectedTopic, setSelectedTopic] = useState(TOPICS_ITEMS[0].value)
+  const [selectedRecord, setSelectedRecord] = useState(INITIAL)
+  const [isOpen, setIsOpen] = useState(false)
+  const [comp, setComp] = useState(null)
   const {
     recordsWrapperSection,
     titleWrapper,
@@ -36,6 +46,11 @@ const Records = ({ navigation }) => {
     dataWrapper,
     btnStyle,
     txtStyle,
+    dropDownBg,
+    dropDownWrapper,
+    dropDownContainerStyle,
+    subTitle,
+    subTitleBg,
   } = styles
 
   // This function will show the records for the Lessons
@@ -48,11 +63,10 @@ const Records = ({ navigation }) => {
     setSelectedRecord(ACTIVITIES)
   }
 
-  // get the corresponding component
-  const getCorresComp = () => {
+  useEffect(() => {
     switch (selectedRecord) {
       case INITIAL:
-        return (
+        setComp(
           <View style={btnWrapper}>
             <Button
               label={`Ulat ng mga Natapos na mga Leksiyon`}
@@ -68,15 +82,60 @@ const Records = ({ navigation }) => {
             />
           </View>
         )
+        break
       case LESSONS:
-        return <LessonsRec />
+        setComp(
+          <LessonsRec
+            selectedTopic={selectedTopic}
+            setSelectedTopic={setSelectedTopic}
+          />
+        )
+        break
       case ACTIVITIES:
-        return <ActivitiesRec />
+        setComp(
+          <ActivitiesRec
+            selectedTopic={selectedTopic}
+            setSelectedTopic={setSelectedTopic}
+          />
+        )
+        break
       default:
         console.log(`something went wrong`)
     }
+  }, [selectedYear, selectedTopic, selectedRecord, dataChanged])
+
+  useEffect(() => {
+    setSelectedTopic(TOPICS_ITEMS[0].value)
+  }, [selectedYear])
+
+  const getDropDown = () => {
+    switch (selectedRecord) {
+      case INITIAL:
+        return <></>
+      case LESSONS:
+      case ACTIVITIES:
+        return (
+          <View style={dropDownBg}>
+            <DropDownPicker
+              items={YEAR_LEVELS}
+              open={isOpen}
+              setOpen={setIsOpen}
+              value={selectedYear}
+              setValue={setSelectedYear}
+              dropDownDirection="BOTTOM"
+              dropDownContainerStyle={dropDownContainerStyle}
+              onChangeValue={(value) => {}}
+              textStyle={subTitle}
+              style={{ borderWidth: 0, backgroundColor: 'transparent' }}
+            />
+          </View>
+        )
+      default:
+        return <Text>Something went wrong</Text>
+    }
   }
 
+  console.log('Selected Year: ', selectedYear)
   // get the corresponding title
   const getTitle = () => {
     switch (selectedRecord) {
@@ -106,6 +165,7 @@ const Records = ({ navigation }) => {
 
   const handleUndoBtn = () => {
     if (selectedRecord === INITIAL) {
+      setSelectedYear(1)
       navigation.goBack()
     } else {
       setSelectedRecord(INITIAL)
@@ -119,6 +179,7 @@ const Records = ({ navigation }) => {
       resizeMode="contain"
     >
       <View style={(container, centered)}>
+        <View style={[positionAbsolute, dropDownWrapper]}>{getDropDown()}</View>
         <View style={positionAbsolute}>
           <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
         </View>
@@ -126,7 +187,7 @@ const Records = ({ navigation }) => {
           <View style={[centered, titleWrapper]}>
             <Text style={getStyle()}>{getTitle()}</Text>
           </View>
-          <View style={[centered, dataWrapper]}>{getCorresComp()}</View>
+          <View style={[centered, dataWrapper]}>{comp ? comp : null}</View>
         </View>
         {isProfileClicked ? <ProfileCard /> : <></>}
       </View>
@@ -211,6 +272,47 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     textAlign: 'center',
     fontWeight: '400',
+  },
+  subTitle: {
+    fontFamily: 'QuiapoRegular',
+    fontSize: 20,
+    zIndex: 10,
+    letterSpacing: 1,
+  },
+  subTitleBg: {
+    width: 180,
+    height: 25,
+    marginVertical: 10,
+    backgroundColor: COLORS.whiteTrans,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dropDownContainerStyle: {
+    backgroundColor: COLORS.primaryTrans,
+    borderColor: COLORS.accent,
+    borderWidth: 2,
+  },
+  dropDownWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 140,
+    height: 35,
+    right: 10,
+    top: 'auto',
+    bottom: 'auto',
+    left: 'auto',
+    zIndex: 10,
+  },
+  dropDownBg: {
+    backgroundColor: COLORS.primary,
+    borderColor: COLORS.accent,
+    borderWidth: 5,
+    height: 40,
+    right: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
   },
 })
 

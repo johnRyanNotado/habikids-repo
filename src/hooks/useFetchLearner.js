@@ -27,6 +27,7 @@ const useFetchLearner = () => {
                   name: learner.learner_name,
                   age: learner.learner_age,
                   avatarNum: learner.avatar_num,
+                  learnerRecords: learner.learnerRecords,
                 }
               }
             )

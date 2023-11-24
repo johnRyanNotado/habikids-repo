@@ -33,8 +33,9 @@ const BASKET_DIMENSION = {
 }
 
 const KindCatch = ({ navigation }) => {
-  const { score, kindnessList, timer, badList } = useKindCatchContext()
-  const { isGamePaused } = useChildSectionContext()
+  const { score, kindnessList, timer, setTimer, badList } =
+    useKindCatchContext()
+  const { isGamePaused, saveAct } = useChildSectionContext()
 
   const { isLoading, isError } = useAppContext()
   const { basketStyle, basketWrapper, custTitle } = styles
@@ -44,14 +45,18 @@ const KindCatch = ({ navigation }) => {
 
   // Sets timer for game
   useEffect(() => {
+    let saveActTimeout
     const timerInterval = setInterval(async () => {
       if (!isGamePaused) {
         // Decrements timer if game is not paused
-        timer.value--
+        setTimer((prevState) => prevState - 1)
       }
 
-      if (timer.value <= 0) {
+      if (timer <= 0) {
         // Display options if timer runs out
+        saveActTimeout = setTimeout(async () => {
+          await saveAct(score.value)
+        }, 500)
         clearInterval(timerInterval)
         navigation.goBack()
       }
@@ -97,7 +102,7 @@ const KindCatch = ({ navigation }) => {
         kindness={kindness}
         score={score}
         waitingTime={waitingTime}
-        timer={timer.value}
+        timer={timer}
       />
     )
   }
@@ -120,7 +125,7 @@ const KindCatch = ({ navigation }) => {
 
   const handleExit = () => {
     score.value = 0
-    timer.value = 0
+    setTimer(0)
     navigation.goBack()
   }
 
@@ -173,7 +178,7 @@ const KindCatch = ({ navigation }) => {
           <Text style={[titleText, custTitle]}>{score.value}</Text>
 
           {/* Timer */}
-          <Timer timer={timer.value} />
+          <Timer timer={timer} />
 
           <PanGestureHandler onGestureEvent={gestureHandler}>
             <Animated.View

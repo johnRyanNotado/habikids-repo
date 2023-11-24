@@ -4,7 +4,7 @@ import COLORS from '../../constants/colors'
 import { globalStyles } from '../../styles/GlobalStyles'
 
 const ActivitiesData = (props) => {
-  const { actNum, date, scoreOverItems } = props
+  const { actNum, date, score } = props
   const {
     activityDataWrapper,
     progressWrapper,
@@ -25,9 +25,7 @@ const ActivitiesData = (props) => {
           date ? done : notStarted,
         ]}
       >
-        <Text style={progressTitle}>{`${
-          date ? scoreOverItems : 'Not Started'
-        }`}</Text>
+        <Text style={progressTitle}>{`${date ? score : 'Not Started'}`}</Text>
       </View>
     </View>
   )
@@ -48,7 +46,7 @@ const styles = StyleSheet.create({
   },
   progressWrapper: {
     height: 35,
-    width: 130,
+    width: 150,
     borderRadius: 60,
   },
   done: {

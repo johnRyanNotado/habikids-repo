@@ -18,7 +18,7 @@ const KindCatchNav = () => {
   const [instruction, setInstruction] = useState('')
   const [instructionDuration, setInstructionDuration] = useState(0)
   const [narrator, setNarrator] = useState('uni')
-  const [displayedScore, setDisplayedScore] = useState(0)
+  const [timer, setTimer] = useState(TIMER_VALUE)
 
   useEffect(() => {
     db_KindCatch.grade[selectedYear - 1].map((item) => {
@@ -32,18 +32,7 @@ const KindCatchNav = () => {
     })
   }, [selectedYear, actID])
 
-  // useEffect(() => {
-  //   let saveActTimeout
-  //   if (score.value) {
-  //     saveActTimeout = setTimeout(async () => {
-  //       await saveAct(score.value)
-  //     }, 500)
-  //   }
-
-  //   return () => clearTimeout(saveActTimeout)
-  // }, [saveToggle])
-
-  const timer = useSharedValue(TIMER_VALUE)
+  // const timer = useSharedValue(TIMER_VALUE)
   const score = useSharedValue(0)
 
   return (
@@ -55,11 +44,10 @@ const KindCatchNav = () => {
         kindnessList,
         badList,
         timer,
+        setTimer,
         instruction,
         instructionDuration,
         narrator,
-        displayedScore,
-        setDisplayedScore,
       }}
     >
       <KindCatchStack.Navigator>

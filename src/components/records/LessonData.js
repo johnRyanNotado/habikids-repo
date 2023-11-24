@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   progressWrapper: {
     height: 35,
-    width: 130,
+    width: 150,
     borderRadius: 60,
   },
   done: {

@@ -10,9 +10,9 @@ export const AGE_ITEMS = [
 ]
 
 export const TOPICS_ITEMS = [
-  { label: 'Good Habits', value: 'Good Habits' },
-  { label: 'Traditions', value: 'Traditions' },
   { label: 'Values', value: 'Values' },
+  { label: 'Traditions', value: 'Traditions' },
+  { label: 'Good Habits', value: 'Good Habits' },
 ]
 
 export const YEAR_LEVELS = [

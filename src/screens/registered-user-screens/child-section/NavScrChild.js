@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import {
   Activities,
@@ -38,8 +38,9 @@ const ChildSectionStack = createStackNavigator()
 
 const NavScrChild = ({ navigation }) => {
   const { setIsChildChosen } = useChildDataContext()
-  const { chosenChild } = useChildDataContext()
-  const { user, setIsError, setIsLoading } = useAppContext()
+  const { chosenChild, childData } = useChildDataContext()
+  const { user, setIsError, setIsLoading, dataChanged, setDataChanged } =
+    useAppContext()
 
   const [lessonsGHData, setLessonsGHData] = useState(LESSONS_GOODHABITS) // Data for the good habits lessons
 
@@ -54,6 +55,22 @@ const NavScrChild = ({ navigation }) => {
   const [activitiesVData, setActivitiesVData] = useState(ACTIVITIES_VALUES) // Data for the values activities
 
   const [activitiesTData, setActivitiesTData] = useState(ACTIVITIES_TRADITIONS) // Data for the traditions activities
+
+  useEffect(() => {
+    let childRec
+    childData.map((item, index) => {
+      if (item.id === chosenChild.id) {
+        childRec = item.learnerRecords
+      }
+      setLessonsGHData(childRec.LESSONS_GOODHABITS)
+      setLessonsTData(childRec.LESSONS_TRADITIONS)
+      setLessonsVData(childRec.LESSONS_VALUES)
+
+      setActivitiesGHData(childRec.ACTIVITIES_GOODHABITS)
+      setActivitiesTData(childRec.ACTIVITIES_TRADITIONS)
+      setActivitiesVData(childRec.ACTIVITIES_VALUES)
+    })
+  }, [dataChanged, chosenChild])
 
   // use state for profile card in home-child screen
   const [isProfileClicked, setIsProfileClicked] = useState(false)
@@ -113,6 +130,7 @@ const NavScrChild = ({ navigation }) => {
       setIsLoading(false)
     }
     setIsLoading(true)
+    setDataChanged((prevstate) => prevstate + 1)
     await save()
   }
 

@@ -75,7 +75,7 @@ const BadObj = (props) => {
         waitingTime.value = waitingTime.value - 1000
       }
       // clear interval if waiting interval is <= 0 or timer is <= 0
-      if (waitingTime.value <= 0 || timer.value <= 0) {
+      if (waitingTime.value <= 0 || timer <= 0) {
         if (waitingTime.value <= 0) {
           setWait(false)
         }

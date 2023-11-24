@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, FlatList } from 'react-native'
 import COLORS from '../../constants/colors'
 import DropDownPicker from 'react-native-dropdown-picker'
@@ -6,8 +6,10 @@ import { TOPICS_ITEMS } from '../../constants/dropDownItems'
 import LessonData from './LessonData'
 import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 
-const LessonsRec = () => {
-  const { lessonsGHData, lessonsVData, lessonsTData } = useChildSectionContext()
+const LessonsRec = (props) => {
+  const { selectedTopic, setSelectedTopic } = props
+  const { lessonsGHData, lessonsVData, lessonsTData, selectedYear } =
+    useChildSectionContext()
 
   const { lessonsListWrapper, titleWrapper, title, dropDownContainerStyle } =
     styles
@@ -16,17 +18,20 @@ const LessonsRec = () => {
   const getCorresData = (value) => {
     switch (value) {
       case 'Good Habits':
-        return lessonsGHData
+        return lessonsGHData.grade[selectedYear - 1]
       case 'Values':
-        return lessonsVData
+        return lessonsVData.grade[selectedYear - 1]
       case 'Traditions':
-        return lessonsTData
+        return lessonsTData.grade[selectedYear - 1]
       default:
         console.log('something went wrong')
     }
   }
 
-  const [selectedTopic, setSelectedTopic] = useState(TOPICS_ITEMS[0].value)
+  useEffect(() => {
+    handleDropDownChange(TOPICS_ITEMS[0].value)
+  }, [selectedYear])
+
   const [listData, setListData] = useState(getCorresData(TOPICS_ITEMS[0].value))
   const [isOpen, setIsOpen] = useState(false)
 
@@ -53,6 +58,7 @@ const LessonsRec = () => {
           dropDownDirection="BOTTOM"
           dropDownContainerStyle={dropDownContainerStyle}
           onChangeValue={(value) => {
+            console.log('value: ', value)
             handleDropDownChange(value)
           }}
           textStyle={title}
