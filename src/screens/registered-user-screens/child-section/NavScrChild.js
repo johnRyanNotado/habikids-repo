@@ -70,7 +70,7 @@ const NavScrChild = ({ navigation }) => {
       setActivitiesTData(childRec.ACTIVITIES_TRADITIONS)
       setActivitiesVData(childRec.ACTIVITIES_VALUES)
     })
-  }, [dataChanged, chosenChild])
+  }, [dataChanged, chosenChild, childData])
 
   // use state for profile card in home-child screen
   const [isProfileClicked, setIsProfileClicked] = useState(false)

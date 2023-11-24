@@ -20,7 +20,7 @@ import { delLearnerUrl } from '../../constants/db_config'
 
 const ManageProfileChildren = () => {
   const { childData, setChildData, handleChosenChild } = useChildDataContext()
-  const { isDeleteEnabled, setResponse } = useChosenChildContext()
+  const { isDeleteEnabled, setResponse, setPrevName } = useChosenChildContext()
   const { user, setIsLoading, setIsError } = useAppContext()
   const {
     custNameStyle,
@@ -87,14 +87,15 @@ const ManageProfileChildren = () => {
             avatarNum={avatarNum}
             age={age}
             iconStyle={iconStyle}
-            handleOnPress={() =>
+            handleOnPress={() => {
+              setPrevName(name)
               handleChosenChild({
                 id: id,
                 name: name,
                 age: age,
                 avatarNum: avatarNum,
               })
-            }
+            }}
           />
           <View style={delBtnWrapper}>
             {isDeleteEnabled ? (

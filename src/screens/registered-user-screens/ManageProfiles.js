@@ -28,6 +28,7 @@ const ManageProfiles = ({ navigation }) => {
     useAppContext()
   const { custContainer, cardWrapper } = styles
   const { centered, container } = globalStyles
+  const [prevName, setPrevName] = useState(null)
 
   // handle back press (navigate to home screen)
   useEffect(() => {
@@ -112,6 +113,8 @@ const ManageProfiles = ({ navigation }) => {
         setIsDeleteEnabled,
         response,
         setResponse,
+        prevName,
+        setPrevName,
       }}
     >
       <View style={[container, centered, custContainer]}>

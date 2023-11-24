@@ -4,13 +4,16 @@ import COLORS from '../../constants/colors'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { TOPICS_ITEMS } from '../../constants/dropDownItems'
 import LessonData from './LessonData'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../screens/context-api/ContextAPI'
 
 const LessonsRec = (props) => {
   const { selectedTopic, setSelectedTopic } = props
   const { lessonsGHData, lessonsVData, lessonsTData, selectedYear } =
     useChildSectionContext()
-
+  const { dataChanged } = useAppContext()
   const { lessonsListWrapper, titleWrapper, title, dropDownContainerStyle } =
     styles
 
@@ -30,7 +33,7 @@ const LessonsRec = (props) => {
 
   useEffect(() => {
     handleDropDownChange(TOPICS_ITEMS[0].value)
-  }, [selectedYear])
+  }, [selectedYear, dataChanged])
 
   const [listData, setListData] = useState(getCorresData(TOPICS_ITEMS[0].value))
   const [isOpen, setIsOpen] = useState(false)

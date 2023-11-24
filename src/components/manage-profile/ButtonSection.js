@@ -13,7 +13,7 @@ import {
 const ButtonSection = () => {
   const { chosenChild, setIsChildChosen, setChosenChild } =
     useChildDataContext()
-  const { setResponse } = useChosenChildContext()
+  const { setResponse, prevName, setPrevName } = useChosenChildContext()
   const { user, setIsLoading, setIsError } = useAppContext()
   const { editBtnWrapper, okayBtn, cancelBtn } = styles
 
@@ -21,10 +21,13 @@ const ButtonSection = () => {
   const handleCancel = () => {
     setIsChildChosen(false)
     setChosenChild(EMPTY_CHILD_OBJ)
+    setPrevName('')
   }
 
   // saves the changes
   const handleOkay = async () => {
+    const prevNameVal = prevName
+    setPrevName('')
     setIsChildChosen(false)
     setChosenChild(EMPTY_CHILD_OBJ)
 
@@ -41,6 +44,7 @@ const ButtonSection = () => {
           name: chosenChild.name,
           age: chosenChild.age,
           avatarNum: chosenChild.avatarNum,
+          prevName: prevNameVal,
         }),
       }).catch((err) => console.log(err))
 
