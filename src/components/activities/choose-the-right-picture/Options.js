@@ -5,6 +5,7 @@ import Animated, { BounceIn } from 'react-native-reanimated'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import CorrectSection from './CorrectSection'
 import WrongSection from './WrongSection'
+import { Audio } from 'expo-av'
 
 const Options = (props) => {
   const { goBack } = props
@@ -14,14 +15,26 @@ const Options = (props) => {
   const leftEnteringProps = { delay: 300, duration: 1000 }
   const rightEnteringProps = { delay: 1300, duration: 1000 }
 
+  playSound = async (soundVal) => {
+    const { sound } = await Audio.Sound.createAsync(soundVal)
+    await sound.playAsync()
+  }
+
   const renderInRandomOrder = () => {
     const num = Math.random() - 0.5
 
     if (num > 0) {
       return (
         <>
-          <CorrectSection goBack={goBack} enteringProps={leftEnteringProps} />
-          <WrongSection enteringProps={rightEnteringProps} />
+          <CorrectSection
+            goBack={goBack}
+            enteringProps={leftEnteringProps}
+            playSound={playSound}
+          />
+          <WrongSection
+            enteringProps={rightEnteringProps}
+            playSound={playSound}
+          />
         </>
       )
     } else {

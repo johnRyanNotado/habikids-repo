@@ -13,6 +13,7 @@ import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { imgUrl } from '../../../constants/db_config'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
+import { getSound } from '../../../utilities/getSound'
 
 const CorrectSection = (props) => {
   const { goBack, enteringProps } = props
@@ -29,6 +30,7 @@ const CorrectSection = (props) => {
   const properItem = item - 1
 
   const handleCorrectBtn = async () => {
+    await playThisSound(getSound.effects.correct.link)
     // Change the score, delay the setting so that the next scene wont render before the end of animation
     const renderDelay = setTimeout(() => {
       setScore((prevState) => prevState + 1)
@@ -44,7 +46,7 @@ const CorrectSection = (props) => {
       const correctTimout = setTimeout(() => {
         setItem((prevState) => prevState + 1)
         clearTimeout(correctTimout)
-      }, 500)
+      }, 2000)
     }
   }
 

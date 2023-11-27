@@ -18,9 +18,10 @@ import { useCTRPContext } from '../../../screens/activities/choose-the-right-pic
 import COLORS from '../../../constants/colors'
 import { TapGestureHandler } from 'react-native-gesture-handler'
 import { imgUrl } from '../../../constants/db_config'
+import { getSound } from '../../../utilities/getSound'
 
 const WrongSection = (props) => {
-  const { enteringProps } = props
+  const { enteringProps, playSound } = props
   const { item, gameData } = useCTRPContext()
   const { section, imgBox, txtBox, txtStyle, imgStyle, tapGestureStyle } =
     styles
@@ -31,8 +32,9 @@ const WrongSection = (props) => {
 
   const properItem = item - 1
 
-  const handleWrongBtn = () => {
+  const handleWrongBtn = async () => {
     Vibration.vibrate(1000)
+    await playSound(getSound.effects.wrong.link)
   }
 
   const wrongAnimatedStyle = useAnimatedStyle(() => {

@@ -1,22 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { View, StyleSheet, ScrollView, Text, Image } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import SettingsConfigSect from './SettingsConfigSect'
 import { LANGUAGES } from '../../constants/dropDownItems'
 import DropDownPicker from 'react-native-dropdown-picker'
 import { globalStyles } from '../../styles/GlobalStyles'
+import { useAppContext } from '../../screens/context-api/ContextAPI'
 
 const SettingsMainSect = () => {
-  // These are the useState that will serve as the value for each switch in the settings.
-  const [isMusicVal, setIsMusicVal] = useState(false)
-  const [isVoiceVal, setIsVoiceVal] = useState(false)
-  const [isReminderVal, setIsReminderVal] = useState(false)
-  const [isTipsSuppVal, setIsTipsSuppVal] = useState(false)
-  const [isShowBtnVal, setIsShowBtnVal] = useState(false)
-  const [isEngCapShown, setIsEngCapShown] = useState(false)
+  const {
+    isMusicVal,
+    setIsMusicVal,
+    isReminderVal,
+    setIsReminderVal,
+    isVoiceVal,
+    setIsVoiceVal,
+    isTipsSuppVal,
+    setIsTipsSuppVal,
+    isShowBtnVal,
+    setIsShowBtnVal,
+    isEngCapShown,
+    setIsEngCapShown,
+    playSound,
+    sound,
+    soundBg,
+  } = useAppContext()
   const { cardWrapper, scrollViewCustStyle, settingsFont, sectionTitle } =
     styles
   const { container } = globalStyles
+
+  useEffect(() => {
+    const stopSound = async () => {
+      await sound.stopAsync()
+      await sound.unloadAsync()
+    }
+
+    if (isMusicVal) {
+      playSound(soundBg)
+    } else {
+      stopSound()
+    }
+  }, [isMusicVal])
 
   return (
     <View style={cardWrapper}>

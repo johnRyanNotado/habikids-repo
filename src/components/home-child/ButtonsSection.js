@@ -5,7 +5,11 @@ import COLORS from '../../constants/colors'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { Ionicons } from '@expo/vector-icons'
 import Button from '../Button'
-import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../screens/context-api/ContextAPI'
+import { getSound } from '../../utilities/getSound'
 const ButtonsSection = () => {
   const {
     isProfileClicked,
@@ -13,6 +17,8 @@ const ButtonsSection = () => {
     handleSettingsBtn,
     handleSwitchProfBtn,
   } = useChildSectionContext()
+  const { setSoundBg, stopSound, playSound } = useAppContext()
+
   const { btnSection, btnIconWrapper, btnElement } = styles
   const { centered } = globalStyles
 
@@ -46,7 +52,15 @@ const ButtonsSection = () => {
           <Ionicons name="settings-sharp" size={30} color={COLORS.greenThird} />
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={btnElement} onPress={handleSwitchProfBtn}>
+      <TouchableOpacity
+        style={btnElement}
+        onPress={async () => {
+          await stopSound()
+          await playSound(getSound.background.welcome.link)
+          setSoundBg(getSound.background.welcome.link)
+          handleSwitchProfBtn()
+        }}
+      >
         <View style={[centered, btnIconWrapper]}>
           <MaterialCommunityIcons
             name="account-switch"

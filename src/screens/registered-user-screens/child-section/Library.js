@@ -5,11 +5,27 @@ import { BackHandler, View } from 'react-native'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import LibraryMainSect from '../../../components/library/LibraryMainSect'
-import { useChildSectionContext } from '../../context-api/ContextAPI'
+import {
+  useAppContext,
+  useChildSectionContext,
+} from '../../context-api/ContextAPI'
 import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
 import BackBtn from '../../../components/BackBtn'
+import { Audio } from 'expo-av'
+import { getSound } from '../../../utilities/getSound'
+
 const Library = ({ navigation }) => {
+  const { sound, playSound, stopSound, setSoundBg } = useAppContext()
   const { isProfileClicked } = useChildSectionContext()
+  const soundComp = new Audio.Sound()
+  const playThisSound = async (soundVal) => {
+    try {
+      await soundComp.loadAsync(soundVal)
+      await soundComp.playAsync()
+    } catch (err) {
+      console.log('Errod: ', err)
+    }
+  }
 
   // handle back press -> navigate to home screen
   useEffect(() => {
@@ -23,7 +39,10 @@ const Library = ({ navigation }) => {
       backAction
     )
 
-    return () => backHandler.remove()
+    return async () => {
+      backHandler.remove()
+      await soundComp.unloadAsync()
+    }
   }, [])
 
   // This function will navigate the user to the previous screen.
@@ -32,12 +51,18 @@ const Library = ({ navigation }) => {
   }
 
   // This function will navigate the user to the activities screen.
-  const handleJeepBtn = () => {
+  const handleJeepBtn = async () => {
+    await playThisSound(getSound.effects.jeepney.link)
+
+    await stopSound()
+    await playSound(getSound.background.activity.link)
+    setSoundBg(getSound.background.activity.link)
     navigation.navigate('Activities')
   }
 
   // This function will navigate the user to the lessons screen.
-  const handleBooksBtn = () => {
+  const handleBooksBtn = async () => {
+    await playThisSound(getSound.effects.book.link)
     navigation.navigate('Lessons')
   }
 

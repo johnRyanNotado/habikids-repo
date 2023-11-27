@@ -23,6 +23,8 @@ import ConnectTheDots from '../../components/activities/connect-the-dots/Connect
 import { imgUrl, saveLessonUrl } from '../../constants/db_config'
 import LoadingScreen from '../LoadingScreen'
 import ErrorScreen from '../ErrorScreen'
+import { getSound } from '../../utilities/getSound'
+import { Audio } from 'expo-av'
 
 const Lesson = ({ navigation }) => {
   const { lesID } = useChildSectionContext()
@@ -241,11 +243,17 @@ const Lesson = ({ navigation }) => {
     return () => clearInterval(narrInterval)
   })
 
-  const exitLesson = () => {
+  playThisSound = async (soundVal) => {
+    const { sound } = await Audio.Sound.createAsync(soundVal)
+    await sound.playAsync()
+  }
+
+  const exitLesson = async () => {
+    await playThisSound(getSound.effects.closeBook.link)
     navigation.goBack()
   }
 
-  const handleLeftBtn = () => {
+  const handleLeftBtn = async () => {
     if (lessonData) {
       if (scriptNum) {
         setScriptNum((prevState) => prevState - 1)
@@ -256,10 +264,11 @@ const Lesson = ({ navigation }) => {
         setSelected(null)
         setIsActFin(false)
       }
+      await playThisSound(getSound.effects.turnPage.link)
     }
   }
 
-  const handleRightBtn = () => {
+  const handleRightBtn = async () => {
     if (lessonData) {
       if (
         lessonData.item[item - 1].data.length > 1 &&
@@ -278,6 +287,7 @@ const Lesson = ({ navigation }) => {
           setIsActFin(false)
         }
       }
+      await playThisSound(getSound.effects.turnPage.link)
     }
   }
 
@@ -319,6 +329,7 @@ const Lesson = ({ navigation }) => {
       }
       setIsLoading(false)
     }
+    await playThisSound(getSound.effects.closeBook.link)
     setIsLoading(true)
     setDataChanged((prevState) => prevState + 1)
     await fetchLearner()

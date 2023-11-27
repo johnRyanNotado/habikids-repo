@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Vibration } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
@@ -14,6 +14,8 @@ import { useArrTheValContext } from '../../../screens/activities/arrange-the-val
 import Button from './Button'
 import { getImg } from '../../../utilities/getImg'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
+import { getSound } from '../../../utilities/getSound'
+import { Audio } from 'expo-av'
 
 const Options = (props) => {
   const { goBack } = props
@@ -32,6 +34,7 @@ const Options = (props) => {
   const { saveAct } = useChildSectionContext()
   const { gestureHandlerStyle } = styles
   const { container } = globalStyles
+  const [sound, setSound] = useState(null)
 
   const answer = data[item - 1].answer
 
@@ -43,11 +46,19 @@ const Options = (props) => {
   const wrongBackgroundColor = useSharedValue(COLORS.primaryTrans)
   const wrongBorderColor = useSharedValue(COLORS.accent)
 
-  const handleWrongBtn = () => {
+  playThisSound = async (soundVal) => {
+    const { sound } = await Audio.Sound.createAsync(soundVal)
+    setSound(sound)
+    await sound.playAsync()
+  }
+
+  const handleWrongBtn = async () => {
     Vibration.vibrate(1000)
+    await playThisSound(getSound.effects.wrong.link)
   }
 
   const handleCorrBtn = async () => {
+    await playThisSound(getSound.effects.correct.link)
     // Set the narration timer
     timer.value = INIT_TIMER
 
@@ -66,7 +77,7 @@ const Options = (props) => {
       const correctTimout = setTimeout(() => {
         setItem((prevState) => prevState + 1)
         clearTimeout(correctTimout)
-      }, 500)
+      }, 1000)
     }
   }
 

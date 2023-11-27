@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useFonts } from 'expo-font'
 import { globalStyles } from '../../styles/GlobalStyles'
@@ -14,10 +14,12 @@ import {
 } from 'react-native'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { useAppContext } from '../context-api/ContextAPI'
+import { Audio } from 'expo-av'
 import { getAni } from '../../utilities/getAni'
+import { getSound } from '../../utilities/getSound'
 
 const Welcome = ({ navigation }) => {
-  const { user } = useAppContext()
+  const { user, sound, setSound } = useAppContext()
   const {
     welcomeTitle,
     welcomeTitleShadow,
@@ -65,13 +67,6 @@ const Welcome = ({ navigation }) => {
     // video.current.pauseAsync()
     navigation.navigate('Login')
   }
-
-  // Play background vid if this screen is on focus
-  // useFocusEffect(() => {
-  //   if (video.current !== null) {
-  //     video.current.playAsync()
-  //   }
-  // })
 
   if (user) {
     navigation.navigate('NavScreen')

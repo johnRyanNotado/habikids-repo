@@ -16,6 +16,8 @@ import {
 } from './src/screens/unregistered-user-screen'
 import handleBckPrsExit from './src/utilities/handleBckPrsExit'
 import { AppContext } from './src/screens/context-api/ContextAPI'
+import { Audio } from 'expo-av'
+import { getSound } from './src/utilities/getSound'
 
 const Stack = createStackNavigator()
 
@@ -25,6 +27,43 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
   const [dataChanged, setDataChanged] = useState(0)
+  const [sound, setSound] = useState()
+  const [soundBg, setSoundBg] = useState(getSound.background.welcome.link)
+
+  // These are the useState that will serve as the value for each switch in the settings.
+  const [isMusicVal, setIsMusicVal] = useState(true)
+  const [isVoiceVal, setIsVoiceVal] = useState(false)
+  const [isReminderVal, setIsReminderVal] = useState(false)
+  const [isTipsSuppVal, setIsTipsSuppVal] = useState(false)
+  const [isShowBtnVal, setIsShowBtnVal] = useState(false)
+  const [isEngCapShown, setIsEngCapShown] = useState(false)
+  const playSound = async (soundVal) => {
+    console.log('Loading Sound')
+    const { sound } = await Audio.Sound.createAsync(soundVal)
+    setSound(sound)
+
+    console.log('Playing Sound')
+    await sound.playAsync()
+    await sound.setIsLoopingAsync(true)
+  }
+
+  const stopSound = async () => {
+    await sound.stopAsync()
+    await sound.unloadAsync()
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound')
+          sound.unloadAsync()
+        }
+      : undefined
+  }, [sound])
+
+  useEffect(() => {
+    playSound(getSound.background.welcome.link)
+  }, [])
 
   // handle back press
   useEffect(handleBckPrsExit, [])
@@ -44,6 +83,24 @@ export default function App() {
         setIsError,
         dataChanged,
         setDataChanged,
+        sound,
+        playSound,
+        setSound,
+        isMusicVal,
+        setIsMusicVal,
+        isReminderVal,
+        setIsReminderVal,
+        isVoiceVal,
+        setIsVoiceVal,
+        isTipsSuppVal,
+        setIsTipsSuppVal,
+        isShowBtnVal,
+        setIsShowBtnVal,
+        isEngCapShown,
+        setIsEngCapShown,
+        stopSound,
+        soundBg,
+        setSoundBg,
       }}
     >
       <NavigationContainer>

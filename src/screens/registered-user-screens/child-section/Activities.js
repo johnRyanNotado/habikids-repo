@@ -24,12 +24,14 @@ import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
 import DropDownPicker from 'react-native-dropdown-picker'
 import COLORS from '../../../constants/colors'
+import { getSound } from '../../../utilities/getSound'
 
 const Activities = ({ navigation }) => {
   const { isProfileClicked, setSelectedYear, content, setContent } =
     useChildSectionContext()
 
-  const { isLoading, isError } = useAppContext()
+  const { isLoading, isError, setSoundBg, stopSound, playSound } =
+    useAppContext()
   const { dropDownBg, dropDownWrapper, dropDownContainerStyle } = styles
   const { container } = globalStyles
 
@@ -59,7 +61,10 @@ const Activities = ({ navigation }) => {
     setContent(BUTTONS)
   }
   // will set the handle button to navigate to library when clicked
-  const handleUndoBtn = () => {
+  const handleUndoBtn = async () => {
+    await stopSound()
+    await playSound(getSound.background.welcome.link)
+    setSoundBg(getSound.background.welcome.link)
     navigation.goBack()
   }
 
