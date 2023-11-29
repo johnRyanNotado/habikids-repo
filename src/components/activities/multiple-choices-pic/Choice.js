@@ -64,7 +64,7 @@ const Choice = (props) => {
     },
   })
 
-  const handleSelection = () => {
+  const handleSelection = async () => {
     setSelected(choice.id)
     setIsDisabled(false)
     if (choice.answer === TAMA) {
@@ -107,7 +107,7 @@ const Choice = (props) => {
         <View style={[centered, { marginLeft: 20 }]}>
           <Image
             source={{ uri: `${imgUrl}${choice.img}` }}
-            style={{ width: 150, height: 150 }}
+            style={{ width: 180, height: 100 }}
           />
         </View>
       </Animated.View>

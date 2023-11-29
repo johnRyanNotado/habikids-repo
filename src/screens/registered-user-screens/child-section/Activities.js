@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   dropDownWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 140,
+    width: 160,
     height: 35,
     right: 10,
     top: 15,

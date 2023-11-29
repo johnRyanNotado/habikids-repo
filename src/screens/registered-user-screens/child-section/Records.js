@@ -296,10 +296,10 @@ const styles = StyleSheet.create({
   dropDownWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 140,
+    width: 160,
     height: 35,
-    right: 10,
-    top: 'auto',
+    right: 35,
+    top: 150,
     bottom: 'auto',
     left: 'auto',
     zIndex: 10,

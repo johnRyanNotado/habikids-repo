@@ -64,7 +64,7 @@ const Choice = (props) => {
     },
   })
 
-  const handleSelection = () => {
+  const handleSelection = async () => {
     setSelected(choice.id)
     setIsDisabled(false)
     if (choice.answer === TAMA) {

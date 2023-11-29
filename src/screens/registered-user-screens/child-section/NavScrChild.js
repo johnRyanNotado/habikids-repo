@@ -129,8 +129,8 @@ const NavScrChild = ({ navigation }) => {
       setIsLoading(false)
     }
     setIsLoading(true)
-    setDataChanged((prevstate) => prevstate + 1)
     await save()
+    setDataChanged((prevstate) => prevstate + 1)
   }
 
   return (

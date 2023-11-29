@@ -24,8 +24,8 @@ import ErrorScreen from '../ErrorScreen'
 const Login = ({ navigation }) => {
   const { isLoading, isError, setIsLoading, setIsError, setUser, user } =
     useAppContext()
-  const [email, setEmail] = useState('ryan.08.moy@gmail.com')
-  const [password, setPassword] = useState('ewanko01')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [response, setResponse] = useState(null)
   const [fieldsErr, setFieldsErr] = useState('')
   const {

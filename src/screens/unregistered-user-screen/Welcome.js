@@ -14,9 +14,7 @@ import {
 } from 'react-native'
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { useAppContext } from '../context-api/ContextAPI'
-import { Audio } from 'expo-av'
 import { getAni } from '../../utilities/getAni'
-import { getSound } from '../../utilities/getSound'
 
 const Welcome = ({ navigation }) => {
   const { user, sound, setSound } = useAppContext()

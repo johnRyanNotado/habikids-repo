@@ -17,6 +17,8 @@ import {
   ENTER_DURATION,
   EXIT_DURATION,
 } from '../../../constants/narrConstants'
+import { getSound } from '../../../utilities/getSound'
+import { Audio } from 'expo-av'
 
 const ArrowButtons = (props) => {
   const {
@@ -39,8 +41,22 @@ const ArrowButtons = (props) => {
   } = styles
   const { centered, positionAbsolute } = globalStyles
 
-  const wrongAnswer = () => {
+  playThisSound = async (soundVal) => {
+    const { sound } = await Audio.Sound.createAsync(soundVal)
+    await sound.playAsync()
+  }
+
+  const wrongAnswer = async () => {
+    await playThisSound(getSound.effects.wrong.link)
     Vibration.vibrate(1000)
+  }
+
+  const correctAnswer = async () => {
+    await playThisSound(getSound.effects.correct.link)
+    const nextPageTimeout = setTimeout(() => {
+      handleRightBtn()
+      clearTimeout(nextPageTimeout)
+    }, 300)
   }
   return (
     <View style={[positionAbsolute, btnSection]}>
@@ -62,7 +78,7 @@ const ArrowButtons = (props) => {
           exiting={SlideOutRight.duration(EXIT_DURATION)}
         >
           <TouchableOpacity
-            onPress={isActFin === true ? handleRightBtn : wrongAnswer}
+            onPress={isActFin === true ? correctAnswer : wrongAnswer}
             disabled={isDisabled}
           >
             <View

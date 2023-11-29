@@ -21,7 +21,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 20,
@@ -42,7 +42,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -65,7 +65,7 @@ export const db_Les_Traditions = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -100,7 +100,7 @@ export const db_Les_Traditions = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -133,7 +133,7 @@ export const db_Les_Traditions = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -166,7 +166,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -180,7 +180,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -194,7 +194,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -215,7 +215,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -235,7 +235,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 220,
                   top: 10,
@@ -249,7 +249,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 220,
                   top: 10,
@@ -270,7 +270,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -291,7 +291,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -312,7 +312,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 'auto',
@@ -326,7 +326,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 'auto',
@@ -348,7 +348,7 @@ export const db_Les_Traditions = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -382,7 +382,7 @@ export const db_Les_Traditions = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -415,7 +415,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -429,7 +429,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -443,7 +443,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 600,
                   top: 10,
@@ -457,7 +457,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -478,7 +478,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 10,
@@ -498,7 +498,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 10,
@@ -518,7 +518,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 10,
@@ -540,7 +540,7 @@ export const db_Les_Traditions = {
                 activityType: 3,
                 isNarratorShown: true,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 650,
                   top: 20,
@@ -587,7 +587,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -601,7 +601,7 @@ export const db_Les_Traditions = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 600,
                   top: 10,
@@ -611,6 +611,26 @@ export const db_Les_Traditions = {
                 },
                 script:
                   'Ang pamilyang sumususnod sa mga gawaing panrelihiyon kagaya ng pagsimba, pagdadasal, at pagtulong sa kapwa ay nagpapakita ng pasasalamat at pagmamahal sa Diyos na Lumikha.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-1f37948c-f19a-49f0-9fc8-0c32cf6c2fbf',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 1, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
               },
             ],
           },

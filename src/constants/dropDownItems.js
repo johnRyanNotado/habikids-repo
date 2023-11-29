@@ -10,15 +10,15 @@ export const AGE_ITEMS = [
 ]
 
 export const TOPICS_ITEMS = [
-  { label: 'Values', value: 'Values' },
-  { label: 'Traditions', value: 'Traditions' },
-  { label: 'Good Habits', value: 'Good Habits' },
+  { label: 'Prinsipyo', value: 'Values' },
+  { label: 'Tradisyon', value: 'Traditions' },
+  { label: 'Mabubuting Gawi', value: 'Good Habits' },
 ]
 
 export const YEAR_LEVELS = [
-  { label: '1st Grade', value: 1 },
-  { label: '2nd Grade', value: 2 },
-  { label: '3rd Grade', value: 3 },
+  { label: '1st Baitang', value: 1 },
+  { label: '2nd Baitang', value: 2 },
+  { label: '3rd Baitang', value: 3 },
 ]
 
 export const LANGUAGES = [

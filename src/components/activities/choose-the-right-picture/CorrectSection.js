@@ -16,7 +16,7 @@ import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 import { getSound } from '../../../utilities/getSound'
 
 const CorrectSection = (props) => {
-  const { goBack, enteringProps } = props
+  const { goBack, enteringProps, playSound } = props
   const { gameData } = useCTRPContext()
   const { item, setItem, ITEM_AMOUNT, setScore, score } = useCTRPContext()
   const { saveAct } = useChildSectionContext()
@@ -30,7 +30,7 @@ const CorrectSection = (props) => {
   const properItem = item - 1
 
   const handleCorrectBtn = async () => {
-    await playThisSound(getSound.effects.correct.link)
+    await playSound(getSound.effects.correct.link)
     // Change the score, delay the setting so that the next scene wont render before the end of animation
     const renderDelay = setTimeout(() => {
       setScore((prevState) => prevState + 1)

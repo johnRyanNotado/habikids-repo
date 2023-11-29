@@ -15,7 +15,7 @@ const Options = (props) => {
   const leftEnteringProps = { delay: 300, duration: 1000 }
   const rightEnteringProps = { delay: 1300, duration: 1000 }
 
-  playSound = async (soundVal) => {
+  const playSound = async (soundVal) => {
     const { sound } = await Audio.Sound.createAsync(soundVal)
     await sound.playAsync()
   }
@@ -40,8 +40,15 @@ const Options = (props) => {
     } else {
       return (
         <>
-          <WrongSection enteringProps={leftEnteringProps} />
-          <CorrectSection goBack={goBack} enteringProps={rightEnteringProps} />
+          <WrongSection
+            enteringProps={leftEnteringProps}
+            playSound={playSound}
+          />
+          <CorrectSection
+            goBack={goBack}
+            enteringProps={rightEnteringProps}
+            playSound={playSound}
+          />
         </>
       )
     }

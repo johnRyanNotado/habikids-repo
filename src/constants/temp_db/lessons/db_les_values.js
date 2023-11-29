@@ -21,7 +21,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 20,
@@ -42,7 +42,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -56,7 +56,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 500,
                   top: 10,
@@ -77,7 +77,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 10,
@@ -99,7 +99,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 180,
                   top: 'auto',
@@ -121,7 +121,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 'auto',
@@ -143,7 +143,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -165,7 +165,7 @@ export const db_Les_Values = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -205,7 +205,7 @@ export const db_Les_Values = {
                 activityType: 2,
                 isNarratorShown: true,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 650,
                   top: 20,
@@ -251,7 +251,7 @@ export const db_Les_Values = {
                 activityType: 2,
                 isNarratorShown: true,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 650,
                   top: 20,
@@ -296,7 +296,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'juan',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 'auto',
@@ -310,7 +310,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'vio',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 'auto',
@@ -331,7 +331,7 @@ export const db_Les_Values = {
               {
                 isNarratorShown: false,
                 narrator: 'uni',
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 50,
@@ -340,6 +340,26 @@ export const db_Les_Values = {
                   left: 180,
                 },
                 script: 'Tama! Dami nating natutunan noh?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-ed3d4f7e-560b-4458-b6e2-7956f4d89810',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 1, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
               },
             ],
           },
@@ -358,7 +378,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 'auto',
@@ -373,7 +393,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 220,
                   top: 'auto',
@@ -395,7 +415,7 @@ export const db_Les_Values = {
               {
                 narrator: 'vio',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 120,
                   top: 'auto',
@@ -417,7 +437,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 80,
@@ -432,7 +452,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 80,
@@ -446,7 +466,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 'auto',
@@ -467,7 +487,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 190,
                   top: 'auto',
@@ -481,7 +501,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 190,
                   top: 'auto',
@@ -503,7 +523,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -518,7 +538,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -539,7 +559,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -554,7 +574,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -575,7 +595,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 'auto',
@@ -597,7 +617,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 180,
                   top: 'auto',
@@ -618,7 +638,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 20,
@@ -640,7 +660,7 @@ export const db_Les_Values = {
                 activityType: 1,
                 isNarratorShown: true,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 'auto',
@@ -678,7 +698,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -700,7 +720,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -721,7 +741,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -742,7 +762,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 50,
@@ -756,7 +776,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 50,
@@ -777,7 +797,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 30,
@@ -799,7 +819,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -813,7 +833,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -836,7 +856,7 @@ export const db_Les_Values = {
                 activityType: 3,
                 isNarratorShown: true,
                 narrator: 'uni',
-                narrationDuration: 5,
+                narrationDuration: 3,
                 style: {
                   width: 650,
                   top: 20,
@@ -884,7 +904,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -899,7 +919,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -919,7 +939,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 10,
@@ -940,7 +960,7 @@ export const db_Les_Values = {
               {
                 narrator: 'vio',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 300,
                   top: 10,
@@ -962,7 +982,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -983,7 +1003,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -1004,7 +1024,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -1013,6 +1033,26 @@ export const db_Les_Values = {
                   left: 'auto',
                 },
                 script: 'Ikaw, ingat ka ha! Ba-bye!',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-f8605334-8f89-401a-b36d-f62b61cc7967',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 1, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
               },
             ],
           },
@@ -1031,7 +1071,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 'auto',
@@ -1053,7 +1093,7 @@ export const db_Les_Values = {
               {
                 narrator: 'vio',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 230,
                   top: 10,
@@ -1075,7 +1115,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 230,
                   top: 10,
@@ -1097,7 +1137,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 30,
@@ -1118,7 +1158,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 10,
@@ -1140,7 +1180,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -1154,7 +1194,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -1168,7 +1208,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -1189,7 +1229,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 'auto',
@@ -1203,7 +1243,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 150,
                   top: 'auto',
@@ -1218,7 +1258,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 240,
                   top: 'auto',
@@ -1240,7 +1280,7 @@ export const db_Les_Values = {
               {
                 narrator: 'juan',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -1261,7 +1301,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -1275,7 +1315,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -1290,7 +1330,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 260,
                   top: 'auto',
@@ -1310,7 +1350,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -1324,7 +1364,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 10,
@@ -1345,7 +1385,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 400,
                   top: 'auto',
@@ -1367,7 +1407,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 10,
@@ -1388,7 +1428,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 200,
                   top: 10,
@@ -1410,7 +1450,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 20,
@@ -1424,7 +1464,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 10,
@@ -1438,7 +1478,7 @@ export const db_Les_Values = {
               {
                 narrator: 'uni',
                 isNarratorShown: false,
-                narrationDuration: 4,
+                narrationDuration: 3,
                 style: {
                   width: 250,
                   top: 40,
@@ -1447,6 +1487,26 @@ export const db_Les_Values = {
                   left: 'auto',
                 },
                 script: 'Kaya mo na bang magpatuloy sa iba pang mga gawain?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-1c628a7b-6b2b-4271-9a1a-f69de554eb04',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 1, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
               },
             ],
           },

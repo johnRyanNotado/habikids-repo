@@ -17,7 +17,7 @@ const LessonData = (props) => {
   return (
     <View style={lessonDataWrapper}>
       <View>
-        <Text style={lessonTitle}>{`Lesson ${lesNum}`}</Text>
+        <Text style={lessonTitle}>{`Aralin ${lesNum}`}</Text>
       </View>
       <View
         style={[

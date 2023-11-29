@@ -29,7 +29,7 @@ const PickAge = () => {
   return (
     <View style={pickAgeWrapper}>
       <View style={ageLabelWrapper}>
-        <Text style={ageLabel}>How old is {newChild.name}?</Text>
+        <Text style={ageLabel}>Ano ang edad ni {newChild.name}?</Text>
       </View>
       <View style={ageSelectedWrapper}>
         <CustRadioBtnAge
