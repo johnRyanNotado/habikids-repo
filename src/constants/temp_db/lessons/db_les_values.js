@@ -224,12 +224,12 @@ export const db_Les_Values = {
                   },
                   {
                     id: 2,
-                    answer: MALI,
+                    answer: TAMA,
                     img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.7%201.7.2.png`,
                   },
                   {
                     id: 3,
-                    answer: TAMA,
+                    answer: MALI,
                     img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.7%201.7.3.png`,
                   },
                   {
@@ -275,12 +275,12 @@ export const db_Les_Values = {
                   },
                   {
                     id: 3,
-                    answer: MALI,
+                    answer: TAMA,
                     img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.8%201.8.3.png`,
                   },
                   {
                     id: 4,
-                    answer: TAMA,
+                    answer: MALI,
                     img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.8%201.8.4.png`,
                   },
                 ],
