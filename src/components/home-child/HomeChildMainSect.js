@@ -3,6 +3,7 @@ import { Image, View, TouchableOpacity, StyleSheet } from 'react-native'
 import { getImg } from '../../utilities/getImg'
 import COLORS from '../../constants/colors'
 import { useHomeChildSectionContext } from '../../screens/context-api/ContextAPI'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const HomeChildMainSect = () => {
   const { handleRecordsBtn, handleBooksBtn } = useHomeChildSectionContext()
@@ -69,44 +70,56 @@ const styles = StyleSheet.create({
   libraryWrapper: {
     position: 'absolute',
     bottom: '23%',
-    left: '13%',
+    // left: '13%',
+    left: WINDOW_WIDTH * 0.09,
+    bottom: WINDOW_HEIGHT * 0.18,
     height: 200,
     justifyContent: 'flex-end',
   },
   booksImg: {
-    width: 190,
-    height: 148,
+    // width: 190,
+    // height: 148,
     marginBottom: 15,
+    width: WINDOW_WIDTH * 0.26,
+    height: WINDOW_HEIGHT * 0.38,
   },
   jeepImg: {
     marginTop: 30,
-    width: 180,
-    height: 128,
+    // width: 180,
+    // height: 128,
+    width: WINDOW_WIDTH * 0.24,
+    height: WINDOW_HEIGHT * 0.35,
   },
   libraryBtn: {
     flexDirection: 'row',
   },
   bookShadow: {
     position: 'absolute',
-    width: 85,
+    // width: 85,
+    width: WINDOW_WIDTH * 0.12,
     height: 15,
     borderRadius: 65,
     backgroundColor: COLORS.black,
     transform: [{ scaleX: 2 }],
     opacity: 0.2,
-    bottom: 23,
-    left: 55,
+    // bottom: 23,
+    // left: 55,
+    bottom: WINDOW_WIDTH * 0.025,
+    left: WINDOW_WIDTH * 0.06,
   },
   jeepShadow: {
     position: 'absolute',
-    width: 85,
+    // width: 85,
     height: 15,
+    width: WINDOW_WIDTH * 0.11,
     borderRadius: 65,
     backgroundColor: COLORS.black,
     transform: [{ scaleX: 2 }],
     opacity: 0.2,
-    bottom: 23,
-    right: 43,
+    // bottom: 23,
+    // right: 43,
+    bottom: WINDOW_WIDTH * 0.025,
+    right: WINDOW_WIDTH * 0.06,
   },
 })
 

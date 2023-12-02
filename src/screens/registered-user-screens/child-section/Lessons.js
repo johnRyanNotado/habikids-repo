@@ -125,11 +125,7 @@ const Lessons = ({ navigation }) => {
         handleSelectedLes,
       }}
     >
-      <ImageBackground
-        source={getImg.bg.tableZoomedIn.link}
-        style={container}
-        resizeMode="contain"
-      >
+      <ImageBackground source={getImg.bg.tableZoomedIn.link} style={container}>
         <View style={[container, centered]}>
           <Jeep />
           <ChildSectNavBar backBtn={backBtn} />

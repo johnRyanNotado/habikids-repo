@@ -15,6 +15,17 @@ import COLORS from '../../constants/colors'
 import ValuesSvg from '../../svg/activities/buttons/ValuesSvg'
 import { getImg } from '../../utilities/getImg'
 import { CENTER_X } from '../../constants/puzzleConstants'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
+
+const VALUES_DIMENSIONS = { w: WINDOW_WIDTH * 0.18, h: WINDOW_WIDTH * 0.1 }
+const TRADITIONS_DIMENSIONS = {
+  w: WINDOW_WIDTH * 0.18,
+  h: WINDOW_WIDTH * 0.103,
+}
+const GOOD_HABITS_DIMENSIONS = {
+  w: WINDOW_WIDTH * 0.18,
+  h: WINDOW_WIDTH * 0.108,
+}
 
 const Buttons = () => {
   const { setContent } = useChildSectionContext()
@@ -37,18 +48,35 @@ const Buttons = () => {
   }
   return (
     <View style={[centered, container, btnWrapper]}>
-      <View style={{ position: 'absolute', top: 0, right: CENTER_X - 50 }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: CENTER_X - WINDOW_WIDTH * 0.07,
+        }}
+      >
         <TouchableOpacity onPress={handleValBtn}>
           <View style={{ elavation: 5 }}>
             <Image
               source={getImg.components.cardValues.link}
-              style={{ width: 150, height: 90 }}
+              style={{
+                width: 150,
+                height: 90,
+                width: VALUES_DIMENSIONS.w,
+                height: VALUES_DIMENSIONS.h,
+              }}
               resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
       </View>
-      <View style={{ position: 'absolute', top: 0, right: CENTER_X - 220 }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: CENTER_X - WINDOW_WIDTH * 0.25,
+        }}
+      >
         <TouchableOpacity onPress={handleTradBtn}>
           <View style={{ elavation: 5 }}>
             <Image
@@ -56,13 +84,17 @@ const Buttons = () => {
               style={{
                 width: 150,
                 height: 90,
+                width: TRADITIONS_DIMENSIONS.w,
+                height: TRADITIONS_DIMENSIONS.h,
               }}
               resizeMode="contain"
             />
           </View>
         </TouchableOpacity>
       </View>
-      <View style={{ position: 'absolute', right: CENTER_X - 150 }}>
+      <View
+        style={{ position: 'absolute', right: CENTER_X - WINDOW_WIDTH * 0.17 }}
+      >
         <TouchableOpacity onPress={handleGoodHabitBtn}>
           <View style={{ elavation: 5 }}>
             <Image
@@ -70,6 +102,8 @@ const Buttons = () => {
               style={{
                 width: 160,
                 height: 90,
+                width: GOOD_HABITS_DIMENSIONS.w,
+                height: GOOD_HABITS_DIMENSIONS.h,
               }}
               resizeMode="contain"
             />

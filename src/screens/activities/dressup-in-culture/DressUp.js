@@ -54,11 +54,7 @@ const DressUp = ({ navigation }) => {
   }
 
   return (
-    <ImageBackground
-      source={getImg.bg.jeepInterior.link}
-      style={container}
-      resizeMode="contain"
-    >
+    <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       <View style={[container, centered, { flexDirection: 'row' }]}>
         <View style={[positionAbsolute, centered, { height: 80, zIndex: 10 }]}>
           <ActivityNavBar />

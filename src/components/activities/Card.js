@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import COLORS from '../../constants/colors'
 import { imgUrl } from '../../constants/db_config'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const Card = (props) => {
   const { id, img, num, title, label, screen, onPress } = props
@@ -52,10 +53,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.greenSecond,
   },
   card: {
-    minHeight: 240,
-    height: 240,
-    width: 230,
-    minHeight: 200,
+    height: WINDOW_HEIGHT * 0.6,
+    width: WINDOW_HEIGHT * 0.6,
+    minHeight: 150,
+    minWidth: 150,
     borderRadius: 25,
     borderWidth: 5,
     borderColor: COLORS.accent,
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
   },
   titleStyle: {
     fontFamily: 'QuiapoRegular',
-    fontSize: 20,
+    fontSize: WINDOW_HEIGHT * 0.05,
     color: COLORS.accent,
   },
 })

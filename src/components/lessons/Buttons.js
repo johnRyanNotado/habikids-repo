@@ -9,10 +9,26 @@ import {
 import { useChildSectionContext } from '../../screens/context-api/ContextAPI'
 import { getImg } from '../../utilities/getImg'
 import { globalStyles } from '../../styles/GlobalStyles'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
 
-const VALUES_DIMENSTION = { h: 235, w: 77 }
-const TRADITION_DIMENSTION = { h: 240, w: 79 }
-const GOOD_HABITS_DIMENSTION = { h: 235, w: 150 }
+const VALUES_DIMENSION = {
+  h: 235,
+  w: 77,
+  h: WINDOW_HEIGHT * 0.57,
+  w: WINDOW_HEIGHT * 0.2,
+}
+const TRADITION_DIMENSION = {
+  h: 240,
+  w: 79,
+  h: WINDOW_HEIGHT * 0.59,
+  w: WINDOW_HEIGHT * 0.18,
+}
+const GOOD_HABITS_DIMENSION = {
+  h: 235,
+  w: 150,
+  h: WINDOW_HEIGHT * 0.56,
+  w: WINDOW_HEIGHT * 0.38,
+}
 
 const Buttons = () => {
   const { content, setContent } = useChildSectionContext()
@@ -46,13 +62,13 @@ const Buttons = () => {
         <TouchableOpacity
           enable={content === BUTTONS ? true : false}
           onPress={handleValBtn}
-          style={[centered, { width: VALUES_DIMENSTION.w }]}
+          style={[centered, { width: VALUES_DIMENSION.w }]}
         >
           <Image
             source={getImg.components.bookValues.link}
             resizeMode="contain"
             style={{
-              height: VALUES_DIMENSTION.h,
+              height: VALUES_DIMENSION.h,
             }}
           />
         </TouchableOpacity>
@@ -60,13 +76,13 @@ const Buttons = () => {
         <TouchableOpacity
           enable={content === BUTTONS ? true : false}
           onPress={handleTradBtn}
-          style={[centered, { width: TRADITION_DIMENSTION.w, zIndex: 5 }]}
+          style={[centered, { width: TRADITION_DIMENSION.w }]}
         >
           <Image
             source={getImg.components.bookTraditions.link}
             resizeMode="contain"
             style={{
-              height: TRADITION_DIMENSTION.h,
+              height: TRADITION_DIMENSION.h,
             }}
           />
         </TouchableOpacity>
@@ -77,7 +93,7 @@ const Buttons = () => {
           style={[
             centered,
             {
-              width: GOOD_HABITS_DIMENSTION.w,
+              width: GOOD_HABITS_DIMENSION.w,
               borderBottomStartRadius: 1000,
             },
           ]}
@@ -86,9 +102,10 @@ const Buttons = () => {
             source={getImg.components.bookGoodHabits.link}
             resizeMode="contain"
             style={{
-              height: GOOD_HABITS_DIMENSTION.h,
+              height: GOOD_HABITS_DIMENSION.h,
               zIndex: -5,
               borderBottomLeftRadius: 100,
+              width: GOOD_HABITS_DIMENSION.w,
             }}
           />
         </TouchableOpacity>

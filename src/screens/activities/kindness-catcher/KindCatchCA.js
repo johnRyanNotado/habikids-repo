@@ -68,11 +68,7 @@ const KindCatchCA = ({ navigation }) => {
   // }
 
   return (
-    <ImageBackground
-      source={getImg.bg.jeepInterior.link}
-      style={container}
-      resizeMode="contain"
-    >
+    <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       {isLoading ? (
         <View style={[positionAbsolute, { zIndex: 10 }]}>
           <LoadingScreen />

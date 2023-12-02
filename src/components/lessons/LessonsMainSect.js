@@ -17,6 +17,7 @@ import {
 } from '../../screens/context-api/ContextAPI'
 import Buttons from './Buttons'
 import RenderLessons from './RenderLessons'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const LessonsMainSect = () => {
   const { isOpen, setIsOpen } = useLessonsContext()
@@ -154,6 +155,8 @@ const styles = StyleSheet.create({
   titleWrapper: {
     width: 200,
     height: 50,
+    width: WINDOW_WIDTH * 0.23,
+    height: WINDOW_WIDTH * 0.06,
     marginTop: -20,
     backgroundColor: COLORS.whiteTrans,
     borderRadius: 20,
@@ -162,6 +165,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Quiapo',
     fontSize: 48,
     zIndex: 10,
+    fontSize: WINDOW_WIDTH * 0.055,
   },
   subTitleWrapper: {
     width: 120,
@@ -174,11 +178,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     zIndex: 10,
     letterSpacing: 1,
+    fontSize: WINDOW_WIDTH * 0.025,
   },
   subTitleBg: {
     width: 180,
     height: 25,
     marginVertical: 10,
+    width: WINDOW_WIDTH * 0.2,
+    height: WINDOW_WIDTH * 0.03,
     backgroundColor: COLORS.whiteTrans,
     borderRadius: 10,
     alignItems: 'center',
@@ -205,6 +212,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 30,
     right: 10,
+    width: WINDOW_WIDTH * 0.2,
+    height: WINDOW_WIDTH * 0.037,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,

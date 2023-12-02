@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../../styles/GlobalStyles'
-import { BackHandler, View } from 'react-native'
+import { BackHandler, ImageBackground, View } from 'react-native'
 import ChildSectNavBar from '../../../components/home-child/ChildSectNavBar'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import LibraryMainSect from '../../../components/library/LibraryMainSect'
@@ -13,6 +13,7 @@ import LibrariesSvg from '../../../svg/bg/LibrariesSvg'
 import BackBtn from '../../../components/BackBtn'
 import { Audio } from 'expo-av'
 import { getSound } from '../../../utilities/getSound'
+import { getImg } from '../../../utilities/getImg'
 
 const Library = ({ navigation }) => {
   const { sound, playSound, stopSound, setSoundBg } = useAppContext()
@@ -67,15 +68,20 @@ const Library = ({ navigation }) => {
   }
 
   return (
-    <View style={globalStyles.container}>
-      <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
-      <LibraryMainSect
-        handleJeepBtn={handleJeepBtn}
-        handleBooksBtn={handleBooksBtn}
-      />
-      {isProfileClicked ? <ProfileCard /> : <></>}
-      <LibrariesSvg />
-    </View>
+    <ImageBackground
+      style={globalStyles.container}
+      source={getImg.bg.table.link}
+    >
+      <View style={globalStyles.container}>
+        <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
+        <LibraryMainSect
+          handleJeepBtn={handleJeepBtn}
+          handleBooksBtn={handleBooksBtn}
+        />
+        {isProfileClicked ? <ProfileCard /> : <></>}
+        <LibrariesSvg />
+      </View>
+    </ImageBackground>
   )
 }
 

@@ -138,11 +138,7 @@ const KindCatch = ({ navigation }) => {
   // }
 
   return (
-    <ImageBackground
-      source={getImg.bg.jeepInterior.link}
-      style={container}
-      resizeMode="contain"
-    >
+    <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       {isLoading ? <LoadingScreen /> : null}
       {isError ? <isError /> : null}
       <GestureHandlerRootView style={[container]}>

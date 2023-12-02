@@ -19,6 +19,9 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import { TOPICS_ITEMS, YEAR_LEVELS } from '../../../constants/dropDownItems'
 import DropDownPicker from 'react-native-dropdown-picker'
 
+const TITLE_WIDTH = WINDOW_WIDTH * 0.35
+const HALF_TITLE_WIDTH = TITLE_WIDTH / 2
+
 const Records = ({ navigation }) => {
   const { isProfileClicked, selectedYear, setSelectedYear } =
     useChildSectionContext()
@@ -172,15 +175,13 @@ const Records = ({ navigation }) => {
     }
   }
 
+  console.log('Window Dimension: ', WINDOW_HEIGHT, '\t', WINDOW_WIDTH)
+
   return (
-    <ImageBackground
-      source={getImg.bg.records.link}
-      style={container}
-      resizeMode="contain"
-    >
+    <ImageBackground source={getImg.bg.records.link} style={container}>
       <View style={(container, centered)}>
         <View style={[positionAbsolute, dropDownWrapper]}>{getDropDown()}</View>
-        <View style={positionAbsolute}>
+        <View style={[positionAbsolute, { zIndex: 10 }]}>
           <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
         </View>
         <View style={[centered, recordsWrapperSection]}>
@@ -197,7 +198,7 @@ const Records = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   recordsWrapperSection: {
-    width: 400,
+    width: WINDOW_WIDTH,
     height: '100%',
   },
   initialTitle: {
@@ -232,14 +233,16 @@ const styles = StyleSheet.create({
     top: 20,
     bottom: 'auto',
     right: (WINDOW_WIDTH / 2) * 0.125 - 24,
-    width: '75%',
+    right: WINDOW_WIDTH / 2 - HALF_TITLE_WIDTH - WINDOW_WIDTH * 0.02,
+    width: TITLE_WIDTH,
   },
   dataWrapper: {
     height: '70%',
     width: '100%',
     minHeight: 70,
     gap: 20,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: '5%',
     position: 'absolute',
     top: 'auto',
@@ -252,11 +255,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 40,
     height: '100%',
+    width: WINDOW_WIDTH * 0.5,
   },
   custPositionAbs: {
     left: 25,
     top: 20,
-    right: '',
   },
   btnStyle: {
     borderWidth: 1,
@@ -296,13 +299,13 @@ const styles = StyleSheet.create({
   dropDownWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 160,
+    width: WINDOW_WIDTH * 0.2,
     height: 35,
-    right: 35,
-    top: 150,
+    right: 3,
+    top: WINDOW_HEIGHT * 0.34,
     bottom: 'auto',
     left: 'auto',
-    zIndex: 10,
+    zIndex: 15,
   },
   dropDownBg: {
     backgroundColor: COLORS.primary,

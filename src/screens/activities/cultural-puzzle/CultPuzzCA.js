@@ -57,11 +57,7 @@ const CultPuzzCA = ({ navigation }) => {
   }
 
   return (
-    <ImageBackground
-      source={getImg.bg.jeepInterior.link}
-      style={container}
-      resizeMode="contain"
-    >
+    <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>

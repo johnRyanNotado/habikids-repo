@@ -139,11 +139,7 @@ const Activities = ({ navigation }) => {
         handleSelectedAct,
       }}
     >
-      <ImageBackground
-        source={getImg.bg.jeepInterior.link}
-        style={container}
-        resizeMode="contain"
-      >
+      <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
         {/* <JeepSvg /> */}
         <View style={container}>
           <ChildSectNavBar backBtn={<BackBtn onPress={undoBtnFunc} />} />

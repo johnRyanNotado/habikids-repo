@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { globalStyles } from '../../styles/GlobalStyles'
 import { getImg } from '../../utilities/getImg'
 import COLORS from '../../constants/colors'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const LibraryMainSect = (props) => {
   const { handleJeepBtn, handleBooksBtn } = props
@@ -72,11 +73,17 @@ const styles = StyleSheet.create({
   },
   btnWrapper: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: 550,
     height: 200,
-    marginLeft: '7%',
-    marginTop: '-1%',
+    width: WINDOW_WIDTH * 0.72,
+    height: WINDOW_HEIGHT * 0.5,
+    marginTop: WINDOW_HEIGHT * -0.04,
+    marginLeft: WINDOW_HEIGHT * 0.04,
+    gap: WINDOW_WIDTH * 0.06,
+    // backgroundColor: 'lightpink',
+    // marginLeft: '7%',
+    // marginTop: '-1%',
   },
   btnSection: {
     justifyContent: 'center',
@@ -87,6 +94,8 @@ const styles = StyleSheet.create({
     height: 220,
     marginBottom: 20,
     zIndex: 10,
+    width: WINDOW_WIDTH * 0.3,
+    height: WINDOW_WIDTH * 0.3,
   },
   bookShadow: {
     position: 'absolute',
@@ -96,12 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
     transform: [{ scaleX: 2 }],
     opacity: 0.2,
-    bottom: 15,
+    bottom: 13,
+    width: WINDOW_WIDTH * 0.16,
   },
   jeepStyle: {
     width: 260,
     height: 200,
     zIndex: 10,
+    width: WINDOW_WIDTH * 0.3,
+    height: WINDOW_WIDTH * 0.23,
   },
   jeepShadow: {
     position: 'absolute',
@@ -111,7 +123,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.black,
     transform: [{ scaleX: 2 }],
     opacity: 0.2,
-    bottom: 15,
+    bottom: 13,
+    width: WINDOW_WIDTH * 0.16,
   },
 })
 

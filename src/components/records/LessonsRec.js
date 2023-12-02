@@ -8,6 +8,7 @@ import {
   useAppContext,
   useChildSectionContext,
 } from '../../screens/context-api/ContextAPI'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const LessonsRec = (props) => {
   const { selectedTopic, setSelectedTopic } = props
@@ -76,7 +77,7 @@ const LessonsRec = (props) => {
 const styles = StyleSheet.create({
   lessonsListWrapper: {
     backgroundColor: COLORS.white,
-    width: '100%',
+    width: WINDOW_WIDTH * 0.45,
     height: '90%',
     borderRadius: 10,
     paddingHorizontal: 15,

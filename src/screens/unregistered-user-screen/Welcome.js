@@ -15,6 +15,7 @@ import {
 import handleBckPrsExit from '../../utilities/handleBckPrsExit'
 import { useAppContext } from '../context-api/ContextAPI'
 import { getAni } from '../../utilities/getAni'
+import { WINDOW_HEIGHT } from '../../constants/windowConstants'
 
 const Welcome = ({ navigation }) => {
   const { user, sound, setSound } = useAppContext()
@@ -126,12 +127,12 @@ const Welcome = ({ navigation }) => {
 const styles = StyleSheet.create({
   welcomeTitle: {
     color: COLORS.accent,
-    fontSize: 90,
+    fontSize: WINDOW_HEIGHT * 0.21,
     fontFamily: 'Quiapo',
   },
   welcomeTitleShadow: {
     color: COLORS.yellowPrimary,
-    fontSize: 90,
+    fontSize: WINDOW_HEIGHT * 0.21,
     fontFamily: 'Quiapo',
     left: 'auto',
     right: 5,

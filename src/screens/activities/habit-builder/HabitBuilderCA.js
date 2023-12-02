@@ -18,6 +18,7 @@ import {
 } from '../../context-api/ContextAPI'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
+import ProfileCard from '../../../components/home-child/ProfileCard'
 
 const HabitBuilderCA = ({ navigation }) => {
   const { container, centered, positionAbsolute } = globalStyles
@@ -68,11 +69,7 @@ const HabitBuilderCA = ({ navigation }) => {
   }
 
   return (
-    <ImageBackground
-      source={getImg.bg.jeepInterior.link}
-      style={container}
-      resizeMode="contain"
-    >
+    <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>

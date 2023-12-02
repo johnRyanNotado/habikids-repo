@@ -11,7 +11,7 @@ const ProfileCard = () => {
   const { centered, positionAbsolute } = globalStyles
 
   return (
-    <View style={[positionAbsolute, centered, { zIndex: 10 }]}>
+    <View style={[positionAbsolute, centered, { zIndex: 100 }]}>
       <View style={[positionAbsolute, profileCardWrapperBg]} />
       <Animated.View
         entering={BounceIn.duration(500)}

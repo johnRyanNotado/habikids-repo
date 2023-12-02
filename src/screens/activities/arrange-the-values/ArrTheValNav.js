@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MAIN_HEADER_OPT } from '../../../constants/headerOption'
 import { ArrTheVal, ArrTheValCA } from './index'
@@ -6,6 +6,7 @@ import { ArrTheValContext } from './ArrTheValContext'
 import { db_ArrTheVal } from '../../../constants/temp_db/activities/db_ArrTheVal'
 import { useSharedValue } from 'react-native-reanimated'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
+import { BackHandler } from 'react-native'
 
 const ArrTheValStack = createStackNavigator()
 
@@ -16,7 +17,7 @@ const OPTIONS = 'options'
 const TAMA = 'TAMA'
 const MALI = 'MALI'
 
-const ArrTheValNav = () => {
+const ArrTheValNav = ({ navigation }) => {
   const { selectedYear, actID } = useChildSectionContext()
   const [score, setScore] = useState(0)
   const [displayed, setDisplayed] = useState(SCENE)
@@ -36,6 +37,20 @@ const ArrTheValNav = () => {
       data = item.item
     }
   })
+
+  useEffect(() => {
+    const backAction = () => {
+      navigation.goBack()
+      return true
+    }
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction
+    )
+
+    return () => backHandler.remove()
+  }, [])
 
   console.log('Called: ArrTheValNav')
   return (
@@ -60,7 +75,7 @@ const ArrTheValNav = () => {
         data,
       }}
     >
-      <ArrTheValStack.Navigator>
+      <ArrTheValStack.Navigator initialRouteName="ArrTheValCA">
         <ArrTheValStack.Screen
           name="ArrTheValCA"
           component={ArrTheValCA}
