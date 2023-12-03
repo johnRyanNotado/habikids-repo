@@ -15,15 +15,24 @@ import { useChildSectionContext } from '../../context-api/ContextAPI'
 
 const CultPuzzStack = createStackNavigator()
 
-const CultPuzzNav = () => {
+const CultPuzzNav = ({ navigation }) => {
   const { selectedYear, actID } = useChildSectionContext()
   const score = useSharedValue(0)
   const TIMER_VALUE = 30000
   const [timerLimit, setTimerLimit] = useState(TIMER_VALUE / 1000)
   const [isFinished, setIsFinished] = useState(false)
   const [shuffledEndPos, setShuffledEndPos] = useState([])
+  const [comp, setComp] = useState(<CultPuzzCA />)
   const minimumDistanceX = PUZZLE_DIMENSIONS.w + WINDOW_WIDTH * 0.15
   const minimumDistanceY = PUZZLE_DIMENSIONS.h * 0.7
+
+  const goBack = () => {
+    navigation.goBack()
+  }
+
+  const showScoreCard = () => {
+    setComp(<CultPuzzCA />)
+  }
 
   // end position of puzzles
   const endPos = [
@@ -65,9 +74,16 @@ const CultPuzzNav = () => {
         instruction,
         instructionDuration,
         narrator,
+        comp,
+        setComp,
+        goBack,
+        CultPuzz,
+        CultPuzzCA,
+        showScoreCard,
       }}
     >
-      <CultPuzzStack.Navigator>
+      {comp ? comp : null}
+      {/* <CultPuzzStack.Navigator>
         <CultPuzzStack.Screen
           name="CultPuzzCA"
           component={CultPuzzCA}
@@ -78,7 +94,7 @@ const CultPuzzNav = () => {
           component={CultPuzz}
           options={MAIN_HEADER_OPT}
         />
-      </CultPuzzStack.Navigator>
+      </CultPuzzStack.Navigator> */}
     </CultPuzzContext.Provider>
   )
 }

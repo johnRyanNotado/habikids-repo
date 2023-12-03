@@ -19,6 +19,14 @@ const HabitBuilderNav = ({ navigation }) => {
   const [isNarrating, setIsNarrating] = useState(false)
   const [instruction, setInstruction] = useState('')
   const [instructionDuration, setInstructionDuration] = useState(0)
+  const [comp, setComp] = useState(<HabitBuilderCA />)
+  const goBack = () => {
+    navigation.goBack()
+  }
+  const showScoreCard = () => {
+    setComp(<HabitBuilderCA />)
+  }
+
   const [narrator, setNarrator] = useState('vio')
 
   // get the related data for narration
@@ -49,9 +57,16 @@ const HabitBuilderNav = ({ navigation }) => {
         isNarrating,
         setIsNarrating,
         itemScore,
+        comp,
+        setComp,
+        showScoreCard,
+        goBack,
+        HabitBuilderCA,
+        HabitBuilder,
       }}
     >
-      <HabitBuilderStack.Navigator>
+      {comp ? comp : null}
+      {/* <HabitBuilderStack.Navigator>
         <HabitBuilderStack.Screen
           name="HabitBuilderCA"
           component={HabitBuilderCA}
@@ -63,7 +78,7 @@ const HabitBuilderNav = ({ navigation }) => {
           component={HabitBuilder}
           options={MAIN_HEADER_OPT}
         />
-      </HabitBuilderStack.Navigator>
+      </HabitBuilderStack.Navigator> */}
     </HabitBuilderContext.Provider>
   )
 }

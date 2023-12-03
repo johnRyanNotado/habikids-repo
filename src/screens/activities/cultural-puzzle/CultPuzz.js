@@ -19,7 +19,7 @@ import { useCultPuzzContext } from './CultPuzzContext'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
 
-const CultPuzz = ({ navigation }) => {
+const CultPuzz = () => {
   const {
     score,
     timerLimit,
@@ -28,6 +28,8 @@ const CultPuzz = ({ navigation }) => {
     setIsFinished,
     shuffledEndPos,
     narrator,
+    goBack,
+    showScoreCard,
   } = useCultPuzzContext()
   const { isLoading, isError } = useAppContext()
   const { positionAbsolute, centered } = globalStyles
@@ -46,7 +48,8 @@ const CultPuzz = ({ navigation }) => {
       }
 
       if (timerLimit <= 0) {
-        navigation.goBack()
+        // navigation.goBack()
+        showScoreCard()
       }
     }, 1000)
     return () => {
@@ -57,12 +60,13 @@ const CultPuzz = ({ navigation }) => {
   // handleTriviaBtn
   const handleTriviaBtn = async () => {
     await saveAct(4)
-    navigation.goBack()
+    // navigation.goBack()
+    showScoreCard()
   }
 
   const exitGame = () => {
     score.value = 0
-    navigation.goBack()
+    goBack()
   }
 
   if (isLoading) {

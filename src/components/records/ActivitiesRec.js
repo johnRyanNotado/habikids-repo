@@ -8,6 +8,7 @@ import {
   useAppContext,
   useChildSectionContext,
 } from '../../screens/context-api/ContextAPI'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const ActivitiesRec = (props) => {
   const { selectedTopic, setSelectedTopic } = props
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderWidth: 1,
     borderColor: COLORS.primary,
-    width: '100%',
+    width: WINDOW_WIDTH * 0.45,
     height: '90%',
     borderRadius: 10,
     paddingHorizontal: 15,

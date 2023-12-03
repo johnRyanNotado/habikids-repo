@@ -16,7 +16,7 @@ import BackBtn from '../../../components/BackBtn'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 import { useCultPuzzContext } from './CultPuzzContext'
 
-const CultPuzzCA = ({ navigation }) => {
+const CultPuzzCA = () => {
   const {
     score,
     setTimerLimit,
@@ -26,6 +26,9 @@ const CultPuzzCA = ({ navigation }) => {
     narrator,
     instruction,
     instructionDuration,
+    goBack,
+    setComp,
+    CultPuzz,
   } = useCultPuzzContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
@@ -46,14 +49,11 @@ const CultPuzzCA = ({ navigation }) => {
     }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('CultPuzz') // then navigate
+      // navigation.navigate('CultPuzz') // then navigate
+      setComp(<CultPuzz />)
       setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
     }, instructionDuration + 500)
-  }
-
-  const handleCancelBtn = () => {
-    navigation.goBack()
   }
 
   return (
@@ -64,14 +64,12 @@ const CultPuzzCA = ({ navigation }) => {
             <View
               style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
             >
-              <ChildSectNavBar
-                backBtn={<BackBtn onPress={handleCancelBtn} />}
-              />
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
             </View>
             <ActivityCard
               score={score.value}
               handleStartBtn={handleStartBtn}
-              handleCancelBtn={handleCancelBtn}
+              handleCancelBtn={goBack}
             />
           </>
         ) : content === INSTRUCTIONS ? (

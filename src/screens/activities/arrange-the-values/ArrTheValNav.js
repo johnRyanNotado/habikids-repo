@@ -23,6 +23,7 @@ const ArrTheValNav = ({ navigation }) => {
   const [displayed, setDisplayed] = useState(SCENE)
   const timer = useSharedValue(INIT_TIMER)
   const [item, setItem] = useState(1)
+  const [comp, setComp] = useState(<ArrTheValCA />)
 
   // get the related data for narration
   let instruction
@@ -53,9 +54,19 @@ const ArrTheValNav = ({ navigation }) => {
   }, [])
 
   console.log('Called: ArrTheValNav')
+
+  const handleCancelBtn = () => {
+    navigation.goBack()
+  }
+
+  const goBackBtn = () => {
+    navigation.goBack()
+  }
   return (
     <ArrTheValContext.Provider
       value={{
+        comp,
+        setComp,
         score,
         setScore,
         item,
@@ -73,9 +84,14 @@ const ArrTheValNav = ({ navigation }) => {
         instructionDuration,
         narrator,
         data,
+        handleCancelBtn,
+        ArrTheVal,
+        ArrTheValCA,
+        goBackBtn,
       }}
     >
-      <ArrTheValStack.Navigator initialRouteName="ArrTheValCA">
+      {comp ? comp : null}
+      {/* <ArrTheValStack.Navigator initialRouteName="ArrTheValCA">
         <ArrTheValStack.Screen
           name="ArrTheValCA"
           component={ArrTheValCA}
@@ -86,7 +102,7 @@ const ArrTheValNav = ({ navigation }) => {
           component={ArrTheVal}
           options={MAIN_HEADER_OPT}
         />
-      </ArrTheValStack.Navigator>
+      </ArrTheValStack.Navigator> */}
     </ArrTheValContext.Provider>
   )
 }

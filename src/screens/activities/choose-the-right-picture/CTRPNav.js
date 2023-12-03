@@ -16,13 +16,14 @@ const ITEM_AMOUNT = 3
 const SCENE = 'scene'
 const OPTIONS = 'options'
 
-const CTRPNav = () => {
+const CTRPNav = ({ navigation }) => {
   const { content, selectedYear, actID } = useChildSectionContext()
   const [score, setScore] = useState(0)
   const [displayed, setDisplayed] = useState(SCENE)
   const timer = useSharedValue(INIT_TIMER)
   const [item, setItem] = useState(1)
   const [gameData, setGameData] = useState(null)
+  const [comp, setComp] = useState(<CTRPCA />)
 
   // get the related data for narration (initialize it to values, change it when content changes)
   const [instruction, setInstruction] = useState(db_CTRP_Values.instruction)
@@ -30,6 +31,10 @@ const CTRPNav = () => {
     db_CTRP_Values.instructionDuration * 1000
   )
   const [narrator, setNarrator] = useState(db_CTRP_Values.narrator)
+
+  const goBack = () => {
+    navigation.goBack()
+  }
 
   useEffect(() => {
     let wholeGameData =
@@ -68,9 +73,15 @@ const CTRPNav = () => {
         instruction,
         instructionDuration,
         narrator,
+        CTRP,
+        CTRPCA,
+        comp,
+        setComp,
+        goBack,
       }}
     >
-      <CTRPStack.Navigator>
+      {comp ? comp : null}
+      {/* <CTRPStack.Navigator>
         <CTRPStack.Screen
           name="CTRPCA"
           component={CTRPCA}
@@ -81,7 +92,7 @@ const CTRPNav = () => {
           component={CTRP}
           options={MAIN_HEADER_OPT}
         />
-      </CTRPStack.Navigator>
+      </CTRPStack.Navigator> */}
     </CTRPContext.Provider>
   )
 }

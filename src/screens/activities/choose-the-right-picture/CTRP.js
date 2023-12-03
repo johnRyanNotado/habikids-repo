@@ -17,7 +17,7 @@ import ActivityNavBar from '../../../components/activities/ActivityNavBar'
 import { useCTRPContext } from './CTRPContext'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
-const CTRP = ({ navigation }) => {
+const CTRP = () => {
   const {
     item,
     timer,
@@ -27,11 +27,18 @@ const CTRP = ({ navigation }) => {
     SCENE,
     narrator,
     INIT_TIMER,
+    goBack,
+    setComp,
+    CTRPCA,
   } = useCTRPContext()
   const { isLoading, isError } = useAppContext()
   const { isGamePaused } = useChildSectionContext()
   const { mainSectWrapper } = styles
   const { container, centered, positionAbsolute } = globalStyles
+
+  const showScoreCard = () => {
+    setComp(<CTRPCA />)
+  }
 
   // Displays options/scene after timer
   useEffect(() => {
@@ -70,7 +77,7 @@ const CTRP = ({ navigation }) => {
   const getComponent = () => {
     switch (displayed) {
       case OPTIONS:
-        return <Options goBack={goBack} />
+        return <Options goBack={showScoreCard} />
       case SCENE:
         return (
           <>
@@ -81,10 +88,6 @@ const CTRP = ({ navigation }) => {
       default:
         return <Text>Something went wrong!</Text>
     }
-  }
-
-  const goBack = () => {
-    navigation.goBack()
   }
 
   if (isLoading) {

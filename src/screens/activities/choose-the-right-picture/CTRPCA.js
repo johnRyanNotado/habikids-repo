@@ -16,7 +16,7 @@ import ProfileCard from '../../../components/home-child/ProfileCard'
 import { useCTRPContext } from './CTRPContext'
 import { useChildSectionContext } from '../../context-api/ContextAPI'
 
-const CTRPCA = ({ navigation }) => {
+const CTRPCA = () => {
   const {
     score,
     setScore,
@@ -28,14 +28,14 @@ const CTRPCA = ({ navigation }) => {
     instructionDuration,
     timer,
     INIT_TIMER,
+    comp,
+    setComp,
+    CTRP,
+    goBack,
   } = useCTRPContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD)
-
-  const handleCancelBtn = () => {
-    navigation.goBack()
-  }
 
   const handleStartBtn = () => {
     setScore(0)
@@ -50,7 +50,8 @@ const CTRPCA = ({ navigation }) => {
     }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('CTRP') // then navigate
+      // navigation.navigate('CTRP') // then navigate
+      setComp(<CTRP />)
       setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
     }, instructionDuration + 500)
@@ -64,14 +65,12 @@ const CTRPCA = ({ navigation }) => {
             <View
               style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
             >
-              <ChildSectNavBar
-                backBtn={<BackBtn onPress={handleCancelBtn} />}
-              />
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
             </View>
             <ActivityCard
               score={score}
               handleStartBtn={handleStartBtn}
-              handleCancelBtn={handleCancelBtn}
+              handleCancelBtn={goBack}
             />
           </>
         ) : content === INSTRUCTIONS ? (

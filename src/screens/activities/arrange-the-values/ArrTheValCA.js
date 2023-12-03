@@ -20,7 +20,7 @@ import {
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
 
-const ArrTheValCA = ({ navigation }) => {
+const ArrTheValCA = () => {
   const {
     score,
     setScore,
@@ -30,15 +30,14 @@ const ArrTheValCA = ({ navigation }) => {
     setItem,
     timer,
     INIT_TIMER,
+    setComp,
+    handleCancelBtn,
+    ArrTheVal,
   } = useArrTheValContext()
   const { isLoading, isError } = useAppContext()
   const { isProfileClicked } = useChildSectionContext()
   const { container, centered, positionAbsolute } = globalStyles
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
-
-  const handleCancelBtn = () => {
-    navigation.goBack()
-  }
 
   const handleStartBtn = () => {
     setScore(0)
@@ -52,7 +51,7 @@ const ArrTheValCA = ({ navigation }) => {
     }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('ArrTheVal') // then navigate
+      setComp(<ArrTheVal />) // then navigate
       setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
     }, instructionDuration + 500)

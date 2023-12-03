@@ -19,8 +19,9 @@ import {
 import ProfileCard from '../../../components/home-child/ProfileCard'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
+import DressUp from './DressUp'
 
-const DressUpCA = ({ navigation }) => {
+const DressUpCA = () => {
   const { centered, container, positionAbsolute } = globalStyles
   const {
     gameData,
@@ -40,6 +41,9 @@ const DressUpCA = ({ navigation }) => {
     setAccessSelection,
     setNumOfClothes,
     setIsFinished,
+    goBack,
+    setComp,
+    DressUp,
   } = useDressUpContext()
   const { isProfileClicked } = useChildSectionContext()
   const { isLoading, isError } = useAppContext()
@@ -67,14 +71,11 @@ const DressUpCA = ({ navigation }) => {
     }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('DressUp') // then navigate
+      // navigation.navigate('DressUp') // then navigate
+      setComp(<DressUp />)
       setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
     }, instructionDuration + 500)
-  }
-
-  const handleCancelBtn = () => {
-    navigation.goBack()
   }
 
   if (isLoading) {
@@ -93,15 +94,13 @@ const DressUpCA = ({ navigation }) => {
             <View
               style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
             >
-              <ChildSectNavBar
-                backBtn={<BackBtn onPress={handleCancelBtn} />}
-              />
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
             </View>
 
             <ActivityCard
               score={score.value}
               handleStartBtn={handleStartBtn}
-              handleCancelBtn={handleCancelBtn}
+              handleCancelBtn={goBack}
             />
           </>
         ) : content === INSTRUCTIONS ? (

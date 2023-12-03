@@ -181,7 +181,7 @@ const Records = ({ navigation }) => {
     <ImageBackground source={getImg.bg.records.link} style={container}>
       <View style={(container, centered)}>
         <View style={[positionAbsolute, dropDownWrapper]}>{getDropDown()}</View>
-        <View style={[positionAbsolute, { zIndex: 10 }]}>
+        <View style={[positionAbsolute, { zIndex: 10, height: 80 }]}>
           <ChildSectNavBar backBtn={<BackBtn onPress={handleUndoBtn} />} />
         </View>
         <View style={[centered, recordsWrapperSection]}>

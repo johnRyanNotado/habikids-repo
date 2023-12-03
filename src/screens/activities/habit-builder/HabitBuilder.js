@@ -27,6 +27,8 @@ const HabitBuilder = ({ navigation }) => {
     timer,
     isNarrating,
     narrator,
+    showScoreCard,
+    goBack,
   } = useHabitBuilderContext()
   const { isGamePaused, saveAct } = useChildSectionContext()
   const [component, setComponent] = useState(null)
@@ -48,7 +50,8 @@ const HabitBuilder = ({ navigation }) => {
       if (!(item <= gameData.item.length - 1)) {
         goBackDelay = setTimeout(async () => {
           await saveAct(score.value)
-          navigation.goBack()
+          // navigation.goBack()
+          showScoreCard()
         }, 1000)
       } else {
         setIsNarrating(true)
@@ -123,7 +126,7 @@ const HabitBuilder = ({ navigation }) => {
 
   const exitGame = () => {
     score.value = 0
-    navigation.goBack()
+    goBack()
   }
 
   if (isLoading) {

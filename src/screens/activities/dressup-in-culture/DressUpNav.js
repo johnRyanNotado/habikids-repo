@@ -11,7 +11,7 @@ import COLORS from '../../../constants/colors'
 
 const DressUpStack = createStackNavigator()
 
-const DressUpNav = () => {
+const DressUpNav = ({ navigation }) => {
   const { selectedYear, actID } = useChildSectionContext()
   const score = useSharedValue(0)
   const [isFinished, setIsFinished] = useState(false)
@@ -31,6 +31,13 @@ const DressUpNav = () => {
   const [instruction, setInstruction] = useState('')
   const [instructionDuration, setInstructionDuration] = useState(0)
   const [narrator, setNarrator] = useState('uni')
+  const [comp, setComp] = useState(<DressUpCA />)
+  const goBack = () => {
+    navigation.goBack()
+  }
+  const showScoreCard = () => {
+    setComp(<DressUpCA />)
+  }
 
   useEffect(() => {
     db_DressUp.grade[selectedYear - 1].map((item) => {
@@ -181,9 +188,16 @@ const DressUpNav = () => {
         setAccessSelection,
         numOfClothes,
         setNumOfClothes,
+        comp,
+        setComp,
+        showScoreCard,
+        goBack,
+        DressUp,
+        DressUpCA,
       }}
     >
-      <DressUpStack.Navigator>
+      {comp ? comp : null}
+      {/* <DressUpStack.Navigator>
         <DressUpStack.Screen
           name="DressUpCA"
           component={DressUpCA}
@@ -194,7 +208,7 @@ const DressUpNav = () => {
           component={DressUp}
           options={MAIN_HEADER_OPT}
         />
-      </DressUpStack.Navigator>
+      </DressUpStack.Navigator> */}
     </DressUpContext.Provider>
   )
 }

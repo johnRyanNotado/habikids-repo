@@ -20,7 +20,7 @@ import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
 import ProfileCard from '../../../components/home-child/ProfileCard'
 
-const HabitBuilderCA = ({ navigation }) => {
+const HabitBuilderCA = () => {
   const { container, centered, positionAbsolute } = globalStyles
   const {
     score,
@@ -31,14 +31,13 @@ const HabitBuilderCA = ({ navigation }) => {
     setItem,
     setIsNarrating,
     itemScore,
+    goBack,
+    setComp,
+    HabitBuilder,
   } = useHabitBuilderContext()
   const { isProfileClicked } = useChildSectionContext()
   const { isLoading, isError } = useAppContext()
   const [content, setContent] = useState(ACTIVITY_CARD) // first show the activity card
-
-  const handleCancelBtn = () => {
-    navigation.goBack()
-  }
 
   const handleStartBtn = () => {
     score.value = 0
@@ -54,7 +53,9 @@ const HabitBuilderCA = ({ navigation }) => {
     }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('HabitBuilder') // then navigate
+      // navigation.navigate('HabitBuilder') // then navigate
+
+      setComp(<HabitBuilder />)
       setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
     }, instructionDuration + 500)
@@ -76,14 +77,12 @@ const HabitBuilderCA = ({ navigation }) => {
             <View
               style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
             >
-              <ChildSectNavBar
-                backBtn={<BackBtn onPress={handleCancelBtn} />}
-              />
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
             </View>
             <ActivityCard
               score={score.value}
               handleStartBtn={handleStartBtn}
-              handleCancelBtn={handleCancelBtn}
+              handleCancelBtn={goBack}
             />
           </>
         ) : content === INSTRUCTIONS ? (

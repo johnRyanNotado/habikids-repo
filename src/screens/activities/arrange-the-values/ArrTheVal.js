@@ -28,6 +28,9 @@ const ArrTheVal = ({ navigation }) => {
     SCENE,
     narrator,
     INIT_TIMER,
+    goBackBtn,
+    setComp,
+    ArrTheValCA,
   } = useArrTheValContext()
   const { isLoading, isError } = useAppContext()
   const { isGamePaused } = useChildSectionContext()
@@ -72,7 +75,7 @@ const ArrTheVal = ({ navigation }) => {
   const getComponent = () => {
     switch (displayed) {
       case OPTIONS:
-        return <Options goBack={goBack} />
+        return <Options goBack={showScoreCard} />
       case SCENE:
         return (
           <>
@@ -85,8 +88,12 @@ const ArrTheVal = ({ navigation }) => {
     }
   }
 
+  const showScoreCard = () => {
+    setComp(<ArrTheValCA />)
+  }
+
   const goBack = () => {
-    navigation.goBack()
+    goBackBtn()
   }
 
   if (isLoading) {

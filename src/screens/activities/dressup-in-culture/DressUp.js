@@ -17,7 +17,7 @@ import Character from '../../../components/activities/dress-up/Character'
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
 
-const DressUp = ({ navigation }) => {
+const DressUp = () => {
   const { centered, container, positionAbsolute } = globalStyles
   const { selectionWrapper, imgWrapper } = styles
   const {
@@ -30,19 +30,21 @@ const DressUp = ({ navigation }) => {
     isFinished,
     narrator,
     gameData,
+    goBack,
+    showScoreCard,
   } = useDressUpContext()
   const { isLoading, isError } = useAppContext()
   const { isGamePaused, saveAct } = useChildSectionContext()
 
   const exitGame = () => {
     score.value = 0
-    navigation.goBack()
+    goBack()
   }
 
   // handleTriviaBtn
   const handleFinishBtn = async () => {
     await saveAct(4)
-    navigation.goBack()
+    showScoreCard()
   }
 
   if (isLoading) {
