@@ -33,8 +33,15 @@ const BASKET_DIMENSION = {
 }
 
 const KindCatch = ({ navigation }) => {
-  const { score, kindnessList, timer, setTimer, badList } =
-    useKindCatchContext()
+  const {
+    score,
+    kindnessList,
+    timer,
+    setTimer,
+    badList,
+    goBack,
+    showScoreCard,
+  } = useKindCatchContext()
   const { isGamePaused, saveAct } = useChildSectionContext()
 
   const { isLoading, isError } = useAppContext()
@@ -58,7 +65,8 @@ const KindCatch = ({ navigation }) => {
           await saveAct(score.value)
         }, 500)
         clearInterval(timerInterval)
-        navigation.goBack()
+        // navigation.goBack()
+        showScoreCard()
       }
     }, 1000)
 
@@ -126,7 +134,7 @@ const KindCatch = ({ navigation }) => {
   const handleExit = () => {
     score.value = 0
     setTimer(0)
-    navigation.goBack()
+    goBack()
   }
 
   // if (isLoading) {

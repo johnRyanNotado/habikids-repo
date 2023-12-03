@@ -21,7 +21,7 @@ import {
 import LoadingScreen from '../../LoadingScreen'
 import ErrorScreen from '../../ErrorScreen'
 
-const KindCatchCA = ({ navigation }) => {
+const KindCatchCA = () => {
   const {
     score,
     timer,
@@ -30,6 +30,9 @@ const KindCatchCA = ({ navigation }) => {
     instructionDuration,
     TIMER_VALUE,
     setTimer,
+    setComp,
+    KindCatch,
+    goBack,
   } = useKindCatchContext()
   const { isProfileClicked, saveAct } = useChildSectionContext()
 
@@ -49,14 +52,11 @@ const KindCatchCA = ({ navigation }) => {
     }, instructionDuration)
 
     const startTimeout = setTimeout(() => {
-      navigation.navigate('KindCatch') // then navigate
+      // navigation.navigate('KindCatch') // then navigate
+      setComp(<KindCatch />)
       setContent(ACTIVITY_CARD) // set the content to activity card so that after the game finishes the card will be the one to be displayed
       clearTimeout(startTimeout)
     }, instructionDuration + 500)
-  }
-
-  const handleCancelBtn = () => {
-    navigation.goBack()
   }
 
   // if (isLoading) {
@@ -85,14 +85,12 @@ const KindCatchCA = ({ navigation }) => {
             <View
               style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
             >
-              <ChildSectNavBar
-                backBtn={<BackBtn onPress={handleCancelBtn} />}
-              />
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
             </View>
             <ActivityCard
               score={score.value}
               handleStartBtn={handleStartBtn}
-              handleCancelBtn={handleCancelBtn}
+              handleCancelBtn={goBack}
             />
           </>
         ) : content === INSTRUCTIONS ? (

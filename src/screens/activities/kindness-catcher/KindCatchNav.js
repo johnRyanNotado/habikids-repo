@@ -11,7 +11,7 @@ const KindCatchStack = createStackNavigator()
 
 const TIMER_VALUE = 31
 
-const KindCatchNav = () => {
+const KindCatchNav = ({ navigation }) => {
   const { selectedYear, actID } = useChildSectionContext()
   const [kindnessList, setKindnessList] = useState(null)
   const [badList, setBadList] = useState(null)
@@ -19,6 +19,13 @@ const KindCatchNav = () => {
   const [instructionDuration, setInstructionDuration] = useState(0)
   const [narrator, setNarrator] = useState('uni')
   const [timer, setTimer] = useState(TIMER_VALUE)
+  const [comp, setComp] = useState(<KindCatchCA />)
+  const goBack = () => {
+    navigation.goBack()
+  }
+  const showScoreCard = () => {
+    setComp(<KindCatchCA />)
+  }
 
   useEffect(() => {
     db_KindCatch.grade[selectedYear - 1].map((item) => {
@@ -48,9 +55,16 @@ const KindCatchNav = () => {
         instruction,
         instructionDuration,
         narrator,
+        comp,
+        setComp,
+        showScoreCard,
+        goBack,
+        KindCatch,
+        KindCatchCA,
       }}
     >
-      <KindCatchStack.Navigator>
+      {comp ? comp : null}
+      {/* <KindCatchStack.Navigator>
         <KindCatchStack.Screen
           name="KindCatchCA"
           component={KindCatchCA}
@@ -61,7 +75,7 @@ const KindCatchNav = () => {
           component={KindCatch}
           options={MAIN_HEADER_OPT}
         />
-      </KindCatchStack.Navigator>
+      </KindCatchStack.Navigator> */}
     </KindCatchContext.Provider>
   )
 }
