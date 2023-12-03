@@ -22,6 +22,7 @@ import {
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
 import { useChildSectionContext } from '../../../screens/context-api/ContextAPI'
 import { imgUrl } from '../../../constants/db_config'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const TAMA = 'TAMA'
 
@@ -104,10 +105,15 @@ const Choice = (props) => {
             </TapGestureHandler>
           </TouchableOpacity>
         </View>
-        <View style={[centered, { marginLeft: 20 }]}>
+        <View style={[centered, { marginLeft: WINDOW_WIDTH * 0.02 }]}>
           <Image
             source={{ uri: `${imgUrl}${choice.img}` }}
-            style={{ width: 180, height: 100 }}
+            style={{
+              width: 180,
+              height: 100,
+              width: WINDOW_WIDTH * 0.2,
+              height: WINDOW_WIDTH * 0.11,
+            }}
           />
         </View>
       </Animated.View>
@@ -120,6 +126,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 20,
+    marginHorizontal: WINDOW_WIDTH * 0.018,
   },
   choiceBox: {
     borderRadius: 10,
@@ -129,8 +136,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   choiceBtn: {
-    width: 40,
-    height: 40,
+    width: WINDOW_WIDTH * 0.038,
+    height: WINDOW_WIDTH * 0.038,
     borderWidth: 3,
     borderColor: COLORS.accent,
     borderRadius: 50,

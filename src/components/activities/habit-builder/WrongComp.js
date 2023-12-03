@@ -22,7 +22,7 @@ const WrongComp = (props) => {
   const translateX = useSharedValue(initialPosX)
   const translateY = useSharedValue(initialPosY)
   const scale = useSharedValue(1)
-  const z = useSharedValue(1)
+  const z = useSharedValue(2)
   const isEnabled = useSharedValue(1)
   const safeSpacing = width / 2
 
@@ -61,15 +61,17 @@ const WrongComp = (props) => {
           bgColor.value = COLORS.none
         }
         translateX.value = withTiming(event.absoluteX - width / 2, {
-          duration: 130,
+          // duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         translateY.value = withTiming(event.absoluteY - width / 2, {
-          duration: 130,
+          // duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         scale.value = 1.2
-        z.value = withDelay(500, withTiming(2))
+        z.value = withDelay(500, withTiming(3))
       }
     },
     onEnd: (event) => {
@@ -94,7 +96,7 @@ const WrongComp = (props) => {
 
         bgColor.value = withDelay(500, withTiming(COLORS.none))
       }
-      z.value = withDelay(500, withTiming(0))
+      z.value = withDelay(500, withTiming(2))
     },
   })
 

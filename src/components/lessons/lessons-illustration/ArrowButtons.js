@@ -19,6 +19,7 @@ import {
 } from '../../../constants/narrConstants'
 import { getSound } from '../../../utilities/getSound'
 import { Audio } from 'expo-av'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const ArrowButtons = (props) => {
   const {
@@ -132,11 +133,14 @@ const styles = StyleSheet.create({
     top: 'auto',
     right: 'auto',
     left: 'auto',
+    zIndex: 10,
   },
   arrBtnStyle: {
     height: 50,
     width: 50,
-    borderRadius: 24,
+    height: WINDOW_WIDTH * 0.06,
+    width: WINDOW_WIDTH * 0.06,
+    borderRadius: 100,
     borderWidth: 3,
     backgroundColor: COLORS.blueFifth,
     borderColor: COLORS.grayPrimary,
@@ -162,6 +166,7 @@ const styles = StyleSheet.create({
   checkBtnWrapper: {
     position: 'absolute',
     right: 200,
+    right: WINDOW_WIDTH * 0.2,
     left: 'auto',
     top: 'auto',
     bottom: 15,
@@ -170,6 +175,8 @@ const styles = StyleSheet.create({
   checkBtnBox: {
     width: 90,
     height: 60,
+    width: WINDOW_WIDTH * 0.12,
+    height: WINDOW_WIDTH * 0.08,
     borderWidth: 3,
     borderColor: COLORS.white,
     borderRadius: 10,

@@ -70,18 +70,22 @@ const ArrTheValCA = () => {
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>
-            <View
-              style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
-            >
-              <ChildSectNavBar
-                backBtn={<BackBtn onPress={handleCancelBtn} />}
-              />
-            </View>
             <ActivityCard
               score={score}
               handleStartBtn={handleStartBtn}
               handleCancelBtn={handleCancelBtn}
             />
+            <View
+              style={[
+                positionAbsolute,
+                centered,
+                { zIndex: 15, height: '20%' },
+              ]}
+            >
+              <ChildSectNavBar
+                backBtn={<BackBtn onPress={handleCancelBtn} />}
+              />
+            </View>
           </>
         ) : content === INSTRUCTIONS ? (
           <ActivityNarr narrator={narrator} instruction={instruction} />

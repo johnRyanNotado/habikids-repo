@@ -11,7 +11,7 @@ const HabitBuilderComp = (props) => {
 
   return (
     <Animated.View
-      style={[container, { zIndex: -1 }]}
+      style={[container, { zIndex: 1 }]}
       entering={SlideInRight.duration(500)}
       exiting={SlideOutLeft.duration(500)}
     >

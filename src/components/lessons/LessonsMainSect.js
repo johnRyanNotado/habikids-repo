@@ -43,19 +43,19 @@ const LessonsMainSect = () => {
         return null
       case VALUES:
         return (
-          <ScrollView style={[container, positionAbsolute]}>
+          <ScrollView style={[container, positionAbsolute, { zIndex: 5 }]}>
             <RenderLessons data={lessonsData.LESSONS_VALUES} />
           </ScrollView>
         )
       case TRADITIONS:
         return (
-          <ScrollView style={[container, positionAbsolute]}>
+          <ScrollView style={[container, positionAbsolute, { zIndex: 5 }]}>
             <RenderLessons data={lessonsData.LESSONS_TRADITIONS} />
           </ScrollView>
         )
       case GOOD_HABITS:
         return (
-          <ScrollView style={[container, positionAbsolute]}>
+          <ScrollView style={[container, positionAbsolute, { zIndex: 5 }]}>
             <RenderLessons data={lessonsData.LESSONS_GOODHABITS} />
           </ScrollView>
         )
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     height: '100%',
     width: '100%',
+    zIndex: 2,
   },
   contentWrapper: {
     height: '80%',

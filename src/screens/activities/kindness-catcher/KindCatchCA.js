@@ -70,28 +70,32 @@ const KindCatchCA = () => {
   return (
     <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       {isLoading ? (
-        <View style={[positionAbsolute, { zIndex: 10 }]}>
+        <View style={[positionAbsolute, { zIndex: 101 }]}>
           <LoadingScreen />
         </View>
       ) : null}
       {isError ? (
-        <View style={[positionAbsolute, { zIndex: 10 }]}>
+        <View style={[positionAbsolute, { zIndex: 101 }]}>
           <ErrorScreen />
         </View>
       ) : null}
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>
-            <View
-              style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
-            >
-              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
-            </View>
             <ActivityCard
               score={score.value}
               handleStartBtn={handleStartBtn}
               handleCancelBtn={goBack}
             />
+            <View
+              style={[
+                positionAbsolute,
+                centered,
+                { zIndex: 15, height: '20%' },
+              ]}
+            >
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
+            </View>
           </>
         ) : content === INSTRUCTIONS ? (
           <ActivityNarr narrator={narrator} instruction={instruction} />

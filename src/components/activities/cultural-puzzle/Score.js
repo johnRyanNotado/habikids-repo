@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     top: 'auto',
     bottom: 20,
     left: 20,
+    zIndex: 2,
     flexDirection: 'row',
   },
   scoreTxt: {

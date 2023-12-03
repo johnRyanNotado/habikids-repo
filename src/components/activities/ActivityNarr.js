@@ -9,6 +9,7 @@ import {
   EXIT_DURATION,
 } from '../../constants/narrConstants'
 import Narrator from './Narrator'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const ActivityNarr = (props) => {
   const { instruction, narrator } = props
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
   },
   narrTxt: {
     fontSize: 30,
+    fontSize: WINDOW_WIDTH * 0.03,
     color: COLORS.accent,
     fontFamily: 'QuiapoRegular',
   },

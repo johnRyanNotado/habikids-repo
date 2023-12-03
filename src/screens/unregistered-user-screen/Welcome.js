@@ -178,6 +178,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 50,
     backgroundColor: COLORS.greenSecond,
+    zIndex: 1,
   },
   btnShadow: {
     width: 200,
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
     left: 'auto',
     right: 5,
     top: 5,
-    zIndex: -1,
+    zIndex: 0,
   },
 })
 

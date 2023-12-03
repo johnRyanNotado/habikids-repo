@@ -64,6 +64,8 @@ const Lesson = ({ navigation }) => {
     activity,
     setActivity,
     FALSE_AGAIN,
+    showLessonCard,
+    goBack,
   } = useSpecificLessonContext()
   const [response, setResponse] = useState(null)
 
@@ -84,7 +86,13 @@ const Lesson = ({ navigation }) => {
           setNarrator(
             <Narrator
               narrator={lessonData.item[item - 1].data[scriptNum].narrator}
-              custImgStyle={{ height: 200, width: 200 }}
+              custImgStyle={{
+                height: 200,
+                width: 200,
+                height: WINDOW_WIDTH * 0.22,
+                width: WINDOW_WIDTH * 0.22,
+                zIndex: 1,
+              }}
               custDuration={1000}
               custDelay={1000}
               isBackgroundShown={true}
@@ -250,7 +258,8 @@ const Lesson = ({ navigation }) => {
 
   const exitLesson = async () => {
     await playThisSound(getSound.effects.closeBook.link)
-    navigation.goBack()
+    // navigation.goBack()
+    showLessonCard()
   }
 
   const handleLeftBtn = async () => {
@@ -340,8 +349,7 @@ const Lesson = ({ navigation }) => {
     if (response) {
       if (response.id === 101 || response.id === 102) {
         // go back afterwards
-        navigation.goBack()
-        navigation.goBack()
+        goBack()
       } else if (response.id === 400) {
         setIsError(true)
       } else {
@@ -374,7 +382,7 @@ const Lesson = ({ navigation }) => {
             {
               width: WINDOW_WIDTH,
               height: WINDOW_HEIGHT,
-              zIndex: -1,
+              zIndex: 1,
               backgroundColor:
                 lessonData.item[item - 1].type !== 'activity'
                   ? COLORS.white
@@ -424,6 +432,7 @@ const styles = StyleSheet.create({
   navBarWrapper: {
     bottom: 'auto',
     top: 10,
+    zIndex: 20,
   },
 })
 

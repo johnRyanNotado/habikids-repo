@@ -9,6 +9,7 @@ import Animated, {
   ZoomIn,
   useSharedValue,
 } from 'react-native-reanimated'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const Instruction = (props) => {
   const {
@@ -61,7 +62,7 @@ const Instruction = (props) => {
           style={[
             instructionWrapper,
             {
-              width: width,
+              width: (WINDOW_WIDTH * 0.75 * width) / 650,
             },
           ]}
         >
@@ -83,6 +84,7 @@ const styles = StyleSheet.create({
   },
   instructionTxt: {
     fontSize: 24,
+    fontSize: WINDOW_WIDTH * 0.025,
     fontFamily: 'QuiapoRegular',
     textAlign: 'center',
   },

@@ -21,7 +21,7 @@ const PausedCard = (props) => {
     setIsGamePaused(false)
   }
   return (
-    <View style={[positionAbsolute, centered, { zIndex: 10 }]}>
+    <View style={[positionAbsolute, centered, { zIndex: 100 }]}>
       <Animated.View
         style={[positionAbsolute, profileCardWrapperBg]}
         exiting={FadeOut.duration(500)}

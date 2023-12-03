@@ -4,6 +4,7 @@ import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import { AntDesign } from '@expo/vector-icons'
 import { useDressUpContext } from '../../../screens/activities/dressup-in-culture/DressUpContext'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const SelectionNavbar = (props) => {
   const {
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
   finishBtnStyle: {
     backgroundColor: COLORS.secondary,
     width: 120,
+    width: WINDOW_WIDTH * 0.034 * 4,
     paddingVertical: 10,
     borderRadius: 30,
     borderWidth: 3,
@@ -100,6 +102,7 @@ const styles = StyleSheet.create({
   finishBtnTxt: {
     color: COLORS.white,
     fontSize: 20,
+    fontSize: WINDOW_WIDTH * 0.023,
     fontFamily: 'Quiapo',
     fontWeight: '400',
   },
@@ -111,7 +114,12 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
   },
-  labelStyle: { color: COLORS.accent, fontFamily: 'Quiapo', fontSize: 35 },
+  labelStyle: {
+    color: COLORS.accent,
+    fontFamily: 'Quiapo',
+    fontSize: 35,
+    fontSize: WINDOW_WIDTH * 0.034,
+  },
 })
 
 export default SelectionNavbar

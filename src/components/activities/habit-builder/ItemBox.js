@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     top: 20,
     left: 20,
     flexDirection: 'row',
+    zIndex: 5,
   },
   itemTxt: {
     fontSize: 26,

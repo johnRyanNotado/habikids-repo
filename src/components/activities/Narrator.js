@@ -9,6 +9,7 @@ import Animated, { SlideInRight, SlideOutRight } from 'react-native-reanimated'
 import { globalStyles } from '../../styles/GlobalStyles'
 import { getAni } from '../../utilities/getAni'
 import COLORS from '../../constants/colors'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const Narrator = (props) => {
   const {
@@ -61,10 +62,11 @@ const styles = StyleSheet.create({
     left: 'auto',
     right: 0,
     bottom: 0,
+    zIndex: 5,
   },
   narrStyle: {
-    height: 300,
-    width: 300,
+    height: WINDOW_WIDTH * 0.33,
+    width: WINDOW_WIDTH * 0.33,
   },
 })
 

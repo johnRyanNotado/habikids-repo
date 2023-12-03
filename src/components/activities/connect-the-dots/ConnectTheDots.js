@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, ScrollView } from 'react-native'
+import { View, ScrollView, FlatList, Text } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 import Dot from './Dot'
@@ -78,16 +78,24 @@ const ConnectTheDots = (props) => {
         {
           width: WINDOW_WIDTH,
           height: WINDOW_HEIGHT,
+          width: '100%',
+          zIndex: 20,
+          position: 'relative',
         },
       ]}
     >
-      <ScrollView>
+      <ScrollView
+        style={{
+          zIndex: 10,
+        }}
+      >
         {/* the images/values */}
         {initPos && endPos
           ? data.firstColumn.map((item, index) => {
+              console.log('Index:  ', index)
               return (
                 <Choice
-                  key={index}
+                  // key={index}
                   initialPosX={initPos[index].x}
                   initialPosY={initPos[index].y}
                   label={data.firstColumn[index].value}
@@ -95,9 +103,19 @@ const ConnectTheDots = (props) => {
               )
             })
           : null}
-
+        {/* <FlatList
+          data={data.firstColumn}
+          renderItem={({ item, index }) => (
+            <Choice
+              key={index}
+              initialPosX={initPos[index].x}
+              initialPosY={initPos[index].y}
+              label={data.firstColumn[index].value}
+            />
+          )}
+        /> */}
         {/* the dot to be dragged */}
-        {initPos && endPos && shuffledEndPos
+        {/* {initPos && endPos && shuffledEndPos
           ? data.firstColumn.map((item, index) => {
               return (
                 <Dot
@@ -112,9 +130,9 @@ const ConnectTheDots = (props) => {
                 />
               )
             })
-          : null}
+          : null} */}
 
-        {initPos && endPos
+        {/* {initPos && endPos
           ? data.firstColumn.map((item, index) => {
               return (
                 <Spot key={index} x={initPos[index].x} y={initPos[index].y} />
@@ -129,8 +147,8 @@ const ConnectTheDots = (props) => {
                 <Spot key={index} x={endPos[index].x} y={endPos[index].y} />
               )
             })
-          : null}
-
+          : null} */}
+        {/* 
         {initPos && endPos && shuffledEndPos
           ? data.firstColumn.map((item, index) => {
               return (
@@ -143,7 +161,7 @@ const ConnectTheDots = (props) => {
                 />
               )
             })
-          : null}
+          : null} */}
       </ScrollView>
     </View>
   )

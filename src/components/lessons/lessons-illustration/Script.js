@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import { globalStyles } from '../../../styles/GlobalStyles'
 import COLORS from '../../../constants/colors'
 import Animated, { ZoomIn } from 'react-native-reanimated'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const Script = (props) => {
   const { positionAbsolute } = globalStyles
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
   },
   scriptTxt: {
     fontSize: 20,
+    fontSize: WINDOW_WIDTH * 0.023,
     fontFamily: 'QuiapoRegular',
     textAlign: 'center',
   },

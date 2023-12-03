@@ -53,6 +53,9 @@ const BadObj = (props) => {
       if (!isGamePaused) direction.value.y = 1
       interval = setInterval(() => {
         renderObj()
+        if (badnessComp === null) {
+          clearInterval(interval)
+        }
       }, DELTA)
     }
     return () => clearInterval(interval)
@@ -102,11 +105,13 @@ const BadObj = (props) => {
     nextPos = getNextPos(direction.value)
 
     targetPositionX.value = withTiming(nextPos.x, {
-      duration: DELTA,
+      // duration: DELTA,
+      duration: 0,
       easing: Easing.linear,
     })
     targetPositionY.value = withTiming(nextPos.y, {
-      duration: DELTA,
+      // duration: DELTA,
+      duration: 0,
       easing: Easing.linear,
     })
   }

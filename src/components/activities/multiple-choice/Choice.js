@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
   },
   choiceBox: {
     width: 370,
+    width: WINDOW_WIDTH * 0.38,
     borderRadius: 10,
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -128,13 +129,17 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   choiceBtn: {
-    width: 40,
-    height: 40,
+    width: WINDOW_WIDTH * 0.038,
+    height: WINDOW_WIDTH * 0.038,
     borderWidth: 3,
     borderColor: COLORS.accent,
     borderRadius: 50,
   },
-  choiceTxt: { fontSize: 24, fontFamily: 'QuiapoRegular', paddingRight: 15 },
+  choiceTxt: {
+    fontSize: WINDOW_WIDTH * 0.025,
+    fontFamily: 'QuiapoRegular',
+    paddingRight: 15,
+  },
 })
 
 export default Choice

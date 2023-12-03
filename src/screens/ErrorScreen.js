@@ -3,6 +3,10 @@ import { View, Text, StyleSheet } from 'react-native'
 import COLORS from '../constants/colors'
 import { globalStyles } from '../styles/GlobalStyles'
 import { MaterialIcons } from '@expo/vector-icons'
+import Narrator from '../components/activities/Narrator'
+import { WINDOW_WIDTH } from '../constants/windowConstants'
+
+const narrators = ['uni', 'juan', 'vio']
 const ErrorScreen = () => {
   const { errorBox, errorTxt, titleWrapper, messageWrapper } = styles
   const { container, centered } = globalStyles
@@ -19,6 +23,16 @@ const ErrorScreen = () => {
           </Text>
         </View>
       </View>
+      <Narrator
+        narrator={narrators[Math.floor(Math.random() * narrators.length)]}
+        custImgStyle={{
+          height: WINDOW_WIDTH * 0.22,
+          width: WINDOW_WIDTH * 0.22,
+        }}
+        custDuration={500}
+        custDelay={500}
+        isBackgroundShown={true}
+      />
     </View>
   )
 }

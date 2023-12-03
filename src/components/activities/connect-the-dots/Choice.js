@@ -9,7 +9,7 @@ const Choice = (props) => {
   const { initialPosX, initialPosY, label } = props
   const { wrapper, text } = styles
   const { centered } = globalStyles
-
+  console.log('Shit')
   return (
     <Animated.View
       style={[
@@ -31,7 +31,7 @@ const Choice = (props) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    position: 'absolute',
+    // position: 'absolute',
     backgroundColor: COLORS.whitePrimary,
     borderRadius: 20,
     zIndex: 20,

@@ -33,7 +33,8 @@ const KindCatchNav = ({ navigation }) => {
         setKindnessList(item.kindnessList)
         setBadList(item.badList)
         setInstruction(item.instruction)
-        setInstructionDuration(item.instructionDuration * 1000)
+        // setInstructionDuration(item.instructionDuration * 1000)
+        setInstructionDuration(20 * 1000)
         setNarrator(item.narrator)
       }
     })

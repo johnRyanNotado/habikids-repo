@@ -15,20 +15,29 @@ import { useSpecificLessonContext } from './LessonsContext'
 import LoadingScreen from '../LoadingScreen'
 import ErrorScreen from '../ErrorScreen'
 
-const LessonsCA = ({ navigation }) => {
+const LessonsCA = () => {
   const { isProfileClicked } = useChildSectionContext()
   const { isLoading, isError } = useAppContext()
-  const { setItem, setIsFinished, setScriptNum, title, lesNum } =
-    useSpecificLessonContext()
+  const {
+    setItem,
+    setIsFinished,
+    setScriptNum,
+    title,
+    lesNum,
+    setComp,
+    Lesson,
+    goBack,
+  } = useSpecificLessonContext()
   const { container, positionAbsolute, centered } = globalStyles
   const handleCancelBtn = () => {
-    navigation.goBack()
+    goBack()
   }
   const handleStartBtn = () => {
     setItem(1)
     setIsFinished(false)
     setScriptNum(0)
-    navigation.navigate('Lesson')
+    // navigation.navigate('Lesson')
+    setComp(<Lesson />)
   }
 
   if (isLoading) {

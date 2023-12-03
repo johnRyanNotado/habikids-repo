@@ -18,7 +18,7 @@ const FALSE_AGAIN = 'FALSE-AGAIN'
 
 const LessonsStack = createStackNavigator()
 
-const LessonsNav = () => {
+const LessonsNav = ({ navigation }) => {
   const { selectedYear, lesID, content } = useChildSectionContext()
   const [item, setItem] = useState(1)
   const [lessonData, setLessonData] = useState(null)
@@ -34,6 +34,13 @@ const LessonsNav = () => {
   const [selected, setSelected] = useState(null)
   const [activity, setActivity] = useState(null)
   const timer = useSharedValue(0)
+  const [comp, setComp] = useState(<LessonsCA />)
+  const goBack = () => {
+    navigation.goBack()
+  }
+  const showLessonCard = () => {
+    setComp(<LessonsCA />)
+  }
 
   useEffect(() => {
     let tempLessonDB =
@@ -85,9 +92,16 @@ const LessonsNav = () => {
         activity,
         setActivity,
         FALSE_AGAIN,
+        comp,
+        setComp,
+        showLessonCard,
+        goBack,
+        Lesson,
+        LessonsCA,
       }}
     >
-      <LessonsStack.Navigator>
+      {comp ? comp : null}
+      {/* <LessonsStack.Navigator>
         <LessonsStack.Screen
           name="LessonsCA"
           component={LessonsCA}
@@ -99,7 +113,7 @@ const LessonsNav = () => {
           component={Lesson}
           options={MAIN_HEADER_OPT}
         />
-      </LessonsStack.Navigator>
+      </LessonsStack.Navigator> */}
     </SpecificLessonContext.Provider>
   )
 }

@@ -26,7 +26,7 @@ const TRADITION_DIMENSION = {
 const GOOD_HABITS_DIMENSION = {
   h: 235,
   w: 150,
-  h: WINDOW_HEIGHT * 0.56,
+  h: WINDOW_HEIGHT * 0.6,
   w: WINDOW_HEIGHT * 0.38,
 }
 
@@ -56,6 +56,7 @@ const Buttons = () => {
         style={[
           {
             flexDirection: 'row',
+            zIndex: 1,
           },
         ]}
       >
@@ -134,14 +135,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 'auto',
     right: 'auto',
-    bottom: 40,
-    zIndex: -1,
+    bottom: WINDOW_HEIGHT * 0.1,
+    zIndex: 0,
   },
   btnShadow: {
     zIndex: -1,
     opacity: 0.2,
-    height: 80,
-    width: 400,
+    height: WINDOW_HEIGHT * 0.2,
+    width: WINDOW_WIDTH,
     transform: [{ scaleY: 0.7 }],
   },
 })

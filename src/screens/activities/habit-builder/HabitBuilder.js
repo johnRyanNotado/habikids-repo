@@ -140,11 +140,6 @@ const HabitBuilder = ({ navigation }) => {
   return (
     <ImageBackground source={getImg.bg.jeepInterior.link} style={container}>
       <View style={[container]}>
-        <View
-          style={[positionAbsolute, centered, { height: '20%', zIndex: 10 }]}
-        >
-          <ActivityNavBar />
-        </View>
         {component ? component : null}
         {item <= gameData.item.length - 1 ? (
           <ItemBox
@@ -155,6 +150,11 @@ const HabitBuilder = ({ navigation }) => {
 
         {isNarrating ? narratorComp : null}
         {isGamePaused ? <PausedCard exitGame={exitGame} /> : null}
+        <View
+          style={[positionAbsolute, centered, { height: '20%', zIndex: 50 }]}
+        >
+          <ActivityNavBar />
+        </View>
       </View>
     </ImageBackground>
   )

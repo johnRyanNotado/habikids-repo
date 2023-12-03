@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: PUZZLE_DIMENSIONS.w,
     height: PUZZLE_DIMENSIONS.h,
-    zIndex: -5,
+    zIndex: 0,
     borderColor: COLORS.accent,
     backgroundColor: COLORS.primaryTrans,
     borderWidth: 1,

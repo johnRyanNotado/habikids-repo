@@ -5,6 +5,7 @@ import Animated, { ZoomIn } from 'react-native-reanimated'
 import Choice from './Choice'
 import { useSpecificLessonContext } from '../../../screens/lessons/LessonsContext'
 import { FlatList, StyleSheet } from 'react-native'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const MultilplePicture = (props) => {
   const { choices } = props
@@ -27,7 +28,7 @@ const MultilplePicture = (props) => {
         container,
         centered,
         custContainer,
-        { alignItems: 'flex-start', paddingLeft: 100 },
+        { alignItems: 'flex-start', paddingLeft: WINDOW_WIDTH * 0.12 },
       ]}
       entering={ZoomIn}
     >
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
   custContainer: {
     width: '100%',
     paddingTop: 110,
+    paddingTop: WINDOW_WIDTH * 0.14,
   },
 })
 

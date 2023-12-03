@@ -74,16 +74,20 @@ const HabitBuilderCA = () => {
       <View style={[container, centered]}>
         {content === ACTIVITY_CARD ? (
           <>
-            <View
-              style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
-            >
-              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
-            </View>
             <ActivityCard
               score={score.value}
               handleStartBtn={handleStartBtn}
               handleCancelBtn={goBack}
             />
+            <View
+              style={[
+                positionAbsolute,
+                centered,
+                { zIndex: 20, height: '20%' },
+              ]}
+            >
+              <ChildSectNavBar backBtn={<BackBtn onPress={goBack} />} />
+            </View>
           </>
         ) : content === INSTRUCTIONS ? (
           <ActivityNarr narrator={narrator} instruction={instruction} />

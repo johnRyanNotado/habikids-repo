@@ -34,7 +34,7 @@ const PuzzlePiece = (props) => {
   const translateY = useSharedValue(initialPosY)
   const scale = useSharedValue(1)
   const rotate = useSharedValue(0)
-  const z = useSharedValue(0)
+  const z = useSharedValue(1)
   const isEnabled = useSharedValue(1)
 
   // Shuffling the cards
@@ -78,14 +78,14 @@ const PuzzlePiece = (props) => {
         translateX.value = withTiming(
           event.absoluteX - PUZZLE_DIMENSIONS.w / 2,
           {
-            duration: 130,
+            duration: 0,
             easing: Easing.elastic(2),
           }
         )
         translateY.value = withTiming(
           event.absoluteY - PUZZLE_DIMENSIONS.h / 2,
           {
-            duration: 130,
+            duration: 0,
             easing: Easing.elastic(2),
           }
         )
@@ -101,7 +101,7 @@ const PuzzlePiece = (props) => {
       translateX.value = withSpring(isCorrect ? initialPosX : endPos.x)
       translateY.value = withSpring(isCorrect ? initialPosY : endPos.y)
       scale.value = withSpring(isCorrect ? 1 : PIECE_SCALE)
-      z.value = withDelay(500, withTiming(0))
+      z.value = withDelay(500, withTiming(1))
 
       if (isCorrect) {
         isEnabled.value = 0
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   imgStyle: {
     width: PUZZLE_DIMENSIONS.w - 2,
     height: PUZZLE_DIMENSIONS.h - 2,
-    zIndex: -1,
+    zIndex: 1,
   },
 })
 export default PuzzlePiece

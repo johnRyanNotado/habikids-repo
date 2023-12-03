@@ -18,25 +18,29 @@ const RenderComponents = (props) => {
   let numOfComponents
 
   const centerX = WINDOW_WIDTH / 2
-  const COMP_WIDTH = 100
+  // const COMP_WIDTH = 100
+  const COMP_WIDTH = WINDOW_WIDTH * 0.12
+
   const centerPos = centerX - COMP_WIDTH / 2
   useEffect(() => {
     numOfComponents = corrData.length + wrongData.length
-    let tempInitPos = [{ id: 0, x: centerPos, y: WINDOW_HEIGHT - 130 }]
+    let tempInitPos = [
+      { id: 0, x: centerPos, y: WINDOW_HEIGHT - WINDOW_WIDTH * 0.13 },
+    ]
     let tempEndPos = []
-    const endPosY = WINDOW_HEIGHT / 2 - 150
-    const initPosY = WINDOW_HEIGHT - 130
+    const endPosY = WINDOW_HEIGHT / 2 - WINDOW_WIDTH * 0.13
+    const initPosY = WINDOW_HEIGHT - WINDOW_WIDTH * 0.13
 
     for (let i = 0; i < Math.floor(numOfComponents / 2); i++) {
       tempInitPos.push({
         id: i + 1,
-        x: centerPos + (i + 1) * 120,
+        x: centerPos + (i + 1) * WINDOW_WIDTH * 0.13,
         y: initPosY,
       })
 
       tempInitPos.push({
         id: i + 100,
-        x: centerPos - (i + 1) * 120,
+        x: centerPos - (i + 1) * WINDOW_WIDTH * 0.13,
         y: initPosY,
       })
     }
@@ -44,13 +48,13 @@ const RenderComponents = (props) => {
     for (let i = 0; i < Math.floor(corrData.length / 2); i++) {
       tempEndPos.push({
         id: i,
-        x: centerX - (i + 2) * 120,
+        x: centerX - (i + 2) * WINDOW_WIDTH * 0.13,
         y: endPosY,
       })
 
       tempEndPos.push({
         id: i,
-        x: centerX + (i + 1) * 120,
+        x: centerX + (i + 1) * WINDOW_WIDTH * 0.13,
         y: endPosY,
       })
     }
@@ -97,9 +101,8 @@ const RenderComponents = (props) => {
         style={[
           positionAbsolute,
           container,
-          { width: WINDOW_WIDTH, zIndex: -5 },
+          { width: WINDOW_WIDTH, zIndex: 1 },
         ]}
-        resizeMode="contain"
       />
 
       <Character char={char} />

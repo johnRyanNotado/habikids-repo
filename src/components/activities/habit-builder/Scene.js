@@ -10,7 +10,15 @@ const Scene = (props) => {
   const { sceneDesc, narrator } = props
   const { container, positionAbsolute } = globalStyles
   return (
-    <View style={[container, positionAbsolute]}>
+    <View
+      style={[
+        container,
+        positionAbsolute,
+        {
+          zIndex: 5,
+        },
+      ]}
+    >
       <Animated.View
         style={{
           backgroundColor: COLORS.whiteTrans,
@@ -30,7 +38,7 @@ const Scene = (props) => {
       >
         <Text
           style={{
-            fontSize: 24,
+            fontSize: WINDOW_WIDTH * 0.03,
             fontFamily: 'QuiapoRegular',
             textAlign: 'center',
           }}

@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primaryTrans,
     height: WINDOW_HEIGHT,
     width: WINDOW_WIDTH,
+    zIndex: 2,
   },
   triviaCard: {
     width: 600,

@@ -15,7 +15,7 @@ const Character = (props) => {
           left: WINDOW_WIDTH / 2 - (WINDOW_HEIGHT * 0.9) / 2,
           height: WINDOW_HEIGHT * 0.9,
           width: WINDOW_HEIGHT * 0.9,
-          zIndex: -4,
+          zIndex: 1,
         },
       ]}
       resizeMode="contain"

@@ -21,6 +21,9 @@ const Answer = (props) => {
           left: endPosX + VALUE_DIMENSION.w - 50,
           width: VALUE_DIMENSION.w + 100,
           height: VALUE_DIMENSION.h,
+          zIndex: 10,
+          top: 0,
+          left: 0,
         },
       ]}
       entering={BounceInRight.duration(1000).delay(2000)}

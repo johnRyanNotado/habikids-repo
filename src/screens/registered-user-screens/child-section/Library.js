@@ -79,7 +79,7 @@ const Library = ({ navigation }) => {
           handleBooksBtn={handleBooksBtn}
         />
         {isProfileClicked ? <ProfileCard /> : <></>}
-        <LibrariesSvg />
+        {/* <LibrariesSvg /> */}
       </View>
     </ImageBackground>
   )
