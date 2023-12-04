@@ -2,6 +2,8 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../constants/windowConstants'
 export const COMP_DIMENSION = {
   h: 30,
   w: 30,
+  h: WINDOW_WIDTH * 0.035,
+  w: WINDOW_WIDTH * 0.035,
   x: WINDOW_WIDTH / 2 - 25,
   y: WINDOW_HEIGHT / 2 - 25,
 }
@@ -9,6 +11,8 @@ export const COMP_DIMENSION = {
 export const VALUE_DIMENSION = {
   h: 100,
   w: 100,
+  h: WINDOW_WIDTH * 0.12,
+  w: WINDOW_WIDTH * 0.12,
   x: WINDOW_WIDTH / 2 - 25,
   y: WINDOW_HEIGHT / 2 - 25,
 }

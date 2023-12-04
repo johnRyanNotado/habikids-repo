@@ -21,7 +21,7 @@ const ConnectTheDots = (props) => {
   const [endPos, setEndPos] = useState(null)
   const tempEndPos = []
   const tempAns = []
-  const initialPosX = COMP_DIMENSION.x - 100
+  const initialPosX = COMP_DIMENSION.x - WINDOW_WIDTH * 0.12
   const initialPosY = 30
   const score = useSharedValue(0)
 
@@ -31,13 +31,13 @@ const ConnectTheDots = (props) => {
       arr.push(index)
       return {
         x: initialPosX,
-        y: initialPosY + index * VALUE_DIMENSION.h + gap + 30,
+        y: initialPosY + index * VALUE_DIMENSION.h + gap + WINDOW_WIDTH * 0.035,
       }
     })
     setInitPos(initPosTemp)
     setEndPos(
       data.firstColumn.map((item, index) => {
-        return { x: initialPosX + 150, y: initPosTemp[index].y }
+        return { x: initialPosX + WINDOW_WIDTH * 0.15, y: initPosTemp[index].y }
       })
     )
   }, [])
@@ -79,90 +79,75 @@ const ConnectTheDots = (props) => {
           width: WINDOW_WIDTH,
           height: WINDOW_HEIGHT,
           width: '100%',
-          zIndex: 20,
-          position: 'relative',
         },
       ]}
     >
-      <ScrollView
+      {/* <ScrollView
         style={{
           zIndex: 10,
         }}
-      >
-        {/* the images/values */}
-        {initPos && endPos
-          ? data.firstColumn.map((item, index) => {
-              console.log('Index:  ', index)
-              return (
-                <Choice
-                  // key={index}
-                  initialPosX={initPos[index].x}
-                  initialPosY={initPos[index].y}
-                  label={data.firstColumn[index].value}
-                />
-              )
-            })
-          : null}
-        {/* <FlatList
-          data={data.firstColumn}
-          renderItem={({ item, index }) => (
-            <Choice
-              key={index}
-              initialPosX={initPos[index].x}
-              initialPosY={initPos[index].y}
-              label={data.firstColumn[index].value}
-            />
-          )}
-        /> */}
-        {/* the dot to be dragged */}
-        {/* {initPos && endPos && shuffledEndPos
-          ? data.firstColumn.map((item, index) => {
-              return (
-                <Dot
-                  key={index}
-                  initialPosX={initPos[index].x}
-                  initialPosY={initPos[index].y}
-                  endPos={{
-                    x: shuffledEndPos[index].x,
-                    y: shuffledEndPos[index].y,
-                  }}
-                  score={score}
-                />
-              )
-            })
-          : null} */}
+      > */}
+      {/* the images/values */}
+      {initPos && endPos
+        ? data.firstColumn.map((item, index) => {
+            console.log('Index:  ', index)
+            return (
+              <Choice
+                // key={index}
+                initialPosX={initPos[index].x}
+                initialPosY={initPos[index].y}
+                label={data.firstColumn[index].value}
+              />
+            )
+          })
+        : null}
+      {/* the dot to be dragged */}
+      {initPos && endPos && shuffledEndPos
+        ? data.firstColumn.map((item, index) => {
+            return (
+              <Dot
+                key={index}
+                initialPosX={initPos[index].x}
+                initialPosY={initPos[index].y}
+                endPos={{
+                  x: shuffledEndPos[index].x,
+                  y: shuffledEndPos[index].y,
+                }}
+                score={score}
+              />
+            )
+          })
+        : null}
 
-        {/* {initPos && endPos
-          ? data.firstColumn.map((item, index) => {
-              return (
-                <Spot key={index} x={initPos[index].x} y={initPos[index].y} />
-              )
-            })
-          : null}
+      {initPos && endPos
+        ? data.firstColumn.map((item, index) => {
+            return (
+              <Spot key={index} x={initPos[index].x} y={initPos[index].y} />
+            )
+          })
+        : null}
 
-        {initPos && endPos
-          ? data.firstColumn.map((item, index) => {
-              console.log('End pos: ', endPos)
-              return (
-                <Spot key={index} x={endPos[index].x} y={endPos[index].y} />
-              )
-            })
-          : null} */}
-        {/* 
-        {initPos && endPos && shuffledEndPos
-          ? data.firstColumn.map((item, index) => {
-              return (
-                <Answer
-                  key={index}
-                  endPosX={shuffledEndPos[index].x}
-                  endPosY={shuffledEndPos[index].y}
-                  label={data.secondColumn[index].value}
-                  img={data.secondColumn[index].img}
-                />
-              )
-            })
-          : null} */}
-      </ScrollView>
+      {initPos && endPos
+        ? data.firstColumn.map((item, index) => {
+            console.log('End pos: ', endPos)
+            return <Spot key={index} x={endPos[index].x} y={endPos[index].y} />
+          })
+        : null}
+
+      {initPos && endPos && shuffledEndPos
+        ? data.firstColumn.map((item, index) => {
+            return (
+              <Answer
+                key={index}
+                endPosX={shuffledEndPos[index].x}
+                endPosY={shuffledEndPos[index].y}
+                label={data.secondColumn[index].value}
+                img={data.secondColumn[index].img}
+              />
+            )
+          })
+        : null}
+      {/* </ScrollView> */}
     </View>
   )
 }

@@ -5,6 +5,7 @@ import { COMP_DIMENSION, VALUE_DIMENSION } from './constants'
 import COLORS from '../../../constants/colors'
 import Animated, { BounceInRight } from 'react-native-reanimated'
 import { imgUrl } from '../../../constants/db_config'
+import { WINDOW_WIDTH } from '../../../constants/windowConstants'
 
 const Answer = (props) => {
   const { endPosX, endPosY, label, img } = props
@@ -18,12 +19,10 @@ const Answer = (props) => {
         wrapper,
         {
           top: endPosY - VALUE_DIMENSION.h / 2 + COMP_DIMENSION.h / 2,
-          left: endPosX + VALUE_DIMENSION.w - 50,
-          width: VALUE_DIMENSION.w + 100,
+          left: endPosX + VALUE_DIMENSION.w - WINDOW_WIDTH * 0.055,
+          width: VALUE_DIMENSION.w + WINDOW_WIDTH * 0.12,
           height: VALUE_DIMENSION.h,
-          zIndex: 10,
-          top: 0,
-          left: 0,
+          zIndex: 1,
         },
       ]}
       entering={BounceInRight.duration(1000).delay(2000)}
@@ -31,7 +30,7 @@ const Answer = (props) => {
       {img ? (
         <Image
           style={{
-            width: VALUE_DIMENSION.w + 90,
+            width: VALUE_DIMENSION.w + WINDOW_WIDTH * 0.1,
             height: VALUE_DIMENSION.w,
             borderRadius: 20,
           }}

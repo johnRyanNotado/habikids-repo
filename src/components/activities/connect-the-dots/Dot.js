@@ -209,133 +209,133 @@ const Dot = (props) => {
         let y15 = x15 * slope
 
         dot1X.value = withTiming(x1, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot2X.value = withTiming(x2, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot3X.value = withTiming(x3, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot4X.value = withTiming(x4, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot5X.value = withTiming(x5, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot6X.value = withTiming(x6, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot7X.value = withTiming(x7, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot8X.value = withTiming(x8, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot9X.value = withTiming(x9, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot10X.value = withTiming(x10, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot11X.value = withTiming(x11, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot12X.value = withTiming(x12, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot13X.value = withTiming(x13, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot14X.value = withTiming(x14, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot15X.value = withTiming(x15, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
 
         dot1Y.value = withTiming(y1, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot2Y.value = withTiming(y2, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot3Y.value = withTiming(y3, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot4Y.value = withTiming(y4, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot5Y.value = withTiming(y5, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot6Y.value = withTiming(y6, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot7Y.value = withTiming(y7, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot8Y.value = withTiming(y8, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot9Y.value = withTiming(y9, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot10Y.value = withTiming(y10, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot11Y.value = withTiming(y11, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot12Y.value = withTiming(y12, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot13Y.value = withTiming(y13, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot14Y.value = withTiming(y14, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         dot15Y.value = withTiming(y15, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
 
         translateX.value = withTiming(event.absoluteX - COMP_DIMENSION.w / 2, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         translateY.value = withTiming(event.absoluteY - COMP_DIMENSION.h / 2, {
-          duration: 130,
+          duration: 0,
           easing: Easing.elastic(2),
         })
         z.value = withDelay(500, withTiming(2))

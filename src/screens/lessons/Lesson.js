@@ -432,7 +432,7 @@ const styles = StyleSheet.create({
   navBarWrapper: {
     bottom: 'auto',
     top: 10,
-    zIndex: 20,
+    zIndex: 50,
   },
 })
 
