@@ -583,7 +583,7 @@ export const db_Les_Values = {
                   left: 'auto',
                 },
                 script:
-                  'Mahalagang maipadama o maipakita mo ang mga ito sa iyopng kapwa lalong lalo na sa iyong pamilya.',
+                  'Mahalagang maipadama o maipakita mo ang mga ito sa iyong kapwa lalong lalo na sa iyong pamilya.',
               },
             ],
           },
