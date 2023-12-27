@@ -51,17 +51,17 @@ const LessonsCA = () => {
   return (
     <ImageBackground style={container} source={getImg.bg.emptyBg.link}>
       <View style={[globalStyles.container, globalStyles.centered]}>
-        <View
-          style={[positionAbsolute, centered, { zIndex: 1, height: '20%' }]}
-        >
-          <ChildSectNavBar backBtn={<BackBtn onPress={handleCancelBtn} />} />
-        </View>
         <LessonsCard
           title={title}
           lesNum={lesNum}
           handleStartBtn={handleStartBtn}
           handleCancelBtn={handleCancelBtn}
         />
+        <View
+          style={[positionAbsolute, centered, { zIndex: 20, height: '20%' }]}
+        >
+          <ChildSectNavBar backBtn={<BackBtn onPress={handleCancelBtn} />} />
+        </View>
         {isProfileClicked ? <ProfileCard /> : null}
       </View>
     </ImageBackground>

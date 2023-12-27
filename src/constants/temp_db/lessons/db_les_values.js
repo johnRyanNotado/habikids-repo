@@ -1513,5 +1513,2065 @@ export const db_Les_Values = {
         ],
       },
     ],
+    [
+      {
+        id: `ls-20231227-13e93eb3-6adc-4c9e-b8f3-83eff122b0f1`,
+        lesNum: 1,
+        title: 'Pagpapakita ng Pagkamagiliwin at Pagkapalakaibigan',
+        item: [
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 0,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script: null,
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kamusta! Kamakailan, napansin ko ang mga kaibigan nating ito na sobrang saya at palaging magkasama. Gusto mo bang malaman kung bakit?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sa araling ito, ating tatalakayin ang kahalagahan ng pagpapakita ng pagkamagiliwin at pagkapalakaibigan sa ating kapwa. Handa ka na ba?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.4.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 150,
+                  left: 'auto',
+                },
+                script:
+                  'Subukan na tukuyin kung ano ang ipinapakita ng mga larawan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: '%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png',
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Una, tukuyin natin ang mga magagandang asal na ipinapakita sa mga larawan. Ano ang pinapakita nito?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value: 'Pagiging magiliw at palakaibigan',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value: 'Pagiging palakaibigan at mataray.',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Pagiging magiliw at palaaway',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.5.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 300,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 140,
+                },
+                script:
+                  'Ang pagiging magiliw o magiliwin ay maraming mukha o kahulugan. Ito ay maaaring tumutukoy sa pagiging mabait sa kapwa, mapagbigay kanino man, kaaya-aya ang pag-uugali, palakaibigan o di kaya ay maayos makitungo.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 30,
+                  bottom: 'auto',
+                  right: 150,
+                  left: 'auto',
+                },
+                script:
+                  'Madalas ginagamit ito upang ilarawan kung paano tayo makitungo sa iba.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.6.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Tayo ay madalas makisalamuha sa ibang tao o sa ating kapwa. Sino ba ang ating kapwa? Ito ay maaaring kamag-anak, kapitbahay, kamag-aral-',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.6.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  '-, bagong nakilala, panauhin o bisita, at taga-ibang lugar.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Isang magandang halimbawa ng pagiging magiliw at palakaibigan ay ang kwento ni Fey, ang bagong kaibigan nina Kardo, Bugoy, Denisse, Elsa, at Melissa.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Ang Bago naming Kapitbahay',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.9.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Isang maaliwalas na hapon, habang naglalaro sina Kardo, Bugoy, Denisse, Elsa, at Melissa sa harap ng kanilang bahay ay may dumating na bagong lipat na mag-anak sakay ng isang trak.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.10.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 160,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Kasama ng mag-anak ang isang batang babae na halos kasing edad nila. May bitbit itong laruan ngunit tila malungkot. ',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang mag-anak na Reyes ang bagong lipat sa lugar nina Kardo. Lumipat sila ng tírahan mula Batangas dahil naapektuhan ang kanilang kabuhayan mula nang sumabog ang Bulkang Taal.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.11.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 300,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kinabukasan, naglaro muli ang magkakaibigan. Masayang-masaya sila at nagtatawanan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.12.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Napansin nilang nagtatago at sumisilip lamang ang bagong lipat na bata kaya naisisipan nilang puntahan ito upang makipagkaibigan at makipaglaro.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.13.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Dahil sa pagiging magiliw sa panauhin at pagiging palakaibigan ng magkakaibigan ay madali nilang nakapalagayan ng loob si Fey. Simula noon, ang bátang si Fey ay naging isang bátang masayahin.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Ano ang ugali na ipinakita nina Kardo kay Fey nang siya ay kanilang nilapitan?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Pagiging mataray',
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    value: 'Pagiging palakaibigan',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Pagiging masipag',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Tutularan mo ba ang ginawang pakikipagkaibigan nina Elsa kay Fey?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value: 'Opo, upang magkaroon ng bagong kaibigan.',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value:
+                      'Opo, basta po ibibili nila ako ng tsitchirya araw-araw.',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Hindi po dahil ayaw ko ng kaibigang malungkutin.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-1%201.14.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sa pamamagitan ng pagpapakita ng pagkamagiliwin at pagkapalakaibigan, nagiging mas masaya at mas magaan ang buhay. Sana ay maging inspirasyon ito sa iyo para maging mabuti sa kapwa.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-1c628a7b-6b2b-4271-9a1a-f69de554eb04',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 2, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: `ls-20231227-ce49dd03-f5d5-416f-90a3-8238ebcde58d`,
+        lesNum: 2,
+        title: 'Pagbabahagi ng Sarili',
+        item: [
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: null,
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Oh! Nandyan ka na pala. Mayroon akong magandang nabasa ngayon na nais kong ibahagi sa iyo.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Pag-uusapan natin ang pagbabahagi ng sarili. Alam mo ba kung paano magbahagi ng sarili sa kalagayan ng iba?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.3.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bawat batang katulad mo ay nahaharap sa iba’t ibang sitwasyon, kalagayan at uri ng pamumuhay. ',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang kakayahan mong umunawa sa kanilang kalagayan ay malaki ang ambag sa iyong pakikipagkapwa tao at pakikisama. Sa ganitong paraan ay naibabahagi mo ang iyong sarili sa kanilang kalagayan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.4.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script:
+                  'Higit mong mauunawaan ang ibang tao lalo na ang higit na nangangailangan o mahihirap kung ikaw ay may mabuting puso.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script:
+                  'Upang higit mong maunawaan ito, basahing natin ang tula ni GD Viloria na pinamagatang ‘Kapwa’.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.5.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Masdan mo ang iyong kapaligiran\nKalagayan ng kapwa mo’y iyong mauunawaan,\nIba’t ibang antas ng kanilang kabuhayan\nPag-unawa mo’y tunay ngang inaasahan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.6.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 100,
+                  left: 'auto',
+                },
+                script:
+                  'Iba’t iba man ang kanilang pinagmulan \nHilaga, silangan, timog o kanluran, \nMahirap o mayaman, payak o maalwan \nIisang hangarin, ika’y maunawaan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.7.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Kapwang may kapansanan \nLubos kong mauunawaan,\nKanilang kalagayan at katayuan \nSarili ko’y ibabahaging lubusan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: '%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png',
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction: 'Ano nga ulit ang pamagat ng tulang ating binasa?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value: 'Kapwa',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value: 'Pamilya',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Kalaro',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: '%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png',
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Ano ang kinakailangan mo upang maibahagi ang iyong sarili sa kapwa mo na may kapansanan?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Pangungutya',
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    value: 'Pag-unawa',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Pagsusungit',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Alin sa mga larawan sa ibaba ang nagpapakita ng katangian na dapat taglay natin upang maibahagi ang sarili sa kalagayan ng kapwa natin?',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.7.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.8.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.9.png`,
+                  },
+                  {
+                    id: 4,
+                    answer: MALI,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.10.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-2%202.11.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ngayon ay natutunan mo nang makapagbabahagi ng sarili sa kalagayan ng iyong kapwa tulad ng uri ng kanilang kabuhayan, pinagmulan at pagkakaroon ng kapansanan. Nawa ay patuloy mo itong gawin sa hinaharap.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-1c628a7b-6b2b-4271-9a1a-f69de554eb04',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 2, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: `ls-20231227-0cfbaf6a-4216-46a6-aaef-4998d7b9a07a`,
+        lesNum: 3,
+        title: 'Pagpapakita ng Paggalang',
+        item: [
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Magandang araw! Kamusta ka na? Sa araling ito, pag-uusapan natin kung paano natin maipapakita ang paggalang sa kapwa. Handa ka na bang matuto?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 20,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang batang magalang ay dangal ng magulang. Taglay ng isang bátang magalang ang mga katangiang nakalulugod sa mata ng Diyos.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.3.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ikaw ba ay isang bátang magalang? Alam mo ba kung paano mo ito masasabi o maipakikita?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.4.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang mga halimbawa ng magagalang na pananalita ay ang pagbati ng “magandang araw po”, pagsabi ng “salamat po”, pagsabi “paumanhin po” tuwing may nagagawa kang mali –',
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.5.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  ' - , pagsabi ng “paalam po” tuwing ikaw ay aalis, pagsabi ng “makikiraan po” kapag may ibang tao sa dadaanan mo, pagdagdag ng salitang “maaari po bang” kapag ikaw ay may hihilingin, at marami pang iba.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Mahalaga rin na tandaan ang paggamit ng PO at OPO sa mga nakakatanda sa iyo.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: '%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png',
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Alin sa mga sumusunod ang dapat mong sabihin kapag inutusan ka ng iyong lola?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: '“Mamaya nalang, naglalaro pa ako.”',
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    value: '“Okay po lola, gagawin ko po iyan.”',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: '“Ayaw ko po!”',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: '%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png',
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Alin sa mga sumusunod ang dapat mong sabihin sa iyong magulang kapag nakasira ka ng gamit sa inyong bahay?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value: '“Paumanhin po, nasira ko ito”',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value: '“Hindi po ako ang nakasira niyan.”',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: '“Mura lang naman iyan.”',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9759fe29-38a7-439f-bea9-2a85f00879a8',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 3,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                instruction:
+                  'Pagtambalin ang sitwasyon sa tamang larawan na nagpapakita ng paggalang sa kapwa.',
+                data: {
+                  firstColumn: [
+                    { id: 1, img: null, value: 'Aalis ka ng bahay' },
+                    {
+                      id: 2,
+                      img: null,
+                      value: 'Dadaan ka sa harap ng mga nakakatanda sa iyo',
+                    },
+                    { id: 3, img: null, value: 'Binigyan ka ng libro' },
+                  ],
+                  secondColumn: [
+                    {
+                      id: 1,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.6.png`,
+                      value:
+                        'Inalagaan ang may sakit na miyembro ng pamilya at ang nakakabatang kapatid',
+                    },
+                    {
+                      id: 2,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.7.png`,
+                      value:
+                        'Nasiyahan sa ipinakitang pagtutulungan ng magkapatid',
+                    },
+                    {
+                      id: 3,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.8.png`,
+                      value: 'Isang araw siya ay nagkasakit',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.9.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Mahusay! Natapos mo ang ating gawain. Ngayon mababatid mo na ang pagiging magalang ay pagpapakita ng respeto sa kapwa mo higit lalo sa mga nakatatanda.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-3%203.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kaya naman palagi kang magpakita ng paggalang sa kapwa mo lalo na sa mga nakakatanda sa iyo.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Huwag kakalimutan magsabi ng ‘po at opo’ sa nakakatanda, okay? Paalam!',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-1c628a7b-6b2b-4271-9a1a-f69de554eb04',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 2, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: `ls-20231227-85fcf975-70c9-43bd-8645-a219311fa2bc`,
+        lesNum: 4,
+        title: 'Paggawa ng Mabuti sa Kapwa',
+        item: [
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 0,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: null,
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 0,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: null,
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.3.png`,
+            data: [
+              {
+                narrator: 'juan',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 280,
+                },
+                script: 'Anong ginagawa mo?',
+              },
+              {
+                narrator: 'vio',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 220,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 120,
+                },
+                script: 'Oo nga, kanina ka pa namin naririnig at pinapanood.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 220,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 120,
+                  left: 'auto',
+                },
+                script: 'Ah ganon ba hehe! Nag-eensayo kasi akong umawit',
+              },
+              {
+                narrator: 'juan',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 280,
+                },
+                script: 'Bakit ka naman nag-eensayo?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.4.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Birthday na kasi ng lola ko bukas, magkakaroon ng munting salo-salo ang aming pamilya.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Nais kong ibahagi ang talento ko sa pag-awit sa kanila at nang mapasaya ko ang aking lola.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.3.png`,
+            data: [
+              {
+                narrator: 'vio',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 220,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 120,
+                },
+                script: 'Sigurado akong matutuwa sila sa hinanda mong kanta.',
+              },
+              {
+                narrator: 'juan',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 220,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 280,
+                },
+                script:
+                  'Sana sa susunod ay makapagbahagi din ako ng talent ko sa iba.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.5.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Naniniwala akong magagawa niyo rin iyon. Gusto niyo ba malaman kung paano niyo pa maibabahagi ang talento o kakayahan o anomang bagay sa inyong kapwa?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.6.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 5,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bawat nilaláng ay espesyal, may kani-kaniyang katangian, talento at kakayahan. Maituturing ang mga ito na biyaya mula sa Maykapal. ',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 5,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang mga kakayahang meron ka ay hindi dapat ipinagdadamot. Magiging kapaki-pakinabang ka sa tuwing naibabahagi mo ang mga ito sa iyong kapwa nang walang pag-aalinlangan.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 5,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kakambal ng mga kakayahang ito na taglay mo ay ang paggamit mo nito sa mabuting bagay.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.7.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Upang lubos mo pang maunawaan ang ating aralin ngayon, basahin natin ang tula ni GD Viloria na pinamagatang ‘Talento’.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.8.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 60,
+                },
+                script:
+                  'Iba’t bang kakayahan, iba’t ibang katangian,\nPag-awit, pagsayaw, pagtula’y pinagyayaman;\nIbinabahagi sa kapwa o kahit kanino man,\nAng mga ito’y taglay ko bílang isang kabataan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.9.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 60,
+                  left: 'auto',
+                },
+                script:
+                  'Kakayahan kong sumulat, gumuhit o magpinta,\nHindi ipinagdadamot, ibinabahagi sa kapwa;\nGinagamit sa mabuti, nililinang sa tuwina, \nSapagkat tinuturing ko itong malaking biyaya.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.10.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 60,
+                },
+                script:
+                  'Sa aking mga kababata, kalaro at kaeskuwela,\nNamamahagi ng laruan, damit kong sobra;\nMadalas gumawa ng mabuti sa kapwa,\nDangal ng magulang, kaligayahan ni ama’t ina.',
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: '%20images%20lessons%20values%20grade-2%20lesson-1%201.3.png',
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction: 'Ano nga ulit ang pamagat ng tulang ating binasa?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Mabuti',
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    value: 'Talento',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Magalang',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9759fe29-38a7-439f-bea9-2a85f00879a8',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 3,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 5,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                instruction:
+                  'Pagtambalin ang sumusunod na talent o kakayahan sa angkop na larawang nagpapakita nito.',
+                data: {
+                  firstColumn: [
+                    { id: 1, img: null, value: 'Pag-awit' },
+                    {
+                      id: 2,
+                      img: null,
+                      value: 'Pagguhit o pagpinta',
+                    },
+                    { id: 3, img: null, value: 'Pagbabahagi ng gamit' },
+                  ],
+                  secondColumn: [
+                    {
+                      id: 1,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.8.png`,
+                      value:
+                        'Inalagaan ang may sakit na miyembro ng pamilya at ang nakakabatang kapatid',
+                    },
+                    {
+                      id: 2,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.9.png`,
+                      value:
+                        'Nasiyahan sa ipinakitang pagtutulungan ng magkapatid',
+                    },
+                    {
+                      id: 3,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.10.png`,
+                      value: 'Isang araw siya ay nagkasakit',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-4%204.14.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ngayon ay alam mo na na ang pagbabahagi mo ng gamit, talento o kakayahan o ano mang bagay sa iyong kapwa ay isang kaaya-ayang gawain. Mas higit mong mapagyayaman ito kung gagamitin mo sa mabuti. ',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sana sa susunod ay magamit mo rin sa mabuti ang iyong talento o kakayahan. Sige na, kaibigan, ipagpapatuloy ko na ang aking pag-ensayo sa pag-awit para sa kaarawan ng aking lola. Paalam!',
+              },
+            ],
+          },
+          {
+            id: 'li-20231129-1c628a7b-6b2b-4271-9a1a-f69de554eb04',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 2, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: `ls-20231227-77cf4151-6ebc-46da-a406-354d4f3ce589`,
+        lesNum: 5,
+        title: 'Pagmamalasakit sa Paaralan at Pamayanan',
+        item: [
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.1.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Magandang araw! Mabuti at nandito ka na. Natatandaan mo ba ang nakaraang aralin natin tungkol sa pagbabahagi ng talento o kakayahan sa iyong kapwa?',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ngayon naman ay napag-usapan naming magpakita ng pagmamalasakit sa mga kasapi ng ating paaralan at pamayanan.',
+              },
+              {
+                narrator: 'vio',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 60,
+                },
+                script:
+                  'Oo nga. Kaya naman may dala kaming mga gamit dito, para makatulong sa paglinis ng ating silid-aralan.',
+              },
+              {
+                narrator: 'vio',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 60,
+                },
+                script:
+                  'Isa ito sa mga paaraan upang mapakita natin ang pagmamalasakit sa ating paaralan at pamayanan.',
+              },
+              {
+                narrator: 'juan',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 120,
+                  left: 'auto',
+                },
+                script: 'Tara! Samahan mo na kami, kaibigan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.2.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sa panahon ng problema, sakuna o maging sa kinahaharap na pandemya, ay napatunayan natin na sa puso ng isang mabuting tao ay laging sumisibol ang salitáng “MALASAKIT sa KAPWA”.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bílang isang mag-aaral, maaari mo rin matukoy at maipakita ang pagmamalasakit sa kapwa o pamayanan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-dc17c6ee-da3d-4004-a239-b53d65e69eac',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 5,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Piliin ang kilos na nasa larawan na nagpapakita ng malasakit sa kapwa o pamayanan',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.3.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.4.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.5.png`,
+                  },
+                  {
+                    id: 4,
+                    answer: MALI,
+                    img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.6.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.7.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 180,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Ang malasakit sa kapwa ay hindi masusukat kung gaano kamahal o karami ang iyong naibigay o nagawa.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 180,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 50,
+                  left: 'auto',
+                },
+                script:
+                  'Ito ay kung sa paano mo maipadama sa iyong kapwa. Ang maluwag sa loob at kusang pagtulong ay mas kaaya-aya sa mata ng Diyos at tao.',
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.8.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Sino-sino ang maaari nating pagmalasakitan?',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Maaari mong pagmalasakitan ang ilan sa mga kasapi sa inyong paaralan tulad ng mga kaklase, guro, tagapaglinis ng paaralan, mga nagsisilbi sa kantina at mga guwardiya.',
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.9.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 'auto',
+                  bottom: 5,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Gayundin, kung sa pamayanan naman ay maipapakita mo ang iyong malasakit sa mga tindero/tindera, kapitbahay, mga karpintero, mangingisda at magsasaka, kalaro, at iba pang madalas mong nakakasalamuha sa araw–araw.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9759fe29-38a7-439f-bea9-2a85f00879a8',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 3,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 5,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                instruction:
+                  'Pagtambalin mo ang angkop na larawang nagpapakita ng gawain ng ating kasapi sa pamayanan.',
+                data: {
+                  firstColumn: [
+                    { id: 1, img: null, value: 'Magsasaka' },
+                    { id: 2, img: null, value: 'Mangingisda' },
+                    {
+                      id: 3,
+                      img: null,
+                      value: 'Taga-walis ng daan o street sweeper',
+                    },
+                  ],
+                  secondColumn: [
+                    {
+                      id: 1,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.10.png`,
+                      value: 'Magsasaka',
+                    },
+                    {
+                      id: 2,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.12.png`,
+                      value: 'Mangingisda',
+                    },
+                    {
+                      id: 3,
+                      img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.11.png`,
+                      value: 'Taga walis ng kalsada',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Buuin ang pangngusap: Ang ______________ sa kapwa tulad ng kasapi ng iyong paaralan at pamayanan sa iba’t ibang paraan ay isang mabuting gawain.',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Pangmamaliit',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value: 'Pang-aapi',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Panghihiya',
+                  },
+                  {
+                    id: 4,
+                    answer: TAMA,
+                    value: 'Pagmamalasakit',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-9fe56ae0-ccc0-4a28-9bda-34676d74ef54',
+            type: 'story',
+            img: `%20images%20lessons%20values%20grade-2%20lesson-5%205.13.png`,
+            data: [
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 550,
+                  top: 5,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sa panahon ng problema, sakuna o maging sa kinahaharap na pandemya, ay napatunayan natin na sa puso ng isang mabuting tao ay laging sumisibol ang salitáng “MALASAKIT sa KAPWA”.',
+              },
+              {
+                narrator: 'uni',
+                isNarratorShown: false,
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bílang isang mag-aaral, maaari mo rin matukoy at maipakita ang pagmamalasakit sa kapwa o pamayanan.',
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231129-1c628a7b-6b2b-4271-9a1a-f69de554eb04',
+            type: 'story',
+            img: null,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 600,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: `"Ang aralin na ito ay kinuha mula sa: Pivot 4A Learner's Material: ESP Grade 2, na nanggaling sa DepEd CALABARZON, Curriculum and Management Division"`,
+              },
+            ],
+          },
+        ],
+      },
+    ],
   ],
 }

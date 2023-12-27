@@ -53,6 +53,7 @@ const Instruction = (props) => {
             bottom: bottom,
             right: right,
             left: left,
+            zIndex: 15,
           },
         ]}
         entering={SlideInUp.duration(1000).delay(1000)}

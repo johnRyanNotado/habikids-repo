@@ -20,23 +20,23 @@ const LessonsNavBar = (props) => {
   }
 
   return (
-    <View style={navBarWrapper}>
-      <View style={[navBarElement, { width: '13%' }]}>{backBtn}</View>
-      <View style={navBarElement}></View>
-      <View style={[navBarElement, { width: '13%' }]}>
-        <TouchableOpacity onPress={handleProfileBtn}>
-          <Image
-            source={corresIcon[avatarNum].link}
-            style={[
-              avatarStyle,
-              {
-                borderColor: backgroundColor ? backgroundColor : COLORS.white,
-              },
-            ]}
-          />
-        </TouchableOpacity>
-      </View>
+    // <View style={navBarWrapper}>
+    //   <View style={[navBarElement, { width: '13%' }]}>{backBtn}</View>
+    //   <View style={navBarElement}></View>
+    <View style={[navBarElement, { width: '13%' }]}>
+      <TouchableOpacity onPress={handleProfileBtn}>
+        <Image
+          source={corresIcon[avatarNum].link}
+          style={[
+            avatarStyle,
+            {
+              borderColor: backgroundColor ? backgroundColor : COLORS.white,
+            },
+          ]}
+        />
+      </TouchableOpacity>
     </View>
+    // </View>
   )
 }
 

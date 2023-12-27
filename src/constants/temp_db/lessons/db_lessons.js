@@ -5,14 +5,21 @@ export const LESSONS_GOODHABITS = {
         id: `ac-20231123-3e4d732a-f3cf-4a56-a43f-b422f90781ac`,
         lesNum: 1,
         title: 'Pangangalaga sa Katawan at Kalusugan',
-        screen: 'SHEESH',
+        screen: 'LessonsNav',
         img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
       },
       {
-        id: `ls-20231123-3e4d732a-f3cf-4a56-a43f-b422f90781ac`,
+        id: `ls-20231226-0cda6cb8-e42c-4c36-80c3-5f7b8904811e`,
         lesNum: 2,
         title: 'Pagsasabi ng tama at totoo',
-        screen: 'SHEESH',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
+      },
+      {
+        id: `ls-20231226-0cda6cb8-e42c-4c36-80c3-5f7b8904811e`,
+        lesNum: 3,
+        title: 'Pagpapahalaga sa mga Karapatang Tinamasa',
+        screen: 'LessonsNav',
         img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
       },
     ],
@@ -46,7 +53,47 @@ export const LESSONS_VALUES = {
         img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
       },
     ],
-    [],
+    [
+      {
+        id: `ls-20231227-13e93eb3-6adc-4c9e-b8f3-83eff122b0f1`,
+        lesNum: 1,
+        title: 'Pagpapakita ng Pagkamagiliwin at Pagkapalakaibigan',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+
+      {
+        id: `ls-20231227-ce49dd03-f5d5-416f-90a3-8238ebcde58d`,
+        lesNum: 2,
+        title: 'Pagbabahagi ng Sarili',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+
+      {
+        id: `ls-20231227-0cfbaf6a-4216-46a6-aaef-4998d7b9a07a`,
+        lesNum: 3,
+        title: 'Pagpapakita ng Paggalang',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+
+      {
+        id: `ls-20231227-85fcf975-70c9-43bd-8645-a219311fa2bc`,
+        lesNum: 4,
+        title: 'Paggawa ng Mabuti sa Kapwa',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+
+      {
+        id: `ls-20231227-77cf4151-6ebc-46da-a406-354d4f3ce589`,
+        lesNum: 5,
+        title: 'Pagmamalasakit sa Paaralan at Pamayanan',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+    ],
     [],
   ],
 }

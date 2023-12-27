@@ -340,8 +340,8 @@ const Lesson = ({ navigation }) => {
     }
     await playThisSound(getSound.effects.closeBook.link)
     setIsLoading(true)
-    setDataChanged((prevState) => prevState + 1)
     await fetchLearner()
+    setDataChanged((prevState) => prevState + 1)
   }
 
   useEffect(() => {
@@ -372,7 +372,9 @@ const Lesson = ({ navigation }) => {
   return (
     <ImageBackground style={container} source={getImg.bg.emptyBg.link}>
       <View style={[centered, container]}>
-        <View style={[positionAbsolute, styles.navBarWrapper]}>
+        <View
+          style={[styles.navBarWrapper, { position: 'absolute', right: 0 }]}
+        >
           <LessonsNavBar backgroundColor={COLORS.grayPrimary} />
         </View>
         <View

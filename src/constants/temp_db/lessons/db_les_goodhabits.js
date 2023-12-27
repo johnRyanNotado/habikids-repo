@@ -884,6 +884,600 @@ export const db_Les_GoodHabits = {
           },
         ],
       },
+      {
+        id: `ls-20231226-0cda6cb8-e42c-4c36-80c3-5f7b8904811e`,
+        lesNum: 2,
+        title: 'Pagsasabi nang Tama at Totoo',
+        item: [
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 320,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Kamusta ka? Handa ka na bang mag-aral ulit?',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang aralin na aaralin natin ngayon ay ang pagsabi nang tama at totoo.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Bakit ba mahalaga at kailangang magsabi ng totoo?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.5.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Narito ang ilan sa mga dahilan.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 225,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 200,
+                  left: 'auto',
+                },
+                script:
+                  'Nalalaman ang tunay na pangyayari, Nagsisilbing porteksiyon o pag-iingat, Nagsisilbing-aral, Nagpapanatili ng tiwala,',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 225,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 200,
+                  left: 'auto',
+                },
+                script:
+                  'Nagpapakita ng kagandahang-asal, Nagbibigay ng kapayapaan, Nagpapakita ng disiplina, at Naiiwasan ang away o gulo.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.7.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script:
+                  'Sa pamamagitan ng pagsasabi ng katotohanan ay mas higit kang magiging masaya. Mapapabuti ka bilang bata. Tiyak na matutuwa sa iyo ang iyong magulang.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.8.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Minsan ay natatakot kang magsabi ng totoo. Iniisip mo na magagalit ang nanay o tatay mo. Mas pinipili mong umalis ng bahay na hindi nagpapaalam.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.9.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Ginagawa mo ito dahil baka hindi ka payagang lumabas. Mali ang mga ito. Sabihin mo ang totoo.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.10.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Dapat mong tandaan na ang pagsasabi ng totoo ay isang kagandahang–asal. Ikaw, nagsasabi ka rin ba ng totoo?',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Alalahanin mo ang mga pagkakataon na nagging mabuti ang naidulot sa iyo ng pagsasabi nito.',
+              },
+            ],
+          },
+
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: getImg.bg.emptyBg.link,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Pilii ang tamang gawain na nagpapakita ng pagsasabi ng totoo sa magulang o nakatatanda.\n\nPinabili ka ng iyong nanay sa tinadahan. May natira pang sukli. Ano ang gagawin mo?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Sasabihing wala nang natirang sukli.',
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    value: 'Sasabihing may natirang sukli, at ibabalik ito.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: getImg.bg.emptyBg.link,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Pilii ang tamang gawain na nagpapakita ng pagsasabi ng totoo sa magulang o nakatatanda.\n\nHindi sinasadyang nabasag mo ang baso. Ano ang gagawin mo?',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value:
+                      'Agad na sasabin sa iyong nanay, at hihingi ng paumanhin.',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value:
+                      'Itatago ang basag na baso, at hindi sasabihin sa nanay.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.10.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Upang mas maunawaan natin kung pano magpakita ng pagsabi ng totoo, basahin natin ang tulang ito.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.13.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: '"Ako’y Tapat" sulat ni G.D. Viloria',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.14.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script: 'Iniisip at winiwika ko parati\nPawang totoo at mabuti',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script: 'Sa magulang aking sinasabi\nang tama at kawili-wili.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.16.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Maayos na samahan\naming nakakamtan',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.17.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 20,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Hindi ako pagagalitan\nLalong magmamahalan.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.18.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 300,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kunin ang sa iba ay ‘di gagawin\nHinding-hindi magsisinungaling',
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.19.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script:
+                  'Kapag nagkamali ay aamin\nPag-aaral ang palaging uunahin.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: getImg.bg.emptyBg.link,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Ano ang palaging iniisip at winiwika ng nagsasalita sa tula? Piliin ang tamang sagot.',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value: 'Ang pagsabi ng totoo at paggawa ng mabuti.',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value: 'Ang pagsisinungaling.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: getImg.bg.emptyBg.link,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Ano-ano ang mangyayari kung magsasabi nang tama at kawili-wili? Piliin ang tamang sagot.',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Hindi pagkakaisa, laging pagagalitan, at iba pa.',
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    value:
+                      'Maayos na samahan, lalong pagmamahhalahan, at iba pa.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: getImg.bg.emptyBg.link,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Ano-ano ang binanggit na HINDI gagawin? Piliin ang tamang sagot.',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value:
+                      'Kuhain ang bagay na hindi isa iyo at magsinungaling.',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value: 'Magsabi ng totoo at pag-aaral ng mabuti.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-2%202.10.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Mahusay! Kabisado mo na talaga kung pano magpakita ng pagsasabi ng totoo at mabuti.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Ang pagsasabi ng tama o totoo sa magulang, nakatatanda o sino man sa kasapi ng pamilya ay lubhang napakahalaga.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Ito ay pagpapakita ng respeto sa kapwa at maging sa sarili. Laging sabihin ang totoo. Kaya mo ito.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 150,
+                },
+                script:
+                  'Laging alalahanin, ang batang nagsasabi ng totoo o tama ay higit na minamahal ng kapwa.',
+              },
+            ],
+          },
+        ],
+      },
     ],
     [],
     [],

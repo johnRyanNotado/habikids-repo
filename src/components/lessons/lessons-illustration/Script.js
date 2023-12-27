@@ -46,8 +46,7 @@ const Script = (props) => {
 
 const styles = StyleSheet.create({
   scriptWrapper: {
-    // backgroundColor: COLORS.whiteTrans,
-    backgroundColor: COLORS.primaryTrans,
+    backgroundColor: COLORS.whiteTrans,
     paddingHorizontal: 10,
     paddingVertical: 15,
     borderRadius: 20,

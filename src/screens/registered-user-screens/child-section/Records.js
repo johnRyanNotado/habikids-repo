@@ -175,8 +175,6 @@ const Records = ({ navigation }) => {
     }
   }
 
-  console.log('Window Dimension: ', WINDOW_HEIGHT, '\t', WINDOW_WIDTH)
-
   return (
     <ImageBackground source={getImg.bg.records.link} style={container}>
       <View style={(container, centered)}>
