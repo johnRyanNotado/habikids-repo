@@ -38,7 +38,7 @@ const EnterChildNameMainSec = () => {
         </View>
         <View style={inputWrapper}>
           <TextInput
-            placeholder="Name"
+            placeholder="Pangalan"
             style={inputChildName}
             maxLength={15}
             onChangeText={(new_name) => handleChangeText(new_name)}

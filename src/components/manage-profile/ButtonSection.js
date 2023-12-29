@@ -30,7 +30,7 @@ const ButtonSection = () => {
     setPrevName('')
     setIsChildChosen(false)
     setChosenChild(EMPTY_CHILD_OBJ)
-
+    setIsLoading(true)
     try {
       const resp = await fetch(editLearnerUrl, {
         method: 'POST',

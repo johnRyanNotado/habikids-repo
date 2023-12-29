@@ -6,6 +6,8 @@ import {
   Text,
   Switch,
   Alert,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { globalStyles } from '../../styles/GlobalStyles'
@@ -117,18 +119,20 @@ const ManageProfiles = ({ navigation }) => {
         setPrevName,
       }}
     >
-      <View style={[container, centered, custContainer]}>
-        <ManageProfileNavBar handleLeftArrBtn={handleLeftArrBtn} />
-        <View style={[container, centered]}>
-          <View style={cardWrapper}>
-            <ManageProfileAcc handleLogout={handleLogout} />
-            <ChildSect />
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <View style={[container, centered, custContainer]}>
+          <ManageProfileNavBar handleLeftArrBtn={handleLeftArrBtn} />
+          <View style={[container, centered]}>
+            <View style={cardWrapper}>
+              <ManageProfileAcc handleLogout={handleLogout} />
+              <ChildSect />
+            </View>
           </View>
-        </View>
 
-        {/* Show if a child is selected */}
-        {isChildChosen ? <ManageProfileOverlay /> : <></>}
-      </View>
+          {/* Show if a child is selected */}
+          {isChildChosen ? <ManageProfileOverlay /> : <></>}
+        </View>
+      </TouchableWithoutFeedback>
     </ChosenChildContext.Provider>
   )
 }

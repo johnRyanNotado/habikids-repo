@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native'
 import CustRadioBtnAge from './CustRadioBtnAge'
 import { useChildDataContext } from '../../screens/context-api/ContextAPI'
+import COLORS from '../../constants/colors'
 
 const PickAge = () => {
   const { newChild, setNewChild } = useChildDataContext()
   const [selectedAge, setSelectedAge] = useState(null)
-  const { pickAgeWrapper, ageLabelWrapper, ageLabel, ageSelectedWrapper } =
-    styles
+  const {
+    pickAgeWrapper,
+    ageLabelWrapper,
+    ageLabel,
+    ageSelectedWrapper,
+    inputChildName,
+    inputWrapper,
+  } = styles
 
   // This function will change the value of the newChild and selectedAge useStates
   const handleAgeRadioBtn = (ageVal) => {
@@ -27,12 +41,15 @@ const PickAge = () => {
   }, [])
 
   return (
-    <View style={pickAgeWrapper}>
-      <View style={ageLabelWrapper}>
-        <Text style={ageLabel}>Ano ang edad ni {newChild.name}?</Text>
-      </View>
-      <View style={ageSelectedWrapper}>
-        <CustRadioBtnAge
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <View style={pickAgeWrapper}>
+        <View style={ageLabelWrapper}>
+          <Text style={ageLabel}>
+            Ilang taong gulang na si {newChild.name}?
+          </Text>
+        </View>
+        <View style={ageSelectedWrapper}>
+          {/* <CustRadioBtnAge
           label={6}
           selected={selectedAge === 6}
           onSelect={() => handleAgeRadioBtn(6)}
@@ -46,9 +63,19 @@ const PickAge = () => {
           label={8}
           selected={selectedAge === 8}
           onSelect={() => handleAgeRadioBtn(8)}
-        />
+        /> */}
+          <View style={inputWrapper}>
+            <TextInput
+              placeholder="Edad"
+              style={inputChildName}
+              maxLength={2}
+              keyboardType="numeric"
+              onChangeText={(newAge) => handleAgeRadioBtn(newAge)}
+            />
+          </View>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 
@@ -59,6 +86,21 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 20,
     borderTopStartRadius: 20,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inputChildName: {
+    width: 350,
+    height: '100%',
+    borderRadius: 150,
+    paddingHorizontal: 20,
+    fontSize: 26,
+    fontWeight: '400',
+    fontFamily: 'QuiapoRegular',
+    backgroundColor: COLORS.white,
+  },
+  inputWrapper: {
+    width: '100%',
+    height: 50,
     alignItems: 'center',
   },
   ageLabelWrapper: {

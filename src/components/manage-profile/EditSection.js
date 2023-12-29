@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Image, TextInput } from 'react-native'
+import { View, Image, TextInput, Text } from 'react-native'
 import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -49,6 +49,14 @@ const EditSection = () => {
       avatarNum: avatarNum,
     })
   }
+  const handleAgeChange = (newAge) => {
+    handleChosenChild({
+      id: id,
+      name: name,
+      age: Number(newAge),
+      avatarNum: avatarNum,
+    })
+  }
 
   return (
     <View style={editConfigWrapper}>
@@ -58,17 +66,28 @@ const EditSection = () => {
       <View style={ageNameWrapper}>
         <View style={genWrapperBorder}>
           <View style={txtInputWrapper}>
+            <Text>Pangalan: </Text>
             <TextInput
               style={inputFontStyle}
               defaultValue={`${name}`}
               value={name}
-              onChangeText={(new_name) => handleNameChange(new_name)}
+              maxLength={15}
+              onChangeText={(newName) => handleNameChange(newName)}
             />
           </View>
         </View>
         <View style={genWrapperBorder}>
-          <View style={pickerWrapper}>
-            <DropDownPicker
+          <View style={txtInputWrapper}>
+            <Text>Edad: </Text>
+            <TextInput
+              style={inputFontStyle}
+              defaultValue={`${selectedAge}`}
+              value={selectedAge}
+              maxLength={2}
+              keyboardType="numeric"
+              onChangeText={(newAge) => handleAgeChange(newAge)}
+            />
+            {/* <DropDownPicker
               items={items}
               open={isAgeOpen}
               setOpen={setIsAgeOpen}
@@ -81,7 +100,7 @@ const EditSection = () => {
               }}
               style={custDropDownStyle}
               containerSyle={{ display: 'none' }}
-            />
+            /> */}
           </View>
         </View>
       </View>
@@ -121,12 +140,15 @@ const styles = {
   txtInputWrapper: {
     paddingLeft: 15,
     paddingTop: 3,
+
+    flexDirection: 'row',
   },
   inputFontStyle: {
     fontWeight: '400',
     fontSize: 19,
     fontFamily: 'QuiapoRegular',
     height: 20,
+    flex: 1,
   },
   ageNameWrapper: {
     gap: 10,
