@@ -1,5 +1,5 @@
-// const ip = '195.35.23.91'
-const ip = '192.168.1.21'
+const ip = '195.35.23.91'
+// const ip = '192.168.1.21'
 const port = '3500'
 export const url = `http://${ip}:${port}/`
 export const signupUrl = `${url}signup`

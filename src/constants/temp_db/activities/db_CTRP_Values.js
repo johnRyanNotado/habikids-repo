@@ -71,5 +71,42 @@ export const db_CTRP_Values = {
         ],
       },
     ],
+    [
+      {
+        id: 'ac-20240105-6585a891-ca39-4ce6-a2e5-018fde664c82',
+        narrator: 'uni',
+        instructionDuration: 10,
+        instruction: `Piliin ang angkop na kilos o gawain sa mga sumusunod na sitwasyon.`,
+        item: [
+          {
+            sceneDesc:
+              'Binilinan ka ng iyong ama na huwag lalabas dahil sa COVID-19. Ano ang iyong gagawin?',
+            sceneImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%201%20scene.png`,
+            corrDesc: 'Mag-aaral',
+            corrImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%201%20correct.png`,
+            wrongDesc: 'Lalabas upang maglaro',
+            wrongImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%201%20wrong.png`,
+          },
+          {
+            sceneDesc:
+              'Nabalitaan mong maraming mga bata ang nagkakasakit ngayon. Ano ang makabubuting gawin para sa iyo?',
+            sceneImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%202%20scene.png`,
+            corrDesc: 'Maglinis ng katawan',
+            corrImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%202%20correct.png`,
+            wrongDesc: 'Maglaro sa labas',
+            wrongImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%202%20wrong.png`,
+          },
+          {
+            sceneDesc:
+              'Gabi na at oras na para matulog. Ano ang dapat mong gawin bago matulog?',
+            sceneImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%203%20scene.png`,
+            corrDesc: 'Mag sipilyo',
+            corrImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%203%20correct.png`,
+            wrongDesc: 'Mag cellphone',
+            wrongImg: `%20images%20activities%20grade-2%20values%20ctrp%20item-3%203%20wrong.png`,
+          },
+        ],
+      },
+    ],
   ],
 }

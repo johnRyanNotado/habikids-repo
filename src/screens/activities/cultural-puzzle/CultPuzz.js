@@ -107,7 +107,7 @@ const CultPuzz = () => {
         <Timer timer={timerLimit} />
 
         {isFinished ? (
-          <View style={container}>
+          <View style={[container, { zIndex: 10 }]}>
             <Trivia
               theme={PUZZLE_GAME_DATA.theme}
               trivia={PUZZLE_GAME_DATA.trivia}

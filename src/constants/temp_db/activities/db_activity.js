@@ -16,6 +16,22 @@ export const ACTIVITIES_GOODHABITS = {
         img: `%20images%20activities%20prev%20ctrp.png`,
       },
     ],
+    [
+      {
+        id: 'ac-20240105-175631a3-f3c0-436e-b806-bfad5b1dd93d',
+        actNum: 1,
+        title: 'Pagbabahagi ng sarili',
+        screen: 'HabitBuilderNav',
+        img: `%20images%20activities%20prev%20habit-builder.png`,
+      },
+      {
+        id: 'ac-20240105-1a0a8c04-6155-438a-b29c-c03ac722dc51',
+        actNum: 2,
+        title: 'Pagpapakita ng Kaayusan sa iba’t ibang Paraan',
+        screen: 'CTRPNav',
+        img: `%20images%20activities%20prev%20ctrp.png`,
+      },
+    ],
   ],
 }
 
@@ -33,6 +49,22 @@ export const ACTIVITIES_TRADITIONS = {
         id: 'ac-20231122-4b7c3df0-7829-4d4a-a004-8e1babfbfa9a',
         actNum: 2,
         title: "Barong at Baro't Saya",
+        screen: 'DressUpNav',
+        img: `%20images%20activities%20prev%20dress-up.png`,
+      },
+    ],
+    [
+      {
+        id: 'ac-20240105-6527d7b6-51c2-45e5-81e2-d1921a5abb73',
+        actNum: 1,
+        title: 'Ang Prusisyon',
+        screen: 'CultPuzzNav',
+        img: `%20images%20activities%20prev%20cultural-puzzle.png`,
+      },
+      {
+        id: 'ac-20240105-be16c5c9-46ee-482a-a851-ecd6ee30ff93',
+        actNum: 2,
+        title: 'Cordilleran / Ifugao Attire',
         screen: 'DressUpNav',
         img: `%20images%20activities%20prev%20dress-up.png`,
       },
@@ -94,6 +126,20 @@ export const ACTIVITIES_VALUES = {
         title: 'Kindness Catcher',
         screen: 'KindCatchNav',
         img: `%20images%20activities%20prev%20kindness-catcher.png`,
+      },
+      {
+        id: 'ac-20240105-50ef3e45-4564-405e-844c-abae72c3f6a2',
+        actNum: 2,
+        title: 'Pagsasakilos ng Kakayahang Taglay',
+        screen: 'ArrTheValNav',
+        img: `%20images%20activities%20prev%20arr-the-val.png`,
+      },
+      {
+        id: 'ac-20240105-6585a891-ca39-4ce6-a2e5-018fde664c82',
+        actNum: 3,
+        title: 'Pangangalaga sa Kalusugan',
+        screen: 'CTRPNav',
+        img: `%20images%20activities%20prev%20ctrp.png`,
       },
     ],
   ],

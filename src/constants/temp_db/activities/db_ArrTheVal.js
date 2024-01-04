@@ -99,5 +99,39 @@ export const db_ArrTheVal = {
         ],
       },
     ],
+    [
+      {
+        id: 'ac-20240105-50ef3e45-4564-405e-844c-abae72c3f6a2',
+        narrator: 'uni',
+        instructionDuration: 10,
+        instruction: `Tukuyin kung ang sumusunod na sitwasyon ay nagpapakita ng pagsasakilos ng kakayahang taglay.`,
+        item: [
+          {
+            id: 1,
+            sceneDesc:
+              'Lagi kong binabati ang aking mga kapitbahay tuwing umaga. ',
+            question: 'Isa ba itong tamang gawain o mali?',
+            answer: TAMA,
+            img: `%20images%20activities%20grade-2%20values%20arr-the-val%20item-2%201.png`,
+          },
+          {
+            id: 2,
+            sceneDesc:
+              'Hindi ko pinapansin ang bagong lipat naming kapitbahay.',
+            question: 'Isa ba itong tamang gawain o mali?',
+            answer: MALI,
+            img: `%20images%20activities%20grade-2%20values%20arr-the-val%20item-2%202.png`,
+          },
+          {
+            id: 3,
+            sceneDesc:
+              'Binabati ko and aking guro at kamag-aaral sat wing nasasalubong ko sila',
+            question: 'Isa ba itong tamang gawain o mali?',
+            answer: TAMA,
+            img: `%20images%20activities%20grade-2%20values%20arr-the-val%20item-2%203.png`,
+          },
+        ],
+      },
+    ],
   ],
 }
