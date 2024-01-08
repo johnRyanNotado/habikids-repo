@@ -16,9 +16,17 @@ export const LESSONS_GOODHABITS = {
         img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
       },
       {
-        id: `ls-20231226-0cda6cb8-e42c-4c36-80c3-5f7b8904811e`,
+        id: `ls-20240108-c608820a-6f5a-4416-8fbd-8e7a21c7fba4`,
         lesNum: 3,
         title: 'Pagpapahalaga sa mga Karapatang Tinamasa',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
+      },
+      {
+        id: `ls-20240108-6b7ba408-5499-4260-84c5-bfef63d863ba`,
+        lesNum: 4,
+        title:
+          'Pagtulong sa Pagpapanatili ng Kalinisan at Kaayusan sa Tahanan at Paaralan',
         screen: 'LessonsNav',
         img: `%20images%20lessons%20values%20grade-1%20lesson-1%201.1.png`,
       },
@@ -49,6 +57,20 @@ export const LESSONS_VALUES = {
         id: `ls-20231121-1820259d-cbc7-4c4c-a7b0-17aa11701aa5`,
         lesNum: 3,
         title: 'Pagmamahal at pagmamalasakit sa pamilya',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+      {
+        id: `ls-20240108-1afbbcdc-8b16-4535-893d-4dea1b9745b9`,
+        lesNum: 4,
+        title: 'Pagpapakita ng Pagmamahal at Paggalang sa Kapwa',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
+      },
+      {
+        id: `ls-20240108-315a95d5-eabf-4088-9e42-a5c2be8eb718`,
+        lesNum: 5,
+        title: 'Pagiging Masunurin at Magalang',
         screen: 'LessonsNav',
         img: `%20images%20lessons%20values%20grade-1%20lesson-3%203.1.png`,
       },
@@ -109,7 +131,15 @@ export const LESSONS_TRADITIONS = {
         img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.7.png`,
       },
     ],
-    [],
+    [
+      {
+        id: `ls-20240108-8c196ac4-2591-49df-9f81-28c31af3b78c`,
+        lesNum: 1,
+        title: 'Pagpapakita ng Pasasalamat sa mga Biyayang Bigay ng Diyos',
+        screen: 'LessonsNav',
+        img: `%20images%20lessons%20traditions%20grade-1%20lesson-1%201.7.png`,
+      },
+    ],
     [],
   ],
 }

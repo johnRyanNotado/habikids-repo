@@ -635,5 +635,593 @@ export const db_Les_Traditions = {
         ],
       },
     ],
+    [
+      {
+        id: `ls-20240108-8c196ac4-2591-49df-9f81-28c31af3b78c`,
+        lesNum: 1,
+        title: 'Pagpapakita ng Pasasalamat sa mga Biyayang Bigay ng Diyos',
+        item: [
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 50,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Wow! Ang sarap naman ng mga pagkain natin.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 50,
+                  left: 'auto',
+                },
+                script: 'Tara! Kain na tayo.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.2.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sandali lang. Magdasal muna tayo at magpasalamat sa mga pagkain na binigay sa atin.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 50,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Oo nga pala. Iyan ang tinuro sa atin ni teacher kanina.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 50,
+                  left: 'auto',
+                },
+                script: 'Okay sige, magdasal muna tayo bago kumain.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.4.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 0,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script: null,
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.5.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Maraming mga biyayang ibinibigay sa atin ang Diyos. Dapat nating pasalamatan ang Diyos sa lahat ng kaniyang nilikha at sa mga biyayang ipinagkaloob Niya sa atin.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kaya nararapat lang na ingatan, pahalagahan at ipagpasalamat ang mga ito.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Piliin sa mga sumusunod na larawan ang gawaing nagpapakita ng pasasalamat sa mga biyayang bigay ng Diyos.',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.6.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.7.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.8.png`,
+                  },
+                  {
+                    id: 4,
+                    answer: MALI,
+                    img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.9.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.10.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'May iba’t ibang paraan ng pagpapakita ng pasasalamat sa biyayang bigay ng Diyos.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Isa sa paraan upang maipakita ang pasasalamat ay pamumuhay ayon sa kagustuhan ng Diyos. Nais ng Diyos na mamuhay ang tayo nang tama at matuwid.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.11.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Maging madasalin sapagkat ang pagdarasal ang pangunahing paraan upang makipag-usap sa Diyos.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sa tuwing nagdarasal tayo, tuwiran tayong nakapaghahayag ng kaniyang pasasalamat sa Diyos.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.12.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang paggawa ng mabuti sa kapwa ay ikatutuwa ng Diyos. Nais niyang gawin din natin ang mga kabutihang ginawa niya para sa atin.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sa ganitong paraan naipapakita ang pagpapasalamat sa mga biyayang bigay Niya.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.13.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang huli ay maging masaya sa lahat ng bagay na mayroon ka. Ang isang batang may kasiyahan sa mga bagay na mayroon siya ay totoong mapagpasalamat.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Maging masaya ka sa kung ano ang ipinagkaloob ng Diyos sa iyo at namumuhay ka nang may kagalakan sa bawat araw.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.14.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ikaw, marunong ka bang magpasalamat sa mga biyayang bigay ng Diyos? ',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Samahan mo akong basahin ang isang maikling kuwento tungkol sa panalangin ni Yeziah, upang mas maunawaan mo pa ang kahalagahan ng pagpapasalamat sa biyayang bigay sa iyo.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.15.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  '“Ang Panalangin ni Yeziah” sulat ni Joymae De Raya Ramos',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.16.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Pagkagising ni Yeziah sa umaga, umupo siya sa kaniyang higaan, pinagdikit ang palad at nagpasalamat dahil siya ay nagising at may bagong umaga.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.17.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Pumunta siya sa kusina, nakita ang hain ng nanay niya na agahan, pumikit at nagpasalamat sa Diyos.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.18.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Napansin ni Yeziah na mukhang malungkot ang tatay niyang si Mang Roni.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 170,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 70,
+                  left: 'auto',
+                },
+                script: 'Tatay bakit po kayo malungkot?',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 30,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Anak hindi muna ako makapamamasada ng jeep, dahil may kumakalat na sakit na tinatawag na COVID-19 at madali itong makahawa kayâ hindi táyo maaring lumabas ng bahay,',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 30,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Kahit walang pasada si tatay ay hindi sila pinabayaan ng Diyos. Maraming biyaya ang ibinigay sa kanila. Hindi sila naubusan ng pagkain at panggastos. Marami ring nagbibigay ng tulong sa kanila.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.21.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 20,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bago matulog si Yeziah ay naupo muli siya sa kaniyang higaan. Pumikit at nagdasal…',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.21.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 20,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bago matulog si Yeziah ay naupo muli siya sa kaniyang higaan. Pumikit at nagdasal…',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 200,
+                  top: 50,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 70,
+                },
+                script:
+                  '"Panginoon salamat po sa lahat ng ibinibigay ninyong biyaya sa amin. Salamat po kay tatay at nanay, sa aming pagkain at sa pagiging ligtas namin sa loob ng aming bahay. Sana po ay ingatan ninyo ang mga frontliners at mga guro. Salamat po sa lahat ng ibinibigay ninyong biyaya sa amin. Amen"',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20traditions%20grade-2%20lesson-1%201.22.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Bago matulog si Yeziah ay naupo muli siya sa kaniyang higaan. Pumikit at nagdasal… Ang pananalangin, pagmamahal sa kapwa at pagbibigay halalaga sa mga biyayang ipinagkaloob ng Diyos ay pagpapakita ng pasasalamat sa mga biyayang bigay Niya.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'juan',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kaya naman huwag mong kalilimutan magdasal at magpasalamat palagi sa mga bagay na mayroon ka ngayon, maliit man o malaki, okay? Paalam!,',
+              },
+            ],
+          },
+        ],
+      },
+    ],
   ],
 }

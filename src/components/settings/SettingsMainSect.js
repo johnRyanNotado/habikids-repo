@@ -61,14 +61,14 @@ const SettingsMainSect = () => {
                   value={isMusicVal}
                   setValue={setIsMusicVal}
                 />
-                <SettingsConfigSect
+                {/* <SettingsConfigSect
                   label={'Tunog ng Boses'}
                   value={isVoiceVal}
                   setValue={setIsVoiceVal}
-                />
+                /> */}
               </View>
             </View>
-            <View>
+            {/* <View>
               <Text style={[settingsFont, sectionTitle]}>Notifications</Text>
               <View>
                 <SettingsConfigSect
@@ -99,7 +99,7 @@ const SettingsMainSect = () => {
                   setValue={setIsEngCapShown}
                 />
               </View>
-            </View>
+            </View> */}
           </View>
         </ScrollView>
       </ScrollView>

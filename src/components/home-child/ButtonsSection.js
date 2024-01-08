@@ -31,7 +31,7 @@ const ButtonsSection = () => {
     <View style={btnSection}>
       <TouchableOpacity style={[btnElement, { flex: 1.5 }]}>
         <Button
-          label="Kanselahin"
+          label="Bumalik"
           onPress={handleCancel}
           btnStyle={{
             backgroundColor: COLORS.grayPrimary,

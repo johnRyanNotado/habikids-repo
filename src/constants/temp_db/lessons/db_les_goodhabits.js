@@ -1478,6 +1478,937 @@ export const db_Les_GoodHabits = {
           },
         ],
       },
+      {
+        id: `ls-20240108-c608820a-6f5a-4416-8fbd-8e7a21c7fba4`,
+        lesNum: 3,
+        title: 'Pagpapahalaga sa mga Karapatang Tinamasa',
+        item: [
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Kamusta ka? Ang pagaaralan natin ngayon ay ang pagpapahalaga sa mga karapatang tinamasa.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ikaw ba napapahalagahan mo ba ang karapatang iyong tinatamasa?',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.3.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ito ang mga karapatang tinatamasa mo ngayon, ngunit ang mga karapatang ito ay dapat mo ring pinapahalagahan.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Karapatan mo bilang bata ang bigyan ng masustansiyang pagkain. Karapatan mo rin ang makapag-aral.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ngunit ang mga karapatan mong ito ay may kakabit na responsibilidad. Ito ay ang pahalagahan ang mga ito.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Paano mo mapapahalagahan ang mga karapatang iyong tinatamasa?',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Basahin at unawain natin ang kuwento ng mga sumusunod na batang tulad mo.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.9.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 230,
+                  left: 'auto',
+                },
+                script:
+                  'Ako si Ana. Pinapahalagan ko ang aking karapatan. Ako ay kumakain ng masustansiyang pagkain.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.10.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 230,
+                  left: 'auto',
+                },
+                script:
+                  'Ako ay kumakain ng gulay at prutas. Umi-inom ako ng gatas araw-araw at ng maraming tubig.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.11.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 230,
+                  left: 'auto',
+                },
+                script:
+                  'Iniiwasan ko ang pagkain ng mga tsitsirya. Iniiwasan ko rin ang pag-inom ng softdrinks. Kaya ako ay healthy at masaya.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Piliin ang tamang larawan na magkokompleto sa kwentong nabasa mo.\n"Ako ay kumakain ng ________ at _______."',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.12.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.13.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.14.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Piliin ang tamang larawan na magkokompleto sa kwentong nabasa mo.\n"Umi-inom ako ng _____ araw-araw at ng maraming _____."',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.15.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.16.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.17.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Basahin at unawain naman natin ang kuwento ni Rod.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.19.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 230,
+                  left: 'auto',
+                },
+                script:
+                  'Ako naman si Rod. Pinapa-halagan ko ang aking karapatan.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.20.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 230,
+                  left: 'auto',
+                },
+                script: 'Ako ay nag-aaral ng mabuti. Lagi akong nagbabasa.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.21.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Iniiwasan kong maglaro ng computer games tuwing may kailangan akong tapusing gawain.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.22.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Kaya ako ay masaya at ang aking pamilya.',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Piliin ang tamang larawan na magkokompleto sa kwentong nabasa mo.\n"Ako ay nag-aaral ng mabuti. Lagi akong ________."',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.23.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.24.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.25.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-3%203.22.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sana naunawaan mong mabuti na kailangang pahalahagan mo ang mga karapatang iyong tinatamasa araw-araw',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Tandaan natin! Bilang bata Karapatan mo ang kumain ng masustansiya at makapag-aral. Ngunit dapat mor in itong pahalagahan.',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: `ls-20240108-6b7ba408-5499-4260-84c5-bfef63d863ba`,
+        lesNum: 4,
+        title:
+          'Pagtulong sa Pagpapanatili ng Kalinisan at Kaayusan sa Tahanan at Paaralan',
+        item: [
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: 'Kamusta ka? Handa ka na bang matuto ulit?',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang pag-aaralan naman natin ngayon ay tungkol sa pagtulong sa pagpapanatili ng kalinisan at kaayusan sa tahanan at paaralan.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.3.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang pagiging malinis at maayos ay tatak na kaugalian nating mga Filipino. Bilang isang Filipino, ikaw rin ay inaasahang maging malinis at maayos.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ikaw ba ay malinis at maayos sa sarili? Tumutulong ka ba sa paglilinis sa bahay? Hindi ka ba nagkakalat?',
+              },
+            ],
+          },
+          {
+            id: 'li-20231121-477669b7-42e6-4656-93b1-31c1540b5845',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 2,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 650,
+                  top: 20,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 80,
+                },
+                instruction:
+                  'Piliin ang larawan na nagpapakita ng mga paraan upang mapanatili ang kalinisan at kaayusan sa tahanan at paaralan.',
+                instructionDuration: 10,
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.5.png`,
+                  },
+                  {
+                    id: 2,
+                    answer: TAMA,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.6.png`,
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.7.png`,
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.8.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang kalinisan ay kasunod sa pagiging maka-Diyos. Pinagpapala ng Diyos ang batang malinis at maayos.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.9.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Ang kalinisan ay kinakailangan upang makamit ang Magandang kalusugan. Ang batang malinis at maayos ay makakaiwas sa mga sakit.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.10.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Upang mapanatili ang kalinisan at kaayusan sa loob ng tahanan at paaralan kailangan mong tumulong sa paglilinis. Iwasan mo rin ang pagkakalat.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Upang mas maunawaan natin ang aralin, basahin natin ang kwentong ito.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.12.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script: '“Ang Batang Mahilig Maglinis”',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.13.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 10,
+                  left: 'auto',
+                },
+                script:
+                  'Ang batang si Farhan Mushin Fida ay ipinanganak sa isang pangkaraniwang pamilya. Siya ay bunso sa tatlong magkakapatid.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.14.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 150,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 50,
+                },
+                script:
+                  'Si Farhan Mushin Fida ay isang masayahing bata. At ang kaniyang paboritong\ngawin ay tumulong sa mga gawaing bahay tulad ng paglilinis ng kanilang tahanan.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.15.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Isang araw, nakita niya ang kaniyang ama na nag-aayos ng mga gamit ng kusina. “Dad, tulungan ko na po kayo,” malambing na sabi niya sa kaniyang ama. “Oo naman. Ang bait talaga ng anak ko,” nakangiting pagpupuri sa kaniya ng ama.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.16.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Noong siya ay pumapasok pa sa paaralan. Minsan ay nakita niyang maraming nakakalat na basura sa kanilang silid-aralan. “Classmates, ang bilin ng ating guro ay huwag tayong magkalat,” paalala niya sa kaniyang mga kaklase.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.17.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 'auto',
+                  bottom: 10,
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Pagkatapos ay kinuha niya ang walis at dustpan. Siya ay nagsimula nang maglinis. Kumuha rin ng walis at dustpan ang kaniyang mga kaklase.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.18.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Sila ay masayang naglinis. Tuwang-tuwa naman ang kanilang guro nang sila ay makitang naglilinis.',
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-8bc9abcb-d09f-407e-b544-a8a8ac184a70',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Mula sa kwentong ating binasa, piliin ang pahayag na tumutugma sa mga pangyayari sa kwento.',
+                choices: [
+                  {
+                    id: 1,
+                    answer: TAMA,
+                    value:
+                      'Si Farhan Mushin Fida ay isang masayahing bata na paboritong gawain ay tumulong sa mga gawaing bahay.',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value:
+                      'Hindi tinulungan nang mga kaklase si Farhan maglinis ng silid-aralan',
+                  },
+                  {
+                    id: 3,
+                    answer: MALI,
+                    value: 'Nagalit si Farhan sa kaniyang mga kaklase.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-8bc9abcb-d09f-407e-b544-a8a8ac184a70',
+            type: 'activity',
+            img: null,
+            data: [
+              {
+                activityType: 1,
+                isNarratorShown: true,
+                narrator: 'uni',
+                narrationDuration: 3,
+                style: {
+                  width: 250,
+                  top: 'auto',
+                  bottom: 'auto',
+                  right: WINDOW_WIDTH / 2 + 80,
+                  left: 'auto',
+                },
+                instruction:
+                  'Tama! Si Farhan Mushin Fida ay isang masayahing bata na paboritong gawain ay tumulong sa mga gawaing bahay.',
+                choices: [
+                  {
+                    id: 1,
+                    answer: MALI,
+                    value: 'Pinagalitan si Farhan ng kaniyang guro.',
+                  },
+                  {
+                    id: 2,
+                    answer: MALI,
+                    value:
+                      'Inutusan ni Farhan ang kaniyang mga kaklase na maglinis ng silid-aralan.',
+                  },
+                  {
+                    id: 3,
+                    answer: TAMA,
+                    value:
+                      'Masayang naglinis si Farahan kasama ang kaniyang mga kaklase.',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ls-20231127-b7beb2aa-9535-4a23-84fd-27b874debcbb',
+            type: 'story',
+            img: `%20images%20lessons%20good-habits%20grade-1%20lesson-4%204.1.png`,
+            data: [
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Katulad ni Farhan sa kwentong ating binasa, ang mga batang tulad natin ay inaasahang makatulong sa pagpapanatili ng kalinisan at kaayusan sa loob ng tahanan at paaralan.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Para sa mabuting kalusugan nating lahat kailangan nating tumulong sa paglilinnis ng tahanan at paaralan, at pag-iwas sa pagkakalat.',
+              },
+              {
+                isNarratorShown: false,
+                narrator: 'vio',
+                narrationDuration: 3,
+                style: {
+                  width: 500,
+                  top: 10,
+                  bottom: 'auto',
+                  right: 'auto',
+                  left: 'auto',
+                },
+                script:
+                  'Tandaan natin, ang pagiging malinis at maayos ay tatak na kaugalian nating mga Pilipino.',
+              },
+            ],
+          },
+        ],
+      },
     ],
     [],
     [],
