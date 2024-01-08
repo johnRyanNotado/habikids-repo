@@ -59,7 +59,7 @@ const ButtonSection = () => {
   return (
     <View style={editBtnWrapper}>
       <Button
-        label="Kanselahin"
+        label="Bumalik"
         onPress={handleCancel}
         btnStyle={cancelBtn}
         txtStyle={{

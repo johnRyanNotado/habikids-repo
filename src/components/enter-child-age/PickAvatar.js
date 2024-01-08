@@ -52,7 +52,7 @@ const PickAvatar = () => {
           data={AVATAR_LIST}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
-          numColumns={4}
+          numColumns={6}
           contentContainerStyle={avatarContainerStyle}
         />
       </View>
