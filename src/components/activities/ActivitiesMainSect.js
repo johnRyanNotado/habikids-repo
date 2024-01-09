@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     right: 10,
     top: 25,
     left: 'auto',
-    zIndex: 10,
+    zIndex: 14,
   },
   dropDownBg: {
     backgroundColor: COLORS.primary,

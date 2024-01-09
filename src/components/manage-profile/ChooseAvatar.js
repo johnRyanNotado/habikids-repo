@@ -1,5 +1,13 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native'
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  FlatList,
+  TouchableWithoutFeedback,
+  ScrollView,
+} from 'react-native'
 import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
 import { globalStyles } from '../../styles/GlobalStyles'
@@ -10,6 +18,7 @@ import {
   useChildDataContext,
   useChosenChildContext,
 } from '../../screens/context-api/ContextAPI'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
 
 const ChooseAvatar = () => {
   const { chosenChild, handleChosenChild } = useChildDataContext()
@@ -59,12 +68,12 @@ const ChooseAvatar = () => {
           <Text style={chosenPicLabel}>Pumili ng Bagong Avatar</Text>
         </View>
         <View style={[centered, notChosenPictureWrapper]}>
-          <View style={{ height: '85%' }}>
+          <View style={{ height: '85%', width: '100%' }}>
             <FlatList
               data={AVATAR_LIST}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
-              numColumns={3}
+              numColumns={6}
               contentContainerStyle={avatarContainerStyle}
             />
           </View>
@@ -101,7 +110,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 20,
     height: 260,
-    width: 420,
+    width: WINDOW_WIDTH * 0.75,
+    minWidth: 500,
   },
   avatar: {
     height: 100,
@@ -111,7 +121,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   chosenPictureWrapper: {
-    width: '40%',
+    width: 420 * 0.4,
     height: '100%',
     alignItems: 'center',
     paddingTop: 20,
@@ -125,11 +135,13 @@ const styles = StyleSheet.create({
     fontFamily: 'QuiapoRegular',
   },
   notChosenPictureWrapper: {
-    width: '60%',
+    flex: 1,
     height: '100%',
   },
   avatarContainerStyle: {
     justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
   },
   saveBtn: {
     backgroundColor: COLORS.greenPrimary,

@@ -11,4 +11,8 @@ export const corresIcon = {
   10: { id: 8, link: require('../img/avatars/avatar-10.png') },
   11: { id: 7, link: require('../img/avatars/avatar-11.png') },
   12: { id: 8, link: require('../img/avatars/avatar-12.png') },
+  13: { id: 7, link: require('../img/avatars/avatar-13.png') },
+  14: { id: 8, link: require('../img/avatars/avatar-14.png') },
+  15: { id: 7, link: require('../img/avatars/avatar-15.png') },
+  16: { id: 8, link: require('../img/avatars/avatar-16.png') },
 }

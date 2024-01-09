@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, FlatList } from 'react-native'
 import { AVATAR_LIST } from '../../constants/avatarList'
 import CustRadioBtnAvatar from './CustRadioBtnAvatar'
 import { useChildDataContext } from '../../screens/context-api/ContextAPI'
+import { WINDOW_HEIGHT } from '../../constants/windowConstants'
 
 const PickAvatar = () => {
   const { newChild, setNewChild } = useChildDataContext()
@@ -52,7 +53,7 @@ const PickAvatar = () => {
           data={AVATAR_LIST}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
-          numColumns={6}
+          numColumns={8}
           contentContainerStyle={avatarContainerStyle}
         />
       </View>
@@ -62,7 +63,7 @@ const PickAvatar = () => {
 
 const styles = StyleSheet.create({
   pickAvatarWrapper: {
-    height: '65%',
+    height: 0.65 * WINDOW_HEIGHT,
     width: '100%',
     borderBottomEndRadius: 20,
     borderBottomStartRadius: 20,
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
   avatarContainerStyle: {
     justifyContent: 'flex-start',
     alignItems: 'center',
-    height: '100%',
+    // height: '100%',
     marginTop: 5,
   },
 })

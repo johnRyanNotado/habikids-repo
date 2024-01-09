@@ -2,6 +2,9 @@ import React from 'react'
 import { TouchableOpacity, StyleSheet, Image } from 'react-native'
 import COLORS from '../../constants/colors'
 import { corresIcon } from '../../utilities/determineAvatar'
+import { WINDOW_WIDTH } from '../../constants/windowConstants'
+
+const AVATART_DIMENSION = { s: WINDOW_WIDTH * 0.065 }
 
 const CustRadioBtnAvatar = (props) => {
   // based on the selected useState, the styles of the buttons will change.
@@ -19,8 +22,10 @@ const CustRadioBtnAvatar = (props) => {
 
 const styles = StyleSheet.create({
   imageStyle: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
+    width: AVATART_DIMENSION.s,
+    height: AVATART_DIMENSION.s,
     marginHorizontal: 5,
     marginBottom: 4,
   },
